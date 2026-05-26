@@ -4,7 +4,7 @@ Updated By: Claude Code (Builder) — 2026-05-26
 
 ## Phase
 
-Phase 0.10 — One-Line Agent Commands
+Phase 0.11 — Owner Approval Shortcut
 
 ## Status
 
@@ -12,9 +12,9 @@ Phase 0.10 — One-Line Agent Commands
 
 ## Current Command
 
-**CMD-0.10-001** — Phase 0.10, One-Line Agent Commands
+**CMD-0.11-001** — Phase 0.11, Owner Approval Shortcut
 Status: `OWNER_APPROVED`
-See full record: `commands/COMMAND_INBOX.md` → CMD-0.10-001 section
+See full record: `commands/COMMAND_INBOX.md` → CMD-0.11-001 section
 Quick view: `commands/CURRENT_COMMAND.md`
 
 ## Builder
@@ -27,23 +27,24 @@ Codex / GPT-4o (AGT-04)
 
 ## Next Gate
 
-Owner: run git commit + git push, then mark CMD-0.10-001 → `CLOSED` with commit hash.
+Codex reviews CMD-0.11-001 using shortcut `REVIEW_CURRENT_COMMAND`.
+Read `commands/CURRENT_COMMAND.md` for active command summary, then `commands/COMMAND_INBOX.md` for full acceptance criteria.
+
+Owner: run git commit + git push, then run `CLOSE_APPROVED_COMMAND` with commit hash.
 After CLOSED: ChatGPT opens next phase.
-## Phase 0.10 Files
+
+## Phase 0.11 Files
 
 | File | Status |
 |------|--------|
-| `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md` | Complete — inference algorithm, end-to-end flows, done criteria |
-| `commands/CURRENT_COMMAND.md` | Complete — single-file active command pointer |
-| `commands/COMMAND_SHORTCUTS.md` | Updated — inference section + Owner usage examples |
-| `commands/COMMAND_ROUTING_RULES.md` | Updated — Active Command Inference section |
-| `agents/AGENT_RUN_PROTOCOL.md` | Updated — inference in Session Start Checklist |
-| `agents/BUILDER_PROTOCOL.md` | Updated — inference spec at Step 1 |
-| `agents/REVIEWER_PROTOCOL.md` | Updated — inference + PASS_WITH_NOTES + importability check |
+| `docs/phase-0/PHASE_0_11_OWNER_APPROVAL_SHORTCUT.md` | Complete — shortcut spec, guardrails, end-to-end example |
+| `commands/COMMAND_SHORTCUTS.md` | Updated — APPROVE_CURRENT_PHASE shortcut + Owner usage example |
+| `commands/COMMAND_ROUTING_RULES.md` | Updated — APPROVE_CURRENT_PHASE in Shortcut Role Gate table |
+| `agents/AGENT_RUN_PROTOCOL.md` | Updated — integration diagram includes APPROVE_CURRENT_PHASE |
 
 ## Previous Phase
 
-Phase 0.9 — CLOSED (commit fd9c750)
+Phase 0.10 — CLOSED (commit 7498c73)
 
 ## Guardrails
 
@@ -51,5 +52,5 @@ Phase 0.9 — CLOSED (commit fd9c750)
 - Do not auto-post or auto-reply.
 - Do not activate n8n workflows.
 - Do not run ads or spend money.
-- Do not modify files outside Phase 0.10 scope.
+- Do not modify files outside Phase 0.11 scope.
 - Do not commit until `OWNER_APPROVED`.

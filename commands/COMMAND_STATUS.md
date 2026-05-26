@@ -1,7 +1,7 @@
 # Command Status
 
 Created By: Codex (Reviewer) - 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10)
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.11)
 
 ## Status Lifecycle
 
@@ -47,7 +47,8 @@ NEW
 
 | Command ID | Phase | Builder | Reviewer | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| CMD-0.10-001 | 0.10 | Claude Code | Codex | high | OWNER_APPROVED |
+| CMD-0.11-001 | 0.11 | Claude Code | Codex | high | OWNER_APPROVED |
+| CMD-0.10-001 | 0.10 | Claude Code | Codex | high | CLOSED (commit 7498c73) |
 | CMD-0.9-001 | 0.9 | Claude Code | Codex | high | CLOSED (commit fd9c750) |
 | CMD-0.8-001 | 0.8 | Claude Code | Codex | high | CLOSED (commit e58427c) |
 | CMD-0.7-001 | 0.7 | Claude Code | Codex | high | CLOSED (commit d4771a) |

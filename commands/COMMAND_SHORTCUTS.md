@@ -1,8 +1,8 @@
 # Command Execution Shortcuts
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10 — Active Command Inference added)
-Phase: 0.10
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.11 — APPROVE_CURRENT_PHASE added)
+Phase: 0.11
 
 Shortcuts replace the need to write or paste long role-specific prompts. Each shortcut maps to a named set of actions an agent must perform. Owner pastes the shortcut token; the agent resolves it against the active command in `commands/COMMAND_INBOX.md`.
 
@@ -96,6 +96,50 @@ When an agent receives a shortcut token and no other context, it identifies the 
 - Rebuild the phase from scratch.
 - Open the next phase.
 - Commit or push.
+
+---
+
+### APPROVE_CURRENT_PHASE
+
+**Role:** Builder (Claude Code) — on Owner's explicit approval instruction
+**When to use:** After Reviewer returns REVIEW_PASS or PASS_WITH_NOTES. Owner wants to mark the active command as OWNER_APPROVED and receive the ready-to-paste commit command.
+
+**Agent must:**
+1. Read `commands/COMMAND_INBOX.md` — find first non-CLOSED record via Active Command Inference.
+2. Check status:
+   - `REVIEW_PASS` → proceed.
+   - Anything else → STOP. Report exact status and reason (see Guardrails below).
+3. Update `commands/COMMAND_STATUS.md` — set status to `OWNER_APPROVED`.
+4. Update `commands/COMMAND_INBOX.md` — set status field to `OWNER_APPROVED` in the active command record.
+5. Update `commands/CURRENT_COMMAND.md` — set status to `OWNER_APPROVED`; update Next Gate to show commit instructions.
+6. Update `handoff/CURRENT_PHASE.md` — set Status to `**OWNER_APPROVED**`.
+7. Update `handoff/SESSION_SUMMARY.md` — set `owner_approval_needed: false`; update `next_agent_action` to "Owner: run git commit + git push, then run CLOSE_APPROVED_COMMAND."
+8. Output recommended commit command (do NOT run it):
+   ```
+   ## Recommended Commit Command
+
+   git add [scope_files from active command]
+   git commit -m "feat(phase-X.X): [objective from active command]"
+   git push
+   ```
+9. End output with: `OWNER_APPROVED — READY FOR COMMIT`
+
+**Guardrails — status checks:**
+
+| Active Command Status | Behaviour |
+|----------------------|-----------|
+| `REVIEW_PASS` | Proceed |
+| `REVIEW_FAIL` | STOP — "APPROVE_CURRENT_PHASE blocked: active command has REVIEW_FAIL. Builder must fix and re-submit." |
+| `REVIEW_REQUESTED` | STOP — "APPROVE_CURRENT_PHASE blocked: Reviewer has not yet returned a result." |
+| `IN_PROGRESS` / `ASSIGNED` | STOP — "APPROVE_CURRENT_PHASE blocked: Builder has not finished yet." |
+| `OWNER_APPROVED` | STOP — "Already OWNER_APPROVED. Run CLOSE_APPROVED_COMMAND after git commit/push." |
+| `CLOSED` | STOP — "Command is already CLOSED. No action needed." |
+
+**Agent must NOT:**
+- Run `git commit` or `git push` — Owner executes these manually in terminal.
+- Move status to `CLOSED` — that is `CLOSE_APPROVED_COMMAND` after commit.
+- Skip the status check.
+- Approve work that has an unresolved `REVIEW_FAIL`.
 
 ---
 
@@ -219,6 +263,26 @@ Agent reads `commands/CURRENT_COMMAND.md` → outputs structured summary block. 
 
 ---
 
+### Approving a reviewed phase
+
+After Codex returns REVIEW RESULT: PASS (or PASS_WITH_NOTES), Owner opens Claude Code and types:
+
+```
+APPROVE_CURRENT_PHASE
+```
+
+Claude Code:
+1. Scans `commands/COMMAND_INBOX.md` → first non-CLOSED record; verifies status is `REVIEW_PASS`
+2. Updates status → `OWNER_APPROVED` in COMMAND_STATUS.md, COMMAND_INBOX.md, CURRENT_COMMAND.md, CURRENT_PHASE.md, SESSION_SUMMARY.md
+3. Outputs the recommended commit command
+
+Owner copies the git lines, pastes in terminal, runs them.
+Then types `CLOSE_APPROVED_COMMAND` with the commit hash.
+
+No manual file editing. One line triggers the approval + commit prep.
+
+---
+
 ## Shortcut Error Conditions
 
 | Error | Trigger | Required Action |
@@ -238,6 +302,7 @@ Agent reads `commands/CURRENT_COMMAND.md` → outputs structured summary block. 
 | `RUN_CURRENT_COMMAND` | Builder | ASSIGNED / IN_PROGRESS | `READY FOR CODEX REVIEW` |
 | `REVIEW_CURRENT_COMMAND` | Reviewer | REVIEW_REQUESTED | `REVIEW RESULT: PASS/FAIL` |
 | `FIX_REVIEW_FAIL` | Builder | REVIEW_FAIL | `READY FOR CODEX RE-REVIEW` |
+| `APPROVE_CURRENT_PHASE` | Builder (on Owner instruction) | REVIEW_PASS | `OWNER_APPROVED — READY FOR COMMIT` |
 | `CLOSE_APPROVED_COMMAND` | Owner | OWNER_APPROVED (after commit) | Status → CLOSED |
 | `CREATE_SESSION_SUMMARY` | Any | Any (turn 8+) | SESSION_SUMMARY updated |
 | `SHOW_CURRENT_STATUS` | Any | Any | Structured status block |

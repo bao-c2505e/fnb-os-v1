@@ -14,9 +14,9 @@ instead of scanning the full COMMAND_INBOX.md.
 
 | Field | Value |
 |-------|-------|
-| `command_id` | CMD-0.10-001 |
-| `phase` | 0.10 — One-Line Agent Commands |
-| `objective` | Define Active Command Inference so agents can execute one-line shortcuts with zero additional context from Owner |
+| `command_id` | CMD-0.11-001 |
+| `phase` | 0.11 — Owner Approval Shortcut |
+| `objective` | Add APPROVE_CURRENT_PHASE shortcut so Owner can approve a reviewed command with one line |
 | `status` | OWNER_APPROVED |
 | `assigned_builder` | Claude Code |
 | `assigned_reviewer` | Codex |
@@ -24,8 +24,8 @@ instead of scanning the full COMMAND_INBOX.md.
 
 ## Next Gate
 
-Owner: run `git commit` and `git push`, then mark CMD-0.10-001 as CLOSED with commit hash.
-Full command record: `commands/COMMAND_INBOX.md` → CMD-0.10-001.
+Owner: run git commit + git push, then run `CLOSE_APPROVED_COMMAND` with the commit hash.
+Full command record: `commands/COMMAND_INBOX.md` → CMD-0.11-001.
 
 ---
 
@@ -33,12 +33,12 @@ Full command record: `commands/COMMAND_INBOX.md` → CMD-0.10-001.
 
 **As Builder (RUN_CURRENT_COMMAND):**
 1. Read this file — confirm `assigned_builder: Claude Code` and status is `ASSIGNED` or `IN_PROGRESS`.
-2. Open `commands/COMMAND_INBOX.md` → CMD-0.10-001 for full scope_files, forbidden_actions, acceptance_criteria.
+2. Open `commands/COMMAND_INBOX.md` → CMD-0.11-001 for full scope_files, forbidden_actions, acceptance_criteria.
 3. Execute.
 
 **As Reviewer (REVIEW_CURRENT_COMMAND):**
 1. Read this file — confirm `assigned_reviewer: Codex` and status is `REVIEW_REQUESTED`.
-2. Open `commands/COMMAND_INBOX.md` → CMD-0.10-001 for full output_required and acceptance_criteria.
+2. Open `commands/COMMAND_INBOX.md` → CMD-0.11-001 for full output_required and acceptance_criteria.
 3. Review.
 
 **As Owner (SHOW_CURRENT_STATUS):**

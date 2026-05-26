@@ -1,8 +1,8 @@
 # Command Routing Rules
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10 — Active Command Inference added)
-Phase: 0.10
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.11 — APPROVE_CURRENT_PHASE added)
+Phase: 0.11
 
 This document defines how commands are routed to agents, what each agent may do, and what error conditions require a stop.
 
@@ -171,6 +171,7 @@ After Phase 0.9, agents may receive a shortcut token instead of a full prompt. E
 | `RUN_CURRENT_COMMAND` | Builder (Claude Code) only | `ASSIGNED` or `IN_PROGRESS` |
 | `REVIEW_CURRENT_COMMAND` | Reviewer (Codex) only | `REVIEW_REQUESTED` |
 | `FIX_REVIEW_FAIL` | Builder (Claude Code) only | `REVIEW_FAIL` |
+| `APPROVE_CURRENT_PHASE` | Builder (Claude Code) on Owner instruction | `REVIEW_PASS` |
 | `CLOSE_APPROVED_COMMAND` | Owner only (after commit/push) | `OWNER_APPROVED` |
 | `CREATE_SESSION_SUMMARY` | Any agent | Any |
 | `SHOW_CURRENT_STATUS` | Any agent or Owner | Any |
@@ -190,6 +191,7 @@ After Phase 0.9, agents may receive a shortcut token instead of a full prompt. E
 - `RUN_CURRENT_COMMAND` may only be run by the agent named in `assigned_builder`.
 - `REVIEW_CURRENT_COMMAND` may only be run by the agent named in `assigned_reviewer`.
 - `FIX_REVIEW_FAIL` requires Reviewer's FAIL output to already exist before Builder starts.
+- `APPROVE_CURRENT_PHASE` requires active command status to be exactly `REVIEW_PASS` — blocked on any other status.
 - `CLOSE_APPROVED_COMMAND` requires Owner to have committed and pushed — agent must verify with `git log`.
 - No shortcut bypasses the 10-turn session cap or pre-BUILDER_DONE checklist.
 - No shortcut allows commit or push without `OWNER_APPROVED`.
@@ -207,6 +209,6 @@ After Phase 0.9, agents may receive a shortcut token instead of a full prompt. E
 | `BUILDER_DONE` | Builder | Move to REVIEW_REQUESTED |
 | `REVIEW_REQUESTED` | Reviewer | Run review checks, set REVIEW_PASS or REVIEW_FAIL |
 | `REVIEW_FAIL` | Builder | Fix issues, return to IN_PROGRESS |
-| `REVIEW_PASS` | Owner | Set OWNER_APPROVED |
+| `REVIEW_PASS` | Owner (via `APPROVE_CURRENT_PHASE` shortcut) | Builder updates status files to OWNER_APPROVED; Owner receives commit command |
 | `OWNER_APPROVED` | Owner | Run git commit/push, set CLOSED |
 | `CLOSED` | None | No further action |

@@ -13,62 +13,59 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.10 — REVIEW_REQUESTED, pending Codex review and Owner approval
+## CURRENT STATE: Phase 0.11 — REVIEW_REQUESTED, pending Codex review
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
 **Phase 0.8:** CLOSED (commit e58427c)
 **Phase 0.9:** CLOSED (commit fd9c750)
-**Current command:** CMD-0.10-001
+**Phase 0.10:** CLOSED (commit 7498c73)
+**Current command:** CMD-0.11-001
 **Current status:** REVIEW_REQUESTED
 
-Nothing in Phase 1 or beyond should start until CMD-0.10-001 is CLOSED.
+Nothing in Phase 1 or beyond should start until CMD-0.11-001 is CLOSED.
 
 ---
 
-## 🟠 HIGH — Phase 0.10 Gate (must complete in order)
+## 🟠 HIGH — Phase 0.11 Gate (must complete in order)
 
-### Step 1 — Codex: Review CMD-0.10-001
+### Step 1 — Codex: Review CMD-0.11-001
 
 Use shortcut `REVIEW_CURRENT_COMMAND`.
-Read `commands/CURRENT_COMMAND.md` first (active command pointer), then `commands/COMMAND_INBOX.md` → CMD-0.10-001 for full scope_files and acceptance criteria.
+Read `commands/CURRENT_COMMAND.md` first (active command pointer), then `commands/COMMAND_INBOX.md` → CMD-0.11-001 for full scope_files and acceptance criteria.
 
-Files to review (from CMD-0.10-001 scope_files):
+Files to review (from CMD-0.11-001 scope_files):
 
-1. `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md` — inference algorithm + end-to-end flows
-2. `commands/CURRENT_COMMAND.md` — active command pointer file
-3. `commands/COMMAND_SHORTCUTS.md` — inference section + Owner usage examples
-4. `commands/COMMAND_ROUTING_RULES.md` — Active Command Inference section
-5. `agents/AGENT_RUN_PROTOCOL.md` — inference reference in Session Start Checklist
-6. `agents/BUILDER_PROTOCOL.md` — inference spec reference at Step 1
-7. `agents/REVIEWER_PROTOCOL.md` — inference spec + PASS_WITH_NOTES + importability check
+1. `docs/phase-0/PHASE_0_11_OWNER_APPROVAL_SHORTCUT.md` — shortcut spec, guardrails, end-to-end example
+2. `commands/COMMAND_SHORTCUTS.md` — APPROVE_CURRENT_PHASE definition + guardrails + usage example
+3. `commands/COMMAND_ROUTING_RULES.md` — APPROVE_CURRENT_PHASE in Shortcut Role Gate table
+4. `agents/AGENT_RUN_PROTOCOL.md` — integration diagram updated with APPROVE_CURRENT_PHASE step
 
-Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.10-001.
+Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.11-001.
 
-If REVIEW_PASS → update CMD-0.10-001 status → `REVIEW_PASS` → notify Owner.
-If REVIEW_FAIL → record reason → update CMD-0.10-001 status → `REVIEW_FAIL` → return to Builder.
+If REVIEW_PASS or REVIEW_PASS_WITH_NOTES → Owner types `APPROVE_CURRENT_PHASE`.
+If REVIEW_FAIL → record reason → return to Builder.
 
-### Step 2 — Owner: Approve CMD-0.10-001
+### Step 2 — Owner: Approve CMD-0.11-001
 
-After Codex REVIEW_PASS on CMD-0.10-001:
-- Review `handoff/SESSION_SUMMARY.md`.
-- If satisfied, update CMD-0.10-001 status → `OWNER_APPROVED`.
+After Codex REVIEW_PASS on CMD-0.11-001:
+- Type `APPROVE_CURRENT_PHASE` → Claude Code updates status files and outputs commit command.
 
-### Step 3 — Owner: Commit CMD-0.10-001
+### Step 3 — Owner: Commit CMD-0.11-001
 
-After CMD-0.10-001 status = `OWNER_APPROVED`:
+After CMD-0.11-001 status = `OWNER_APPROVED`:
 
 ```
-git add docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md commands/COMMAND_SHORTCUTS.md commands/COMMAND_ROUTING_RULES.md agents/ commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md handoff/ logs/ 09_LOGS/PHASE_LOG.md 06_HANDOFF/NEXT_ACTIONS.md
-git commit -m "feat(phase-0.10): add one-line agent command inference"
+git add docs/phase-0/PHASE_0_11_OWNER_APPROVAL_SHORTCUT.md commands/COMMAND_SHORTCUTS.md commands/COMMAND_ROUTING_RULES.md agents/AGENT_RUN_PROTOCOL.md commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/ logs/ 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md
+git commit -m "feat(phase-0.11): add owner approval shortcut"
 git push
 ```
 
-Update CMD-0.10-001 status → `CLOSED`.
+Then run `CLOSE_APPROVED_COMMAND` with commit hash. Also close out Phase 0.10 (CMD-0.10-001) if not yet done.
 
-### Step 4 — ChatGPT: Open Phase 1 (or next phase)
+### Step 4 — ChatGPT: Open next phase
 
-Only after Phase 0.10 commit confirmed in git log.
+Only after Phase 0.11 commit confirmed in git log.
 Issue next command via `commands/COMMAND_INBOX.md`.
 
 ---

@@ -1,8 +1,8 @@
 # Agent Run Protocol
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10 — Active Command Inference reference added)
-Phase: 0.10
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.11 — APPROVE_CURRENT_PHASE added to integration diagram)
+Phase: 0.11
 
 This document is the master operational protocol for all agent sessions in FnB OS V1.
 It bridges the Phase 0.6 Command Intake Layer with actual session execution.
@@ -156,7 +156,7 @@ READY FOR CODEX REVIEW
 
 ---
 
-## 8. How This Connects to Phase 0.6, 0.8, and 0.9
+## 8. How This Connects to Phase 0.6, 0.8, 0.9, and 0.11
 
 ```
 Owner / ChatGPT creates command (COMMAND_TEMPLATE.md or GITHUB_ISSUE_COMMAND_TEMPLATE.md)
@@ -172,9 +172,13 @@ Owner pastes shortcut token: REVIEW_CURRENT_COMMAND  [Phase 0.9]
     ↓
 Reviewer resolves token → reads AGENT_RUN_PROTOCOL.md + REVIEWER_PROTOCOL.md
     ↓ status: REVIEW_PASS or REVIEW_FAIL
-Owner approves
-    ↓ status: OWNER_APPROVED → CLOSED
+Owner pastes shortcut token: APPROVE_CURRENT_PHASE  [Phase 0.11]
+    ↓
+Builder updates status files → OWNER_APPROVED; outputs recommended commit command
+    ↓ status: OWNER_APPROVED
+Owner runs git commit + git push in terminal
 Owner commits → pastes: CLOSE_APPROVED_COMMAND  [Phase 0.9]
+    ↓ status: CLOSED
 ```
 
 State machine: `commands/COMMAND_STATUS.md`

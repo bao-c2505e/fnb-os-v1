@@ -341,3 +341,56 @@ CMD-0.7-001 marked CLOSED (commit d4771a) in COMMAND_STATUS.md.
 No secrets added. No GitHub API called. No workflows activated. No Phase 1 actions taken.
 
 ---
+
+### 2026-05-26 — Phase 0.11 — Owner Approved
+
+**By:** Owner
+**Status:** OWNER_APPROVED
+**Detail:**
+Owner approved CMD-0.11-001 via APPROVE_CURRENT_PHASE shortcut.
+Status updated: REVIEW_PASS → OWNER_APPROVED across all state files.
+Awaiting Owner git commit + git push, then CLOSE_APPROVED_COMMAND.
+
+---
+
+### 2026-05-26 — Phase 0.11 — Codex Review: PASS
+
+**By:** Codex (Reviewer) via Owner state update
+**Status:** REVIEW_PASS
+**Detail:**
+Codex reviewed CMD-0.11-001 and returned REVIEW RESULT: PASS / OWNER CAN APPROVE.
+Status updated: REVIEW_REQUESTED → REVIEW_PASS across COMMAND_STATUS.md, COMMAND_INBOX.md,
+CURRENT_COMMAND.md, CURRENT_PHASE.md, SESSION_SUMMARY.md.
+No file content changes. No commit. Awaiting Owner APPROVE_CURRENT_PHASE.
+
+---
+
+### 2026-05-26 — Phase 0.11 — State Reconciliation: CMD-0.10-001
+
+**By:** Claude Code (Builder)
+**Status:** Complete (reconciliation fix — no feature change)
+**Detail:**
+Reconciled CMD-0.10-001 state. Git commit 7498c73 (feat(phase-0.10)) existed in repo history, but
+command state files still showed OWNER_APPROVED / commit-pending. This violated the command gate
+(CMD-0.11-001 was opened while CMD-0.10-001 appeared unclosed).
+Fix applied: collapsed CMD-0.10-001 to CLOSED stub (commit 7498c73) in COMMAND_INBOX.md;
+updated COMMAND_STATUS.md, CURRENT_COMMAND.md, CURRENT_PHASE.md, SESSION_SUMMARY.md, NEXT_ACTIONS.md.
+No features added. No commits made. CMD-0.11-001 remains REVIEW_REQUESTED and is unaffected.
+
+---
+
+### 2026-05-26 — Phase 0.11 — Owner Approval Shortcut
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Built the Owner Approval Shortcut — closes the gap between REVIEW_PASS and the manual file-editing step required to reach OWNER_APPROVED.
+- `docs/phase-0/PHASE_0_11_OWNER_APPROVAL_SHORTCUT.md`: phase doc. Problem statement, shortcut spec (9-step action list), guardrails table (all 6 non-PASS status cases), end-to-end example, done criteria.
+- `commands/COMMAND_SHORTCUTS.md`: updated. APPROVE_CURRENT_PHASE shortcut added (role, action list, guardrails table, must-nots). Owner usage example added. Quick-Reference table updated (now 7 shortcuts).
+- `commands/COMMAND_ROUTING_RULES.md`: updated. APPROVE_CURRENT_PHASE row in Shortcut Role Gate table. APPROVE_CURRENT_PHASE routing rule added. Routing Summary Table: REVIEW_PASS row updated to reference shortcut.
+- `agents/AGENT_RUN_PROTOCOL.md`: updated. Section 8 integration diagram updated — APPROVE_CURRENT_PHASE step added between REVIEW_PASS and OWNER_APPROVED.
+CMD-0.11-001 added to COMMAND_INBOX.md and COMMAND_STATUS.md (REVIEW_REQUESTED).
+CMD-0.10-001 remains OWNER_APPROVED in COMMAND_INBOX.md (commit pending from Owner).
+No secrets added. No API called. No workflows activated. No Phase 1 actions taken.
+
+---
