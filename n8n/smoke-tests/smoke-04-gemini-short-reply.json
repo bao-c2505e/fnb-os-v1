@@ -1,0 +1,78 @@
+{
+  "name": "SMOKE-04 Gemini Short Reply Test (Fixed)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "b2c3d4e5-0004-4004-8004-bbccdd000001",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "notes": "Phase 0.4 smoke test — run manually only. Never activate on schedule."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
+        "authentication": "none",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "={{ $env.GEMINI_API_KEY }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"contents\":[{\"parts\":[{\"text\":\"Reply with exactly this text: FnB OS V1 Gemini smoke test passed.\"}]}],\"generationConfig\":{\"maxOutputTokens\":60,\"temperature\":0}}",
+        "options": {}
+      },
+      "id": "b2c3d4e5-0004-4004-8004-bbccdd000002",
+      "name": "Gemini Short Reply",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 300],
+      "notes": "FIX: Gemini REST API requires the key as query parameter ?key=VALUE, NOT as an HTTP header. API key is read from n8n env var via ={{ $env.GEMINI_API_KEY }}. No credential lookup. No hardcoded key. Pre-req: set GEMINI_API_KEY in your n8n environment before running."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Gemini Short Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "phase": "0.4",
+    "type": "smoke-test",
+    "autoPublish": false,
+    "humanApprovalRequired": true,
+    "fixVersion": "v2",
+    "fixNote": "v1 used httpHeaderAuth which caused 403 Forbidden. Gemini REST API requires ?key= query param, not a header. v2 uses authentication=none + sendQuery with $env.GEMINI_API_KEY expression.",
+    "geminiEndpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
+    "authMethod": "query-parameter-key",
+    "envVarRequired": "GEMINI_API_KEY",
+    "expectedOutput": "FnB OS V1 Gemini smoke test passed.",
+    "templateCredsSetupCompleted": true
+  },
+  "id": "smoke-04-gemini-short-reply-v2",
+  "tags": [
+    { "name": "phase-0.4" },
+    { "name": "smoke-test" },
+    { "name": "no-production" },
+    { "name": "gemini-fixed" }
+  ]
+}
