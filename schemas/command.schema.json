@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AgentCommand",
+  "description": "Canonical command intake object for assigning repo-based work to FnB OS V1 agents.",
+  "type": "object",
+  "required": [
+    "command_id",
+    "phase",
+    "created_by",
+    "assigned_builder",
+    "assigned_reviewer",
+    "priority",
+    "status",
+    "owner_request",
+    "scope_files",
+    "forbidden_actions",
+    "acceptance_criteria",
+    "output_required",
+    "review_required",
+    "approval_required",
+    "handoff_required",
+    "log_required"
+  ],
+  "properties": {
+    "command_id": {
+      "type": "string",
+      "description": "Stable command identifier. Example: CMD-0.6-001",
+      "pattern": "^CMD-[0-9.]+-[0-9]{3}$"
+    },
+    "phase": {
+      "type": "string",
+      "description": "Project phase or sub-phase. Example: 0.6"
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Command author. Examples: Owner, ChatGPT, AGT-01"
+    },
+    "assigned_builder": {
+      "type": "string",
+      "description": "Builder agent or role assigned to execute the command. Example: Claude Code"
+    },
+    "assigned_reviewer": {
+      "type": "string",
+      "description": "Reviewer agent or role assigned to verify the output. Example: Codex"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "NEW",
+        "ASSIGNED",
+        "IN_PROGRESS",
+        "BLOCKED",
+        "BUILDER_DONE",
+        "REVIEW_REQUESTED",
+        "REVIEW_PASS",
+        "REVIEW_FAIL",
+        "OWNER_APPROVED",
+        "CLOSED"
+      ]
+    },
+    "owner_request": {
+      "type": "string",
+      "description": "Plain-language description of what the Owner or ChatGPT wants done.",
+      "minLength": 10
+    },
+    "scope_files": {
+      "type": "array",
+      "description": "Exact file paths or folders the Builder is allowed to create or modify.",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "description": "Explicit list of actions the Builder must not take.",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "description": "Specific, testable conditions that define DONE.",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "output_required": {
+      "type": "array",
+      "description": "Artifacts the Builder must produce (files, patches, command output).",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "review_required": {
+      "type": "boolean",
+      "description": "If true, output must be reviewed before Owner approval."
+    },
+    "approval_required": {
+      "type": "boolean",
+      "description": "If true, Owner must explicitly approve before commit."
+    },
+    "handoff_required": {
+      "type": "boolean",
+      "description": "If true, Builder must update handoff files before BUILDER_DONE."
+    },
+    "log_required": {
+      "type": "boolean",
+      "description": "If true, Builder must append to PHASE_LOG.md before BUILDER_DONE."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "blocked_reason": {
+      "type": ["string", "null"],
+      "description": "Required when status is BLOCKED. Describes what is missing."
+    },
+    "review_notes": {
+      "type": ["string", "null"],
+      "description": "Reviewer notes on REVIEW_PASS or REVIEW_FAIL."
+    }
+  },
+  "additionalProperties": false
+}

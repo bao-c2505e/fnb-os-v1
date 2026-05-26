@@ -133,3 +133,51 @@ Updated SESSION_SUMMARY.md and NEXT_ACTIONS.md.
 All Phase 0 sub-phases now complete. Ready for Phase 1 — Google Sheet & Drive Setup.
 
 ---
+
+### 2026-05-26 - Phase 0.6 - Agent Command Intake Layer (Initial Build)
+
+**By:** Codex (Reviewer) — acting as initial file author before role lock
+**Status:** Complete (pending consistency review)
+**Detail:**
+Created canonical command intake files under `commands/`.
+Created `schemas/command.schema.json` with required command fields and 7-state status enum.
+Created `docs/phase-0/PHASE_0_6_COMMAND_INTAKE.md`.
+Updated handoff and activity logs.
+No secrets added. No workflows activated. No external actions taken.
+
+---
+
+### 2026-05-26 - Phase 0.6 - Agent Command Intake Layer (Consistency Patch)
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — pending Codex review
+**Detail:**
+Reviewed all Phase 0.6 files against spec. Applied consistency patch:
+- COMMAND_STATUS.md: expanded from 7 to 10 states with transition rules and ownership per state.
+  Full lifecycle: NEW → ASSIGNED → IN_PROGRESS → BLOCKED / BUILDER_DONE → REVIEW_REQUESTED → REVIEW_PASS/FAIL → OWNER_APPROVED → CLOSED.
+- COMMAND_TEMPLATE.md: added missing fields (owner_request, assigned_builder, assigned_reviewer, scope_files, review_required, approval_required).
+- command.schema.json: updated required array + properties to match template; 10-state enum; removed obsolete fields.
+- PHASE_0_6_COMMAND_INTAKE.md: added How-to-issue guide, lifecycle diagram, Who Does What section, field reference, commit gate rule.
+- handoff/CURRENT_PHASE.md: status set to BUILDER_DONE_PENDING_REVIEW.
+- handoff/SESSION_SUMMARY.md, logs/AGENT_ACTIVITY_LOG.md, 06_HANDOFF/NEXT_ACTIONS.md: updated.
+No secrets added. No workflows activated. No external actions taken. No files outside Phase 0.6 scope modified.
+
+---
+
+### 2026-05-26 - Phase 0.6 - Codex REVIEW_FAIL Fix
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED (re-submit after REVIEW_FAIL)
+**Detail:**
+Applied targeted fixes for 4 issues flagged in Codex REVIEW_FAIL:
+1. COMMAND_INBOX.md: replaced `ACCEPTED` (undefined status) with `ASSIGNED` per lifecycle.
+2. All files: corrected `Codex (Builder)` → `Codex (Reviewer)` across COMMAND_STATUS.md,
+   COMMAND_INBOX.md, PHASE_0_6_COMMAND_INTAKE.md, AGENT_ACTIVITY_LOG.md, PHASE_LOG.md,
+   NEXT_ACTIONS.md completed-actions table.
+3. PHASE_0_6_COMMAND_INTAKE.md: Builder role scoped to "Claude Code" only; Reviewer role
+   scoped to "Codex" only (removed incorrect "/ Codex" from Builder, "/ ChatGPT" from Reviewer).
+4. NEXT_ACTIONS.md: Restructured to place Phase 0.6 gate as top priority.
+   Phase 1 items remain as roadmap but cannot proceed before Phase 0.6 is CLOSED.
+No secrets added. No workflows activated. No files outside Phase 0.6 scope modified.
+
+---

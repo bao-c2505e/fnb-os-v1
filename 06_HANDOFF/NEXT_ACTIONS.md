@@ -13,9 +13,57 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## Current Queue — Phase 0.4 Testing → Phase 1
+## CURRENT STATE: Phase 0.6 pending Codex re-review and Owner approval
 
-### 🔴 BLOCKED — User Actions Required (run in n8n)
+**CMD-0.6-001 status:** REVIEW_REQUESTED (re-submit after REVIEW_FAIL fix)
+
+Nothing below this line should be started until Phase 0.6 is CLOSED.
+
+---
+
+## 🟠 HIGH — Phase 0.6 Gate (must complete in order)
+
+### Step 1 — Codex: Re-review Phase 0.6
+
+Review the following files against acceptance criteria in `docs/phase-0/PHASE_0_6_COMMAND_INTAKE.md`:
+
+1. `commands/COMMAND_INBOX.md` — no `ACCEPTED` status; uses `ASSIGNED`
+2. `commands/COMMAND_STATUS.md` — 10-state lifecycle; no `Codex (Builder)` label
+3. `commands/COMMAND_TEMPLATE.md` — all required fields present
+4. `schemas/command.schema.json` — matches template; validates with `python -m json.tool`
+5. `docs/phase-0/PHASE_0_6_COMMAND_INTAKE.md` — Builder = Claude Code only; Reviewer = Codex only
+
+If REVIEW_PASS → update CMD-0.6-001 status → `REVIEW_PASS` → notify Owner.
+If REVIEW_FAIL → record reason in `review_notes`; update status → `REVIEW_FAIL`; return to Builder.
+
+### Step 2 — Owner: Approve Phase 0.6
+
+After Codex REVIEW_PASS:
+- Review output summary in `handoff/SESSION_SUMMARY.md`.
+- If satisfied, update CMD-0.6-001 status → `OWNER_APPROVED`.
+
+### Step 3 — Owner: Commit Phase 0.6
+
+After OWNER_APPROVED:
+
+```
+git add commands/ schemas/command.schema.json docs/phase-0/PHASE_0_6_COMMAND_INTAKE.md handoff/ logs/ 09_LOGS/PHASE_LOG.md 06_HANDOFF/NEXT_ACTIONS.md
+git commit -m "feat(phase-0.6): add agent command intake layer"
+git push
+```
+
+Update CMD-0.6-001 status → `CLOSED`.
+
+### Step 4 — ChatGPT: Open Phase 0.7
+
+Only after Phase 0.6 commit is confirmed in git log.
+ChatGPT issues next command via `commands/COMMAND_INBOX.md`.
+
+---
+
+## 🔴 BLOCKED — Awaiting Phase 0.6 CLOSED before any item below can start
+
+### Phase 0.4 Smoke Tests (Owner must run in n8n)
 
 1. **Finish filling `.env`** *(Phase 0.2 — In Progress)*
    - File: `D:\FNB_OS_V1\.env`
@@ -39,52 +87,38 @@ Updated by Chief Architect or Builder Agents after each session.
    - Constraint: keep all workflows `active = OFF`
    - Blocker for: Phase 1
 
-3. **Commit Phase 0.4 results**
-   - After all 5 PASS, commit:
-     ```
-     git add n8n/ docs/ logs/ SESSION_SUMMARY.md 09_LOGS/PHASE_LOG.md 06_HANDOFF/NEXT_ACTIONS.md
-     git commit -m "feat(phase-0.4): add n8n smoke test workflows and docs"
-     git push
-     ```
-
 ---
 
----
+## 🟡 MEDIUM — Phase 1 Roadmap (after all Phase 0 gates passed)
 
-### 🟠 HIGH — Phase 1 Tasks (After 0.4 Complete)
-
-4. **Fill BRAIN file placeholders**
+3. **Fill BRAIN file placeholders**
    - Files: `01_BRAIN/brand_brain.md` and all other BRAIN files
    - Action: Replace all `[FILL: ...]` with real Vị Cuốn data
    - Blocker for: Phase 1 data layer, all agent prompts
 
-5. **Create Google Sheet — Control Center**
+4. **Create Google Sheet — Control Center**
    - Schema: `08_DEPLOY/google_sheet_schema.md`
    - Agent: Claude Code (Builder)
-   - Output: Live Google Sheet with all 11 tabs
 
-6. **Create Google Drive folder structure**
+5. **Create Google Drive folder structure**
    - Schema: `08_DEPLOY/google_drive_structure.md`
    - Agent: Claude Code (Builder)
-   - Output: Drive folders created, IDs back-filled in `.env`
 
-7. **Seed test data in Google Sheet**
+6. **Seed test data in Google Sheet**
    - Fixtures: `07_TEST_FIXTURES/test_campaign_combo_trua.json`
    - Agent: Claude Code (Builder)
-   - Output: Test campaign rows added
 
 ---
 
-### 🟡 MEDIUM — Phase 2 Tasks
+## 🟢 LOW — Phase 2 Roadmap
 
-8. **Review and lock all agent prompts**
+7. **Review and lock all agent prompts**
    - Files: `02_PROMPTS/*.md`
-   - Agent: ChatGPT (Chief Architect) + User
-   - Output: All prompts version-bumped to v1.0.0
+   - Agent: ChatGPT (Chief Architect) + Owner
 
-9. **Review and lock all SOPs**
+8. **Review and lock all SOPs**
    - Files: `03_SOPS/*.md`
-   - Agent: ChatGPT (Chief Architect) + User
+   - Agent: ChatGPT (Chief Architect) + Owner
 
 ---
 
@@ -92,6 +126,8 @@ Updated by Chief Architect or Builder Agents after each session.
 
 | # | Action | Completed By | Date |
 |---|--------|-------------|------|
+| 20 | Phase 0.6 — Codex REVIEW_FAIL fix (role labels, ACCEPTED→ASSIGNED, NEXT_ACTIONS restructure) | Claude Code (Builder) | 2026-05-26 |
+| 19 | Phase 0.6 — Created Agent Command Intake Layer (initial build) | Codex (Reviewer) | 2026-05-26 |
 | 1 | Create Phase 0 repo structure (75 files) | Claude Code (Builder) | 2026-05-26 |
 | 2 | Create all BRAIN files | Claude Code (Builder) | 2026-05-26 |
 | 3 | Create all agent prompts | Claude Code (Builder) | 2026-05-26 |
