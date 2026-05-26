@@ -1,62 +1,45 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) - 2026-05-26
+Updated By: Claude Code (Builder) — 2026-05-26
 
-## Latest Session
+## Latest Session — Phase 0.7 Build
 
-Claude Code performed Phase 0.6 consistency review and patch, bringing all command intake files to full spec.
+### current_phase
+0.7 — Agent Run Protocol
 
-## What Changed This Session
+### current_role
+Builder (Claude Code)
 
-- `commands/COMMAND_STATUS.md` — Replaced 7-state lifecycle with full 10-state lifecycle:
-  NEW, ASSIGNED, IN_PROGRESS, BLOCKED, BUILDER_DONE, REVIEW_REQUESTED, REVIEW_PASS, REVIEW_FAIL, OWNER_APPROVED, CLOSED.
-  Added transition rules. Added Builder/Reviewer/Owner ownership per state.
+### files_changed
+- `agents/AGENT_RUN_PROTOCOL.md` — created (master protocol)
+- `agents/BUILDER_PROTOCOL.md` — created (Builder step-by-step)
+- `agents/REVIEWER_PROTOCOL.md` — created (Reviewer step-by-step)
+- `agents/SESSION_LIMIT_RULE.md` — created (10-turn cap formalization)
+- `docs/phase-0/PHASE_0_7_AGENT_RUN_PROTOCOL.md` — created (phase doc)
+- `handoff/CURRENT_PHASE.md` — updated (Phase 0.7 IN_PROGRESS → BUILDER_DONE)
+- `handoff/SESSION_SUMMARY.md` — updated (this file)
+- `06_HANDOFF/NEXT_ACTIONS.md` — updated (Phase 0.7 gate as top priority)
+- `09_LOGS/PHASE_LOG.md` — appended (Phase 0.7 entry)
+- `logs/AGENT_ACTIVITY_LOG.md` — appended (Claude Code Phase 0.7 row)
 
-- `commands/COMMAND_TEMPLATE.md` — Added missing required fields:
-  `owner_request`, `assigned_builder`, `assigned_reviewer`, `scope_files`, `review_required`, `approval_required`.
-  Renamed `allowed_files` → `scope_files` for clarity. Improved Forbidden Actions and Handoff/Log sections.
+### decisions_made
+- Agent Run Protocol structured as 4 separate files (master + builder + reviewer + session limit) to allow each agent to read only what applies to their role.
+- No content duplicated from Phase 0.5 / 0.6 infrastructure — files reference existing docs by path.
+- Builder Protocol includes 7-item pre-BUILDER_DONE checklist to enforce consistent handoff.
+- Reviewer Protocol requires unambiguous PASS/FAIL output (not prose) to prevent ambiguous review results.
+- SESSION_LIMIT_RULE.md formalizes the 10-turn cap with required turn 8 and turn 10 actions.
 
-- `schemas/command.schema.json` — Updated to match new template:
-  Added `owner_request`, `assigned_builder`, `assigned_reviewer`, `scope_files`, `review_required`, `approval_required`.
-  Removed old `assigned_to`/`objective`/`scope`/`allowed_files` fields. Updated status enum to 10 states.
+### open_issues
+Phase 0.7 build was complete but missing a command record in the command intake system. Fix applied: CMD-0.7-001 created in `commands/COMMAND_INBOX.md` and `commands/COMMAND_STATUS.md`. All handoff/log files updated with command ID.
 
-- `docs/phase-0/PHASE_0_6_COMMAND_INTAKE.md` — Expanded with:
-  How-to-issue guide. Full lifecycle diagram. Who Does What section (Owner/Builder/Reviewer).
-  Field reference table. Updated Done Criteria checklist.
+### next_agent_action
+Codex: review command **CMD-0.7-001** (find it in `commands/COMMAND_INBOX.md`). Use `agents/REVIEWER_PROTOCOL.md`. Check acceptance criteria listed in the CMD-0.7-001 record.
 
-- `handoff/CURRENT_PHASE.md` — Status updated to `BUILDER_DONE_PENDING_REVIEW`.
-  Builder: Claude Code. Reviewer: Codex. Next step documented.
+### owner_approval_needed
+true — Owner must approve CMD-0.7-001 after Codex REVIEW_PASS before commit.
 
-## Codex REVIEW_FAIL Fix Session (Claude Code — 2026-05-26)
+---
 
-Fixed 4 issues flagged by Codex:
+## Previous Session — Phase 0.6 Codex REVIEW_FAIL Fix (Claude Code)
 
-1. `commands/COMMAND_INBOX.md` — replaced `ACCEPTED` (undefined in lifecycle) with `ASSIGNED`.
-2. All Phase 0.6 files — corrected `Codex (Builder)` → `Codex (Reviewer)` role label in headers and log entries.
-3. `docs/phase-0/PHASE_0_6_COMMAND_INTAKE.md` — Builder role section now says `Claude Code` only; Reviewer section says `Codex` only.
-4. `06_HANDOFF/NEXT_ACTIONS.md` — restructured: Phase 0.6 gate is now the top section; Phase 1 items gated behind CLOSED status.
-
-## Previous Session (Codex — initial build)
-
-Codex created initial Phase 0.6 files: COMMAND_INBOX, COMMAND_STATUS, COMMAND_TEMPLATE, command.schema.json, PHASE_0_6_COMMAND_INTAKE.md.
-
-## Validation
-
-- `python -m json.tool schemas/command.schema.json` — PASS (no schema changes this session)
-- Secret scan — CLEAN
-- git status — only Phase 0.6 files modified
-
-## Next Step
-
-Codex re-reviews Phase 0.6. If `REVIEW_PASS` → Owner approves → commit.
-
-Suggested commit message:
-```
-feat(phase-0.6): add agent command intake layer
-
-- 10-state lifecycle (NEW→ASSIGNED→IN_PROGRESS→BUILDER_DONE→REVIEW_REQUESTED→REVIEW_PASS/FAIL→OWNER_APPROVED→CLOSED)
-- command template with all required fields (owner_request, assigned_builder/reviewer, scope_files, review/approval_required)
-- JSON schema updated to match template
-- phase doc with Builder/Reviewer/Owner role explanations and commit gate
-- handoff + logs updated
-```
+Fixed 4 issues: ACCEPTED→ASSIGNED in INBOX, all "Codex (Builder)"→"Codex (Reviewer)" role labels, Builder role in phase doc scoped to Claude Code only, NEXT_ACTIONS restructured with Phase 0.6 gate before Phase 1.

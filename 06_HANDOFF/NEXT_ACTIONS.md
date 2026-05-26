@@ -13,11 +13,57 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.6 pending Codex re-review and Owner approval
+## CURRENT STATE: Phase 0.7 — REVIEW_REQUESTED, pending Codex review and Owner approval
 
-**CMD-0.6-001 status:** REVIEW_REQUESTED (re-submit after REVIEW_FAIL fix)
+**Phase 0.6:** CLOSED (commit c20ca42)
+**Current command:** CMD-0.7-001
+**Current status:** REVIEW_REQUESTED
 
-Nothing below this line should be started until Phase 0.6 is CLOSED.
+Nothing in Phase 1 or beyond should start until CMD-0.7-001 is CLOSED.
+
+---
+
+## 🟠 HIGH — Phase 0.7 Gate (must complete in order)
+
+### Step 1 — Codex: Review CMD-0.7-001
+
+Review command `CMD-0.7-001` (see `commands/COMMAND_INBOX.md`).
+Use `agents/REVIEWER_PROTOCOL.md` for the review process.
+
+Files to review (from CMD-0.7-001 scope_files):
+
+1. `agents/AGENT_RUN_PROTOCOL.md` — session start checklist, constraints, stop conditions, pre-BUILDER_DONE, output format
+2. `agents/BUILDER_PROTOCOL.md` — 7-step Builder protocol, status transitions, forbidden actions
+3. `agents/REVIEWER_PROTOCOL.md` — 7-step Reviewer protocol, PASS/FAIL output format
+4. `agents/SESSION_LIMIT_RULE.md` — 10-turn cap, turn 8 checkpoint, 7 SESSION_SUMMARY fields, resume protocol
+
+Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.7-001 section.
+
+If REVIEW_PASS → update CMD-0.7-001 status → `REVIEW_PASS` → notify Owner.
+If REVIEW_FAIL → record reason → update CMD-0.7-001 status → `REVIEW_FAIL` → return to Builder.
+
+### Step 2 — Owner: Approve CMD-0.7-001
+
+After Codex REVIEW_PASS on CMD-0.7-001:
+- Review `handoff/SESSION_SUMMARY.md`.
+- If satisfied, update CMD-0.7-001 status → `OWNER_APPROVED`.
+
+### Step 3 — Owner: Commit CMD-0.7-001
+
+After CMD-0.7-001 status = `OWNER_APPROVED`:
+
+```
+git add agents/ docs/phase-0/PHASE_0_7_AGENT_RUN_PROTOCOL.md handoff/ logs/ 09_LOGS/PHASE_LOG.md 06_HANDOFF/NEXT_ACTIONS.md
+git commit -m "feat(phase-0.7): add agent run protocol"
+git push
+```
+
+Update CMD-0.7-001 status → `CLOSED`.
+
+### Step 4 — ChatGPT: Open Phase 0.8 (or next phase)
+
+Only after Phase 0.7 commit confirmed in git log.
+Issue next command via `commands/COMMAND_INBOX.md`.
 
 ---
 
@@ -126,6 +172,7 @@ ChatGPT issues next command via `commands/COMMAND_INBOX.md`.
 
 | # | Action | Completed By | Date |
 |---|--------|-------------|------|
+| 21 | Phase 0.7 — Created Agent Run Protocol (AGENT_RUN_PROTOCOL, BUILDER_PROTOCOL, REVIEWER_PROTOCOL, SESSION_LIMIT_RULE) | Claude Code (Builder) | 2026-05-26 |
 | 20 | Phase 0.6 — Codex REVIEW_FAIL fix (role labels, ACCEPTED→ASSIGNED, NEXT_ACTIONS restructure) | Claude Code (Builder) | 2026-05-26 |
 | 19 | Phase 0.6 — Created Agent Command Intake Layer (initial build) | Codex (Reviewer) | 2026-05-26 |
 | 1 | Create Phase 0 repo structure (75 files) | Claude Code (Builder) | 2026-05-26 |

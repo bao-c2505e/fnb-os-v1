@@ -181,3 +181,45 @@ Applied targeted fixes for 4 issues flagged in Codex REVIEW_FAIL:
 No secrets added. No workflows activated. No files outside Phase 0.6 scope modified.
 
 ---
+
+### 2026-05-26 - Phase 0.7 - Agent Run Protocol
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Created Agent Run Protocol — operational layer bridging Phase 0.6 command intake with actual session execution.
+- `agents/AGENT_RUN_PROTOCOL.md`: master protocol. Session start checklist (8 items), role confirmation,
+  execution constraints, execution loop diagram, stop conditions table, pre-BUILDER_DONE checklist (8 items),
+  mandatory final output format, full integration diagram with Phase 0.6.
+- `agents/BUILDER_PROTOCOL.md`: Builder (Claude Code) step-by-step. 7 steps from command acceptance
+  through mandatory final output. Includes scope lock rule, turn 8 warning, pre-BUILDER_DONE checklist,
+  allowed/forbidden status transitions.
+- `agents/REVIEWER_PROTOCOL.md`: Reviewer (Codex) step-by-step. 7 steps: read outputs, acceptance
+  criteria check (table format), scope violation check, secret leak check, role conflict check, safety
+  check, mandatory PASS/FAIL output format. Includes OWNER CAN APPROVE / RETURN TO BUILDER blocks.
+- `agents/SESSION_LIMIT_RULE.md`: Formalizes 10-turn cap from AGENT_COMMUNICATION_RULES.md. Turn 8
+  checkpoint (forced SESSION_SUMMARY update), turn 10 hard stop. 7 required SESSION_SUMMARY fields.
+  Resume protocol for multi-session tasks.
+- `docs/phase-0/PHASE_0_7_AGENT_RUN_PROTOCOL.md`: Phase doc with objective, file list, integration
+  diagram, role map, approval gate, what Phase 0.7 does NOT define, done criteria checklist.
+No content duplicated from Phase 0.5/0.6 infrastructure — all cross-references by path only.
+No secrets added. No workflows activated. No files outside Phase 0.7 scope modified.
+
+---
+
+### 2026-05-26 - Phase 0.7 - Codex REVIEW_FAIL Fix: Missing Command Record
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED (re-submit after REVIEW_FAIL)
+**Detail:**
+Codex flagged that Phase 0.7 handoff referenced REVIEW_REQUESTED status but no command record existed
+in the command intake system. Fix applied:
+- `commands/COMMAND_INBOX.md`: added CMD-0.7-001 with full fields (scope_files, forbidden_actions,
+  acceptance_criteria, output_required, status: REVIEW_REQUESTED).
+- `commands/COMMAND_STATUS.md`: added CMD-0.7-001 row (REVIEW_REQUESTED); updated CMD-0.6-001 to CLOSED.
+- `06_HANDOFF/NEXT_ACTIONS.md`: all references updated to CMD-0.7-001 with explicit command ID.
+- `handoff/CURRENT_PHASE.md`: added Current Command section with CMD-0.7-001 and status.
+- `handoff/SESSION_SUMMARY.md`: open_issues documents the fix; next_agent_action now references CMD-0.7-001 explicitly.
+No secrets added. No protocol files modified. No Phase 1 actions taken.
+
+---

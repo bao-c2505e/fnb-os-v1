@@ -47,4 +47,5 @@ NEW
 
 | Command ID | Phase | Builder | Reviewer | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| CMD-0.6-001 | 0.6 | Claude Code | Codex | high | REVIEW_REQUESTED (re-submit after REVIEW_FAIL fix) |
+| CMD-0.7-001 | 0.7 | Claude Code | Codex | high | REVIEW_REQUESTED |
+| CMD-0.6-001 | 0.6 | Claude Code | Codex | high | CLOSED (commit c20ca42) |
