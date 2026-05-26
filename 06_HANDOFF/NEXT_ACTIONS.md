@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.14 — CLOSED (commit 7305acb)
+## CURRENT STATE: Phase 0.14 — CLOSED (latest: 0b90a2a)
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
@@ -23,43 +23,8 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 0.11:** CLOSED (commit bbda9d1)
 **Phase 0.12:** CLOSED (commit 36fcfe)
 **Phase 0.13:** CLOSED (commit c014a25)
-**Phase 0.14:** CLOSED (commit 7305acb)
+**Phase 0.14:** CLOSED (commit 7305acb → post-close: 0b90a2a)
 **Current command:** None — no active command
-
----
-
-## 🟠 HIGH — Phase 0.14 Gate (must complete in order)
-
-### Step 1 — Codex: Review CMD-0.14-001
-
-Use shortcut `REVIEW_CURRENT_COMMAND`.
-Primary file to review: `docs/phase-0/PHASE_0_14_REPO_STATUS_SMOKE_TEST.md`.
-Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.14-001.
-
-If REVIEW_PASS or REVIEW_PASS_WITH_NOTES → Owner types `APPROVE_CURRENT_PHASE`.
-If REVIEW_FAIL → record reason → return to Builder.
-
-### Step 2 — Owner: Approve CMD-0.14-001
-
-After Codex REVIEW_PASS:
-- Type `APPROVE_CURRENT_PHASE` → Claude Code updates status files and outputs commit command.
-
-### Step 3 — Owner: Commit CMD-0.14-001
-
-After CMD-0.14-001 status = `OWNER_APPROVED`:
-
-```
-git add docs/phase-0/PHASE_0_14_REPO_STATUS_SMOKE_TEST.md commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/CURRENT_PHASE.md handoff/SESSION_SUMMARY.md 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md logs/AGENT_ACTIVITY_LOG.md
-git commit -m "feat(phase-0.14): repo status smoke test"
-git push
-```
-
-Then run `CLOSE_APPROVED_COMMAND` with commit hash.
-
-### Step 4 — ChatGPT: Open next phase
-
-Only after Phase 0.14 commit confirmed in git log.
-Issue next command via `commands/COMMAND_INBOX.md`.
 
 ---
 

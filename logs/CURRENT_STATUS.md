@@ -1,6 +1,6 @@
 # Current Status — FnB OS V1
 
-Last Updated: 2026-05-27 by Claude Code (Builder — CLOSE_APPROVED_COMMAND)
+Last Updated: 2026-05-27 by Claude Code (Builder — refresh post-close metadata)
 
 ---
 
@@ -18,8 +18,8 @@ Last Updated: 2026-05-27 by Claude Code (Builder — CLOSE_APPROVED_COMMAND)
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | 7305acb — chore(phase-0.14): close repo status smoke test |
-| Working Tree | CLEAN (post-commit; CLOSE_APPROVED_COMMAND state files pending commit) |
+| Latest Commit | 0b90a2a — chore(phase-0.14): persist post-close state |
+| Working Tree | CLEAN (except .claude/ untracked) |
 
 ## Review & Approval State
 
@@ -36,7 +36,7 @@ None.
 
 | Role | Next Action |
 |------|-------------|
-| Owner | Commit CLOSE_APPROVED_COMMAND state files and push |
+| Owner | Ready for Phase 0.15 — issue next command via `commands/COMMAND_INBOX.md` |
 | Builder | N/A — no active command |
 | Reviewer | N/A — no active command |
 | ChatGPT | Open next phase via `commands/COMMAND_INBOX.md` |
