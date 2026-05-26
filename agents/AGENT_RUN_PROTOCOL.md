@@ -1,8 +1,8 @@
 # Agent Run Protocol
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9 — Shortcut layer reference added)
-Phase: 0.9
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10 — Active Command Inference reference added)
+Phase: 0.10
 
 This document is the master operational protocol for all agent sessions in FnB OS V1.
 It bridges the Phase 0.6 Command Intake Layer with actual session execution.
@@ -19,10 +19,12 @@ Do not restate content from the following — read them first:
 
 Before writing a single line of output, every agent must complete this checklist in order:
 
+> **If Owner provided only a shortcut token (e.g. `RUN_CURRENT_COMMAND`):** Use the Active Command Inference algorithm to identify the active command before beginning this checklist. See `commands/COMMAND_SHORTCUTS.md` → Active Command Inference, or `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md`.
+
 | # | Check | Pass Condition |
 |---|-------|---------------|
-| 1 | Read `handoff/CURRENT_PHASE.md` | Phase number matches the command you were assigned |
-| 2 | Read `commands/COMMAND_INBOX.md` | Your command exists and status is `ASSIGNED` (for Builder) or `REVIEW_REQUESTED` (for Reviewer) |
+| 1 | Read `commands/COMMAND_INBOX.md` | Active command found via inference (first non-CLOSED record); status matches shortcut trigger |
+| 2 | Read `handoff/CURRENT_PHASE.md` | Phase number matches the active command's phase |
 | 3 | Confirm `assigned_builder` or `assigned_reviewer` | Field matches your own agent identity exactly |
 | 4 | Read `scope_files` in the command | You can enumerate every file you are allowed to touch |
 | 5 | Read `forbidden_actions` in the command | None of them apply to anything you are about to do |

@@ -1,7 +1,7 @@
 # Command Inbox
 
 Created By: Codex (Reviewer) - 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9)
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10)
 
 This is the canonical intake queue for commands from ChatGPT Chief Architect or Owner to Builder agents.
 
@@ -17,16 +17,16 @@ Rules:
 
 ---
 
-### CMD-0.9-001
+### CMD-0.10-001
 
 **Created By:** ChatGPT (Chief Architect) — 2026-05-26
 **Updated By:** Claude Code (Builder) — 2026-05-26
 
 | Field | Value |
 |-------|-------|
-| `command_id` | CMD-0.9-001 |
-| `phase` | 0.9 |
-| `objective` | Create Command Execution Shortcuts so Owner can trigger any standard agent action with a single token |
+| `command_id` | CMD-0.10-001 |
+| `phase` | 0.10 |
+| `objective` | Define Active Command Inference so agents can execute one-line shortcuts with zero additional context from Owner |
 | `created_by` | ChatGPT (Chief Architect) |
 | `assigned_builder` | Claude Code |
 | `assigned_reviewer` | Codex |
@@ -38,9 +38,11 @@ Rules:
 | `log_required` | true |
 
 **Owner Request:**
-Build the Command Execution Shortcuts system so Owner no longer needs to paste long role-specific prompts when starting Builder or Reviewer sessions. Define 6 shortcut tokens (RUN_CURRENT_COMMAND, REVIEW_CURRENT_COMMAND, FIX_REVIEW_FAIL, CLOSE_APPROVED_COMMAND, CREATE_SESSION_SUMMARY, SHOW_CURRENT_STATUS), each with exact role, trigger status, action list, and error conditions. Update routing rules and agent protocols to reference shortcuts. Design only — no automation or API calls.
+Make one-line commands fully operational. Owner must be able to type only `RUN_CURRENT_COMMAND` to Claude and `REVIEW_CURRENT_COMMAND` to Codex — no phase number, no command ID, no context pasted. Define the Active Command Inference Algorithm (how agents find the active command from COMMAND_INBOX.md), document end-to-end flows for both shortcuts, and update all agent protocols to reference the inference spec.
 
 **Scope Files:**
+- `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md`
+- `commands/CURRENT_COMMAND.md`
 - `commands/COMMAND_SHORTCUTS.md`
 - `commands/COMMAND_INBOX.md`
 - `commands/COMMAND_STATUS.md`
@@ -48,7 +50,6 @@ Build the Command Execution Shortcuts system so Owner no longer needs to paste l
 - `agents/AGENT_RUN_PROTOCOL.md`
 - `agents/BUILDER_PROTOCOL.md`
 - `agents/REVIEWER_PROTOCOL.md`
-- `docs/phase-0/PHASE_0_9_COMMAND_EXECUTION_SHORTCUTS.md`
 - `handoff/CURRENT_PHASE.md`
 - `handoff/SESSION_SUMMARY.md`
 - `06_HANDOFF/NEXT_ACTIONS.md`
@@ -61,24 +62,43 @@ Build the Command Execution Shortcuts system so Owner no longer needs to paste l
 - Do not auto-post, auto-reply to real users, activate n8n workflows, or run paid ads.
 - Do not modify files outside Scope Files.
 - Do not open Phase 1 or any subsequent phase.
-- Do not call any external API or automate shortcut execution.
+- Do not automate or script the inference algorithm.
 
 **Acceptance Criteria:**
-- [ ] `COMMAND_SHORTCUTS.md` defines all 6 shortcuts with role, trigger status, required actions, error conditions, and quick-reference table
-- [ ] `COMMAND_ROUTING_RULES.md` has a Shortcut Routing section covering role gating and all 5 error conditions (ROLE_CONFLICT, NO_ACTIVE_COMMAND, NEED_COMMAND_CLARIFICATION, SCOPE_CONFLICT, SECRET_RISK)
-- [ ] `BUILDER_PROTOCOL.md` references `RUN_CURRENT_COMMAND` as entry point at Step 1
-- [ ] `REVIEWER_PROTOCOL.md` references `REVIEW_CURRENT_COMMAND` as entry point at Identity Check
-- [ ] `AGENT_RUN_PROTOCOL.md` describes shortcut layer in integration section
-- [ ] CMD-0.9-001 in `COMMAND_INBOX.md` and `COMMAND_STATUS.md`; CMD-0.8-001 marked CLOSED
+- [ ] Owner can tell Claude only `RUN_CURRENT_COMMAND` and Claude infers active command without additional context
+- [ ] Owner can tell Codex only `REVIEW_CURRENT_COMMAND` and Codex infers active command without additional context
+- [ ] `PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md` explains inference algorithm and end-to-end flows for both shortcuts
+- [ ] `commands/CURRENT_COMMAND.md` exists as single-file active command pointer with update protocol
+- [ ] `COMMAND_SHORTCUTS.md` has Active Command Inference section (10-step algorithm) + Owner usage examples
+- [ ] `COMMAND_ROUTING_RULES.md` has Active Command Inference section
+- [ ] `AGENT_RUN_PROTOCOL.md` Session Start Checklist references inference
+- [ ] `BUILDER_PROTOCOL.md` Step 1 and `REVIEWER_PROTOCOL.md` Identity Check reference inference spec
+- [ ] `REVIEWER_PROTOCOL.md` has `PASS_WITH_NOTES` result option and importability check (Step 6b)
+- [ ] CMD-0.10-001 in COMMAND_INBOX.md and COMMAND_STATUS.md; CMD-0.9-001 CLOSED (commit fd9c750)
 - [ ] Handoff and logs updated
-- [ ] No secrets in any Phase 0.9 file
+- [ ] No secrets in any Phase 0.10 file
 
 **Output Required:**
-- 1 new file: `commands/COMMAND_SHORTCUTS.md`
-- 1 new file: `docs/phase-0/PHASE_0_9_COMMAND_EXECUTION_SHORTCUTS.md`
-- Updated: `commands/COMMAND_ROUTING_RULES.md`, `agents/AGENT_RUN_PROTOCOL.md`, `agents/BUILDER_PROTOCOL.md`, `agents/REVIEWER_PROTOCOL.md`
+- 1 new file: `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md`
+- Updated: `commands/COMMAND_SHORTCUTS.md`, `commands/COMMAND_ROUTING_RULES.md`
+- Updated: `agents/AGENT_RUN_PROTOCOL.md`, `agents/BUILDER_PROTOCOL.md`, `agents/REVIEWER_PROTOCOL.md`
 - Updated: `commands/COMMAND_INBOX.md`, `commands/COMMAND_STATUS.md`, handoff files, logs
 - Final output ending with: `READY FOR CODEX REVIEW`
+
+---
+
+### CMD-0.9-001
+
+**Closed By:** Owner — 2026-05-26 (commit fd9c750)
+
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-0.9-001 |
+| `phase` | 0.9 |
+| `status` | **CLOSED** |
+| `commit` | fd9c750 |
+
+*This command is closed. See `commands/COMMAND_STATUS.md` for history.*
 
 ---
 

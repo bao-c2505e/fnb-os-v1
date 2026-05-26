@@ -224,6 +224,54 @@ No secrets added. No protocol files modified. No Phase 1 actions taken.
 
 ---
 
+### 2026-05-26 - Phase 0.10 - One-Line Agent Commands (Extended Build: CURRENT_COMMAND + PASS_WITH_NOTES + Examples)
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Extended Phase 0.10 with three additional deliverables:
+- `commands/CURRENT_COMMAND.md`: created. Single-file active command pointer. Shows current command_id,
+  phase, status, assigned agents, next gate. How-to-use guide for Builder, Reviewer, and Owner.
+  Update protocol: Builder must update when command status changes.
+- `agents/REVIEWER_PROTOCOL.md`: updated. Added Step 6b (importability check for n8n workflow JSONs:
+  active=false, valid JSON, no hardcoded credentials, no production URLs). Added PASS_WITH_NOTES as
+  third review result (non-blocking; Owner may approve without requiring Builder fix). Updated
+  status transition table to reflect REVIEW_PASS covers both PASS and PASS_WITH_NOTES.
+- `commands/COMMAND_SHORTCUTS.md`: updated. Added Owner Usage Examples section: RUN_CURRENT_COMMAND
+  flow (Owner types one line, Claude infers command, executes, ends with READY FOR CODEX REVIEW);
+  REVIEW_CURRENT_COMMAND flow; SHOW_CURRENT_STATUS flow.
+- `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md`: updated. Files delivered and done criteria
+  updated to include CURRENT_COMMAND.md, examples, PASS_WITH_NOTES.
+- `commands/COMMAND_INBOX.md`: updated. CMD-0.10-001 scope_files now includes CURRENT_COMMAND.md;
+  acceptance criteria updated to include all new items.
+
+---
+
+### 2026-05-26 - Phase 0.10 - One-Line Agent Commands
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Defined Active Command Inference — the missing protocol that makes one-line shortcuts fully operational.
+- `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md`: phase doc. Problem statement, 10-step inference
+  algorithm, end-to-end flows for RUN_CURRENT_COMMAND and REVIEW_CURRENT_COMMAND, what changes table,
+  files delivered, out-of-scope, done criteria.
+- `commands/COMMAND_SHORTCUTS.md`: updated. Active Command Inference section added at top (10-step
+  algorithm with WHY explanation). Phase updated to 0.10.
+- `commands/COMMAND_ROUTING_RULES.md`: updated. Active Command Inference section added (scan rule,
+  mismatch reporting, full-spec reference). Phase updated to 0.10.
+- `agents/AGENT_RUN_PROTOCOL.md`: updated. Session Start Checklist pre-note references inference.
+  Check #1 updated to use inference instead of assuming command is known. Phase updated to 0.10.
+- `agents/BUILDER_PROTOCOL.md`: updated. Step 1 shortcut note now includes inference spec steps.
+  Phase updated to 0.10.
+- `agents/REVIEWER_PROTOCOL.md`: updated. Identity Check shortcut note includes inference spec.
+  Phase updated to 0.10.
+CMD-0.10-001 added to COMMAND_INBOX.md (REVIEW_REQUESTED) and COMMAND_STATUS.md.
+CMD-0.9-001 collapsed to CLOSED stub in COMMAND_INBOX.md; marked CLOSED (commit fd9c750) in STATUS.md.
+No secrets added. No automation implemented. No Phase 1 actions taken.
+
+---
+
 ### 2026-05-26 - Phase 0.9 - Command Execution Shortcuts
 
 **By:** Claude Code (Builder)
