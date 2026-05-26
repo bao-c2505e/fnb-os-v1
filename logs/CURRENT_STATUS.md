@@ -1,6 +1,6 @@
 # Current Status — FnB OS V1
 
-Last Updated: 2026-05-27 by Claude Code (Builder — CREATE_SESSION_HANDOFF)
+Last Updated: 2026-05-27 by Claude Code (Builder — Phase 0.15 close)
 
 ---
 
@@ -19,13 +19,14 @@ Last Updated: 2026-05-27 by Claude Code (Builder — CREATE_SESSION_HANDOFF)
 | Field | Value |
 |-------|-------|
 | Latest Commit | Run: `git log --oneline -1` |
-| Working Tree | CLEAN (except .claude/ untracked) |
+| Working Tree | CLEAN (after Phase 0.15 commit; .claude/ untracked — never commit) |
 
 ## Review & Approval State
 
 | Check | State |
 |-------|-------|
-| Review result | CLOSED (CMD-0.14-001, phase-close commit 7305acb) |
+| CMD-0.14-001 | CLOSED (commit 7305acb) |
+| CMD-0.15-001 | CLOSED (blocker-only policy) — Phase 0.15 complete |
 | Owner approval | CLOSED |
 
 ## Blockers
@@ -36,11 +37,11 @@ None.
 
 | Role | Next Action |
 |------|-------------|
-| Owner | Open Phase 0.15 in a fresh Claude Code session via `commands/COMMAND_INBOX.md` |
+| Owner | Open Phase 1.1 — Brand Brain Foundation in a fresh Claude Code session |
+| ChatGPT | Issue Phase 1.1 command via `commands/COMMAND_INBOX.md` |
 | Builder | N/A — no active command |
 | Reviewer | N/A — no active command |
-| ChatGPT | Issue Phase 0.15 command via `commands/COMMAND_INBOX.md` |
 
 ---
-*Written by CREATE_SESSION_HANDOFF.*
-*Sources: handoff/CURRENT_PHASE.md · commands/COMMAND_INBOX.md · commands/COMMAND_STATUS.md · handoff/SESSION_SUMMARY.md*
+*Written by SHOW_CURRENT_STATUS (Phase 0.15 close).*
+*Sources: handoff/CURRENT_PHASE.md · commands/COMMAND_INBOX.md · commands/COMMAND_STATUS.md · commands/CURRENT_COMMAND.md*

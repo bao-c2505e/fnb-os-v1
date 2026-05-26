@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.14 — CLOSED | CREATE_SESSION_HANDOFF executed | Ready for Phase 0.15
+## CURRENT STATE: Phase 0.15 — CLOSED | Blocker-only policy | Ready for Phase 1.1
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
@@ -24,6 +24,7 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 0.12:** CLOSED (commit 36fcfe)
 **Phase 0.13:** CLOSED (commit c014a25)
 **Phase 0.14:** CLOSED (commit 7305acb)
+**Phase 0.15:** CLOSED (blocker-only policy)
 **Current command:** None — no active command
 
 ---

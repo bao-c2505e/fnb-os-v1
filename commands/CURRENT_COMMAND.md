@@ -14,11 +14,11 @@ instead of scanning the full COMMAND_INBOX.md.
 
 No active command.
 
-CMD-0.14-001 is CLOSED (commit 7305acb). Phase 0.14 complete.
+CMD-0.15-001 is CLOSED (blocker-only policy). Phase 0.15 complete.
 
 ## Next Gate
 
-ChatGPT (Chief Architect): open Phase 0.15 or next phase via `commands/COMMAND_INBOX.md`.
+ChatGPT (Chief Architect): open Phase 1.1 — Brand Brain Foundation via `commands/COMMAND_INBOX.md`.
 Use `commands/COMMAND_TEMPLATE.md` to author the next command.
 
 ---

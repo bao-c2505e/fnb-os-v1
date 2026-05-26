@@ -4,7 +4,7 @@ Updated By: Claude Code (Builder) — 2026-05-27
 
 ## Phase
 
-Phase 0.14 — Repo Status Smoke Test
+Phase 0.15 — Pre-Phase-1 Readiness Gate
 
 ## Status
 
@@ -12,9 +12,9 @@ Phase 0.14 — Repo Status Smoke Test
 
 ## Current Command
 
-**CMD-0.14-001** — Phase 0.14, Repo Status Smoke Test
-Status: `CLOSED` (commit 7305acb)
-See full record: `commands/COMMAND_INBOX.md` → CMD-0.14-001 section
+**CMD-0.15-001** — Phase 0.15, Pre-Phase-1 Readiness Gate
+Status: `CLOSED` (blocker-only policy)
+See full record: `commands/COMMAND_INBOX.md` → CMD-0.15-001 section
 
 ## Builder
 
@@ -26,18 +26,18 @@ Codex / GPT-4o (AGT-04)
 
 ## Next Gate
 
-Phase 0.14 CLOSED (phase commit: 7305acb). Working tree clean — run `git log --oneline -1` for current HEAD.
-ChatGPT (Chief Architect): open next phase via `commands/COMMAND_INBOX.md`.
-Use `commands/COMMAND_TEMPLATE.md` to author the next command.
+Phase 0.15 CLOSED. Working tree clean after commit — run `git log --oneline -1` for current HEAD.
+ChatGPT (Chief Architect): open Phase 1.1 — Brand Brain Foundation via `commands/COMMAND_INBOX.md`.
 
-## Phase 0.14 Files
+## Phase 0.15 Files
 
 | File | Status |
 |------|--------|
-| `docs/phase-0/PHASE_0_14_REPO_STATUS_SMOKE_TEST.md` | Complete — 7 shortcuts verified, 4 warnings documented, fixes recommended |
+| `docs/phase-0/PHASE_0_15_PRE_PHASE_1_READINESS_GATE.md` | Complete — 8 preconditions PASS, 6 risks documented, READY WITH WARNINGS, blocker check PASS |
 
 ## Previous Phase
 
+Phase 0.15 — CLOSED (current)
 Phase 0.14 — CLOSED (commit 7305acb)
 Phase 0.13 — CLOSED (commit c014a25)
 

@@ -342,6 +342,36 @@ No secrets added. No GitHub API called. No workflows activated. No Phase 1 actio
 
 ---
 
+### 2026-05-27 — Phase 0.15 — CLOSED
+
+**By:** Owner
+**Status:** CLOSED
+**Detail:**
+CMD-0.15-001 đóng theo blocker-only policy. Owner quyết định: chỉ blockers thật (secrets committed, .claude/ committed, Phase 1 code created, auto-post executed) mới ngăn được phase close.
+Blocker check: PASS — không có secret, .claude/ không staged, không Phase 1 code.
+Warnings còn lại (metadata wording, report formatting) là non-blocking.
+Phase 0.15 CLOSED. Readiness result: READY WITH WARNINGS.
+Next: Phase 1.1 — Brand Brain Foundation.
+
+---
+
+### 2026-05-27 — Phase 0.15 — Pre-Phase-1 Readiness Gate
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Kiểm tra toàn diện trạng thái sẵn sàng trước Phase 1. Không build feature mới — gate phase only.
+Xác nhận: 8 preconditions PASS, Phase 0.14 CLOSED, không có stale active metadata, working tree sạch.
+Deliverables Phase 0.1–0.14: tất cả tồn tại trong repo.
+6 rủi ro trước Phase 1: n8n smoke tests chưa chạy (HIGH), .env chưa fill (HIGH), BRAIN placeholders chưa fill (HIGH),
+Google Sheet/Drive chưa tạo (MEDIUM), CLOSE_APPROVED_COMMAND spec thiếu files (MEDIUM), APPROVE_CURRENT_PHASE spec gap (LOW).
+7 recommended fixes: F-1 đến F-3 cần Owner (blocking), F-4/F-6 cần Builder+Owner, F-5/F-7 non-blocking.
+Kết quả: **READY WITH WARNINGS** — infrastructure sẵn sàng, 3 human actions cần hoàn thành trước Phase 1.
+CMD-0.15-001 thêm vào COMMAND_INBOX.md và COMMAND_STATUS.md (REVIEW_REQUESTED).
+Không có shortcut nào được thực thi. Không có commit, không có push.
+
+---
+
 ### 2026-05-27 — Phase 0.14 — CLOSED
 
 **By:** Owner
