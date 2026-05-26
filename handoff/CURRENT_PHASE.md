@@ -26,7 +26,7 @@ Codex / GPT-4o (AGT-04)
 
 ## Next Gate
 
-Phase 0.14 CLOSED (phase commit: 7305acb; post-close: 5ba95f2). Working tree clean.
+Phase 0.14 CLOSED (phase commit: 7305acb). Working tree clean — run `git log --oneline -1` for current HEAD.
 ChatGPT (Chief Architect): open next phase via `commands/COMMAND_INBOX.md`.
 Use `commands/COMMAND_TEMPLATE.md` to author the next command.
 

@@ -1,6 +1,6 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-27 (refresh final current snapshot)
+Updated By: Claude Code (Builder) — 2026-05-27 (avoid self-referential commit metadata)
 
 ## Latest Session — Phase 0.14 Build
 
@@ -14,7 +14,7 @@ Builder (Claude Code)
 None — Phase 0.14 CLOSED (CMD-0.14-001 CLOSED, commit 7305acb)
 
 ### latest_commit
-5ba95f2 — chore(phase-0.14): clean final stale metadata
+Phase 0.14 CLOSED — run `git log --oneline -1` for current HEAD.
 
 ### files_changed
 - `docs/phase-0/PHASE_0_14_REPO_STATUS_SMOKE_TEST.md` — created (static smoke test report: 7 shortcuts verified, 4 warnings, recommended fixes, final recommendation)
@@ -28,7 +28,7 @@ None — Phase 0.14 CLOSED (CMD-0.14-001 CLOSED, commit 7305acb)
 - `logs/AGENT_ACTIVITY_LOG.md` — appended (row)
 
 ### files_pending
-None — all committed. Latest: 5ba95f2. Working tree clean.
+None — all committed. Working tree clean (run `git status` to verify).
 
 ### decisions_made
 - Static verification only — no shortcuts were executed. All checks were performed by reading spec files (`COMMAND_SHORTCUTS.md`, `COMMAND_ROUTING_RULES.md`) and comparing against practice observed in Phase 0.10–0.13 history.

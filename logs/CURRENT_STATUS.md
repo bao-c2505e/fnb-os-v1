@@ -1,6 +1,6 @@
 # Current Status — FnB OS V1
 
-Last Updated: 2026-05-27 by Claude Code (Builder — refresh final current snapshot)
+Last Updated: 2026-05-27 by Claude Code (Builder — avoid self-referential commit metadata)
 
 ---
 
@@ -18,7 +18,7 @@ Last Updated: 2026-05-27 by Claude Code (Builder — refresh final current snaps
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | 5ba95f2 — chore(phase-0.14): clean final stale metadata |
+| Latest Commit | Run: `git log --oneline -1` |
 | Working Tree | CLEAN (except .claude/ untracked) |
 
 ## Review & Approval State
