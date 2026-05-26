@@ -342,6 +342,21 @@ No secrets added. No GitHub API called. No workflows activated. No Phase 1 actio
 
 ---
 
+### 2026-05-27 — Phase 0.13 — Session Handoff Shortcut
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Added CREATE_SESSION_HANDOFF to the one-line command system.
+- `docs/phase-0/PHASE_0_13_SESSION_HANDOFF_SHORTCUT.md`: phase doc. Problem (CREATE_SESSION_SUMMARY is 1-file / 7-field only; no CURRENT_STATUS update, no role-split next actions), before/after table, 10-step action list, 14-field SESSION_SUMMARY format, guardrails table, done criteria.
+- `commands/COMMAND_SHORTCUTS.md`: updated. CREATE_SESSION_HANDOFF shortcut added between CREATE_SESSION_SUMMARY and SHOW_CURRENT_STATUS. Includes 10-step action list, 14-field required fields table, must-NOTs. Quick-Reference table updated (now 8 shortcuts).
+- `commands/COMMAND_ROUTING_RULES.md`: updated. CREATE_SESSION_HANDOFF row added to Shortcut Role Gate table (Any / Any). File-write rule added: exactly 4 files written. Header updated to Phase 0.13.
+CMD-0.13-001 added to COMMAND_INBOX.md and COMMAND_STATUS.md (REVIEW_REQUESTED).
+CMD-0.12-001 remains CLOSED (commit 36fcfe).
+No secrets added. No automation implemented. No Phase 1 actions taken.
+
+---
+
 ### 2026-05-27 — Phase 0.12 — CLOSED
 
 **By:** Owner

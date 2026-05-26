@@ -1,8 +1,8 @@
 # Command Routing Rules
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.12 — SHOW_CURRENT_STATUS file-write noted)
-Phase: 0.12
+Updated By: Claude Code (Builder) — 2026-05-27 (Phase 0.13 — CREATE_SESSION_HANDOFF added)
+Phase: 0.13
 
 This document defines how commands are routed to agents, what each agent may do, and what error conditions require a stop.
 
@@ -174,6 +174,7 @@ After Phase 0.9, agents may receive a shortcut token instead of a full prompt. E
 | `APPROVE_CURRENT_PHASE` | Builder (Claude Code) on Owner instruction | `REVIEW_PASS` |
 | `CLOSE_APPROVED_COMMAND` | Owner only (after commit/push) | `OWNER_APPROVED` |
 | `CREATE_SESSION_SUMMARY` | Any agent | Any |
+| `CREATE_SESSION_HANDOFF` | Any agent or Owner | Any |
 | `SHOW_CURRENT_STATUS` | Any agent or Owner | Any |
 
 ### Shortcut Error Conditions
@@ -196,6 +197,7 @@ After Phase 0.9, agents may receive a shortcut token instead of a full prompt. E
 - No shortcut bypasses the 10-turn session cap or pre-BUILDER_DONE checklist.
 - No shortcut allows commit or push without `OWNER_APPROVED`.
 - `SHOW_CURRENT_STATUS` writes exactly one file (`logs/CURRENT_STATUS.md`) — all other files are read-only during this shortcut.
+- `CREATE_SESSION_HANDOFF` writes exactly four files: `handoff/SESSION_SUMMARY.md`, `logs/CURRENT_STATUS.md`, `06_HANDOFF/NEXT_ACTIONS.md` (CURRENT STATE header only), `logs/AGENT_ACTIVITY_LOG.md`. No other files may be written. Command status must not change.
 
 ---
 

@@ -1,8 +1,8 @@
 # Command Execution Shortcuts
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.12 — SHOW_CURRENT_STATUS expanded)
-Phase: 0.12
+Updated By: Claude Code (Builder) — 2026-05-27 (Phase 0.13 — CREATE_SESSION_HANDOFF added)
+Phase: 0.13
 
 Shortcuts replace the need to write or paste long role-specific prompts. Each shortcut maps to a named set of actions an agent must perform. Owner pastes the shortcut token; the agent resolves it against the active command in `commands/COMMAND_INBOX.md`.
 
@@ -179,6 +179,59 @@ When an agent receives a shortcut token and no other context, it identifies the 
 | `owner_approval_needed` | `true` or `false` with reason |
 
 This shortcut does not change command status. It only preserves session state so the next session can resume cleanly.
+
+---
+
+### CREATE_SESSION_HANDOFF
+
+**Role:** Any agent (Builder or Reviewer) or Owner
+**When to use:**
+- Turn 8+ of 10 (approaching session limit)
+- Before switching to a new Claude or Codex chat window
+- After a major phase state change (REVIEW_PASS, OWNER_APPROVED, CLOSED)
+- When Owner says: "move to new chat", "start fresh session", "hand off"
+
+This shortcut is a superset of `CREATE_SESSION_SUMMARY`. Use `CREATE_SESSION_HANDOFF` when switching sessions or context windows; use `CREATE_SESSION_SUMMARY` for lightweight in-session state capture only.
+
+**Agent must:**
+1. Read `handoff/CURRENT_PHASE.md` — get current phase, status, active command.
+2. Read `commands/COMMAND_INBOX.md` — first non-CLOSED record → active command ID, status, scope_files.
+3. Read `commands/COMMAND_STATUS.md` — command index.
+4. Read `handoff/SESSION_SUMMARY.md` — existing session state and open issues.
+5. Run `git log --oneline -1` — latest commit hash and message.
+6. Run `git status --short` — working tree state.
+7. Write `handoff/SESSION_SUMMARY.md` — all 14 required fields (see format below).
+8. Write `logs/CURRENT_STATUS.md` — same snapshot format as `SHOW_CURRENT_STATUS`.
+9. Update `06_HANDOFF/NEXT_ACTIONS.md` — CURRENT STATE header line only (phase + status + next gate). Do not modify action items below.
+10. Append row to `logs/AGENT_ACTIVITY_LOG.md`.
+
+**SESSION_SUMMARY required fields (14):**
+
+| Field | Required Content |
+|-------|-----------------|
+| `current_phase` | Phase number and name |
+| `current_role` | Agent name and role (e.g. "Builder — Claude Code") |
+| `active_command` | Command ID and current status (e.g. "CMD-0.13-001 — REVIEW_REQUESTED") |
+| `latest_commit` | Hash and message (e.g. "36fcfe — feat(phase-0.12): add status snapshot shortcut") |
+| `files_changed` | Complete list with path and what changed |
+| `files_pending` | Files modified but not yet committed — or "None" |
+| `decisions_made` | Non-obvious choices and reason for each — or "None" |
+| `open_issues` | Anything incomplete, blocked, or uncertain — or "None" |
+| `blockers` | Hard blockers preventing next step — or "None" |
+| `next_owner_action` | Exact next step for Owner |
+| `next_builder_action` | Exact next step for Builder (Claude Code) |
+| `next_reviewer_action` | Exact next step for Reviewer (Codex) |
+| `session_limit_note` | e.g. "Session ended at turn 9/10. Resume from this file." |
+| `owner_approval_needed` | `true` or `false` with reason |
+
+**Agent must NOT:**
+- Write to any file other than the 4 listed: `handoff/SESSION_SUMMARY.md`, `logs/CURRENT_STATUS.md`, `06_HANDOFF/NEXT_ACTIONS.md`, `logs/AGENT_ACTIVITY_LOG.md`.
+- Modify feature files, schema files, docs, or agent protocol files.
+- Commit or push.
+- Call external APIs, activate n8n workflows, or read production data.
+- Write secrets, API keys, tokens, passwords, credentials, or production URLs.
+- Advance or change any command status — this shortcut is read-only for command state.
+- Modify anything below the CURRENT STATE header in `06_HANDOFF/NEXT_ACTIONS.md`.
 
 ---
 
@@ -360,4 +413,5 @@ No manual file editing. One line triggers the approval + commit prep.
 | `APPROVE_CURRENT_PHASE` | Builder (on Owner instruction) | REVIEW_PASS | `OWNER_APPROVED — READY FOR COMMIT` |
 | `CLOSE_APPROVED_COMMAND` | Owner | OWNER_APPROVED (after commit) | Status → CLOSED |
 | `CREATE_SESSION_SUMMARY` | Any | Any (turn 8+) | SESSION_SUMMARY updated |
+| `CREATE_SESSION_HANDOFF` | Any | Any | 4 files updated — full cross-session handoff package |
 | `SHOW_CURRENT_STATUS` | Any | Any | Snapshot written to `logs/CURRENT_STATUS.md` + chat |

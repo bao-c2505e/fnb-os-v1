@@ -12,14 +12,20 @@ instead of scanning the full COMMAND_INBOX.md.
 
 ## Active Command
 
-No active command.
-
-CMD-0.12-001 is CLOSED (commit 36fcfe). Phase 0.12 complete.
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-0.13-001 |
+| `phase` | 0.13 — Session Handoff Shortcut |
+| `objective` | Add CREATE_SESSION_HANDOFF shortcut — cross-session handoff package writing 4 state files |
+| `status` | OWNER_APPROVED |
+| `assigned_builder` | Claude Code |
+| `assigned_reviewer` | Codex |
+| `priority` | high |
 
 ## Next Gate
 
-ChatGPT (Chief Architect): open Phase 0.13 or next phase via `commands/COMMAND_INBOX.md`.
-Use `commands/COMMAND_TEMPLATE.md` to author the next command.
+Owner: run git commit + git push, then run `CLOSE_APPROVED_COMMAND` with the commit hash.
+Full command record: `commands/COMMAND_INBOX.md` → CMD-0.13-001.
 
 ---
 
@@ -27,12 +33,12 @@ Use `commands/COMMAND_TEMPLATE.md` to author the next command.
 
 **As Builder (RUN_CURRENT_COMMAND):**
 1. Read this file — confirm `assigned_builder: Claude Code` and status is `ASSIGNED` or `IN_PROGRESS`.
-2. Open `commands/COMMAND_INBOX.md` → CMD-0.12-001 for full scope_files, forbidden_actions, acceptance_criteria.
+2. Open `commands/COMMAND_INBOX.md` → active command ID (shown in Active Command table above) for full scope_files, forbidden_actions, acceptance_criteria.
 3. Execute.
 
 **As Reviewer (REVIEW_CURRENT_COMMAND):**
 1. Read this file — confirm `assigned_reviewer: Codex` and status is `REVIEW_REQUESTED`.
-2. Open `commands/COMMAND_INBOX.md` → CMD-0.12-001 for full output_required and acceptance_criteria.
+2. Open `commands/COMMAND_INBOX.md` → active command ID (shown in Active Command table above) for full output_required and acceptance_criteria.
 3. Review.
 
 **As Owner (SHOW_CURRENT_STATUS):**
