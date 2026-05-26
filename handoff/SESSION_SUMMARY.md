@@ -1,6 +1,6 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-27
+Updated By: Claude Code (Builder) — 2026-05-27 (clean final stale metadata)
 
 ## Latest Session — Phase 0.14 Build
 
@@ -11,10 +11,10 @@ Updated By: Claude Code (Builder) — 2026-05-27
 Builder (Claude Code)
 
 ### active_command
-CMD-0.14-001 — REVIEW_REQUESTED
+None — Phase 0.14 CLOSED (CMD-0.14-001 CLOSED, commit 7305acb)
 
 ### latest_commit
-59fbee4 — chore(phase-0.13): close approved command
+a6a1640 — chore(phase-0.14): refresh post-close metadata
 
 ### files_changed
 - `docs/phase-0/PHASE_0_14_REPO_STATUS_SMOKE_TEST.md` — created (static smoke test report: 7 shortcuts verified, 4 warnings, recommended fixes, final recommendation)
@@ -28,7 +28,7 @@ CMD-0.14-001 — REVIEW_REQUESTED
 - `logs/AGENT_ACTIVITY_LOG.md` — appended (row)
 
 ### files_pending
-All 9 files above — modified but not yet committed. Commit only after OWNER_APPROVED.
+None — all committed (7305acb, 0b90a2a, a6a1640). Working tree clean.
 
 ### decisions_made
 - Static verification only — no shortcuts were executed. All checks were performed by reading spec files (`COMMAND_SHORTCUTS.md`, `COMMAND_ROUTING_RULES.md`) and comparing against practice observed in Phase 0.10–0.13 history.
@@ -43,7 +43,7 @@ None. All Phase 0.14 acceptance criteria met.
 None.
 
 ### next_owner_action
-Commit CLOSE_APPROVED_COMMAND state files and push. ChatGPT opens next phase.
+Open Phase 0.15 via `commands/COMMAND_INBOX.md`. No pending commits.
 
 ### next_builder_action
 N/A — no active command.
