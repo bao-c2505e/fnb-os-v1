@@ -342,6 +342,38 @@ No secrets added. No GitHub API called. No workflows activated. No Phase 1 actio
 
 ---
 
+### 2026-05-26 — Phase 0.12 — Owner Approved
+
+**By:** Owner
+**Status:** OWNER_APPROVED
+**Detail:**
+Codex returned REVIEW RESULT: PASS on CMD-0.12-001.
+Owner approved via APPROVE_CURRENT_PHASE shortcut.
+Status advanced: REVIEW_REQUESTED → REVIEW_PASS → OWNER_APPROVED in a single pass.
+Awaiting Owner git commit + git push, then CLOSE_APPROVED_COMMAND.
+
+---
+
+### 2026-05-26 — Phase 0.12 — Status Snapshot Shortcut
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Expanded SHOW_CURRENT_STATUS shortcut to write a persistent status snapshot to logs/CURRENT_STATUS.md.
+- `docs/phase-0/PHASE_0_12_STATUS_SNAPSHOT_SHORTCUT.md`: phase doc. Problem (chat-only output not shareable),
+  expanded 9-step action list, snapshot format (10 required fields), guardrails table, done criteria.
+- `commands/COMMAND_SHORTCUTS.md`: updated. SHOW_CURRENT_STATUS action list expanded from 4 steps to 9.
+  Snapshot format defined inline. Must-NOTs added (no commit/push, no API calls, no secrets in output,
+  no other files modified). Quick-Reference table updated.
+- `commands/COMMAND_ROUTING_RULES.md`: updated. Rule added: SHOW_CURRENT_STATUS writes exactly one file
+  (logs/CURRENT_STATUS.md); all other files read-only during this shortcut.
+- `logs/CURRENT_STATUS.md`: created. Persistent snapshot target. Initial content reflects Phase 0.12
+  REVIEW_REQUESTED state.
+CMD-0.11-001 closed (commit bbda9d1); CMD-0.12-001 added to COMMAND_INBOX.md and COMMAND_STATUS.md.
+No secrets added. No automation implemented. No Phase 1 actions taken.
+
+---
+
 ### 2026-05-26 — Phase 0.11 — Owner Approved
 
 **By:** Owner

@@ -13,59 +13,60 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.11 — REVIEW_REQUESTED, pending Codex review
+## CURRENT STATE: Phase 0.12 — REVIEW_REQUESTED, pending Codex review
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
 **Phase 0.8:** CLOSED (commit e58427c)
 **Phase 0.9:** CLOSED (commit fd9c750)
 **Phase 0.10:** CLOSED (commit 7498c73)
-**Current command:** CMD-0.11-001
+**Phase 0.11:** CLOSED (commit bbda9d1)
+**Current command:** CMD-0.12-001
 **Current status:** REVIEW_REQUESTED
 
-Nothing in Phase 1 or beyond should start until CMD-0.11-001 is CLOSED.
+Nothing in Phase 1 or beyond should start until CMD-0.12-001 is CLOSED.
 
 ---
 
-## 🟠 HIGH — Phase 0.11 Gate (must complete in order)
+## 🟠 HIGH — Phase 0.12 Gate (must complete in order)
 
-### Step 1 — Codex: Review CMD-0.11-001
+### Step 1 — Codex: Review CMD-0.12-001
 
 Use shortcut `REVIEW_CURRENT_COMMAND`.
-Read `commands/CURRENT_COMMAND.md` first (active command pointer), then `commands/COMMAND_INBOX.md` → CMD-0.11-001 for full scope_files and acceptance criteria.
+Read `commands/CURRENT_COMMAND.md` first (active command pointer), then `commands/COMMAND_INBOX.md` → CMD-0.12-001 for full scope_files and acceptance criteria.
 
-Files to review (from CMD-0.11-001 scope_files):
+Files to review (from CMD-0.12-001 scope_files):
 
-1. `docs/phase-0/PHASE_0_11_OWNER_APPROVAL_SHORTCUT.md` — shortcut spec, guardrails, end-to-end example
-2. `commands/COMMAND_SHORTCUTS.md` — APPROVE_CURRENT_PHASE definition + guardrails + usage example
-3. `commands/COMMAND_ROUTING_RULES.md` — APPROVE_CURRENT_PHASE in Shortcut Role Gate table
-4. `agents/AGENT_RUN_PROTOCOL.md` — integration diagram updated with APPROVE_CURRENT_PHASE step
+1. `docs/phase-0/PHASE_0_12_STATUS_SNAPSHOT_SHORTCUT.md` — problem, spec, snapshot format, guardrails
+2. `commands/COMMAND_SHORTCUTS.md` — SHOW_CURRENT_STATUS expanded action list + snapshot format + guardrails
+3. `commands/COMMAND_ROUTING_RULES.md` — SHOW_CURRENT_STATUS file-write rule added
+4. `logs/CURRENT_STATUS.md` — initial snapshot for Phase 0.12
 
-Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.11-001.
+Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.12-001.
 
 If REVIEW_PASS or REVIEW_PASS_WITH_NOTES → Owner types `APPROVE_CURRENT_PHASE`.
 If REVIEW_FAIL → record reason → return to Builder.
 
-### Step 2 — Owner: Approve CMD-0.11-001
+### Step 2 — Owner: Approve CMD-0.12-001
 
-After Codex REVIEW_PASS on CMD-0.11-001:
+After Codex REVIEW_PASS on CMD-0.12-001:
 - Type `APPROVE_CURRENT_PHASE` → Claude Code updates status files and outputs commit command.
 
-### Step 3 — Owner: Commit CMD-0.11-001
+### Step 3 — Owner: Commit CMD-0.12-001
 
-After CMD-0.11-001 status = `OWNER_APPROVED`:
+After CMD-0.12-001 status = `OWNER_APPROVED`:
 
 ```
-git add docs/phase-0/PHASE_0_11_OWNER_APPROVAL_SHORTCUT.md commands/COMMAND_SHORTCUTS.md commands/COMMAND_ROUTING_RULES.md agents/AGENT_RUN_PROTOCOL.md commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/ logs/ 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md
-git commit -m "feat(phase-0.11): add owner approval shortcut"
+git add docs/phase-0/PHASE_0_12_STATUS_SNAPSHOT_SHORTCUT.md commands/COMMAND_SHORTCUTS.md commands/COMMAND_ROUTING_RULES.md logs/CURRENT_STATUS.md commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/ logs/AGENT_ACTIVITY_LOG.md 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md
+git commit -m "feat(phase-0.12): add status snapshot shortcut"
 git push
 ```
 
-Then run `CLOSE_APPROVED_COMMAND` with commit hash. Also close out Phase 0.10 (CMD-0.10-001) if not yet done.
+Then run `CLOSE_APPROVED_COMMAND` with commit hash.
 
 ### Step 4 — ChatGPT: Open next phase
 
-Only after Phase 0.11 commit confirmed in git log.
+Only after Phase 0.12 commit confirmed in git log.
 Issue next command via `commands/COMMAND_INBOX.md`.
 
 ---

@@ -1,8 +1,8 @@
 # Command Execution Shortcuts
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.11 — APPROVE_CURRENT_PHASE added)
-Phase: 0.11
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.12 — SHOW_CURRENT_STATUS expanded)
+Phase: 0.12
 
 Shortcuts replace the need to write or paste long role-specific prompts. Each shortcut maps to a named set of actions an agent must perform. Owner pastes the shortcut token; the agent resolves it against the active command in `commands/COMMAND_INBOX.md`.
 
@@ -185,29 +185,75 @@ This shortcut does not change command status. It only preserves session state so
 ### SHOW_CURRENT_STATUS
 
 **Role:** Any agent or Owner
-**When to use:** At the start of any session, or any time current state is unclear.
+**When to use:** At the start of any session, or any time current state is unclear. Also useful for sharing repo state without screenshots or copy-paste.
 
 **Agent must:**
 1. Read `handoff/CURRENT_PHASE.md`.
-2. Read `commands/COMMAND_INBOX.md` — active command section only.
+2. Read `commands/COMMAND_INBOX.md` — first non-CLOSED record (active command).
 3. Read `commands/COMMAND_STATUS.md` — current index.
-4. Output a structured summary:
+4. Read `handoff/SESSION_SUMMARY.md` — blockers and next_agent_action fields.
+5. Run `git log --oneline -1` — latest commit hash and message.
+6. Run `git status --short` — working tree state.
+7. Assemble snapshot with all 10 required fields (see format below).
+8. Write snapshot to `logs/CURRENT_STATUS.md` (overwrite previous snapshot).
+9. Output the same snapshot to chat.
 
+**Snapshot format (written to `logs/CURRENT_STATUS.md` and echoed to chat):**
+
+```markdown
+# Current Status — FnB OS V1
+
+Last Updated: [YYYY-MM-DD] by [agent name]
+
+---
+
+## Active Command
+
+| Field | Value |
+|-------|-------|
+| Phase | [X.XX — Phase Name] |
+| Command ID | [CMD-X.XX-XXX] |
+| Status | [STATUS] |
+| Builder | [name] |
+| Reviewer | [name] |
+
+## Commit State
+
+| Field | Value |
+|-------|-------|
+| Latest Commit | [hash] — [commit message] |
+| Working Tree | [CLEAN / N files modified / N untracked] |
+
+## Review & Approval State
+
+| Check | State |
+|-------|-------|
+| Review result | [REVIEW_REQUESTED / REVIEW_PASS / REVIEW_FAIL / N/A] |
+| Owner approval | [OWNER_APPROVED / pending / N/A] |
+
+## Blockers
+
+[None — or exact description]
+
+## Next Actions
+
+| Role | Next Action |
+|------|-------------|
+| Owner | [exact next step] |
+| Builder | [exact next step] |
+| Reviewer | [exact next step] |
+
+---
+*Written by SHOW_CURRENT_STATUS. Do not edit manually.*
+*Sources: handoff/CURRENT_PHASE.md · commands/COMMAND_INBOX.md · commands/COMMAND_STATUS.md · handoff/SESSION_SUMMARY.md*
 ```
-## Current Status — FnB OS V1
 
-Phase:          [phase number and name]
-Active Command: [CMD-X.X-XXX]
-Status:         [status]
-Builder:        [agent name]
-Reviewer:       [agent name]
-Next Gate:      [what must happen next and who does it]
-
-Recent CLOSED:
-- [CMD-X.X-XXX] commit [hash]
-```
-
-This shortcut makes no file changes and does not move any status.
+**Agent must NOT:**
+- Modify any file other than `logs/CURRENT_STATUS.md`.
+- Commit or push.
+- Call external APIs, activate n8n workflows, or read production data.
+- Write any secret, API key, token, password, or production URL to the snapshot.
+- Move any command status.
 
 ---
 
@@ -259,7 +305,16 @@ Owner (or any agent) types:
 SHOW_CURRENT_STATUS
 ```
 
-Agent reads `commands/CURRENT_COMMAND.md` → outputs structured summary block. No file changes.
+Agent:
+1. Reads `handoff/CURRENT_PHASE.md`, `commands/COMMAND_INBOX.md`, `commands/COMMAND_STATUS.md`, `handoff/SESSION_SUMMARY.md`
+2. Runs `git log --oneline -1` and `git status --short`
+3. Assembles a structured snapshot (phase, active command, status, commit state, review state, blockers, next actions)
+4. **Writes snapshot to `logs/CURRENT_STATUS.md`** (overwrites previous)
+5. Echoes the same snapshot to chat
+
+Owner can read `logs/CURRENT_STATUS.md` at any time — it is the persistent, shareable repo state file.
+
+**Guardrails:** Only `logs/CURRENT_STATUS.md` is written. No feature files modified. No commit or push. No external API calls or workflow activation. No secrets written to the snapshot.
 
 ---
 
@@ -305,4 +360,4 @@ No manual file editing. One line triggers the approval + commit prep.
 | `APPROVE_CURRENT_PHASE` | Builder (on Owner instruction) | REVIEW_PASS | `OWNER_APPROVED — READY FOR COMMIT` |
 | `CLOSE_APPROVED_COMMAND` | Owner | OWNER_APPROVED (after commit) | Status → CLOSED |
 | `CREATE_SESSION_SUMMARY` | Any | Any (turn 8+) | SESSION_SUMMARY updated |
-| `SHOW_CURRENT_STATUS` | Any | Any | Structured status block |
+| `SHOW_CURRENT_STATUS` | Any | Any | Snapshot written to `logs/CURRENT_STATUS.md` + chat |

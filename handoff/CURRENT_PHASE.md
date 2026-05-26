@@ -4,7 +4,7 @@ Updated By: Claude Code (Builder) — 2026-05-26
 
 ## Phase
 
-Phase 0.11 — Owner Approval Shortcut
+Phase 0.12 — Status Snapshot Shortcut
 
 ## Status
 
@@ -12,9 +12,9 @@ Phase 0.11 — Owner Approval Shortcut
 
 ## Current Command
 
-**CMD-0.11-001** — Phase 0.11, Owner Approval Shortcut
+**CMD-0.12-001** — Phase 0.12, Status Snapshot Shortcut
 Status: `OWNER_APPROVED`
-See full record: `commands/COMMAND_INBOX.md` → CMD-0.11-001 section
+See full record: `commands/COMMAND_INBOX.md` → CMD-0.12-001 section
 Quick view: `commands/CURRENT_COMMAND.md`
 
 ## Builder
@@ -27,24 +27,25 @@ Codex / GPT-4o (AGT-04)
 
 ## Next Gate
 
-Codex reviews CMD-0.11-001 using shortcut `REVIEW_CURRENT_COMMAND`.
+Codex reviews CMD-0.12-001 using shortcut `REVIEW_CURRENT_COMMAND`.
 Read `commands/CURRENT_COMMAND.md` for active command summary, then `commands/COMMAND_INBOX.md` for full acceptance criteria.
 
+Codex returned REVIEW RESULT: PASS. Owner approved via APPROVE_CURRENT_PHASE.
 Owner: run git commit + git push, then run `CLOSE_APPROVED_COMMAND` with commit hash.
 After CLOSED: ChatGPT opens next phase.
 
-## Phase 0.11 Files
+## Phase 0.12 Files
 
 | File | Status |
 |------|--------|
-| `docs/phase-0/PHASE_0_11_OWNER_APPROVAL_SHORTCUT.md` | Complete — shortcut spec, guardrails, end-to-end example |
-| `commands/COMMAND_SHORTCUTS.md` | Updated — APPROVE_CURRENT_PHASE shortcut + Owner usage example |
-| `commands/COMMAND_ROUTING_RULES.md` | Updated — APPROVE_CURRENT_PHASE in Shortcut Role Gate table |
-| `agents/AGENT_RUN_PROTOCOL.md` | Updated — integration diagram includes APPROVE_CURRENT_PHASE |
+| `docs/phase-0/PHASE_0_12_STATUS_SNAPSHOT_SHORTCUT.md` | Complete — problem, spec, snapshot format, guardrails |
+| `commands/COMMAND_SHORTCUTS.md` | Updated — SHOW_CURRENT_STATUS expanded (9-step action list, writes logs/CURRENT_STATUS.md) |
+| `commands/COMMAND_ROUTING_RULES.md` | Updated — SHOW_CURRENT_STATUS file-write rule added |
+| `logs/CURRENT_STATUS.md` | Created — initial Phase 0.12 snapshot |
 
 ## Previous Phase
 
-Phase 0.10 — CLOSED (commit 7498c73)
+Phase 0.11 — CLOSED (commit bbda9d1)
 
 ## Guardrails
 
@@ -52,5 +53,5 @@ Phase 0.10 — CLOSED (commit 7498c73)
 - Do not auto-post or auto-reply.
 - Do not activate n8n workflows.
 - Do not run ads or spend money.
-- Do not modify files outside Phase 0.11 scope.
+- Do not modify files outside Phase 0.12 scope.
 - Do not commit until `OWNER_APPROVED`.

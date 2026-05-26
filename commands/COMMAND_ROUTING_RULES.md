@@ -1,8 +1,8 @@
 # Command Routing Rules
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.11 — APPROVE_CURRENT_PHASE added)
-Phase: 0.11
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.12 — SHOW_CURRENT_STATUS file-write noted)
+Phase: 0.12
 
 This document defines how commands are routed to agents, what each agent may do, and what error conditions require a stop.
 
@@ -195,6 +195,7 @@ After Phase 0.9, agents may receive a shortcut token instead of a full prompt. E
 - `CLOSE_APPROVED_COMMAND` requires Owner to have committed and pushed — agent must verify with `git log`.
 - No shortcut bypasses the 10-turn session cap or pre-BUILDER_DONE checklist.
 - No shortcut allows commit or push without `OWNER_APPROVED`.
+- `SHOW_CURRENT_STATUS` writes exactly one file (`logs/CURRENT_STATUS.md`) — all other files are read-only during this shortcut.
 
 ---
 
