@@ -12,14 +12,20 @@ instead of scanning the full COMMAND_INBOX.md.
 
 ## Active Command
 
-No active command.
-
-CMD-0.13-001 is CLOSED (commit c014a25). Phase 0.13 complete.
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-0.14-001 |
+| `phase` | 0.14 — Repo Status Smoke Test |
+| `objective` | Static smoke test of shortcut system (Phases 0.10–0.13) before Phase 1 |
+| `status` | OWNER_APPROVED |
+| `assigned_builder` | Claude Code |
+| `assigned_reviewer` | Codex |
+| `priority` | high |
 
 ## Next Gate
 
-ChatGPT (Chief Architect): open Phase 0.14 or next phase via `commands/COMMAND_INBOX.md`.
-Use `commands/COMMAND_TEMPLATE.md` to author the next command.
+Owner: run git commit + git push, then run `CLOSE_APPROVED_COMMAND` with the commit hash.
+Full command record: `commands/COMMAND_INBOX.md` → CMD-0.14-001.
 
 ---
 

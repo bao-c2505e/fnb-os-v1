@@ -342,6 +342,25 @@ No secrets added. No GitHub API called. No workflows activated. No Phase 1 actio
 
 ---
 
+### 2026-05-27 — Phase 0.14 — Repo Status Smoke Test
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Static smoke test của hệ thống shortcut Phase 0.10–0.13. Kiểm tra tĩnh 7 shortcuts:
+RUN_CURRENT_COMMAND, REVIEW_CURRENT_COMMAND, APPROVE_CURRENT_PHASE, CLOSE_APPROVED_COMMAND,
+SHOW_CURRENT_STATUS, CREATE_SESSION_SUMMARY, CREATE_SESSION_HANDOFF.
+Kết quả: 5 PASS / 2 WARNING / 0 FAIL.
+4 warnings tìm thấy (APPROVE_CURRENT_PHASE combined-pass pattern không document,
+SESSION_SUMMARY field refs lỗi thời, CLOSE_APPROVED_COMMAND thiếu 6 files trong spec,
+Owner Usage Examples hardcode CMD-0.10-001).
+Không có blocking issues cho Phase 1.
+`docs/phase-0/PHASE_0_14_REPO_STATUS_SMOKE_TEST.md` tạo mới với đầy đủ kết quả.
+CMD-0.14-001 thêm vào COMMAND_INBOX.md và COMMAND_STATUS.md (REVIEW_REQUESTED).
+Không thực thi shortcut nào. Không có commit, không có push.
+
+---
+
 ### 2026-05-27 — Phase 0.13 — CLOSED
 
 **By:** Owner
