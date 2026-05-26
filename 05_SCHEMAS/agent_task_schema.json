@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema_version": "0.1.0",
+  "title": "AgentTask",
+  "description": "A task assigned to an agent in the FnB OS V1 multi-agent system. Maps to Google Sheet Agent_Tasks tab.",
+  "type": "object",
+  "required": [
+    "task_id",
+    "task_name",
+    "assigned_to",
+    "assigned_by",
+    "phase",
+    "status",
+    "priority",
+    "created_at"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "Unique task ID. Format: TASK-[PHASE]-[SEQ]. Example: TASK-1-001",
+      "pattern": "^TASK-[0-9.]+-[0-9]+$"
+    },
+    "task_name": {
+      "type": "string",
+      "description": "Short human-readable task name"
+    },
+    "assigned_to": {
+      "type": "string",
+      "enum": [
+        "AGT-01",
+        "AGT-02",
+        "AGT-03",
+        "AGT-04",
+        "AGT-05",
+        "AGT-06",
+        "AGT-07",
+        "HUMAN"
+      ],
+      "description": "Agent ID from AGENT_REGISTRY.md"
+    },
+    "assigned_to_name": {
+      "type": "string",
+      "description": "Display name of assigned agent (for readability in Sheet)"
+    },
+    "assigned_by": {
+      "type": "string",
+      "enum": [
+        "AGT-01",
+        "AGT-02",
+        "AGT-03",
+        "AGT-04",
+        "AGT-05",
+        "AGT-06",
+        "AGT-07",
+        "HUMAN"
+      ],
+      "description": "Agent ID or HUMAN who created this task"
+    },
+    "phase": {
+      "type": "string",
+      "description": "Project phase this task belongs to. Example: 0.5, 1, 2"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "blocked",
+        "complete",
+        "failed",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "default": "medium"
+    },
+    "goal": {
+      "type": "string",
+      "description": "1–2 sentence description of what must be achieved"
+    },
+    "input_ref": {
+      "type": "string",
+      "description": "File path, Sheet tab, or URL where the agent reads its input"
+    },
+    "output_ref": {
+      "type": "string",
+      "description": "File path, Sheet tab, or URL where the agent writes its output"
+    },
+    "schema_ref": {
+      "type": "string",
+      "description": "Path to the JSON schema the output must conform to"
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Testable conditions that mark this task complete"
+    },
+    "blocked_reason": {
+      "type": ["string", "null"],
+      "description": "Why the task is blocked, if status=blocked"
+    },
+    "error_ref": {
+      "type": ["string", "null"],
+      "description": "Error ID from ERROR_LOG if status=failed"
+    },
+    "next_task_id": {
+      "type": ["string", "null"],
+      "description": "Task ID that should start after this one completes"
+    },
+    "next_agent": {
+      "type": ["string", "null"],
+      "description": "Agent ID that receives this task's output"
+    },
+    "telegram_notification": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to send a Telegram notification when this task completes"
+    },
+    "requires_human_approval": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether output must be approved via Telegram before the next task starts"
+    },
+    "campaign_id": {
+      "type": ["string", "null"],
+      "description": "Optional campaign ID this task belongs to"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "started_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "duration_seconds": {
+      "type": ["integer", "null"],
+      "description": "How long the task took to complete"
+    },
+    "notes": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": false
+}

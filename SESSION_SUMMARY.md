@@ -1,6 +1,6 @@
 # Session Summary — FnB OS V1
 
-Last updated: 2026-05-26
+Last updated: 2026-05-26 (Phase 0.5)
 Updated by: Claude Code (Builder Agent)
 
 This file is updated at the end of every significant agent session or when the 10-message session cap is reached.
@@ -13,9 +13,31 @@ This file is updated at the end of every significant agent session or when the 1
 |-------|------|--------|------------|
 | 0 | Environment & Project Setup | COMPLETE | 75 files — full repo foundation |
 | 0.1 | Local .env + Git Init | COMPLETE | `.env` created, `.gitignore` active, pushed to GitHub |
+| 0.2 | Env Mapping | COMPLETE | All keys filled in `.env` by human owner |
+| 0.3 | n8n Credential Guide | COMPLETE | `08_DEPLOY/n8n_credentials_step_by_step.md` |
+| 0.4 | n8n Smoke Test Workflows | COMPLETE | 5 workflow JSONs + Gemini fix (`smoke-04-gemini-short-reply.json`) |
+| 0.5 | Agent Collaboration Layer | COMPLETE | Registry, task schema, collaboration flow doc |
 | 0.2 | Env Mapping | IN PROGRESS | User filling real API keys into `.env` |
 | 0.3 | n8n Credential Creation Guide | COMPLETE | `08_DEPLOY/n8n_credentials_step_by_step.md` |
 | 0.4 | n8n Smoke Test Workflows | COMPLETE (artifacts) | 5 workflow JSONs + docs + results log |
+
+---
+
+## Phase 0.5 — What Was Built This Session
+
+### Files created
+
+| File | Purpose |
+|------|---------|
+| `06_HANDOFF/AGENT_REGISTRY.md` | 7 agents defined — role, model, capabilities, safety limits, n8n node |
+| `05_SCHEMAS/agent_task_schema.json` | JSON schema for Agent_Tasks sheet tab + lifecycle |
+| `docs/phase-0/PHASE_0_5_AGENT_COLLABORATION.md` | Full collaboration flow, routing rules, Telegram protocol |
+
+### Key decisions
+- Gemini REST API auth confirmed as **query param `?key=`** — not header (SMOKE-04 fixed)
+- `Agent_Tasks` sheet tab column order locked in schema (Cols A–U)
+- Task routing table defined: `content_pack` → AGT-03, `repo_build` → AGT-02, etc.
+- Telegram notification format standardised for all agent task completions
 
 ---
 

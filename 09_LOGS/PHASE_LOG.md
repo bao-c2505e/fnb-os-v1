@@ -114,3 +114,22 @@ Human action required: import workflows into n8n, run manually, record results.
 Phase 0.4 gate: all 5 PASS → proceed to Phase 1.
 
 ---
+
+### 2026-05-26 — Phase 0.5 — Agent Collaboration Layer
+
+**By:** Claude Code (Builder Agent)
+**Status:** Complete
+**Detail:**
+Created `06_HANDOFF/AGENT_REGISTRY.md` — 7 agents registered with full specs:
+  AGT-01 ChatGPT (Chief Architect), AGT-02 Claude Code (Builder),
+  AGT-03 Gemini (Content), AGT-04 Codex/GPT-4o (Code),
+  AGT-05 LangGraph (Orchestrator), AGT-06 n8n (Runtime), AGT-07 QC Agent.
+Created `05_SCHEMAS/agent_task_schema.json` — 21-field schema for Agent_Tasks tab.
+  Lifecycle: pending → in_progress → complete / blocked / failed / cancelled.
+Created `docs/phase-0/PHASE_0_5_AGENT_COLLABORATION.md` — full collaboration flow,
+  task routing table, Telegram notification protocol, Agent_Tasks column map (A–U),
+  safety rules, done criteria, next phase spec.
+Updated SESSION_SUMMARY.md and NEXT_ACTIONS.md.
+All Phase 0 sub-phases now complete. Ready for Phase 1 — Google Sheet & Drive Setup.
+
+---

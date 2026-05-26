@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AgentTask",
+  "type": "object",
+  "required": [
+    "task_id",
+    "title",
+    "assigned_to",
+    "assigned_by",
+    "status",
+    "priority",
+    "allowed_scope",
+    "goal",
+    "acceptance_criteria",
+    "requires_human_approval",
+    "created_at"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^TASK-[0-9.]+-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "assigned_to": {
+      "type": "string",
+      "enum": ["USER", "AGT-01", "AGT-02", "AGT-03", "AGT-04", "AGT-05", "AGT-06"]
+    },
+    "assigned_by": {
+      "type": "string",
+      "enum": ["USER", "AGT-01", "AGT-02", "AGT-03", "AGT-04", "AGT-05", "AGT-06"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "in_progress", "blocked", "complete", "failed", "cancelled", "approved", "rejected"]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "allowed_scope": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 10
+    },
+    "inputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "requires_human_approval": {
+      "type": "boolean",
+      "default": true
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": ["not_required", "pending", "approved", "rejected"],
+      "default": "pending"
+    },
+    "secret_check": {
+      "type": "string",
+      "enum": ["not_run", "clean", "failed"],
+      "default": "not_run"
+    },
+    "activity_log_ref": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
