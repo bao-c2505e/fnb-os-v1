@@ -1,6 +1,6 @@
 # Current Status — FnB OS V1
 
-Last Updated: 2026-05-27 by Claude Code (Builder — clean final stale metadata)
+Last Updated: 2026-05-27 by Claude Code (Builder — refresh final current snapshot)
 
 ---
 
@@ -18,7 +18,7 @@ Last Updated: 2026-05-27 by Claude Code (Builder — clean final stale metadata)
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | a6a1640 — chore(phase-0.14): refresh post-close metadata |
+| Latest Commit | 5ba95f2 — chore(phase-0.14): clean final stale metadata |
 | Working Tree | CLEAN (except .claude/ untracked) |
 
 ## Review & Approval State

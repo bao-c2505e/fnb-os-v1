@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.14 — CLOSED (latest: 0b90a2a)
+## CURRENT STATE: Phase 0.14 — CLOSED (latest: 5ba95f2)
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
@@ -23,7 +23,7 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 0.11:** CLOSED (commit bbda9d1)
 **Phase 0.12:** CLOSED (commit 36fcfe)
 **Phase 0.13:** CLOSED (commit c014a25)
-**Phase 0.14:** CLOSED (commit 7305acb → post-close: 0b90a2a)
+**Phase 0.14:** CLOSED (commit 7305acb → post-close: 5ba95f2)
 **Current command:** None — no active command
 
 ---
