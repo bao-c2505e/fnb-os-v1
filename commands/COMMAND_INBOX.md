@@ -1,7 +1,7 @@
 # Command Inbox
 
 Created By: Codex (Reviewer) - 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.8)
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9)
 
 This is the canonical intake queue for commands from ChatGPT Chief Architect or Owner to Builder agents.
 
@@ -17,15 +17,16 @@ Rules:
 
 ---
 
-### CMD-0.8-001
+### CMD-0.9-001
 
 **Created By:** ChatGPT (Chief Architect) — 2026-05-26
 **Updated By:** Claude Code (Builder) — 2026-05-26
 
 | Field | Value |
 |-------|-------|
-| `command_id` | CMD-0.8-001 |
-| `phase` | 0.8 |
+| `command_id` | CMD-0.9-001 |
+| `phase` | 0.9 |
+| `objective` | Create Command Execution Shortcuts so Owner can trigger any standard agent action with a single token |
 | `created_by` | ChatGPT (Chief Architect) |
 | `assigned_builder` | Claude Code |
 | `assigned_reviewer` | Codex |
@@ -37,15 +38,17 @@ Rules:
 | `log_required` | true |
 
 **Owner Request:**
-Build the GitHub Command Bridge — a protocol that lets Owner/ChatGPT issue structured commands via the repo or GitHub Issues, so agents read from a source of truth rather than from chat prompts. Must define two command modes (repo file vs. GitHub Issue), a GitHub Issue template, routing rules, and error conditions. No GitHub API calls in Phase 0.8 — design and templates only.
+Build the Command Execution Shortcuts system so Owner no longer needs to paste long role-specific prompts when starting Builder or Reviewer sessions. Define 6 shortcut tokens (RUN_CURRENT_COMMAND, REVIEW_CURRENT_COMMAND, FIX_REVIEW_FAIL, CLOSE_APPROVED_COMMAND, CREATE_SESSION_SUMMARY, SHOW_CURRENT_STATUS), each with exact role, trigger status, action list, and error conditions. Update routing rules and agent protocols to reference shortcuts. Design only — no automation or API calls.
 
 **Scope Files:**
-- `docs/phase-0/PHASE_0_8_GITHUB_COMMAND_BRIDGE.md`
-- `commands/GITHUB_COMMAND_BRIDGE.md`
-- `commands/GITHUB_ISSUE_COMMAND_TEMPLATE.md`
-- `commands/COMMAND_ROUTING_RULES.md`
+- `commands/COMMAND_SHORTCUTS.md`
 - `commands/COMMAND_INBOX.md`
 - `commands/COMMAND_STATUS.md`
+- `commands/COMMAND_ROUTING_RULES.md`
+- `agents/AGENT_RUN_PROTOCOL.md`
+- `agents/BUILDER_PROTOCOL.md`
+- `agents/REVIEWER_PROTOCOL.md`
+- `docs/phase-0/PHASE_0_9_COMMAND_EXECUTION_SHORTCUTS.md`
 - `handoff/CURRENT_PHASE.md`
 - `handoff/SESSION_SUMMARY.md`
 - `06_HANDOFF/NEXT_ACTIONS.md`
@@ -58,22 +61,40 @@ Build the GitHub Command Bridge — a protocol that lets Owner/ChatGPT issue str
 - Do not auto-post, auto-reply to real users, activate n8n workflows, or run paid ads.
 - Do not modify files outside Scope Files.
 - Do not open Phase 1 or any subsequent phase.
-- Do not call the GitHub API — templates and protocol design only.
+- Do not call any external API or automate shortcut execution.
 
 **Acceptance Criteria:**
-- [ ] `PHASE_0_8_GITHUB_COMMAND_BRIDGE.md` explains problem, objective, two modes, flow, and what is out of scope
-- [ ] `GITHUB_COMMAND_BRIDGE.md` defines mode decision guide, field mapping, status-to-label mapping, ownership rules, close conditions
-- [ ] `GITHUB_ISSUE_COMMAND_TEMPLATE.md` provides complete Issue template matching all command fields
-- [ ] `COMMAND_ROUTING_RULES.md` defines routing by agent, no-concurrent-edit rule, NEED_COMMAND_CLARIFICATION / SCOPE_CONFLICT / SECRET_RISK error conditions
-- [ ] CMD-0.8-001 created in COMMAND_INBOX.md and COMMAND_STATUS.md
+- [ ] `COMMAND_SHORTCUTS.md` defines all 6 shortcuts with role, trigger status, required actions, error conditions, and quick-reference table
+- [ ] `COMMAND_ROUTING_RULES.md` has a Shortcut Routing section covering role gating and all 5 error conditions (ROLE_CONFLICT, NO_ACTIVE_COMMAND, NEED_COMMAND_CLARIFICATION, SCOPE_CONFLICT, SECRET_RISK)
+- [ ] `BUILDER_PROTOCOL.md` references `RUN_CURRENT_COMMAND` as entry point at Step 1
+- [ ] `REVIEWER_PROTOCOL.md` references `REVIEW_CURRENT_COMMAND` as entry point at Identity Check
+- [ ] `AGENT_RUN_PROTOCOL.md` describes shortcut layer in integration section
+- [ ] CMD-0.9-001 in `COMMAND_INBOX.md` and `COMMAND_STATUS.md`; CMD-0.8-001 marked CLOSED
 - [ ] Handoff and logs updated
-- [ ] No secrets in any Phase 0.8 file
+- [ ] No secrets in any Phase 0.9 file
 
 **Output Required:**
-- 4 new files: PHASE_0_8 doc, GITHUB_COMMAND_BRIDGE, GITHUB_ISSUE_COMMAND_TEMPLATE, COMMAND_ROUTING_RULES
-- Updated COMMAND_INBOX.md and COMMAND_STATUS.md
-- Updated handoff, logs, and NEXT_ACTIONS
+- 1 new file: `commands/COMMAND_SHORTCUTS.md`
+- 1 new file: `docs/phase-0/PHASE_0_9_COMMAND_EXECUTION_SHORTCUTS.md`
+- Updated: `commands/COMMAND_ROUTING_RULES.md`, `agents/AGENT_RUN_PROTOCOL.md`, `agents/BUILDER_PROTOCOL.md`, `agents/REVIEWER_PROTOCOL.md`
+- Updated: `commands/COMMAND_INBOX.md`, `commands/COMMAND_STATUS.md`, handoff files, logs
 - Final output ending with: `READY FOR CODEX REVIEW`
+
+---
+
+### CMD-0.8-001
+
+**Closed By:** Owner — 2026-05-26 (commit e58427c)
+
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-0.8-001 |
+| `phase` | 0.8 |
+| `status` | **CLOSED** |
+| `commit` | e58427c |
+
+*This command is closed. See `commands/COMMAND_STATUS.md` for history.*
+*Full record archived above for reference only — not an active command.*
 
 ---
 

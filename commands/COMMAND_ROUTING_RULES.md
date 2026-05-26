@@ -1,7 +1,8 @@
 # Command Routing Rules
 
 Created By: Claude Code (Builder) — 2026-05-26
-Phase: 0.8
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9 — Shortcut Routing added)
+Phase: 0.9
 
 This document defines how commands are routed to agents, what each agent may do, and what error conditions require a stop.
 
@@ -136,6 +137,42 @@ A command is complete (`CLOSED`) when ALL of the following are true:
 | No secrets in any changed file | Reviewer confirmed in secret scan |
 
 If any condition is unmet → command is not closed.
+
+---
+
+## Shortcut Routing
+
+After Phase 0.9, agents may receive a shortcut token instead of a full prompt. Each shortcut maps to a defined role and required command status. See full shortcut definitions: `commands/COMMAND_SHORTCUTS.md`.
+
+### Shortcut Role Gate
+
+| Shortcut | Allowed Role | Required Command Status |
+|----------|-------------|------------------------|
+| `RUN_CURRENT_COMMAND` | Builder (Claude Code) only | `ASSIGNED` or `IN_PROGRESS` |
+| `REVIEW_CURRENT_COMMAND` | Reviewer (Codex) only | `REVIEW_REQUESTED` |
+| `FIX_REVIEW_FAIL` | Builder (Claude Code) only | `REVIEW_FAIL` |
+| `CLOSE_APPROVED_COMMAND` | Owner only (after commit/push) | `OWNER_APPROVED` |
+| `CREATE_SESSION_SUMMARY` | Any agent | Any |
+| `SHOW_CURRENT_STATUS` | Any agent or Owner | Any |
+
+### Shortcut Error Conditions
+
+| Error | Trigger | Action |
+|-------|---------|--------|
+| `ROLE_CONFLICT` | Agent invokes a shortcut reserved for a different role | Stop. Do not execute. Report to Owner. |
+| `NO_ACTIVE_COMMAND` | No command matches the required status for the shortcut | Report to Owner. Do not start work. |
+| `NEED_COMMAND_CLARIFICATION` | Active command is missing required fields | Set `BLOCKED`, record missing fields, notify Owner. |
+| `SCOPE_CONFLICT` | Shortcut execution would touch a file outside `scope_files` | Set `BLOCKED`, record conflict, notify Owner. |
+| `SECRET_RISK` | Shortcut execution would write a secret pattern | Stop all writes immediately. Set `BLOCKED`. Notify Owner. |
+
+### Rules
+
+- `RUN_CURRENT_COMMAND` may only be run by the agent named in `assigned_builder`.
+- `REVIEW_CURRENT_COMMAND` may only be run by the agent named in `assigned_reviewer`.
+- `FIX_REVIEW_FAIL` requires Reviewer's FAIL output to already exist before Builder starts.
+- `CLOSE_APPROVED_COMMAND` requires Owner to have committed and pushed — agent must verify with `git log`.
+- No shortcut bypasses the 10-turn session cap or pre-BUILDER_DONE checklist.
+- No shortcut allows commit or push without `OWNER_APPROVED`.
 
 ---
 

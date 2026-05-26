@@ -224,6 +224,32 @@ No secrets added. No protocol files modified. No Phase 1 actions taken.
 
 ---
 
+### 2026-05-26 - Phase 0.9 - Command Execution Shortcuts
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Built Command Execution Shortcuts — 6 named tokens that replace long role-specific prompts.
+- `commands/COMMAND_SHORTCUTS.md`: created. Defines all 6 shortcuts:
+    RUN_CURRENT_COMMAND (Builder), REVIEW_CURRENT_COMMAND (Reviewer),
+    FIX_REVIEW_FAIL (Builder after FAIL), CLOSE_APPROVED_COMMAND (Owner after commit),
+    CREATE_SESSION_SUMMARY (any agent, turn 8+), SHOW_CURRENT_STATUS (any agent/Owner).
+    Each includes: role, trigger status, required actions, error conditions, ending phrase.
+    Quick-reference table lists all 6 with trigger status and output ending.
+- `docs/phase-0/PHASE_0_9_COMMAND_EXECUTION_SHORTCUTS.md`: phase doc. Problem, objective,
+    before/after table, shortcut resolution flow, integration with phases 0.6/0.7/0.8/0.9, done criteria.
+- `commands/COMMAND_ROUTING_RULES.md`: updated. Added Shortcut Routing section with role gate table,
+    error conditions table (ROLE_CONFLICT, NO_ACTIVE_COMMAND + existing 3), routing rules.
+- `agents/AGENT_RUN_PROTOCOL.md`: updated. Section 8 now shows full Phase 0.6/0.8/0.9 integration
+    diagram including shortcut tokens. References COMMAND_SHORTCUTS.md and COMMAND_ROUTING_RULES.md.
+- `agents/BUILDER_PROTOCOL.md`: updated. Step 1 now references RUN_CURRENT_COMMAND as entry point.
+- `agents/REVIEWER_PROTOCOL.md`: updated. Identity Check references REVIEW_CURRENT_COMMAND as entry point.
+CMD-0.9-001 added to COMMAND_INBOX.md and COMMAND_STATUS.md (initial status IN_PROGRESS → synchronized to REVIEW_REQUESTED after Builder completed Phase 0.9).
+CMD-0.8-001 collapsed to CLOSED stub in COMMAND_INBOX.md; marked CLOSED (commit e58427c) in STATUS.md.
+No secrets added. No automation implemented. No GitHub API called. No Phase 1 actions taken.
+
+---
+
 ### 2026-05-26 - Phase 0.8 - Codex REVIEW_FAIL Fix: Template Fields + Naming + CMD-0.7-001 Status
 
 **By:** Claude Code (Builder)

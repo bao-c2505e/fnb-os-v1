@@ -1,7 +1,8 @@
 # Reviewer Protocol — Codex
 
 Created By: Claude Code (Builder) — 2026-05-26
-Phase: 0.7
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9 — REVIEW_CURRENT_COMMAND reference added)
+Phase: 0.9
 
 This protocol applies exclusively to Codex acting as Reviewer.
 Read `agents/AGENT_RUN_PROTOCOL.md` first — this document adds Reviewer-specific steps only.
@@ -9,6 +10,8 @@ Read `agents/AGENT_RUN_PROTOCOL.md` first — this document adds Reviewer-specif
 ---
 
 ## Identity Check
+
+> **Shortcut:** If Owner passed `REVIEW_CURRENT_COMMAND`, this is your entry point. Resolve the shortcut against `commands/COMMAND_SHORTCUTS.md` and follow the action list there. The steps below are the full expanded form.
 
 Before starting any review session, confirm:
 

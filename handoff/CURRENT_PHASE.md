@@ -4,7 +4,7 @@ Updated By: Claude Code (Builder) — 2026-05-26
 
 ## Phase
 
-Phase 0.8 — GitHub Command Bridge
+Phase 0.9 — Command Execution Shortcuts
 
 ## Status
 
@@ -12,9 +12,9 @@ Phase 0.8 — GitHub Command Bridge
 
 ## Current Command
 
-**CMD-0.8-001** — Phase 0.8, GitHub Command Bridge
+**CMD-0.9-001** — Phase 0.9, Command Execution Shortcuts
 Status: `REVIEW_REQUESTED`
-See full record: `commands/COMMAND_INBOX.md` → CMD-0.8-001 section
+See full record: `commands/COMMAND_INBOX.md` → CMD-0.9-001 section
 
 ## Builder
 
@@ -26,23 +26,25 @@ Codex / GPT-4o (AGT-04)
 
 ## Next Gate
 
-Codex reviews CMD-0.8-001 using `agents/REVIEWER_PROTOCOL.md`.
-Acceptance criteria for review are in `commands/COMMAND_INBOX.md` → CMD-0.8-001.
+Codex reviews CMD-0.9-001 using `agents/REVIEWER_PROTOCOL.md`.
+Acceptance criteria for review are in `commands/COMMAND_INBOX.md` → CMD-0.9-001.
 
-If REVIEW_PASS → Owner approves CMD-0.8-001 → Owner commits → ChatGPT opens next phase.
+If REVIEW_PASS → Owner approves CMD-0.9-001 → Owner commits → ChatGPT opens next phase.
 
-## Phase 0.8 Files
+## Phase 0.9 Files
 
 | File | Status |
 |------|--------|
-| `docs/phase-0/PHASE_0_8_GITHUB_COMMAND_BRIDGE.md` | Complete — phase doc |
-| `commands/GITHUB_COMMAND_BRIDGE.md` | Complete — mode guide + field/status mapping |
-| `commands/GITHUB_ISSUE_COMMAND_TEMPLATE.md` | Complete — GitHub Issue template |
-| `commands/COMMAND_ROUTING_RULES.md` | Complete — routing rules + error conditions |
+| `commands/COMMAND_SHORTCUTS.md` | Complete — 6 shortcuts defined |
+| `docs/phase-0/PHASE_0_9_COMMAND_EXECUTION_SHORTCUTS.md` | Complete — phase doc |
+| `commands/COMMAND_ROUTING_RULES.md` | Updated — Shortcut Routing section added |
+| `agents/AGENT_RUN_PROTOCOL.md` | Updated — shortcut layer in integration section |
+| `agents/BUILDER_PROTOCOL.md` | Updated — RUN_CURRENT_COMMAND reference at Step 1 |
+| `agents/REVIEWER_PROTOCOL.md` | Updated — REVIEW_CURRENT_COMMAND reference at Identity Check |
 
 ## Previous Phase
 
-Phase 0.7 — CLOSED (commit d4771a)
+Phase 0.8 — CLOSED (commit e58427c)
 
 ## Guardrails
 
@@ -50,5 +52,5 @@ Phase 0.7 — CLOSED (commit d4771a)
 - Do not auto-post or auto-reply.
 - Do not activate n8n workflows.
 - Do not run ads or spend money.
-- Do not modify files outside Phase 0.8 scope.
+- Do not modify files outside Phase 0.9 scope.
 - Do not commit until `OWNER_APPROVED`.

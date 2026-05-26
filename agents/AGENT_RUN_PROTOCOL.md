@@ -1,7 +1,8 @@
 # Agent Run Protocol
 
 Created By: Claude Code (Builder) — 2026-05-26
-Phase: 0.7
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9 — Shortcut layer reference added)
+Phase: 0.9
 
 This document is the master operational protocol for all agent sessions in FnB OS V1.
 It bridges the Phase 0.6 Command Intake Layer with actual session execution.
@@ -153,22 +154,29 @@ READY FOR CODEX REVIEW
 
 ---
 
-## 8. How This Connects to Phase 0.6
+## 8. How This Connects to Phase 0.6, 0.8, and 0.9
 
 ```
-Owner / ChatGPT creates command (COMMAND_TEMPLATE.md)
+Owner / ChatGPT creates command (COMMAND_TEMPLATE.md or GITHUB_ISSUE_COMMAND_TEMPLATE.md)
     ↓ status: NEW → ASSIGNED
-commands/COMMAND_INBOX.md
+commands/COMMAND_INBOX.md  [Phase 0.6]
     ↓
-Builder reads AGENT_RUN_PROTOCOL.md + BUILDER_PROTOCOL.md
+Owner pastes shortcut token: RUN_CURRENT_COMMAND  [Phase 0.9]
+    ↓
+Builder resolves token → reads AGENT_RUN_PROTOCOL.md + BUILDER_PROTOCOL.md
     ↓ Session Start Checklist → Execute → Pre-BUILDER_DONE
     ↓ status: IN_PROGRESS → BUILDER_DONE → REVIEW_REQUESTED
-Reviewer reads AGENT_RUN_PROTOCOL.md + REVIEWER_PROTOCOL.md
+Owner pastes shortcut token: REVIEW_CURRENT_COMMAND  [Phase 0.9]
+    ↓
+Reviewer resolves token → reads AGENT_RUN_PROTOCOL.md + REVIEWER_PROTOCOL.md
     ↓ status: REVIEW_PASS or REVIEW_FAIL
 Owner approves
     ↓ status: OWNER_APPROVED → CLOSED
-Owner commits
+Owner commits → pastes: CLOSE_APPROVED_COMMAND  [Phase 0.9]
 ```
 
-State machine is defined in `commands/COMMAND_STATUS.md`.
-Transition rules (who can move which states) are in `docs/phase-0/PHASE_0_6_COMMAND_INTAKE.md`.
+State machine: `commands/COMMAND_STATUS.md`
+Transition rules: `docs/phase-0/PHASE_0_6_COMMAND_INTAKE.md`
+Command modes (repo vs GitHub Issue): `commands/GITHUB_COMMAND_BRIDGE.md`  [Phase 0.8]
+Shortcut definitions: `commands/COMMAND_SHORTCUTS.md`  [Phase 0.9]
+Shortcut routing + error conditions: `commands/COMMAND_ROUTING_RULES.md` → Shortcut Routing section

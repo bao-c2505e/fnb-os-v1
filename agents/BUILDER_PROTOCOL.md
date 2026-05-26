@@ -1,7 +1,8 @@
 # Builder Protocol — Claude Code
 
 Created By: Claude Code (Builder) — 2026-05-26
-Phase: 0.7
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9 — RUN_CURRENT_COMMAND reference added)
+Phase: 0.9
 
 This protocol applies exclusively to Claude Code acting as Builder.
 Read `agents/AGENT_RUN_PROTOCOL.md` first — this document adds Builder-specific steps only.
@@ -24,6 +25,8 @@ If `assigned_builder` does not match → do not start. Set status `BLOCKED`, rec
 ---
 
 ## Step 1 — Read and Accept the Command
+
+> **Shortcut:** If Owner passed `RUN_CURRENT_COMMAND`, this step is your entry point. Resolve the shortcut against `commands/COMMAND_SHORTCUTS.md` and follow the action list there. The steps below are the full expanded form.
 
 1. Open `commands/COMMAND_INBOX.md`.
 2. Find the command with status `ASSIGNED` and `assigned_builder: Claude Code`.
