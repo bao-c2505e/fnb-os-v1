@@ -1,0 +1,78 @@
+{
+  "name": "SMOKE-02 Google Sheets Read Test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1b2c3d4-0002-4002-8002-aabbcc000001",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "notes": "Phase 0.4 smoke test — run manually only, never on schedule"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "documentId": {
+          "__rl": true,
+          "value": "REPLACE_WITH_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Config",
+          "mode": "name"
+        },
+        "options": {
+          "returnAllMatches": true
+        }
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_AFTER_IMPORT",
+          "name": "Google Sheets - FNB OS V1"
+        }
+      },
+      "id": "a1b2c3d4-0002-4002-8002-aabbcc000002",
+      "name": "Read Config Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [460, 300],
+      "notes": "IMPORTANT after import: 1) Open this node. 2) Click Document selector. 3) Search for FNB_OS_V1_CONTROL_CENTER. 4) Select the Config tab. The documentId REPLACE_WITH_GOOGLE_SHEET_ID is a placeholder — you must select the document manually via the n8n UI. Do not paste the Sheet ID into this JSON in the repo."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Read Config Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "phase": "0.4",
+    "type": "smoke-test",
+    "autoPublish": false,
+    "humanApprovalRequired": true,
+    "templateCredsSetupCompleted": false,
+    "targetSheet": "FNB_OS_V1_CONTROL_CENTER",
+    "targetTab": "Config",
+    "instanceId": "REPLACE_WITH_YOUR_N8N_INSTANCE_ID"
+  },
+  "id": "smoke-02-sheets-read-test",
+  "tags": [
+    { "name": "phase-0.4" },
+    { "name": "smoke-test" },
+    { "name": "no-production" }
+  ]
+}

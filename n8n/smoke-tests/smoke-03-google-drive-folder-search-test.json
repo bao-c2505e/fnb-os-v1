@@ -1,0 +1,67 @@
+{
+  "name": "SMOKE-03 Google Drive Folder Search Test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1b2c3d4-0003-4003-8003-aabbcc000001",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "notes": "Phase 0.4 smoke test — run manually only, never on schedule"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "queryString": "name contains 'FnB OS V1' and mimeType = 'application/vnd.google-apps.folder' and trashed = false",
+        "returnAll": true,
+        "options": {}
+      },
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "REPLACE_AFTER_IMPORT",
+          "name": "Google Drive - FNB OS V1"
+        }
+      },
+      "id": "a1b2c3d4-0003-4003-8003-aabbcc000002",
+      "name": "Search Drive Folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [460, 300],
+      "notes": "Searches for folders named 'FnB OS V1' in Google Drive. No OAuth values are hardcoded. Credential is resolved by name after import."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Search Drive Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "phase": "0.4",
+    "type": "smoke-test",
+    "autoPublish": false,
+    "humanApprovalRequired": true,
+    "templateCredsSetupCompleted": false,
+    "driveQuery": "name contains 'FnB OS V1' and mimeType = 'application/vnd.google-apps.folder' and trashed = false",
+    "instanceId": "REPLACE_WITH_YOUR_N8N_INSTANCE_ID"
+  },
+  "id": "smoke-03-drive-search-test",
+  "tags": [
+    { "name": "phase-0.4" },
+    { "name": "smoke-test" },
+    { "name": "no-production" }
+  ]
+}

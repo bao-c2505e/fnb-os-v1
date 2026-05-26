@@ -1,0 +1,75 @@
+{
+  "name": "SMOKE-05 Gemini Short Reply Test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1b2c3d4-0005-4005-8005-aabbcc000001",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "notes": "Phase 0.4 smoke test — run manually only, never on schedule"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": false,
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Reply exactly in Vietnamese with one short sentence: Credential Gemini cho FnB OS V1 dang hoat dong.\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"maxOutputTokens\": 60,\n    \"temperature\": 0\n  }\n}",
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_AFTER_IMPORT",
+          "name": "Gemini - FNB OS V1"
+        }
+      },
+      "id": "a1b2c3d4-0005-4005-8005-aabbcc000002",
+      "name": "Gemini Short Reply",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 300],
+      "notes": "No API key is hardcoded. Credential resolved by name 'Gemini - FNB OS V1' (httpHeaderAuth type, header name: x-goog-api-key) after import. If your Gemini credential uses Query Parameter Auth instead, change genericAuthType to httpQueryAuth and re-map the credential."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Gemini Short Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "phase": "0.4",
+    "type": "smoke-test",
+    "autoPublish": false,
+    "humanApprovalRequired": true,
+    "templateCredsSetupCompleted": false,
+    "geminiEndpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+    "credentialType": "httpHeaderAuth",
+    "credentialHeaderName": "x-goog-api-key",
+    "expectedOutput": "Credential Gemini cho FnB OS V1 dang hoat dong.",
+    "instanceId": "REPLACE_WITH_YOUR_N8N_INSTANCE_ID"
+  },
+  "id": "smoke-05-gemini-short-reply",
+  "tags": [
+    { "name": "phase-0.4" },
+    { "name": "smoke-test" },
+    { "name": "no-production" }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "SMOKE-04 OpenAI Short Reply Test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1b2c3d4-0004-4004-8004-aabbcc000001",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "notes": "Phase 0.4 smoke test — run manually only, never on schedule"
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "operation": "create",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "messages": {
+          "values": [
+            {
+              "role": "user",
+              "content": "Reply exactly in Vietnamese with one short sentence: \"Credential OpenAI cho FnB OS V1 dang hoat dong.\""
+            }
+          ]
+        },
+        "options": {
+          "maxTokens": 60,
+          "temperature": 0
+        }
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "REPLACE_AFTER_IMPORT",
+          "name": "OpenAI - FNB OS V1"
+        }
+      },
+      "id": "a1b2c3d4-0004-4004-8004-aabbcc000002",
+      "name": "OpenAI Short Reply",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1.4,
+      "position": [460, 300],
+      "notes": "No API key is hardcoded. Credential resolved by name 'OpenAI - FNB OS V1' after import. Model is gpt-4o — change to your preferred model in the node UI if needed."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Short Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "phase": "0.4",
+    "type": "smoke-test",
+    "autoPublish": false,
+    "humanApprovalRequired": true,
+    "templateCredsSetupCompleted": false,
+    "expectedOutput": "Credential OpenAI cho FnB OS V1 dang hoat dong.",
+    "instanceId": "REPLACE_WITH_YOUR_N8N_INSTANCE_ID"
+  },
+  "id": "smoke-04-openai-short-reply",
+  "tags": [
+    { "name": "phase-0.4" },
+    { "name": "smoke-test" },
+    { "name": "no-production" }
+  ]
+}
