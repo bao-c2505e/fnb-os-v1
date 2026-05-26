@@ -8,14 +8,13 @@ Phase 0.14 — Repo Status Smoke Test
 
 ## Status
 
-**OWNER_APPROVED**
+**CLOSED**
 
 ## Current Command
 
 **CMD-0.14-001** — Phase 0.14, Repo Status Smoke Test
-Status: `OWNER_APPROVED`
+Status: `CLOSED` (commit 7305acb)
 See full record: `commands/COMMAND_INBOX.md` → CMD-0.14-001 section
-Quick view: `commands/CURRENT_COMMAND.md`
 
 ## Builder
 
@@ -27,9 +26,9 @@ Codex / GPT-4o (AGT-04)
 
 ## Next Gate
 
-Codex returned REVIEW RESULT: PASS. Owner approved via APPROVE_CURRENT_PHASE.
-Owner: run git commit + git push, then run `CLOSE_APPROVED_COMMAND` with commit hash.
-After CLOSED: ChatGPT opens next phase.
+Phase 0.14 CLOSED (commit 7305acb).
+ChatGPT (Chief Architect): open next phase via `commands/COMMAND_INBOX.md`.
+Use `commands/COMMAND_TEMPLATE.md` to author the next command.
 
 ## Phase 0.14 Files
 
@@ -39,6 +38,7 @@ After CLOSED: ChatGPT opens next phase.
 
 ## Previous Phase
 
+Phase 0.14 — CLOSED (commit 7305acb)
 Phase 0.13 — CLOSED (commit c014a25)
 
 ## Guardrails

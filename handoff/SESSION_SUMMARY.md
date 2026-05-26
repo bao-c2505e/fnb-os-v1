@@ -43,19 +43,19 @@ None. All Phase 0.14 acceptance criteria met.
 None.
 
 ### next_owner_action
-Run git commit + git push, then run `CLOSE_APPROVED_COMMAND` with commit hash.
+Commit CLOSE_APPROVED_COMMAND state files and push. ChatGPT opens next phase.
 
 ### next_builder_action
-N/A — awaiting Owner commit.
+N/A — no active command.
 
 ### next_reviewer_action
-N/A — review complete (PASS).
+N/A — no active command.
 
 ### session_limit_note
-Build complete. OWNER_APPROVED. Session ended normally.
+Phase 0.14 CLOSED (commit 7305acb). Session ended normally.
 
 ### owner_approval_needed
-false — Owner has approved CMD-0.14-001. Commit gate is next.
+false — CMD-0.14-001 is CLOSED. No approval gate remaining.
 
 ---
 

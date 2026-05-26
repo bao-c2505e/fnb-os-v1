@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.14 — REVIEW_REQUESTED — CMD-0.14-001 awaiting Codex review
+## CURRENT STATE: Phase 0.14 — CLOSED (commit 7305acb)
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
@@ -23,10 +23,8 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 0.11:** CLOSED (commit bbda9d1)
 **Phase 0.12:** CLOSED (commit 36fcfe)
 **Phase 0.13:** CLOSED (commit c014a25)
-**Current command:** CMD-0.14-001
-**Current status:** REVIEW_REQUESTED
-
-Nothing in Phase 1 or beyond should start until CMD-0.14-001 is CLOSED.
+**Phase 0.14:** CLOSED (commit 7305acb)
+**Current command:** None — no active command
 
 ---
 

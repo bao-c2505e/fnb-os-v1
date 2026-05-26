@@ -18,14 +18,14 @@ Last Updated: 2026-05-27 by Claude Code (Builder — CLOSE_APPROVED_COMMAND)
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | c014a25 — feat(phase-0.13): add session handoff shortcut |
+| Latest Commit | 7305acb — chore(phase-0.14): close repo status smoke test |
 | Working Tree | CLEAN (post-commit; CLOSE_APPROVED_COMMAND state files pending commit) |
 
 ## Review & Approval State
 
 | Check | State |
 |-------|-------|
-| Review result | CLOSED (CMD-0.13-001, commit c014a25) |
+| Review result | CLOSED (CMD-0.14-001, commit 7305acb) |
 | Owner approval | CLOSED |
 
 ## Blockers
@@ -36,10 +36,10 @@ None.
 
 | Role | Next Action |
 |------|-------------|
-| Owner | Commit CLOSE_APPROVED_COMMAND state files and push (see NEXT_ACTIONS.md Step 1) |
+| Owner | Commit CLOSE_APPROVED_COMMAND state files and push |
 | Builder | N/A — no active command |
 | Reviewer | N/A — no active command |
-| ChatGPT | Open next phase via `commands/COMMAND_INBOX.md` after Owner commit |
+| ChatGPT | Open next phase via `commands/COMMAND_INBOX.md` |
 
 ---
 *Written by CLOSE_APPROVED_COMMAND. Do not edit manually.*
