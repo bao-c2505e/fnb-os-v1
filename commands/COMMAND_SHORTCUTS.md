@@ -1,11 +1,32 @@
 # Command Execution Shortcuts
 
 Created By: Claude Code (Builder) — 2026-05-26
-Phase: 0.9
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10 — Active Command Inference added)
+Phase: 0.10
 
 Shortcuts replace the need to write or paste long role-specific prompts. Each shortcut maps to a named set of actions an agent must perform. Owner pastes the shortcut token; the agent resolves it against the active command in `commands/COMMAND_INBOX.md`.
 
 Routing rules for shortcuts: `commands/COMMAND_ROUTING_RULES.md` → Shortcut Routing section.
+Inference algorithm detail: `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md`.
+
+---
+
+## Active Command Inference
+
+When an agent receives a shortcut token and no other context, it identifies the active command using this algorithm:
+
+1. Open `commands/COMMAND_INBOX.md`.
+2. Scan records from top to bottom.
+3. Find the **first record that is NOT a CLOSED stub** (a CLOSED stub has `status: CLOSED` or `**CLOSED**`).
+4. Read that record's `status` field.
+5. Check: does the status match the shortcut's required trigger status? (See Shortcut Quick-Reference table below.)
+6. If YES → this is the active command. Read all fields and proceed.
+7. If NO → report the mismatch to Owner: `"Found [CMD-ID] with status [actual], but [SHORTCUT] requires [expected]."` Do not proceed.
+8. Verify `assigned_builder` or `assigned_reviewer` matches your own agent identity. If mismatch → `ROLE_CONFLICT` → stop and report.
+9. Read `scope_files`, `forbidden_actions`, `acceptance_criteria` from the active command.
+10. Execute the shortcut action list.
+
+**Why this works:** `COMMAND_INBOX.md` is maintained with new commands at the top and CLOSED stubs below. The first non-CLOSED record is always the most recent active command — no ID lookup required.
 
 ---
 
@@ -143,6 +164,58 @@ Recent CLOSED:
 ```
 
 This shortcut makes no file changes and does not move any status.
+
+---
+
+## Owner Usage Examples
+
+### Starting a Builder session
+
+Owner opens a chat with Claude Code and types:
+
+```
+RUN_CURRENT_COMMAND
+```
+
+Claude Code:
+1. Reads `commands/CURRENT_COMMAND.md` or scans `commands/COMMAND_INBOX.md` (first non-CLOSED record)
+2. Finds CMD-0.10-001, status ASSIGNED, assigned_builder: Claude Code
+3. Announces scope lock
+4. Executes acceptance_criteria within scope_files
+5. Ends with: `READY FOR CODEX REVIEW`
+
+No phase number. No command ID. No context paste. One line.
+
+---
+
+### Starting a Reviewer session
+
+Owner opens a chat with Codex and types:
+
+```
+REVIEW_CURRENT_COMMAND
+```
+
+Codex:
+1. Reads `commands/CURRENT_COMMAND.md` or scans `commands/COMMAND_INBOX.md` (first non-CLOSED record)
+2. Finds CMD-0.10-001, status REVIEW_REQUESTED, assigned_reviewer: Codex
+3. Reads all output_required files
+4. Evaluates each acceptance_criteria
+5. Ends with: `REVIEW RESULT: PASS` / `PASS_WITH_NOTES` / `FAIL`
+
+No instructions needed. One line.
+
+---
+
+### Checking current status
+
+Owner (or any agent) types:
+
+```
+SHOW_CURRENT_STATUS
+```
+
+Agent reads `commands/CURRENT_COMMAND.md` → outputs structured summary block. No file changes.
 
 ---
 

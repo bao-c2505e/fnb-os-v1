@@ -31,7 +31,7 @@ Rules:
 | `assigned_builder` | Claude Code |
 | `assigned_reviewer` | Codex |
 | `priority` | high |
-| `status` | REVIEW_REQUESTED |
+| `status` | OWNER_APPROVED |
 | `review_required` | true |
 | `approval_required` | true |
 | `handoff_required` | true |

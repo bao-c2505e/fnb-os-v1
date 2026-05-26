@@ -1,8 +1,8 @@
 # Reviewer Protocol — Codex
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9 — REVIEW_CURRENT_COMMAND reference added)
-Phase: 0.9
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10 — Active Command Inference reference added)
+Phase: 0.10
 
 This protocol applies exclusively to Codex acting as Reviewer.
 Read `agents/AGENT_RUN_PROTOCOL.md` first — this document adds Reviewer-specific steps only.
@@ -11,7 +11,7 @@ Read `agents/AGENT_RUN_PROTOCOL.md` first — this document adds Reviewer-specif
 
 ## Identity Check
 
-> **Shortcut:** If Owner passed `REVIEW_CURRENT_COMMAND`, this is your entry point. Resolve the shortcut against `commands/COMMAND_SHORTCUTS.md` and follow the action list there. The steps below are the full expanded form.
+> **Shortcut:** If Owner passed `REVIEW_CURRENT_COMMAND`, this is your entry point. First apply the **Active Command Inference** algorithm: open `commands/COMMAND_INBOX.md`, scan top to bottom, find the first non-CLOSED record. Verify its status is `REVIEW_REQUESTED` and `assigned_reviewer: Codex`. Full inference spec: `commands/COMMAND_SHORTCUTS.md` → Active Command Inference.
 
 Before starting any review session, confirm:
 
@@ -117,6 +117,22 @@ Safety check: PASS / FAIL
 
 ---
 
+## Step 6b — Importability Check (when scope includes n8n workflow JSONs)
+
+If any file in `scope_files` is an n8n workflow JSON (in `n8n/` or matching `*.workflow.json`):
+
+- Confirm `"active": false` in each workflow JSON.
+- Confirm the JSON is valid (no unclosed braces, no truncated content).
+- Confirm no hardcoded credential values inside the JSON — credential references must use name-only format (`"name": "Service - FNB OS V1"`), not inline keys.
+- Confirm no production URLs hardcoded in node parameters.
+
+```
+Importability check: PASS / SKIP (no workflow JSONs in scope) / FAIL
+[If FAIL: file name and issue]
+```
+
+---
+
 ## Step 7 — Mandatory Review Output
 
 End every Reviewer session with this exact structure:
@@ -126,8 +142,17 @@ End every Reviewer session with this exact structure:
 ```
 or
 ```
+## REVIEW RESULT: PASS_WITH_NOTES
+```
+or
+```
 ## REVIEW RESULT: FAIL
 ```
+
+**Result definitions:**
+- `PASS` — all acceptance criteria met, no issues found.
+- `PASS_WITH_NOTES` — all acceptance criteria met; minor observations noted that are non-blocking (e.g. style inconsistency, suggested improvement). Owner may approve without requiring a fix.
+- `FAIL` — one or more acceptance criteria not met. Builder must fix and re-submit.
 
 Followed by:
 
@@ -148,11 +173,17 @@ Result: PASS / FAIL
 ### Safety Check
 Result: PASS / FAIL
 
+### Importability Check
+Result: PASS / SKIP / FAIL
+
+### Notes (PASS_WITH_NOTES only)
+[List non-blocking observations]
+
 ### Summary
 [2–3 sentences]
 ```
 
-If PASS:
+If PASS or PASS_WITH_NOTES:
 ```
 OWNER CAN APPROVE
 Next: Owner moves CMD-[PHASE]-[SEQ] to OWNER_APPROVED, then commits.
@@ -173,8 +204,8 @@ Builder must fix and re-submit to REVIEW_REQUESTED.
 
 | From | To | Condition |
 |------|----|-----------|
-| `REVIEW_REQUESTED` | `REVIEW_PASS` | All checks pass |
-| `REVIEW_REQUESTED` | `REVIEW_FAIL` | Any check fails |
+| `REVIEW_REQUESTED` | `REVIEW_PASS` | All checks pass (PASS or PASS_WITH_NOTES) |
+| `REVIEW_REQUESTED` | `REVIEW_FAIL` | Any acceptance criterion fails |
 
 The Reviewer must NOT move status to `OWNER_APPROVED` or `CLOSED` — those belong to Owner.
 The Reviewer must NOT move status to `IN_PROGRESS` or `BUILDER_DONE` — those belong to Builder.

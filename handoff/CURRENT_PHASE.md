@@ -8,12 +8,12 @@ Phase 0.10 — One-Line Agent Commands
 
 ## Status
 
-**REVIEW_REQUESTED**
+**OWNER_APPROVED**
 
 ## Current Command
 
 **CMD-0.10-001** — Phase 0.10, One-Line Agent Commands
-Status: `REVIEW_REQUESTED`
+Status: `OWNER_APPROVED`
 See full record: `commands/COMMAND_INBOX.md` → CMD-0.10-001 section
 Quick view: `commands/CURRENT_COMMAND.md`
 
@@ -27,11 +27,8 @@ Codex / GPT-4o (AGT-04)
 
 ## Next Gate
 
-Codex reviews CMD-0.10-001 using shortcut `REVIEW_CURRENT_COMMAND`.
-Read `commands/CURRENT_COMMAND.md` for active command summary, then `commands/COMMAND_INBOX.md` for full acceptance criteria.
-
-If REVIEW_PASS or REVIEW_PASS_WITH_NOTES → Owner approves → Owner commits → ChatGPT opens next phase.
-
+Owner: run git commit + git push, then mark CMD-0.10-001 → `CLOSED` with commit hash.
+After CLOSED: ChatGPT opens next phase.
 ## Phase 0.10 Files
 
 | File | Status |

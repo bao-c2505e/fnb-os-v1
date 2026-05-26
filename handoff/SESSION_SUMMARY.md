@@ -29,13 +29,13 @@ Builder (Claude Code)
 - Usage examples are in COMMAND_SHORTCUTS.md (not a separate file) to keep them discoverable alongside the shortcut definitions.
 
 ### open_issues
-None. All Phase 0.10 acceptance criteria met.
+None. Phase 0.10 OWNER_APPROVED. Awaiting Owner commit/push.
 
 ### next_agent_action
-Codex: use shortcut `REVIEW_CURRENT_COMMAND`. Read `commands/CURRENT_COMMAND.md` first (active command pointer), then `commands/COMMAND_INBOX.md` → CMD-0.10-001 for full acceptance criteria. Review result options: PASS, PASS_WITH_NOTES, or FAIL.
+Owner: run git commit + git push for Phase 0.10. Then mark CMD-0.10-001 → CLOSED with commit hash in COMMAND_STATUS.md and COMMAND_INBOX.md.
 
 ### owner_approval_needed
-true — Owner must approve CMD-0.10-001 after Codex REVIEW_PASS or REVIEW_PASS_WITH_NOTES before commit.
+false — Owner has approved CMD-0.10-001. Commit gate is next.
 
 ---
 

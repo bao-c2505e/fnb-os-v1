@@ -1,8 +1,8 @@
 # Command Routing Rules
 
 Created By: Claude Code (Builder) — 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.9 — Shortcut Routing added)
-Phase: 0.9
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.10 — Active Command Inference added)
+Phase: 0.10
 
 This document defines how commands are routed to agents, what each agent may do, and what error conditions require a stop.
 
@@ -137,6 +137,26 @@ A command is complete (`CLOSED`) when ALL of the following are true:
 | No secrets in any changed file | Reviewer confirmed in secret scan |
 
 If any condition is unmet → command is not closed.
+
+---
+
+## Active Command Inference
+
+When an agent receives only a shortcut token (no command ID, no phase number), it identifies the active command using this rule:
+
+**Scan `commands/COMMAND_INBOX.md` top to bottom. The first record that is NOT a CLOSED stub is the active command.**
+
+A CLOSED stub is identifiable by `status: CLOSED` or `**CLOSED**` in its metadata table.
+
+If the active command's status does not match the shortcut's required trigger status, the agent must NOT proceed. Instead, report the mismatch:
+```
+"Found [CMD-ID] with status [actual status], but [SHORTCUT] requires [expected status]."
+```
+
+If `assigned_builder` or `assigned_reviewer` does not match the calling agent's identity:
+→ `ROLE_CONFLICT` → stop, report to Owner.
+
+Full inference algorithm with examples: `docs/phase-0/PHASE_0_10_ONE_LINE_AGENT_COMMANDS.md`.
 
 ---
 
