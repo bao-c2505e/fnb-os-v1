@@ -342,6 +342,20 @@ No secrets added. No GitHub API called. No workflows activated. No Phase 1 actio
 
 ---
 
+### 2026-05-27 — Phase 0.12 — CLOSED
+
+**By:** Owner
+**Status:** CLOSED
+**Detail:**
+CMD-0.12-001 committed and pushed as 36fcfe (feat(phase-0.12): add status snapshot shortcut).
+CLOSE_APPROVED_COMMAND executed by Claude Code (Builder): CMD-0.12-001 collapsed to CLOSED stub in
+COMMAND_INBOX.md; COMMAND_STATUS.md, CURRENT_COMMAND.md, CURRENT_PHASE.md, SESSION_SUMMARY.md,
+NEXT_ACTIONS.md, CURRENT_STATUS.md, AGENT_ACTIVITY_LOG.md all updated to reflect CLOSED state.
+Phase 0.12 is complete. SHOW_CURRENT_STATUS now writes logs/CURRENT_STATUS.md with a persistent
+overwrite-safe snapshot. No active command. ChatGPT to open next phase.
+
+---
+
 ### 2026-05-26 — Phase 0.12 — Owner Approved
 
 **By:** Owner

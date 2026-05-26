@@ -1,6 +1,6 @@
 # Current Status — FnB OS V1
 
-Last Updated: 2026-05-26 by Claude Code (Builder — APPROVE_CURRENT_PHASE)
+Last Updated: 2026-05-27 by Claude Code (Builder — CLOSE_APPROVED_COMMAND)
 
 ---
 
@@ -8,25 +8,25 @@ Last Updated: 2026-05-26 by Claude Code (Builder — APPROVE_CURRENT_PHASE)
 
 | Field | Value |
 |-------|-------|
-| Phase | 0.12 — Status Snapshot Shortcut |
-| Command ID | CMD-0.12-001 |
-| Status | OWNER_APPROVED |
-| Builder | Claude Code |
-| Reviewer | Codex |
+| Phase | — |
+| Command ID | — |
+| Status | No active command |
+| Builder | — |
+| Reviewer | — |
 
 ## Commit State
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | bbda9d1 — feat(phase-0.11): add owner approval shortcut |
-| Working Tree | NOT CLEAN — 10 modified, 2 untracked (Phase 0.12 scope files approved, awaiting Owner commit) |
+| Latest Commit | 36fcfe — feat(phase-0.12): add status snapshot shortcut |
+| Working Tree | CLEAN (post-commit; CLOSE_APPROVED_COMMAND state files pending commit) |
 
 ## Review & Approval State
 
 | Check | State |
 |-------|-------|
-| Review result | REVIEW_PASS (Codex — OWNER CAN APPROVE) |
-| Owner approval | OWNER_APPROVED |
+| Review result | CLOSED (CMD-0.12-001, commit 36fcfe) |
+| Owner approval | CLOSED |
 
 ## Blockers
 
@@ -36,18 +36,11 @@ None.
 
 | Role | Next Action |
 |------|-------------|
-| Owner | Run git commit + git push (see recommended command below), then run `CLOSE_APPROVED_COMMAND` with commit hash |
-| Builder | N/A — awaiting Owner commit |
-| Reviewer | N/A — review complete (PASS) |
-
-## Recommended Commit Command
-
-```
-git add docs/phase-0/PHASE_0_12_STATUS_SNAPSHOT_SHORTCUT.md commands/COMMAND_SHORTCUTS.md commands/COMMAND_ROUTING_RULES.md logs/CURRENT_STATUS.md commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/CURRENT_PHASE.md handoff/SESSION_SUMMARY.md 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md logs/AGENT_ACTIVITY_LOG.md
-git commit -m "feat(phase-0.12): add status snapshot shortcut"
-git push
-```
+| Owner | Commit CLOSE_APPROVED_COMMAND state files (COMMAND_INBOX, COMMAND_STATUS, CURRENT_COMMAND, CURRENT_PHASE, SESSION_SUMMARY, NEXT_ACTIONS, PHASE_LOG, AGENT_ACTIVITY_LOG, CURRENT_STATUS), then push |
+| Builder | N/A — no active command |
+| Reviewer | N/A — no active command |
+| ChatGPT | Open next phase via `commands/COMMAND_INBOX.md` using `commands/COMMAND_TEMPLATE.md` |
 
 ---
-*Written by SHOW_CURRENT_STATUS / APPROVE_CURRENT_PHASE. Do not edit manually.*
+*Written by SHOW_CURRENT_STATUS / CLOSE_APPROVED_COMMAND. Do not edit manually.*
 *Sources: handoff/CURRENT_PHASE.md · commands/COMMAND_INBOX.md · commands/COMMAND_STATUS.md · handoff/SESSION_SUMMARY.md*

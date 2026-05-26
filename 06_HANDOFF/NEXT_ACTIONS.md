@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.12 — REVIEW_REQUESTED, pending Codex review
+## CURRENT STATE: Phase 0.12 — CLOSED (commit 36fcfe)
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
@@ -21,53 +21,26 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 0.9:** CLOSED (commit fd9c750)
 **Phase 0.10:** CLOSED (commit 7498c73)
 **Phase 0.11:** CLOSED (commit bbda9d1)
-**Current command:** CMD-0.12-001
-**Current status:** REVIEW_REQUESTED
-
-Nothing in Phase 1 or beyond should start until CMD-0.12-001 is CLOSED.
+**Phase 0.12:** CLOSED (commit 36fcfe)
+**Current command:** None — no active command
 
 ---
 
-## 🟠 HIGH — Phase 0.12 Gate (must complete in order)
+## 🟠 HIGH — Next Phase Gate
 
-### Step 1 — Codex: Review CMD-0.12-001
-
-Use shortcut `REVIEW_CURRENT_COMMAND`.
-Read `commands/CURRENT_COMMAND.md` first (active command pointer), then `commands/COMMAND_INBOX.md` → CMD-0.12-001 for full scope_files and acceptance criteria.
-
-Files to review (from CMD-0.12-001 scope_files):
-
-1. `docs/phase-0/PHASE_0_12_STATUS_SNAPSHOT_SHORTCUT.md` — problem, spec, snapshot format, guardrails
-2. `commands/COMMAND_SHORTCUTS.md` — SHOW_CURRENT_STATUS expanded action list + snapshot format + guardrails
-3. `commands/COMMAND_ROUTING_RULES.md` — SHOW_CURRENT_STATUS file-write rule added
-4. `logs/CURRENT_STATUS.md` — initial snapshot for Phase 0.12
-
-Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.12-001.
-
-If REVIEW_PASS or REVIEW_PASS_WITH_NOTES → Owner types `APPROVE_CURRENT_PHASE`.
-If REVIEW_FAIL → record reason → return to Builder.
-
-### Step 2 — Owner: Approve CMD-0.12-001
-
-After Codex REVIEW_PASS on CMD-0.12-001:
-- Type `APPROVE_CURRENT_PHASE` → Claude Code updates status files and outputs commit command.
-
-### Step 3 — Owner: Commit CMD-0.12-001
-
-After CMD-0.12-001 status = `OWNER_APPROVED`:
+### Step 1 — Owner: Commit CLOSE_APPROVED_COMMAND state files
 
 ```
-git add docs/phase-0/PHASE_0_12_STATUS_SNAPSHOT_SHORTCUT.md commands/COMMAND_SHORTCUTS.md commands/COMMAND_ROUTING_RULES.md logs/CURRENT_STATUS.md commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/ logs/AGENT_ACTIVITY_LOG.md 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md
-git commit -m "feat(phase-0.12): add status snapshot shortcut"
+git add commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/CURRENT_PHASE.md handoff/SESSION_SUMMARY.md 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md logs/AGENT_ACTIVITY_LOG.md logs/CURRENT_STATUS.md
+git commit -m "chore: close CMD-0.12-001 state files"
 git push
 ```
 
-Then run `CLOSE_APPROVED_COMMAND` with commit hash.
+### Step 2 — ChatGPT: Open next phase
 
-### Step 4 — ChatGPT: Open next phase
-
-Only after Phase 0.12 commit confirmed in git log.
 Issue next command via `commands/COMMAND_INBOX.md`.
+Use `commands/COMMAND_TEMPLATE.md` to author the command.
+Assign Builder: Claude Code.
 
 ---
 
