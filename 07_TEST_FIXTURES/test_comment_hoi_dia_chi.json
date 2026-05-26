@@ -1,0 +1,9 @@
+{
+  "comment_id": "TEST-CMT-001",
+  "platform": "facebook",
+  "comment_text": "Bạn ơi cho mình hỏi quán ở đâu vậy? Có gần quận 1 không?",
+  "commenter_name": "Lan Anh",
+  "post_context": "Food photo post of Cuốn Tươi with caption about fresh ingredients",
+  "timestamp": "2026-06-01T11:30:00+07:00",
+  "_test_note": "TEST FIXTURE — simulates location inquiry comment. Expected output: category=location, sentiment=neutral, auto_post_safe=true, escalation_flag=false"
+}

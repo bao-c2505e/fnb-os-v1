@@ -1,0 +1,20 @@
+{
+  "campaign_id": "VQ-CAMP-TEST-001",
+  "name": "Combo Trưa Thứ 2-6",
+  "type": "content",
+  "status": "new",
+  "start_date": "2026-06-01",
+  "end_date": "2026-06-30",
+  "target_segment": "office_workers",
+  "dish_name": "Combo Trưa Cuốn Tươi",
+  "offer": "Combo 2 cuốn tươi + nước suối giá ưu đãi chỉ [FILL: price]đ",
+  "platforms": ["facebook", "zalo"],
+  "budget_placeholder": "[PLACEHOLDER — set by user before activation]",
+  "content_pack_ids": [],
+  "design_brief_ids": [],
+  "ads_pack_ids": [],
+  "notes": "TEST FIXTURE — do not use in production. Simulates standard weekday lunch campaign.",
+  "created_at": "2026-05-26T09:00:00+07:00",
+  "updated_at": "2026-05-26T09:00:00+07:00",
+  "created_by": "Claude Code (Builder) — TEST FIXTURE"
+}

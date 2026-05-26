@@ -1,0 +1,9 @@
+{
+  "comment_id": "TEST-CMT-002",
+  "platform": "facebook",
+  "comment_text": "Giá combo trưa bao nhiêu vậy shop? Có rẻ không?",
+  "commenter_name": "Minh Tuấn",
+  "post_context": "Promotion post for Combo Trưa lunch deal",
+  "timestamp": "2026-06-01T12:00:00+07:00",
+  "_test_note": "TEST FIXTURE — simulates price inquiry. Expected output: category=price, sentiment=neutral, auto_post_safe=true, escalation_flag=false"
+}

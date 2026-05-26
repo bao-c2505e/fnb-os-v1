@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema_version": "0.1.0",
+  "title": "ApprovalRequest",
+  "description": "An approval request sent to Telegram",
+  "type": "object",
+  "required": [
+    "approval_id",
+    "object_type",
+    "object_id",
+    "preview_text",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "approval_id": {
+      "type": "string",
+      "description": "Format: VQ-APR-[YYYYMMDD]-[SEQ]"
+    },
+    "object_type": {
+      "type": "string",
+      "enum": ["content_pack", "design_brief", "ads_pack", "crm_message", "comment_reply", "escalation"]
+    },
+    "object_id": {
+      "type": "string",
+      "description": "ID of the object being approved"
+    },
+    "preview_text": {
+      "type": "string",
+      "description": "Short human-readable preview for Telegram message"
+    },
+    "telegram_message_id": {
+      "type": ["string", "null"],
+      "description": "Telegram message ID once sent"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "approved", "rejected", "edited", "timeout", "escalated"]
+    },
+    "reviewer_notes": {
+      "type": ["string", "null"],
+      "description": "Notes from human reviewer"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "responded_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "timeout_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this approval request expires"
+    }
+  },
+  "additionalProperties": false
+}

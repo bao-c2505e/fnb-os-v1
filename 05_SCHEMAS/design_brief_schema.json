@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema_version": "0.1.0",
+  "title": "DesignBrief",
+  "description": "A creative design brief for Vị Cuốn visuals",
+  "type": "object",
+  "required": [
+    "design_brief_id",
+    "campaign_id",
+    "format",
+    "dimensions",
+    "hero_element",
+    "ai_generation_prompt",
+    "confidence_score",
+    "requires_human_review",
+    "generated_at"
+  ],
+  "properties": {
+    "design_brief_id": {
+      "type": "string",
+      "description": "Format: VQ-DB-[YYYYMMDD]-[SEQ]"
+    },
+    "campaign_id": { "type": "string" },
+    "content_pack_id": { "type": ["string", "null"] },
+    "format": {
+      "type": "string",
+      "enum": ["feed_square", "feed_portrait", "story", "cover", "thumbnail", "banner"]
+    },
+    "dimensions": {
+      "type": "string",
+      "description": "e.g., 1080x1080px"
+    },
+    "hero_element": {
+      "type": "string",
+      "description": "Main visual subject"
+    },
+    "background": { "type": "string" },
+    "lighting": { "type": "string" },
+    "props": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "color_palette": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "typography_notes": { "type": "string" },
+    "text_overlay": { "type": ["string", "null"] },
+    "logo_placement": { "type": "string" },
+    "mood_keywords": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "ai_generation_prompt": {
+      "type": "string",
+      "description": "Self-contained prompt for Midjourney/DALL-E"
+    },
+    "designer_notes": { "type": "string" },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "requires_human_review": { "type": "boolean" },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "approved", "rejected", "in_production", "delivered"]
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

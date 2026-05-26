@@ -1,0 +1,47 @@
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+
+# Service account keys
+*.json.key
+service-account-*.json
+*-credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+/tmp/
+/temp/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# n8n exports with embedded credentials
+*_with_credentials.json
+
+# Claude Code local settings (machine-specific, not for repo)
+.claude/settings.local.json

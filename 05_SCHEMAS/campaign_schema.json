@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema_version": "0.1.0",
+  "title": "Campaign",
+  "description": "A marketing campaign for Vị Cuốn",
+  "type": "object",
+  "required": [
+    "campaign_id",
+    "name",
+    "type",
+    "status",
+    "start_date",
+    "end_date",
+    "target_segment",
+    "created_at"
+  ],
+  "properties": {
+    "campaign_id": {
+      "type": "string",
+      "description": "Unique ID. Format: VQ-CAMP-[YYYYMMDD]-[SEQ]",
+      "example": "VQ-CAMP-20260601-001"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable campaign name"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["content", "ads", "crm", "combo", "event", "seasonal"],
+      "description": "Campaign type"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["new", "in_progress", "approved", "scheduled", "active", "completed", "cancelled"],
+      "default": "new"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "YYYY-MM-DD"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "YYYY-MM-DD"
+    },
+    "target_segment": {
+      "type": "string",
+      "enum": ["office_workers", "families", "students", "health_conscious", "all"],
+      "description": "Primary customer segment"
+    },
+    "dish_name": {
+      "type": "string",
+      "description": "Featured dish or product (optional)"
+    },
+    "offer": {
+      "type": "string",
+      "description": "Promotional offer description (optional)"
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["facebook", "tiktok", "instagram", "zalo"]
+      },
+      "description": "Target platforms"
+    },
+    "budget_placeholder": {
+      "type": "string",
+      "description": "Budget note — PLACEHOLDER ONLY, not a real number"
+    },
+    "content_pack_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Linked content pack IDs"
+    },
+    "design_brief_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "ads_pack_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Agent or user who created this"
+    }
+  },
+  "additionalProperties": false
+}

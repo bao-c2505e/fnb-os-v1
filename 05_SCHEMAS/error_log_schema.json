@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema_version": "0.1.0",
+  "title": "ErrorLog",
+  "description": "Structured error log entry for FnB OS V1",
+  "type": "object",
+  "required": [
+    "error_id",
+    "workflow_id",
+    "agent",
+    "error_code",
+    "error_message",
+    "severity",
+    "status",
+    "occurred_at"
+  ],
+  "properties": {
+    "error_id": {
+      "type": "string",
+      "description": "Format: VQ-ERR-[YYYYMMDD]-[SEQ]"
+    },
+    "workflow_id": { "type": "string" },
+    "agent": {
+      "type": "string",
+      "description": "Agent or system that produced the error"
+    },
+    "error_code": {
+      "type": "string",
+      "description": "Short code, e.g., SHEETS_WRITE_FAIL, API_TIMEOUT"
+    },
+    "error_message": {
+      "type": "string",
+      "description": "Full error message"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "context": {
+      "type": "object",
+      "description": "Additional context data (object IDs, input data, etc.)",
+      "additionalProperties": true
+    },
+    "suggested_action": {
+      "type": "string",
+      "description": "What the orchestrator should do next"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "in_review", "resolved", "ignored"]
+    },
+    "resolved_by": { "type": ["string", "null"] },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "resolved_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

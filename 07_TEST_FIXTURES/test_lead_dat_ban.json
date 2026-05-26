@@ -1,0 +1,15 @@
+{
+  "comment_id": "TEST-CMT-003",
+  "platform": "zalo",
+  "comment_text": "Cho mình đặt bàn trước cho 4 người tối thứ 6 được không? Khoảng 6 giờ tối.",
+  "commenter_name": "Khách A",
+  "post_context": "Zalo OA message inbox",
+  "timestamp": "2026-06-04T14:00:00+07:00",
+  "_crm_context": {
+    "customer_id": "TEST-CUST-001",
+    "segment": "new",
+    "total_orders": 0,
+    "channel": "zalo"
+  },
+  "_test_note": "TEST FIXTURE — simulates reservation request via Zalo. Expected output: category=other (reservation), escalation_flag=false, requires_human_review=true (reservations need human confirmation)"
+}

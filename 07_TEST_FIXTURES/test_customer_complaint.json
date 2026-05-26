@@ -1,0 +1,9 @@
+{
+  "comment_id": "TEST-CMT-004",
+  "platform": "facebook",
+  "comment_text": "Mình đặt hàng lúc 12h mà giờ 1h rồi vẫn chưa nhận được. Gọi điện không ai bắt máy. Quán thế này thì không đến nữa rồi!!",
+  "commenter_name": "Hải Đăng",
+  "post_context": "General brand post",
+  "timestamp": "2026-06-02T13:05:00+07:00",
+  "_test_note": "TEST FIXTURE — simulates delivery complaint. Expected output: category=complaint, sentiment=negative, escalation_flag=true, auto_post_safe=false, requires_human_review=true. This should NEVER auto-post."
+}
