@@ -47,7 +47,7 @@ NEW
 
 | Command ID | Phase | Builder | Reviewer | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| CMD-0.13-001 | 0.13 | Claude Code | Codex | high | OWNER_APPROVED |
+| CMD-0.13-001 | 0.13 | Claude Code | Codex | high | CLOSED (commit c014a25) |
 | CMD-0.12-001 | 0.12 | Claude Code | Codex | high | CLOSED (commit 36fcfe) |
 | CMD-0.11-001 | 0.11 | Claude Code | Codex | high | CLOSED (commit bbda9d1) |
 | CMD-0.10-001 | 0.10 | Claude Code | Codex | high | CLOSED (commit 7498c73) |

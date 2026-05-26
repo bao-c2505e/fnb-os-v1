@@ -12,20 +12,14 @@ instead of scanning the full COMMAND_INBOX.md.
 
 ## Active Command
 
-| Field | Value |
-|-------|-------|
-| `command_id` | CMD-0.13-001 |
-| `phase` | 0.13 — Session Handoff Shortcut |
-| `objective` | Add CREATE_SESSION_HANDOFF shortcut — cross-session handoff package writing 4 state files |
-| `status` | OWNER_APPROVED |
-| `assigned_builder` | Claude Code |
-| `assigned_reviewer` | Codex |
-| `priority` | high |
+No active command.
+
+CMD-0.13-001 is CLOSED (commit c014a25). Phase 0.13 complete.
 
 ## Next Gate
 
-Owner: run git commit + git push, then run `CLOSE_APPROVED_COMMAND` with the commit hash.
-Full command record: `commands/COMMAND_INBOX.md` → CMD-0.13-001.
+ChatGPT (Chief Architect): open Phase 0.14 or next phase via `commands/COMMAND_INBOX.md`.
+Use `commands/COMMAND_TEMPLATE.md` to author the next command.
 
 ---
 

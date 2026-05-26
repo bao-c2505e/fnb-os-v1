@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.13 — REVIEW_REQUESTED — CMD-0.13-001 awaiting Codex review
+## CURRENT STATE: Phase 0.13 — CLOSED (commit c014a25)
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
@@ -22,52 +22,26 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 0.10:** CLOSED (commit 7498c73)
 **Phase 0.11:** CLOSED (commit bbda9d1)
 **Phase 0.12:** CLOSED (commit 36fcfe)
-**Current command:** CMD-0.13-001
-**Current status:** REVIEW_REQUESTED
-
-Nothing in Phase 1 or beyond should start until CMD-0.13-001 is CLOSED.
+**Phase 0.13:** CLOSED (commit c014a25)
+**Current command:** None — no active command
 
 ---
 
-## 🟠 HIGH — Phase 0.13 Gate (must complete in order)
+## 🟠 HIGH — Next Phase Gate
 
-### Step 1 — Codex: Review CMD-0.13-001
-
-Use shortcut `REVIEW_CURRENT_COMMAND`.
-Read `commands/CURRENT_COMMAND.md` first (active command pointer), then `commands/COMMAND_INBOX.md` → CMD-0.13-001 for full scope_files and acceptance criteria.
-
-Files to review (from CMD-0.13-001 scope_files):
-
-1. `docs/phase-0/PHASE_0_13_SESSION_HANDOFF_SHORTCUT.md` — problem, before/after, spec, guardrails
-2. `commands/COMMAND_SHORTCUTS.md` — CREATE_SESSION_HANDOFF definition + Quick-Reference table (8 shortcuts)
-3. `commands/COMMAND_ROUTING_RULES.md` — Shortcut Role Gate row + file-write rule
-
-Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.13-001.
-
-If REVIEW_PASS or REVIEW_PASS_WITH_NOTES → Owner types `APPROVE_CURRENT_PHASE`.
-If REVIEW_FAIL → record reason → return to Builder.
-
-### Step 2 — Owner: Approve CMD-0.13-001
-
-After Codex REVIEW_PASS:
-- Type `APPROVE_CURRENT_PHASE` → Claude Code updates status files and outputs commit command.
-
-### Step 3 — Owner: Commit CMD-0.13-001
-
-After CMD-0.13-001 status = `OWNER_APPROVED`:
+### Step 1 — Owner: Commit CLOSE_APPROVED_COMMAND state files
 
 ```
-git add docs/phase-0/PHASE_0_13_SESSION_HANDOFF_SHORTCUT.md commands/COMMAND_SHORTCUTS.md commands/COMMAND_ROUTING_RULES.md commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/CURRENT_PHASE.md handoff/SESSION_SUMMARY.md 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md logs/AGENT_ACTIVITY_LOG.md
-git commit -m "feat(phase-0.13): add session handoff shortcut"
+git add commands/COMMAND_INBOX.md commands/COMMAND_STATUS.md commands/CURRENT_COMMAND.md handoff/CURRENT_PHASE.md handoff/SESSION_SUMMARY.md 06_HANDOFF/NEXT_ACTIONS.md 09_LOGS/PHASE_LOG.md logs/AGENT_ACTIVITY_LOG.md logs/CURRENT_STATUS.md
+git commit -m "chore: close CMD-0.13-001 state files"
 git push
 ```
 
-Then run `CLOSE_APPROVED_COMMAND` with commit hash.
+### Step 2 — ChatGPT: Open next phase
 
-### Step 4 — ChatGPT: Open next phase
-
-Only after Phase 0.13 commit confirmed in git log.
 Issue next command via `commands/COMMAND_INBOX.md`.
+Use `commands/COMMAND_TEMPLATE.md` to author the command.
+Assign Builder: Claude Code.
 
 ---
 
