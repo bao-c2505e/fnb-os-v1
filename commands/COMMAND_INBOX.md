@@ -1,7 +1,7 @@
 # Command Inbox
 
 Created By: Codex (Reviewer) - 2026-05-26
-Updated By: Claude Code (Builder) - 2026-05-26
+Updated By: Claude Code (Builder) — 2026-05-26 (Phase 0.8)
 
 This is the canonical intake queue for commands from ChatGPT Chief Architect or Owner to Builder agents.
 
@@ -17,15 +17,15 @@ Rules:
 
 ---
 
-### CMD-0.7-001
+### CMD-0.8-001
 
 **Created By:** ChatGPT (Chief Architect) — 2026-05-26
-**Updated By:** Claude Code (Builder) — 2026-05-26 (REVIEW_FAIL fix: added command record)
+**Updated By:** Claude Code (Builder) — 2026-05-26
 
 | Field | Value |
 |-------|-------|
-| `command_id` | CMD-0.7-001 |
-| `phase` | 0.7 |
+| `command_id` | CMD-0.8-001 |
+| `phase` | 0.8 |
 | `created_by` | ChatGPT (Chief Architect) |
 | `assigned_builder` | Claude Code |
 | `assigned_reviewer` | Codex |
@@ -37,14 +37,15 @@ Rules:
 | `log_required` | true |
 
 **Owner Request:**
-Build the Agent Run Protocol — the operational layer that tells agents how to pick up a command, execute safely, log activity, produce a handoff, and stop correctly. Must cover Builder protocol, Reviewer protocol, session limit rule, and approval gate. No content to duplicate from Phase 0.5/0.6 infrastructure — cross-reference by path only.
+Build the GitHub Command Bridge — a protocol that lets Owner/ChatGPT issue structured commands via the repo or GitHub Issues, so agents read from a source of truth rather than from chat prompts. Must define two command modes (repo file vs. GitHub Issue), a GitHub Issue template, routing rules, and error conditions. No GitHub API calls in Phase 0.8 — design and templates only.
 
 **Scope Files:**
-- `agents/AGENT_RUN_PROTOCOL.md`
-- `agents/BUILDER_PROTOCOL.md`
-- `agents/REVIEWER_PROTOCOL.md`
-- `agents/SESSION_LIMIT_RULE.md`
-- `docs/phase-0/PHASE_0_7_AGENT_RUN_PROTOCOL.md`
+- `docs/phase-0/PHASE_0_8_GITHUB_COMMAND_BRIDGE.md`
+- `commands/GITHUB_COMMAND_BRIDGE.md`
+- `commands/GITHUB_ISSUE_COMMAND_TEMPLATE.md`
+- `commands/COMMAND_ROUTING_RULES.md`
+- `commands/COMMAND_INBOX.md`
+- `commands/COMMAND_STATUS.md`
 - `handoff/CURRENT_PHASE.md`
 - `handoff/SESSION_SUMMARY.md`
 - `06_HANDOFF/NEXT_ACTIONS.md`
@@ -57,21 +58,39 @@ Build the Agent Run Protocol — the operational layer that tells agents how to 
 - Do not auto-post, auto-reply to real users, activate n8n workflows, or run paid ads.
 - Do not modify files outside Scope Files.
 - Do not open Phase 1 or any subsequent phase.
+- Do not call the GitHub API — templates and protocol design only.
 
 **Acceptance Criteria:**
-- [ ] `agents/AGENT_RUN_PROTOCOL.md` covers: session start checklist, execution constraints, stop conditions, pre-BUILDER_DONE checklist, mandatory output format
-- [ ] `agents/BUILDER_PROTOCOL.md` covers: 7-step Builder workflow, scope lock, allowed/forbidden status transitions
-- [ ] `agents/REVIEWER_PROTOCOL.md` covers: 6 checks (acceptance criteria, scope, secrets, role conflict, safety), unambiguous PASS/FAIL output
-- [ ] `agents/SESSION_LIMIT_RULE.md` covers: 10-turn cap, turn 8 checkpoint, 7 required SESSION_SUMMARY fields, resume protocol
-- [ ] No content duplicated from Phase 0.5/0.6 infrastructure
+- [ ] `PHASE_0_8_GITHUB_COMMAND_BRIDGE.md` explains problem, objective, two modes, flow, and what is out of scope
+- [ ] `GITHUB_COMMAND_BRIDGE.md` defines mode decision guide, field mapping, status-to-label mapping, ownership rules, close conditions
+- [ ] `GITHUB_ISSUE_COMMAND_TEMPLATE.md` provides complete Issue template matching all command fields
+- [ ] `COMMAND_ROUTING_RULES.md` defines routing by agent, no-concurrent-edit rule, NEED_COMMAND_CLARIFICATION / SCOPE_CONFLICT / SECRET_RISK error conditions
+- [ ] CMD-0.8-001 created in COMMAND_INBOX.md and COMMAND_STATUS.md
 - [ ] Handoff and logs updated
-- [ ] No secrets in any Phase 0.7 file
+- [ ] No secrets in any Phase 0.8 file
 
 **Output Required:**
-- 4 protocol files under `agents/`
-- Phase doc under `docs/phase-0/`
+- 4 new files: PHASE_0_8 doc, GITHUB_COMMAND_BRIDGE, GITHUB_ISSUE_COMMAND_TEMPLATE, COMMAND_ROUTING_RULES
+- Updated COMMAND_INBOX.md and COMMAND_STATUS.md
 - Updated handoff, logs, and NEXT_ACTIONS
 - Final output ending with: `READY FOR CODEX REVIEW`
+
+---
+
+### CMD-0.7-001
+
+**Created By:** ChatGPT (Chief Architect) — 2026-05-26
+**Closed By:** Owner — 2026-05-26 (commit d4771a)
+
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-0.7-001 |
+| `phase` | 0.7 |
+| `status` | **CLOSED** |
+| `commit` | d4771a |
+
+*This command is closed. See `commands/COMMAND_STATUS.md` for history.*
+*Full record archived above for reference only — not an active command.*
 
 ---
 

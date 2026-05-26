@@ -13,56 +13,57 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 0.7 — REVIEW_REQUESTED, pending Codex review and Owner approval
+## CURRENT STATE: Phase 0.8 — REVIEW_REQUESTED, pending Codex review and Owner approval
 
 **Phase 0.6:** CLOSED (commit c20ca42)
-**Current command:** CMD-0.7-001
+**Phase 0.7:** CLOSED (commit d4771a)
+**Current command:** CMD-0.8-001
 **Current status:** REVIEW_REQUESTED
 
-Nothing in Phase 1 or beyond should start until CMD-0.7-001 is CLOSED.
+Nothing in Phase 1 or beyond should start until CMD-0.8-001 is CLOSED.
 
 ---
 
-## 🟠 HIGH — Phase 0.7 Gate (must complete in order)
+## 🟠 HIGH — Phase 0.8 Gate (must complete in order)
 
-### Step 1 — Codex: Review CMD-0.7-001
+### Step 1 — Codex: Review CMD-0.8-001
 
-Review command `CMD-0.7-001` (see `commands/COMMAND_INBOX.md`).
+Review command `CMD-0.8-001` (see `commands/COMMAND_INBOX.md` → CMD-0.8-001 section).
 Use `agents/REVIEWER_PROTOCOL.md` for the review process.
 
-Files to review (from CMD-0.7-001 scope_files):
+Files to review (from CMD-0.8-001 scope_files):
 
-1. `agents/AGENT_RUN_PROTOCOL.md` — session start checklist, constraints, stop conditions, pre-BUILDER_DONE, output format
-2. `agents/BUILDER_PROTOCOL.md` — 7-step Builder protocol, status transitions, forbidden actions
-3. `agents/REVIEWER_PROTOCOL.md` — 7-step Reviewer protocol, PASS/FAIL output format
-4. `agents/SESSION_LIMIT_RULE.md` — 10-turn cap, turn 8 checkpoint, 7 SESSION_SUMMARY fields, resume protocol
+1. `docs/phase-0/PHASE_0_8_GITHUB_COMMAND_BRIDGE.md` — problem statement, objective, two modes, flow, out-of-scope
+2. `commands/GITHUB_COMMAND_BRIDGE.md` — mode decision guide, field mapping, status-to-label mapping, ownership rules, close conditions
+3. `commands/GITHUB_ISSUE_COMMAND_TEMPLATE.md` — Issue template matching all command fields
+4. `commands/COMMAND_ROUTING_RULES.md` — routing by agent, no-concurrent-edit, NEED_COMMAND_CLARIFICATION / SCOPE_CONFLICT / SECRET_RISK
 
-Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.7-001 section.
+Check against acceptance criteria in `commands/COMMAND_INBOX.md` → CMD-0.8-001.
 
-If REVIEW_PASS → update CMD-0.7-001 status → `REVIEW_PASS` → notify Owner.
-If REVIEW_FAIL → record reason → update CMD-0.7-001 status → `REVIEW_FAIL` → return to Builder.
+If REVIEW_PASS → update CMD-0.8-001 status → `REVIEW_PASS` → notify Owner.
+If REVIEW_FAIL → record reason → update CMD-0.8-001 status → `REVIEW_FAIL` → return to Builder.
 
-### Step 2 — Owner: Approve CMD-0.7-001
+### Step 2 — Owner: Approve CMD-0.8-001
 
-After Codex REVIEW_PASS on CMD-0.7-001:
+After Codex REVIEW_PASS on CMD-0.8-001:
 - Review `handoff/SESSION_SUMMARY.md`.
-- If satisfied, update CMD-0.7-001 status → `OWNER_APPROVED`.
+- If satisfied, update CMD-0.8-001 status → `OWNER_APPROVED`.
 
-### Step 3 — Owner: Commit CMD-0.7-001
+### Step 3 — Owner: Commit CMD-0.8-001
 
-After CMD-0.7-001 status = `OWNER_APPROVED`:
+After CMD-0.8-001 status = `OWNER_APPROVED`:
 
 ```
-git add agents/ docs/phase-0/PHASE_0_7_AGENT_RUN_PROTOCOL.md handoff/ logs/ 09_LOGS/PHASE_LOG.md 06_HANDOFF/NEXT_ACTIONS.md
-git commit -m "feat(phase-0.7): add agent run protocol"
+git add docs/phase-0/PHASE_0_8_GITHUB_COMMAND_BRIDGE.md commands/ handoff/ logs/ 09_LOGS/PHASE_LOG.md 06_HANDOFF/NEXT_ACTIONS.md
+git commit -m "feat(phase-0.8): add github command bridge"
 git push
 ```
 
-Update CMD-0.7-001 status → `CLOSED`.
+Update CMD-0.8-001 status → `CLOSED`.
 
-### Step 4 — ChatGPT: Open Phase 0.8 (or next phase)
+### Step 4 — ChatGPT: Open Phase 0.9 (or next phase)
 
-Only after Phase 0.7 commit confirmed in git log.
+Only after Phase 0.8 commit confirmed in git log.
 Issue next command via `commands/COMMAND_INBOX.md`.
 
 ---
@@ -172,6 +173,7 @@ ChatGPT issues next command via `commands/COMMAND_INBOX.md`.
 
 | # | Action | Completed By | Date |
 |---|--------|-------------|------|
+| 22 | Phase 0.8 — Created GitHub Command Bridge (PHASE_0_8 doc, GITHUB_COMMAND_BRIDGE, GITHUB_ISSUE_COMMAND_TEMPLATE, COMMAND_ROUTING_RULES) | Claude Code (Builder) | 2026-05-26 |
 | 21 | Phase 0.7 — Created Agent Run Protocol (AGENT_RUN_PROTOCOL, BUILDER_PROTOCOL, REVIEWER_PROTOCOL, SESSION_LIMIT_RULE) | Claude Code (Builder) | 2026-05-26 |
 | 20 | Phase 0.6 — Codex REVIEW_FAIL fix (role labels, ACCEPTED→ASSIGNED, NEXT_ACTIONS restructure) | Claude Code (Builder) | 2026-05-26 |
 | 19 | Phase 0.6 — Created Agent Command Intake Layer (initial build) | Codex (Reviewer) | 2026-05-26 |

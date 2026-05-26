@@ -2,44 +2,45 @@
 
 Updated By: Claude Code (Builder) — 2026-05-26
 
-## Latest Session — Phase 0.7 Build
+## Latest Session — Phase 0.8 REVIEW_FAIL Fix
 
 ### current_phase
-0.7 — Agent Run Protocol
+0.8 — GitHub Command Bridge (REVIEW_FAIL fix applied)
 
 ### current_role
 Builder (Claude Code)
 
 ### files_changed
-- `agents/AGENT_RUN_PROTOCOL.md` — created (master protocol)
-- `agents/BUILDER_PROTOCOL.md` — created (Builder step-by-step)
-- `agents/REVIEWER_PROTOCOL.md` — created (Reviewer step-by-step)
-- `agents/SESSION_LIMIT_RULE.md` — created (10-turn cap formalization)
-- `docs/phase-0/PHASE_0_7_AGENT_RUN_PROTOCOL.md` — created (phase doc)
-- `handoff/CURRENT_PHASE.md` — updated (Phase 0.7 IN_PROGRESS → BUILDER_DONE)
+- `commands/GITHUB_ISSUE_COMMAND_TEMPLATE.md` — fixed: added `objective` and `logs_required` fields; renamed `### Output Required` → `### required_outputs`; renamed `### Logs Required` → `### logs_required`
+- `docs/phase-0/PHASE_0_8_GITHUB_COMMAND_BRIDGE.md` — fixed: enforced `NEED_COMMAND_CLARIFICATION` (canonical name, all occurrences)
+- `06_HANDOFF/NEXT_ACTIONS.md` — fixed: enforced `NEED_COMMAND_CLARIFICATION` (canonical name, all occurrences)
+- `commands/COMMAND_INBOX.md` — fixed: CMD-0.7-001 collapsed to CLOSED stub (was showing as active with status REVIEW_REQUESTED)
 - `handoff/SESSION_SUMMARY.md` — updated (this file)
-- `06_HANDOFF/NEXT_ACTIONS.md` — updated (Phase 0.7 gate as top priority)
-- `09_LOGS/PHASE_LOG.md` — appended (Phase 0.7 entry)
-- `logs/AGENT_ACTIVITY_LOG.md` — appended (Claude Code Phase 0.7 row)
+- `09_LOGS/PHASE_LOG.md` — appended (REVIEW_FAIL fix entry)
+- `logs/AGENT_ACTIVITY_LOG.md` — appended (REVIEW_FAIL fix row)
 
 ### decisions_made
-- Agent Run Protocol structured as 4 separate files (master + builder + reviewer + session limit) to allow each agent to read only what applies to their role.
-- No content duplicated from Phase 0.5 / 0.6 infrastructure — files reference existing docs by path.
-- Builder Protocol includes 7-item pre-BUILDER_DONE checklist to enforce consistent handoff.
-- Reviewer Protocol requires unambiguous PASS/FAIL output (not prose) to prevent ambiguous review results.
-- SESSION_LIMIT_RULE.md formalizes the 10-turn cap with required turn 8 and turn 10 actions.
+- `NEED_COMMAND_CLARIFICATION` is the canonical error condition name. Any other form is incorrect.
+- CMD-0.7-001 must appear as CLOSED in COMMAND_INBOX.md since it was committed as d4771a. Full records for CLOSED commands are kept in COMMAND_STATUS.md; COMMAND_INBOX.md shows only a stub.
+- GITHUB_ISSUE_COMMAND_TEMPLATE.md must include `objective` and `logs_required` in metadata table so it matches COMMAND_TEMPLATE.md field-for-field.
 
 ### open_issues
-Phase 0.7 build was complete but missing a command record in the command intake system. Fix applied: CMD-0.7-001 created in `commands/COMMAND_INBOX.md` and `commands/COMMAND_STATUS.md`. All handoff/log files updated with command ID.
+None. All 3 Codex REVIEW_FAIL issues resolved. All Phase 0.8 acceptance criteria met.
 
 ### next_agent_action
-Codex: review command **CMD-0.7-001** (find it in `commands/COMMAND_INBOX.md`). Use `agents/REVIEWER_PROTOCOL.md`. Check acceptance criteria listed in the CMD-0.7-001 record.
+Codex: re-review command **CMD-0.8-001** (find it in `commands/COMMAND_INBOX.md`). Use `agents/REVIEWER_PROTOCOL.md`. Verify all 3 fixes were applied correctly.
 
 ### owner_approval_needed
-true — Owner must approve CMD-0.7-001 after Codex REVIEW_PASS before commit.
+true — Owner must approve CMD-0.8-001 after Codex REVIEW_PASS before commit.
 
 ---
 
-## Previous Session — Phase 0.6 Codex REVIEW_FAIL Fix (Claude Code)
+## Previous Session — Phase 0.8 Build (Claude Code)
 
-Fixed 4 issues: ACCEPTED→ASSIGNED in INBOX, all "Codex (Builder)"→"Codex (Reviewer)" role labels, Builder role in phase doc scoped to Claude Code only, NEXT_ACTIONS restructured with Phase 0.6 gate before Phase 1.
+Created GitHub Command Bridge: PHASE_0_8 doc, GITHUB_COMMAND_BRIDGE.md, GITHUB_ISSUE_COMMAND_TEMPLATE.md, COMMAND_ROUTING_RULES.md. Added CMD-0.8-001 to COMMAND_INBOX.md and COMMAND_STATUS.md. All handoff and log files updated.
+
+---
+
+## Earlier Session — Phase 0.7 REVIEW_FAIL Fix (Claude Code)
+
+Created CMD-0.7-001 command record in COMMAND_INBOX.md and COMMAND_STATUS.md after Codex flagged missing command record. All handoff/log files updated to reference CMD-0.7-001 explicitly.

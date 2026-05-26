@@ -223,3 +223,47 @@ in the command intake system. Fix applied:
 No secrets added. No protocol files modified. No Phase 1 actions taken.
 
 ---
+
+### 2026-05-26 - Phase 0.8 - Codex REVIEW_FAIL Fix: Template Fields + Naming + CMD-0.7-001 Status
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED (re-submit after REVIEW_FAIL)
+**Detail:**
+Codex flagged 3 issues in Phase 0.8. Targeted fixes applied:
+1. GITHUB_ISSUE_COMMAND_TEMPLATE.md: added missing `objective` and `logs_required` fields to metadata table;
+   renamed `### Output Required` → `### required_outputs`; renamed `### Logs Required` → `### logs_required`.
+2. Naming: all occurrences of `NEED_COMMAND_CLARIFICATION` enforced (authoritative name)
+   in: NEXT_ACTIONS.md, SESSION_SUMMARY.md, PHASE_0_8_GITHUB_COMMAND_BRIDGE.md.
+3. CMD-0.7-001 in COMMAND_INBOX.md: collapsed from active full record (status: REVIEW_REQUESTED) to a short
+   CLOSED stub with commit reference (d4771a). Active section now shows only CMD-0.8-001.
+Secret scan: CLEAN. No files outside CMD-0.8-001 scope_files modified.
+
+---
+
+### 2026-05-26 - Phase 0.8 - GitHub Command Bridge
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Built the GitHub Command Bridge — protocol that removes manual copy/paste between agents.
+- `docs/phase-0/PHASE_0_8_GITHUB_COMMAND_BRIDGE.md`: phase doc. Explains problem (manual copy/paste),
+  objective, two command modes (repo-file vs. GitHub Issue), full command flow diagram,
+  what Phase 0.8 delivers vs. what is out of scope (no GitHub API calls).
+- `commands/GITHUB_COMMAND_BRIDGE.md`: two-mode decision guide. Mode 1 (COMMAND_INBOX.md) and
+  Mode 2 (GitHub Issue). Field mapping table (command field → GitHub Issue location).
+  Status-to-label mapping (10 states → 10 labels). Ownership rules. Close conditions.
+  Mode 2 reference row format for COMMAND_INBOX.md. Future automation section.
+- `commands/GITHUB_ISSUE_COMMAND_TEMPLATE.md`: complete Issue template matching all COMMAND_TEMPLATE.md
+  fields. Includes Issue title format, labels to apply, metadata table, Owner Request, Scope Files,
+  Forbidden Actions, Acceptance Criteria, Output Required, Review Checklist, Approval Gate,
+  Status History table, Logs Required.
+- `commands/COMMAND_ROUTING_RULES.md`: routing by agent (Claude Code / Codex / Owner+ChatGPT).
+  No-concurrent-edit rule with file group ownership table. Builder constraints. Reviewer constraints.
+  Three error conditions: NEED_COMMAND_CLARIFICATION (missing fields → BLOCKED), SCOPE_CONFLICT
+  (file outside scope or concurrent edit → BLOCKED), SECRET_RISK (secret pattern detected → immediate
+  stop, no file write, BLOCKED). Complete routing summary table.
+CMD-0.8-001 added to COMMAND_INBOX.md and COMMAND_STATUS.md (REVIEW_REQUESTED).
+CMD-0.7-001 marked CLOSED (commit d4771a) in COMMAND_STATUS.md.
+No secrets added. No GitHub API called. No workflows activated. No Phase 1 actions taken.
+
+---

@@ -4,7 +4,7 @@ Updated By: Claude Code (Builder) — 2026-05-26
 
 ## Phase
 
-Phase 0.7 — Agent Run Protocol
+Phase 0.8 — GitHub Command Bridge
 
 ## Status
 
@@ -12,9 +12,9 @@ Phase 0.7 — Agent Run Protocol
 
 ## Current Command
 
-**CMD-0.7-001** — Phase 0.7, Agent Run Protocol
+**CMD-0.8-001** — Phase 0.8, GitHub Command Bridge
 Status: `REVIEW_REQUESTED`
-See full record: `commands/COMMAND_INBOX.md` → CMD-0.7-001 section
+See full record: `commands/COMMAND_INBOX.md` → CMD-0.8-001 section
 
 ## Builder
 
@@ -26,20 +26,23 @@ Codex / GPT-4o (AGT-04)
 
 ## Next Gate
 
-Codex reviews CMD-0.7-001 using `agents/REVIEWER_PROTOCOL.md`.
-Acceptance criteria for review are in `commands/COMMAND_INBOX.md` → CMD-0.7-001.
+Codex reviews CMD-0.8-001 using `agents/REVIEWER_PROTOCOL.md`.
+Acceptance criteria for review are in `commands/COMMAND_INBOX.md` → CMD-0.8-001.
 
-If REVIEW_PASS → Owner approves CMD-0.7-001 → Owner commits → ChatGPT opens next phase.
+If REVIEW_PASS → Owner approves CMD-0.8-001 → Owner commits → ChatGPT opens next phase.
 
-## Phase 0.7 Files
+## Phase 0.8 Files
 
 | File | Status |
 |------|--------|
-| `agents/AGENT_RUN_PROTOCOL.md` | Complete — master protocol |
-| `agents/BUILDER_PROTOCOL.md` | Complete — Builder step-by-step |
-| `agents/REVIEWER_PROTOCOL.md` | Complete — Reviewer step-by-step |
-| `agents/SESSION_LIMIT_RULE.md` | Complete — 10-turn cap + SESSION_SUMMARY fields |
-| `docs/phase-0/PHASE_0_7_AGENT_RUN_PROTOCOL.md` | Complete — phase doc |
+| `docs/phase-0/PHASE_0_8_GITHUB_COMMAND_BRIDGE.md` | Complete — phase doc |
+| `commands/GITHUB_COMMAND_BRIDGE.md` | Complete — mode guide + field/status mapping |
+| `commands/GITHUB_ISSUE_COMMAND_TEMPLATE.md` | Complete — GitHub Issue template |
+| `commands/COMMAND_ROUTING_RULES.md` | Complete — routing rules + error conditions |
+
+## Previous Phase
+
+Phase 0.7 — CLOSED (commit d4771a)
 
 ## Guardrails
 
@@ -47,5 +50,5 @@ If REVIEW_PASS → Owner approves CMD-0.7-001 → Owner commits → ChatGPT open
 - Do not auto-post or auto-reply.
 - Do not activate n8n workflows.
 - Do not run ads or spend money.
-- Do not modify files outside Phase 0.7 scope.
+- Do not modify files outside Phase 0.8 scope.
 - Do not commit until `OWNER_APPROVED`.
