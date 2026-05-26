@@ -1,6 +1,6 @@
 # Current Status — FnB OS V1
 
-Last Updated: 2026-05-27 by Claude Code (Builder — avoid self-referential commit metadata)
+Last Updated: 2026-05-27 by Claude Code (Builder — CREATE_SESSION_HANDOFF)
 
 ---
 
@@ -25,7 +25,7 @@ Last Updated: 2026-05-27 by Claude Code (Builder — avoid self-referential comm
 
 | Check | State |
 |-------|-------|
-| Review result | CLOSED (CMD-0.14-001, commit 7305acb) |
+| Review result | CLOSED (CMD-0.14-001, phase-close commit 7305acb) |
 | Owner approval | CLOSED |
 
 ## Blockers
@@ -36,11 +36,11 @@ None.
 
 | Role | Next Action |
 |------|-------------|
-| Owner | Ready for Phase 0.15 — issue next command via `commands/COMMAND_INBOX.md` |
+| Owner | Open Phase 0.15 in a fresh Claude Code session via `commands/COMMAND_INBOX.md` |
 | Builder | N/A — no active command |
 | Reviewer | N/A — no active command |
-| ChatGPT | Open next phase via `commands/COMMAND_INBOX.md` |
+| ChatGPT | Issue Phase 0.15 command via `commands/COMMAND_INBOX.md` |
 
 ---
-*Written by CLOSE_APPROVED_COMMAND. Do not edit manually.*
+*Written by CREATE_SESSION_HANDOFF.*
 *Sources: handoff/CURRENT_PHASE.md · commands/COMMAND_INBOX.md · commands/COMMAND_STATUS.md · handoff/SESSION_SUMMARY.md*
