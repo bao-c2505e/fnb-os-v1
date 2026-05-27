@@ -42,8 +42,36 @@ Single source of truth for phase completion.
 
 ## Phase 1 — Core Data Layer
 
-**Status:** ⏳ NOT STARTED
-**Prerequisite:** Phase 0 user approval complete
+**Status:** 🔄 IN PROGRESS
+
+### Phase 1.1 — Brand Brain Foundation
+**Status:** ✅ CLOSED
+**Commit:** d054f65
+**Date:** 2026-05-26
+
+### Phase 1.2 — Content Pillar & Offer Engine
+**Status:** ✅ CLOSED
+**Commit:** a261763 (metadata close: 75dd288)
+**Date:** 2026-05-27
+
+### Phase 1.3 — Approval Sheet & Pipeline Schema
+**Status:** ✅ CLOSED
+**Builder:** Claude Code (AGT-02)
+**Reviewer:** Codex (AGT-04) — PASS
+**Date:** 2026-05-27
+**Commit:** [see chore commit]
+**Files:**
+- [x] `03_APPROVAL_PIPELINE/README.md`
+- [x] `03_APPROVAL_PIPELINE/status_lifecycle.md`
+- [x] `03_APPROVAL_PIPELINE/approval_sheet_schema.md`
+- [x] `03_APPROVAL_PIPELINE/content_pipeline_schema.md`
+- [x] `03_APPROVAL_PIPELINE/content_pack_json_schema.md`
+- [x] `03_APPROVAL_PIPELINE/telegram_approval_message_template.md`
+- [x] `03_APPROVAL_PIPELINE/owner_review_checklist.md`
+- [x] `docs/phase-1/PHASE_1_3_APPROVAL_SHEET_PIPELINE_SCHEMA.md`
+- [x] Codex review — PASS
+- [x] Owner approval — APPROVED
+- [x] Commit — DONE
 
 ---
 

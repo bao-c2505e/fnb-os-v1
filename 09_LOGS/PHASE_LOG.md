@@ -342,6 +342,48 @@ No secrets added. No GitHub API called. No workflows activated. No Phase 1 actio
 
 ---
 
+### 2026-05-27 — Phase 1.3 — CLOSED
+
+**By:** Owner
+**Status:** CLOSED
+**Detail:**
+Codex review: PASS. Warnings non-blocking (.claude/ untracked — correct, Telegram command parser documented only — not production, status/handoff file changes — allowed).
+Owner approved. CMD-1.3-001 CLOSED.
+7 files tạo mới trong `03_APPROVAL_PIPELINE/`: README, status_lifecycle, approval_sheet_schema (21 cột), content_pipeline_schema (8 stages), content_pack_json_schema (JSON Schema Draft-07), telegram_approval_message_template (7 templates), owner_review_checklist (6 phần).
+`docs/phase-1/PHASE_1_3_APPROVAL_SHEET_PIPELINE_SCHEMA.md` tạo mới.
+`06_HANDOFF/PHASE_STATUS.md` và `06_HANDOFF/NEXT_ACTIONS.md` cập nhật.
+Commit hash: [see chore commit]
+Next: Phase 1.4 — Draft Content Pack Generator Schema.
+
+---
+
+### 2026-05-27 — Phase 1.3 — Approval Sheet & Pipeline Schema
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Xây dựng toàn bộ Approval Pipeline Schema cho Vị Cuốn Growth OS.
+Tầng trung gian kết nối AI Content Engine (Phase 1.2) và đăng bài thực tế (Phase 3+).
+Deliverables: 9 status states với transition rules nghiêm ngặt; 21-column Google Sheet schema cho "Content Approval Queue"; JSON Schema Draft-07 đầy đủ cho Content Pack; 8-stage pipeline từ Idea đến Archived; 7 Telegram notification templates; Owner review checklist 6 phần.
+AI Self-Check rules: BLOCKER flags ngăn set READY_FOR_REVIEW — AI không thể bỏ qua.
+Approval rules: AI chỉ tạo, Owner phải approve trước khi đăng — không có auto-post/auto-schedule/auto-reply.
+Telegram Command Parser (APPROVE/REVISE/REJECT qua chat) chỉ là spec cho Phase 3 — không build production workflow.
+Không có secrets hardcoded. Không có production n8n workflow. Không có commit, không có push (tại thời điểm Builder done).
+
+---
+
+### 2026-05-27 — Phase 1.2 — CLOSED
+
+**By:** Owner
+**Status:** CLOSED
+**Detail:**
+Codex review: PASS. Owner approved. CMD-1.2-001 CLOSED.
+Commit hash: a261763. Metadata close commit: 75dd288.
+7 files trong `02_CONTENT_ENGINE/`: content_pillars, content_angles, caption_templates, video_script_templates, offer_engine, approval_rules, README.
+Next: Phase 1.3 — Approval Sheet & Pipeline Schema.
+
+---
+
 ### 2026-05-27 — Phase 1.1 — CLOSED
 
 **By:** Owner

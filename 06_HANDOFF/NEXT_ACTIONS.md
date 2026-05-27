@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 1.1 — CLOSED | Brand Brain Foundation committed | Ready for Phase 1.2
+## CURRENT STATE: Phase 1.3 — REVIEW_REQUESTED | Approval Schema built | Awaiting Codex review + Owner approval
 
 **Phase 0.6:** CLOSED (commit c20ca42)
 **Phase 0.7:** CLOSED (commit d4771a)
@@ -26,7 +26,23 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 0.14:** CLOSED (commit 7305acb)
 **Phase 0.15:** CLOSED (commit 1239a1d)
 **Phase 1.1:** CLOSED (commit d054f65)
-**Current command:** None — no active command
+**Phase 1.2:** CLOSED (commit a261763, metadata: 75dd288)
+**Phase 1.3:** REVIEW_REQUESTED — Builder done, awaiting Codex + Owner
+**Current command:** CMD-1.3-001 — Status: REVIEW_REQUESTED
+
+---
+
+## CURRENT STATE: Phase 1.3 — CLOSED | Approval Pipeline Schema committed | Ready for Phase 1.4
+
+**Phase 1.3:** CLOSED (commit: see latest git log)
+
+## 🟠 HIGH — Phase 1.4 (next phase)
+
+### Phase 1.4 — Draft Content Pack Generator Schema
+
+**Mục tiêu:** Định nghĩa schema cho AI Content Pack Generator — agent tạo Content Pack theo JSON Schema đã định nghĩa trong Phase 1.3.
+
+**Input cần:** Owner hoặc ChatGPT mở Phase 1.4 command qua `commands/COMMAND_INBOX.md`.
 
 ---
 
