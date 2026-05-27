@@ -91,6 +91,23 @@ Single source of truth for phase completion.
 - [x] Owner approval — APPROVED
 - [x] Commit — d19bce7
 
+### Phase 1.5 — Content Pack Validation & Sample Queue
+**Status:** ✅ CLOSED
+**Builder:** Claude Code (AGT-02)
+**Reviewer:** Codex (AGT-04) — PASS
+**Date:** 2026-05-27
+**Commit:** [to-be-filled by metadata close commit]
+**Files:**
+- [x] `05_VALIDATION_QUEUE/README.md`
+- [x] `05_VALIDATION_QUEUE/content_pack_validation_rules.md`
+- [x] `05_VALIDATION_QUEUE/validation_checklist.md`
+- [x] `05_VALIDATION_QUEUE/revision_rules.md`
+- [x] `05_VALIDATION_QUEUE/sample_content_queue.md`
+- [x] `docs/phase-1/PHASE_1_5_CONTENT_PACK_VALIDATION_SAMPLE_QUEUE.md`
+- [x] Codex review — PASS
+- [x] Owner approval — APPROVED
+- [x] Commit — DONE
+
 ---
 
 ## Phase 2 — Agent Prompts & SOPs Finalized

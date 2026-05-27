@@ -1,7 +1,7 @@
 # Command Inbox
 
 Created By: Codex (Reviewer) - 2026-05-26
-Updated By: Claude Code (Builder) — 2026-05-27 (Phase 1.1 close)
+Updated By: Claude Code (Builder) — 2026-05-27 (Phase 1.5 close)
 
 This is the canonical intake queue for commands from ChatGPT Chief Architect or Owner to Builder agents.
 
@@ -14,6 +14,21 @@ Rules:
 - Do not paste screenshots as the only source of truth; reference repo files, logs, or exact error text.
 
 ## Inbox
+
+---
+
+### CMD-1.5-001
+
+**Closed By:** Owner — 2026-05-27 (Codex PASS)
+
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-1.5-001 |
+| `phase` | 1.5 |
+| `status` | **CLOSED** |
+| `commit` | [to-be-filled by metadata close commit] |
+
+*This command is closed. See `commands/COMMAND_STATUS.md` for history.*
 
 ---
 

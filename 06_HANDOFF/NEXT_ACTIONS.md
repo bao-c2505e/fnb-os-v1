@@ -13,57 +13,37 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 1.4 — REVIEW_REQUESTED | Content Pack Generator Schema built | Awaiting Codex review + Owner approval
+## CURRENT STATE: Phase 1.5 — CLOSED | Content Pack Validation & Sample Queue committed | Next: Phase 1.6
 
 **Phase 0.6–0.15:** CLOSED
 **Phase 1.1:** CLOSED (commit d054f65)
 **Phase 1.2:** CLOSED (commit a261763, metadata: 75dd288)
 **Phase 1.3:** CLOSED (commit 01def32, metadata: bd55fab)
-**Phase 1.4:** REVIEW_REQUESTED — Builder done 2026-05-27, awaiting Codex + Owner
-**Current command:** CMD-1.4-001 — Status: REVIEW_REQUESTED
+**Phase 1.4:** CLOSED (commit d19bce7, metadata: 898921d)
+**Phase 1.5:** CLOSED (commit [to-be-filled], Codex PASS — Owner approved)
+**Current command:** CMD-1.5-001 — Status: CLOSED
 
 ---
 
-## 🔴 IMMEDIATE — Phase 1.4 Review Gate
+## 🔴 IMMEDIATE — Open Phase 1.6
 
-### Step 1 — Codex: Review Phase 1.4
+### Step 1 — ChatGPT: Open Phase 1.6 — Manual Content Pack Runbook
 
-Review các file sau trong `04_CONTENT_PACK_GENERATOR/`:
-1. `README.md`
-2. `content_pack_generator_schema.md`
-3. `content_pack_prompt_template.md`
-4. `input_brief_template.md`
-5. `output_examples.md`
-6. `safety_self_check.md`
-7. `docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md`
+Phase 1.5 CLOSED. ChatGPT (Chief Architect) mở Phase 1.6 qua `commands/COMMAND_INBOX.md`.
 
-Xem đầy đủ tiêu chí review tại:
-`docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md` → Section "Tiêu chí Review"
+Phase 1.6 đề xuất: Manual Content Pack Runbook — hướng dẫn Owner chạy tay một Content Pack hoàn chỉnh từ đầu đến cuối sử dụng 05_VALIDATION_QUEUE + 04_CONTENT_PACK_GENERATOR + 03_APPROVAL_PIPELINE.
 
-BLOCKER: secret thật | .claude/ | production n8n workflow | auto-post behavior | file trống/vô nghĩa | status ≠ DRAFT
+### Step 2 — Owner: Điền [FILL] ưu tiên cao để unblock queue
 
-Nếu REVIEW_PASS → notify Owner approve + commit.
-Nếu REVIEW_FAIL → ghi blockers, notify Builder sửa.
-
-### Step 2 — Owner: Approve Phase 1.4
-
-Sau Codex REVIEW_PASS:
-- Review output_examples.md — 3 Content Pack ví dụ (bữa trưa / ngày mưa / combo gia đình)
-- Nếu hài lòng → approve để commit
-
-### Step 3 — Owner: Commit Phase 1.4
-
-```bash
-git add 04_CONTENT_PACK_GENERATOR/ docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md 06_HANDOFF/PHASE_STATUS.md 06_HANDOFF/NEXT_ACTIONS.md
-git commit -m "feat(phase-1.4): add content pack generator schema and prompt templates"
-git push
-```
-
-### Step 4 — ChatGPT: Open Phase 1.5 (hoặc Owner quyết định next phase)
+Các [FILL] quan trọng nhất (ảnh hưởng 7–9/10 queue items):
+1. Địa chỉ chi tiết → `01_BRAIN/brand_brain.md`
+2. Số điện thoại → `01_BRAIN/brand_brain.md`
+3. Giá Combo Trưa (OF-01) → `02_CONTENT_ENGINE/offer_engine.md`
+4. Offer status OF-01 → OF-08 (ACTIVE/INACTIVE) → `02_CONTENT_ENGINE/offer_engine.md`
 
 ---
 
-## 🟠 HIGH — Phase 1.4 (REVIEW_REQUESTED)
+## 🟠 HIGH — Phase 1.5 (CLOSED)
 
 ---
 
