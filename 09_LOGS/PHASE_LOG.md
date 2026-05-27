@@ -352,7 +352,7 @@ Owner approved. CMD-1.3-001 CLOSED.
 7 files tạo mới trong `03_APPROVAL_PIPELINE/`: README, status_lifecycle, approval_sheet_schema (21 cột), content_pipeline_schema (8 stages), content_pack_json_schema (JSON Schema Draft-07), telegram_approval_message_template (7 templates), owner_review_checklist (6 phần).
 `docs/phase-1/PHASE_1_3_APPROVAL_SHEET_PIPELINE_SCHEMA.md` tạo mới.
 `06_HANDOFF/PHASE_STATUS.md` và `06_HANDOFF/NEXT_ACTIONS.md` cập nhật.
-Commit hash: [see chore commit]
+Commit hash: 01def32
 Next: Phase 1.4 — Draft Content Pack Generator Schema.
 
 ---

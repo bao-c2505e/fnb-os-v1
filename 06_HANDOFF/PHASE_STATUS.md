@@ -59,7 +59,7 @@ Single source of truth for phase completion.
 **Builder:** Claude Code (AGT-02)
 **Reviewer:** Codex (AGT-04) — PASS
 **Date:** 2026-05-27
-**Commit:** [see chore commit]
+**Commit:** 01def32
 **Files:**
 - [x] `03_APPROVAL_PIPELINE/README.md`
 - [x] `03_APPROVAL_PIPELINE/status_lifecycle.md`
