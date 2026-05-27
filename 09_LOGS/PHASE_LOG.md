@@ -342,6 +342,36 @@ No secrets added. No GitHub API called. No workflows activated. No Phase 1 actio
 
 ---
 
+### 2026-05-27 — Phase 1.1 — CLOSED
+
+**By:** Owner
+**Status:** CLOSED
+**Detail:**
+Codex review: PASS. Owner approved. CMD-1.1-001 CLOSED.
+content_brain.md thêm clarification: AI không tự đăng/lên lịch đăng — Owner đăng tay sau khi approve.
+Tất cả 6 BRAIN files + phase doc committed. Working tree sạch sau commit.
+Next: Phase 1.2 — Content Pillar & Offer Engine.
+
+---
+
+### 2026-05-27 — Phase 1.1 — Brand Brain Foundation
+
+**By:** Claude Code (Builder)
+**Status:** BUILDER_DONE — REVIEW_REQUESTED to Codex
+**Detail:**
+Xây dựng Brand Brain Foundation — tầng kiến thức cốt lõi cho Vị Cuốn Growth OS.
+Filled 6 BRAIN files trong `01_BRAIN/` với nội dung thực tế Vị Cuốn (thay thế placeholder hoàn toàn):
+- `brand_brain.md`: brand identity, positioning Vinh/Nghệ An, mission, values, tone table, visual direction, USPs, AI safety rules
+- `menu_brain.md`: danh mục bánh tráng cuốn thịt heo, bún trộn mắm nêm, gỏi cuốn, heo quay/nướng lu, combos 60–80k/người, upsell logic, FAQs
+- `customer_brain.md`: 5 segments (văn phòng, gia đình, sinh viên, healthy, du lịch Vinh), customer journey, CRM stages, escalation rules
+- `content_brain.md`: 5 content pillars, posting schedule, weekly calendar template, caption formulas với ví dụ thực tế Vị Cuốn, hashtag banks, approval flow, AI content constraints
+- `offer_brain.md`: 4 active offers (Combo Trưa, Cuối Tuần, Gia Đình, Lần Đầu), offer rules, upsell/cross-sell triggers, promotion calendar
+- `design_brain.md`: palette direction (warm street food), typography gợi ý, photography direction, creative formats, design brief format
+Created `docs/phase-1/PHASE_1_1_BRAND_BRAIN_FOUNDATION.md` — phase doc với scope, 11 assumptions, 15 [FILL] items cần Owner điền, done criteria.
+Không có secrets hardcoded. Không có production workflow. Không có commit, không có push.
+
+---
+
 ### 2026-05-27 — Phase 0.15 — CLOSED
 
 **By:** Owner
