@@ -73,6 +73,24 @@ Single source of truth for phase completion.
 - [x] Owner approval — APPROVED
 - [x] Commit — DONE
 
+### Phase 1.4 — Draft Content Pack Generator Schema
+**Status:** 🔄 REVIEW_REQUESTED
+**Builder:** Claude Code (AGT-02)
+**Reviewer:** Codex (AGT-04) — PENDING
+**Date:** 2026-05-27
+**Commit:** PENDING
+**Files:**
+- [x] `04_CONTENT_PACK_GENERATOR/README.md`
+- [x] `04_CONTENT_PACK_GENERATOR/content_pack_generator_schema.md`
+- [x] `04_CONTENT_PACK_GENERATOR/content_pack_prompt_template.md`
+- [x] `04_CONTENT_PACK_GENERATOR/input_brief_template.md`
+- [x] `04_CONTENT_PACK_GENERATOR/output_examples.md`
+- [x] `04_CONTENT_PACK_GENERATOR/safety_self_check.md`
+- [x] `docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md`
+- [ ] Codex review — PENDING
+- [ ] Owner approval — PENDING
+- [ ] Commit — PENDING
+
 ---
 
 ## Phase 2 — Agent Prompts & SOPs Finalized

@@ -342,6 +342,21 @@ No secrets added. No GitHub API called. No workflows activated. No Phase 1 actio
 
 ---
 
+### 2026-05-27 — Phase 1.4 — CLOSED
+
+**By:** Owner (Codex PASS — Owner approved)
+**Status:** CLOSED
+**Detail:**
+Codex review: PASS. Warnings non-blocking (.claude/ untracked — đúng quy tắc; [FILL]/[OWNER_CONFIRM] là by design; approval_required wording chấp nhận được).
+Owner approved. CMD-1.4-001 CLOSED.
+6 files tạo mới trong `04_CONTENT_PACK_GENERATOR/`: README, content_pack_generator_schema (Input 11 trường / Output 12 nhóm), content_pack_prompt_template (prompt 5 phần), input_brief_template (form + 3 ví dụ brief), output_examples (3 Content Pack: văn phòng/mưa/gia đình), safety_self_check (7 nhóm, 35 điểm, BLOCKER/WARNING/NOTE).
+`docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md` tạo mới.
+`06_HANDOFF/PHASE_STATUS.md` và `06_HANDOFF/NEXT_ACTIONS.md` cập nhật.
+Commit hash: [HASH]
+Next: Phase 1.5 — Content Pack Validation & Sample Queue.
+
+---
+
 ### 2026-05-27 — Phase 1.3 — CLOSED
 
 **By:** Owner

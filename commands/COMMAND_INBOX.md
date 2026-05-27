@@ -17,6 +17,36 @@ Rules:
 
 ---
 
+### CMD-1.4-001
+
+**Closed By:** Owner — 2026-05-27 (Codex PASS)
+
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-1.4-001 |
+| `phase` | 1.4 |
+| `status` | **CLOSED** |
+| `commit` | [HASH] |
+
+*This command is closed. See `commands/COMMAND_STATUS.md` for history.*
+
+---
+
+### CMD-1.3-001
+
+**Closed By:** Owner — 2026-05-27 (Codex PASS)
+
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-1.3-001 |
+| `phase` | 1.3 |
+| `status` | **CLOSED** |
+| `commit` | 01def32 |
+
+*This command is closed. See `commands/COMMAND_STATUS.md` for history.*
+
+---
+
 ### CMD-1.2-001
 
 **Closed By:** Owner — 2026-05-27 (Codex PASS)

@@ -2,42 +2,52 @@
 
 Updated By: Claude Code (Builder) — 2026-05-27 (CREATE_SESSION_HANDOFF — Phase 0.14 close)
 
-## Latest Session — Phase 0.14 Close & Metadata Convention Fix
+## Latest Session — Phase 1.4 Close
 
 ### current_phase
-0.14 — Repo Status Smoke Test (CLOSED)
+1.4 — Draft Content Pack Generator Schema (CLOSED)
 
 ### current_role
 Builder — Claude Code
 
 ### active_command
-None — all commands CLOSED. Next: Phase 0.15 command to be opened by ChatGPT.
+None — CMD-1.4-001 CLOSED. Next: Phase 1.5 command to be opened by ChatGPT.
 
 ### latest_commit
 Run `git log --oneline -1` for current HEAD.
 Convention: exact HEAD hash is not stored in tracked snapshot files to avoid self-referential metadata loop.
-Phase-close commit (stable): `7305acb — chore(phase-0.14): close repo status smoke test`
+Phase-close commit (stable): `[HASH] — feat(phase-1.4): add draft content pack generator schema`
 
 ### files_changed
-Phase 0.14 lifecycle (build → close → metadata fixes):
-- `docs/phase-0/PHASE_0_14_REPO_STATUS_SMOKE_TEST.md` — created (static smoke test report, 7 shortcuts verified, 4 warnings documented, 0 failures)
-- `commands/COMMAND_INBOX.md` — CMD-0.14-001 CLOSED stub (commit 7305acb)
-- `commands/COMMAND_STATUS.md` — CMD-0.14-001 → CLOSED
-- `commands/CURRENT_COMMAND.md` — cleared, no active command
-- `handoff/CURRENT_PHASE.md` — Phase 0.14 CLOSED; Next Gate updated; post-close hash tracking removed
+Phase 1.4 (build → review → close):
+- `04_CONTENT_PACK_GENERATOR/README.md` — tạo mới
+- `04_CONTENT_PACK_GENERATOR/content_pack_generator_schema.md` — tạo mới (Input/Output schema 11+12 trường)
+- `04_CONTENT_PACK_GENERATOR/content_pack_prompt_template.md` — tạo mới (prompt 5 phần cho AI Worker)
+- `04_CONTENT_PACK_GENERATOR/input_brief_template.md` — tạo mới (form brief + 3 ví dụ)
+- `04_CONTENT_PACK_GENERATOR/output_examples.md` — tạo mới (3 Content Pack ví dụ)
+- `04_CONTENT_PACK_GENERATOR/safety_self_check.md` — tạo mới (7 nhóm, 35 điểm)
+- `docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md` — tạo mới
+- `commands/COMMAND_INBOX.md` — CMD-1.4-001 + CMD-1.3-001 CLOSED stub
+- `commands/COMMAND_STATUS.md` — CMD-1.4-001 + CMD-1.3-001 → CLOSED
+- `commands/CURRENT_COMMAND.md` — cleared, CMD-1.4-001 CLOSED, next Phase 1.5
+- `handoff/CURRENT_PHASE.md` — Phase 1.4 CLOSED; Next Gate Phase 1.5
 - `handoff/SESSION_SUMMARY.md` — this file
-- `06_HANDOFF/NEXT_ACTIONS.md` — CURRENT STATE updated; Phase 0.14 Gate section removed; self-referential hash tracking removed
-- `09_LOGS/PHASE_LOG.md` — Phase 0.14 CLOSED entry prepended
-- `logs/AGENT_ACTIVITY_LOG.md` — Phase 0.14 close rows appended
-- `logs/CURRENT_STATUS.md` — snapshot updated; Latest Commit field now uses `git log` pointer (not hardcoded hash)
+- `06_HANDOFF/PHASE_STATUS.md` — Phase 1.4 CLOSED entry added
+- `06_HANDOFF/NEXT_ACTIONS.md` — CURRENT STATE Phase 1.4 CLOSED, Phase 1.5 gate added
+- `09_LOGS/PHASE_LOG.md` — Phase 1.4 CLOSED entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — Phase 1.4 close row appended
+- `logs/CURRENT_STATUS.md` — snapshot updated
 
 ### files_pending
 None — all committed. Working tree clean (run `git status` to verify).
 
 ### decisions_made
-- Static smoke test only — no shortcuts executed; all checks performed by reading spec files.
-- Phase 0.14 report written in Vietnamese per Owner instruction, English table headers for machine-readability.
-- 4 warnings found (CLOSE_APPROVED_COMMAND spec gap; combined-pass pattern undocumented; stale example IDs). 0 failures.
+- Tất cả Content Pack ví dụ giữ status = DRAFT — không auto-post, không auto-schedule.
+- Giá dùng [FILL] xuyên suốt — menu_brain.md chưa có giá xác nhận.
+- Offer status dùng [OWNER_CONFIRM] — Owner phải bật từng offer trước khi dùng.
+- Safety self-check phân loại rõ BLOCKER / WARNING / NOTE — 35 điểm kiểm tra.
+- Codex warnings (non-blocking): .claude/ untracked đúng theo quy tắc; [FILL]/[OWNER_CONFIRM] là by design; approval_required wording chấp nhận được.
+- Không tạo production n8n workflow. Không kết nối API. Không auto-post.
 - Adopted convention: current-state snapshot files no longer store exact HEAD hash. Stable phase-close hashes (e.g. `7305acb`) are kept; volatile post-close maintenance hashes are removed. Readers run `git log --oneline -1` for current HEAD. This eliminates the self-referential metadata loop.
 
 ### open_issues

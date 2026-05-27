@@ -13,36 +13,57 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 1.3 — REVIEW_REQUESTED | Approval Schema built | Awaiting Codex review + Owner approval
+## CURRENT STATE: Phase 1.4 — REVIEW_REQUESTED | Content Pack Generator Schema built | Awaiting Codex review + Owner approval
 
-**Phase 0.6:** CLOSED (commit c20ca42)
-**Phase 0.7:** CLOSED (commit d4771a)
-**Phase 0.8:** CLOSED (commit e58427c)
-**Phase 0.9:** CLOSED (commit fd9c750)
-**Phase 0.10:** CLOSED (commit 7498c73)
-**Phase 0.11:** CLOSED (commit bbda9d1)
-**Phase 0.12:** CLOSED (commit 36fcfe)
-**Phase 0.13:** CLOSED (commit c014a25)
-**Phase 0.14:** CLOSED (commit 7305acb)
-**Phase 0.15:** CLOSED (commit 1239a1d)
+**Phase 0.6–0.15:** CLOSED
 **Phase 1.1:** CLOSED (commit d054f65)
 **Phase 1.2:** CLOSED (commit a261763, metadata: 75dd288)
-**Phase 1.3:** REVIEW_REQUESTED — Builder done, awaiting Codex + Owner
-**Current command:** CMD-1.3-001 — Status: REVIEW_REQUESTED
+**Phase 1.3:** CLOSED (commit 01def32, metadata: bd55fab)
+**Phase 1.4:** REVIEW_REQUESTED — Builder done 2026-05-27, awaiting Codex + Owner
+**Current command:** CMD-1.4-001 — Status: REVIEW_REQUESTED
 
 ---
 
-## CURRENT STATE: Phase 1.3 — CLOSED | Approval Pipeline Schema committed | Ready for Phase 1.4
+## 🔴 IMMEDIATE — Phase 1.4 Review Gate
 
-**Phase 1.3:** CLOSED (commit: see latest git log)
+### Step 1 — Codex: Review Phase 1.4
 
-## 🟠 HIGH — Phase 1.4 (next phase)
+Review các file sau trong `04_CONTENT_PACK_GENERATOR/`:
+1. `README.md`
+2. `content_pack_generator_schema.md`
+3. `content_pack_prompt_template.md`
+4. `input_brief_template.md`
+5. `output_examples.md`
+6. `safety_self_check.md`
+7. `docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md`
 
-### Phase 1.4 — Draft Content Pack Generator Schema
+Xem đầy đủ tiêu chí review tại:
+`docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md` → Section "Tiêu chí Review"
 
-**Mục tiêu:** Định nghĩa schema cho AI Content Pack Generator — agent tạo Content Pack theo JSON Schema đã định nghĩa trong Phase 1.3.
+BLOCKER: secret thật | .claude/ | production n8n workflow | auto-post behavior | file trống/vô nghĩa | status ≠ DRAFT
 
-**Input cần:** Owner hoặc ChatGPT mở Phase 1.4 command qua `commands/COMMAND_INBOX.md`.
+Nếu REVIEW_PASS → notify Owner approve + commit.
+Nếu REVIEW_FAIL → ghi blockers, notify Builder sửa.
+
+### Step 2 — Owner: Approve Phase 1.4
+
+Sau Codex REVIEW_PASS:
+- Review output_examples.md — 3 Content Pack ví dụ (bữa trưa / ngày mưa / combo gia đình)
+- Nếu hài lòng → approve để commit
+
+### Step 3 — Owner: Commit Phase 1.4
+
+```bash
+git add 04_CONTENT_PACK_GENERATOR/ docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md 06_HANDOFF/PHASE_STATUS.md 06_HANDOFF/NEXT_ACTIONS.md
+git commit -m "feat(phase-1.4): add content pack generator schema and prompt templates"
+git push
+```
+
+### Step 4 — ChatGPT: Open Phase 1.5 (hoặc Owner quyết định next phase)
+
+---
+
+## 🟠 HIGH — Phase 1.4 (REVIEW_REQUESTED)
 
 ---
 
