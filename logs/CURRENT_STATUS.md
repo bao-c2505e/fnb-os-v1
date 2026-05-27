@@ -14,8 +14,8 @@ CMD-1.6-001 is CLOSED (Codex PASS — Owner approved). Phase 1.6 complete.
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | [PENDING — sẽ cập nhật sau commit] |
-| Working Tree | DIRTY — Phase 1.6 files staged, chờ commit |
+| Latest Commit | cd314bd (Phase 1.6 — manual content pack runbook) |
+| Working Tree | DIRTY — Phase 1.6 metadata close pending |
 | .claude/ | Untracked — NEVER commit |
 
 ## Review & Approval State

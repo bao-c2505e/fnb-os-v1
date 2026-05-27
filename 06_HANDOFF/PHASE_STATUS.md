@@ -113,7 +113,7 @@ Single source of truth for phase completion.
 **Builder:** Claude Code (AGT-02)
 **Reviewer:** Codex (AGT-04) — PASS
 **Date:** 2026-05-27
-**Commit:** [PENDING — sẽ cập nhật sau commit]
+**Commit:** cd314bd
 **Files:**
 - [x] `06_MANUAL_RUNBOOK/README.md`
 - [x] `06_MANUAL_RUNBOOK/manual_content_pack_runbook.md`

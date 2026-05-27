@@ -1,6 +1,6 @@
 # PHASE 1.6 — Manual Content Pack Runbook
 
-**Status:** REVIEW_REQUESTED
+**Status:** CLOSED
 **Phase:** 1.6
 **Builder:** Claude Code (AGT-02)
 **Date:** 2026-05-27
@@ -167,13 +167,13 @@ Phase 1.6 tích hợp và test toàn bộ outputs từ Phase 1.1 đến 1.5:
 
 ```
 phase: 1.6
-status: REVIEW_REQUESTED
+status: CLOSED
 opened: 2026-05-27
-closed: [PENDING — chờ Codex Review + Owner Approval]
+closed: 2026-05-27
 builder: Claude Code (AGT-02 — claude-sonnet-4-6)
-reviewer: Codex (AGT-04) — PENDING
-owner_approved: PENDING
-commit_hash: [PENDING — chưa commit]
+reviewer: Codex (AGT-04) — PASS
+owner_approved: APPROVED
+commit_hash: cd314bd
 files_created:
   - 06_MANUAL_RUNBOOK/README.md
   - 06_MANUAL_RUNBOOK/manual_content_pack_runbook.md

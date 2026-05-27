@@ -26,7 +26,7 @@ Rules:
 | `command_id` | CMD-1.6-001 |
 | `phase` | 1.6 |
 | `status` | **CLOSED** |
-| `commit` | [PENDING — sẽ cập nhật sau commit] |
+| `commit` | cd314bd |
 
 *This command is closed. See `commands/COMMAND_STATUS.md` for history.*
 

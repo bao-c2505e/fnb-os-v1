@@ -42,7 +42,7 @@ ChatGPT (Chief Architect): open Phase 1.7 — First Manual Content Pack Test via
 
 ## Previous Phase
 
-Phase 1.6 — REVIEW_REQUESTED (current)
+Phase 1.6 — CLOSED (commit cd314bd)
 Phase 1.5 — CLOSED (commit e18123b, metadata: 9dca816)
 Phase 1.4 — CLOSED (commit d19bce7, metadata: 898921d)
 Phase 1.3 — CLOSED (commit 01def32, metadata: bd55fab)
