@@ -26,7 +26,7 @@ Rules:
 | `command_id` | CMD-1.2-001 |
 | `phase` | 1.2 |
 | `status` | **CLOSED** |
-| `commit` | [pending — to be filled after commit] |
+| `commit` | a261763 |
 
 *This command is closed. See `commands/COMMAND_STATUS.md` for history.*
 
