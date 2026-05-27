@@ -1,6 +1,6 @@
 # Current Status — FnB OS V1
 
-Last Updated: 2026-05-27 by Claude Code (Builder — Phase 1.6 CLOSED)
+Last Updated: 2026-05-28 by Claude Code (Builder — Phase 1.7 CLOSED)
 
 ---
 
@@ -8,25 +8,34 @@ Last Updated: 2026-05-27 by Claude Code (Builder — Phase 1.6 CLOSED)
 
 No active command.
 
-CMD-1.6-001 is CLOSED (Codex PASS — Owner approved). Phase 1.6 complete.
+CMD-1.7-001 is CLOSED (Codex PASS — Owner approved). Phase 1.7 complete.
+
+## Content Pack — Phase 1.7
+
+| Field | Value |
+|-------|-------|
+| Content ID | VQ-TK-BTS-20260527-001 |
+| Platform | TikTok |
+| Pillar | BTS — Hậu trường (Mắm Nêm) |
+| Validation Status | READY_FOR_REVIEW |
+| Approval Status | DRAFT — Owner reviews and approves separately before posting |
 
 ## Commit State
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | cd314bd (Phase 1.6 — manual content pack runbook) |
-| Working Tree | DIRTY — Phase 1.6 metadata close pending |
+| Latest Commit | [PENDING — sẽ cập nhật sau commit] |
+| Working Tree | DIRTY — Phase 1.7 files staged, chờ commit |
 | .claude/ | Untracked — NEVER commit |
 
 ## Review & Approval State
 
 | Check | State |
 |-------|-------|
-| CMD-1.6-001 | CLOSED (Codex PASS — Owner approved) |
+| CMD-1.7-001 | CLOSED (Codex PASS — Owner approved) |
+| CMD-1.6-001 | CLOSED (commit cd314bd, metadata: 9f5ceeb) |
 | CMD-1.5-001 | CLOSED (commit e18123b, metadata: 9dca816) |
 | CMD-1.4-001 | CLOSED (commit d19bce7, metadata: 898921d) |
-| CMD-1.3-001 | CLOSED (commit 01def32, metadata: bd55fab) |
-| CMD-1.2-001 | CLOSED (commit a261763, metadata: 75dd288) |
 
 ## Blockers
 
@@ -36,10 +45,10 @@ None.
 
 | Role | Next Action |
 |------|-------------|
-| ChatGPT | Open Phase 1.7 — First Manual Content Pack Test via commands/COMMAND_INBOX.md |
-| Owner | Fill [FILL] fields (địa chỉ, SĐT, giá, offer status) để unblock 9/10 queue items |
-| Builder | N/A — chờ Phase 1.7 command |
+| Owner | Review content pack VQ-TK-BTS-20260527-001, quay video theo script → đăng TikTok |
+| Owner | Fill [FILL] fields (địa chỉ, SĐT, giờ mở cửa) trong brand_brain.md |
+| ChatGPT | Open next phase via commands/COMMAND_INBOX.md |
 
 ---
-*Written by Claude Code (Builder — Phase 1.6 CLOSED 2026-05-27).*
-*Sources: 06_HANDOFF/PHASE_STATUS.md · 06_HANDOFF/NEXT_ACTIONS.md · docs/phase-1/PHASE_1_6_*.md*
+*Written by Claude Code (Builder — Phase 1.7 CLOSED 2026-05-28).*
+*Sources: 06_HANDOFF/PHASE_STATUS.md · 07_MANUAL_TEST_RUN/ · docs/phase-1/PHASE_1_7_*.md*

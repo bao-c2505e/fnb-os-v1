@@ -1,10 +1,10 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-27 (Phase 1.6 CLOSE)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 1.7 CLOSE)
 
 ## Phase
 
-Phase 1.6 — Manual Content Pack Runbook
+Phase 1.7 — First Manual Content Pack Test
 
 ## Status
 
@@ -14,7 +14,7 @@ Phase 1.6 — Manual Content Pack Runbook
 
 No active command.
 
-CMD-1.6-001 is CLOSED (Codex PASS — Owner approved). Phase 1.6 complete.
+CMD-1.7-001 is CLOSED (Codex PASS — Owner approved). Phase 1.7 complete.
 
 ## Builder
 
@@ -26,23 +26,22 @@ Codex / GPT-4o (AGT-04) — PASS
 
 ## Next Gate
 
-Phase 1.6 CLOSED. Working tree clean after commit.
-ChatGPT (Chief Architect): open Phase 1.7 — First Manual Content Pack Test via `commands/COMMAND_INBOX.md`.
+Phase 1.7 CLOSED. Working tree clean after commit.
+Owner: review content pack VQ-TK-BTS-20260527-001, quay video theo script, đăng TikTok thủ công.
+ChatGPT (Chief Architect): open next phase via `commands/COMMAND_INBOX.md`.
 
-## Phase 1.6 Files
+## Phase 1.7 Files
 
 | File | Status |
 |------|--------|
-| `06_MANUAL_RUNBOOK/README.md` | Complete — tổng quan, bắt đầu nhanh, liên kết hệ thống |
-| `06_MANUAL_RUNBOOK/manual_content_pack_runbook.md` | Complete — 7 bước, 10 STOP rules |
-| `06_MANUAL_RUNBOOK/manual_test_input_examples.md` | Complete — 3 kịch bản test đã điền sẵn |
-| `06_MANUAL_RUNBOOK/manual_output_template.md` | Complete — template ghi nhận output AI |
-| `06_MANUAL_RUNBOOK/owner_approval_flow.md` | Complete — sơ đồ quyết định, ma trận APPROVE/REVISE/REJECT |
-| `docs/phase-1/PHASE_1_6_MANUAL_CONTENT_PACK_RUNBOOK.md` | Complete — báo cáo phase |
+| `07_MANUAL_TEST_RUN/README.md` | Complete — tổng quan thư mục, test run log |
+| `07_MANUAL_TEST_RUN/content_pack_VQ-TK-BTS-20260527-001.md` | Complete — content pack đầy đủ, READY_FOR_REVIEW |
+| `docs/phase-1/PHASE_1_7_FIRST_MANUAL_CONTENT_PACK_TEST.md` | Complete — báo cáo phase |
 
 ## Previous Phase
 
-Phase 1.6 — CLOSED (commit cd314bd)
+Phase 1.7 — CLOSED (commit [PENDING])
+Phase 1.6 — CLOSED (commit cd314bd, metadata: 9f5ceeb)
 Phase 1.5 — CLOSED (commit e18123b, metadata: 9dca816)
 Phase 1.4 — CLOSED (commit d19bce7, metadata: 898921d)
 Phase 1.3 — CLOSED (commit 01def32, metadata: bd55fab)

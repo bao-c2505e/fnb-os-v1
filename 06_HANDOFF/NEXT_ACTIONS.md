@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 1.6 — CLOSED | Manual Content Pack Runbook committed | Next: Phase 1.7
+## CURRENT STATE: Phase 1.7 — CLOSED | Content Pack VQ-TK-BTS-20260527-001 committed | Owner: review + quay video + đăng TikTok
 
 **Phase 0.6–0.15:** CLOSED
 **Phase 1.1:** CLOSED (commit d054f65)
@@ -22,25 +22,45 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 1.4:** CLOSED (commit d19bce7, metadata: 898921d)
 **Phase 1.5:** CLOSED (commit e18123b, Codex PASS — Owner approved)
 **Phase 1.6:** CLOSED (commit cd314bd, Codex PASS — Owner approved)
-**Current command:** CMD-1.6-001 — Status: CLOSED
+**Phase 1.7:** CLOSED (commit [PENDING], Codex PASS — Owner approved)
+**Current command:** CMD-1.7-001 — Status: CLOSED
 
 ---
 
-## 🔴 IMMEDIATE — Open Phase 1.7
+## 🔴 IMMEDIATE — Owner: Review + Publish Content Pack
 
-### Step 1 — ChatGPT: Open Phase 1.7 — First Manual Content Pack Test
+### Step 1 — Owner: Review Content Pack VQ-TK-BTS-20260527-001
 
-Phase 1.6 CLOSED. ChatGPT (Chief Architect) mở Phase 1.7 qua `commands/COMMAND_INBOX.md`.
+1. Mở `07_MANUAL_TEST_RUN/content_pack_VQ-TK-BTS-20260527-001.md`
+2. Chọn hook (đề xuất: Hook 3 — ASMR reveal)
+3. Chọn caption (đề xuất: Caption v1 hoặc v2)
+4. Chạy OWNER APPROVAL CHECKLIST trong content pack
+5. Ra quyết định: APPROVED / REVISION / REJECTED
 
-Phase 1.7 đề xuất: First Manual Content Pack Test — Owner chạy tay Kịch bản 2 (TikTok BTS Mắm Nêm) theo đúng `06_MANUAL_RUNBOOK/manual_content_pack_runbook.md`. Đây là lần đầu tiên hệ thống được test end-to-end với input thực tế.
+### Step 2 — Owner: Quay video theo script (nếu APPROVED)
 
-### Step 2 — Owner: Điền [FILL] ưu tiên cao để unblock queue
+- 5 cảnh × 35 giây, quay bằng điện thoại
+- Xem hướng dẫn chi tiết trong phần VIDEO/IMAGE BRIEF của content pack
+- ASMR: tiếng vắt chanh + khuấy mắm (không cần mic xịn)
 
-Các [FILL] quan trọng nhất (ảnh hưởng 9/10 queue items):
+### Step 3 — Owner: Đăng TikTok thủ công
+
+- Không dùng automation — đăng bằng app TikTok
+- Caption + hashtag: copy từ content pack
+- Ghi link video vào phần SAU KHI ĐĂNG trong content pack
+
+### Step 4 — Owner: Điền [FILL] để unblock queue
+
+Ưu tiên cao (ảnh hưởng 9/10 sample queue items từ Phase 1.5):
 1. Địa chỉ chi tiết → `01_BRAIN/brand_brain.md`
 2. Số điện thoại → `01_BRAIN/brand_brain.md`
-3. Giá Combo Trưa (OF-01) → `02_CONTENT_ENGINE/offer_engine.md`
-4. Offer status OF-01 → OF-08 (ACTIVE/INACTIVE) → `02_CONTENT_ENGINE/offer_engine.md`
+3. Giờ mở cửa → `01_BRAIN/brand_brain.md`
+4. Giá Combo Trưa (OF-01) → `02_CONTENT_ENGINE/offer_engine.md`
+5. Offer status OF-01 → OF-08 → `02_CONTENT_ENGINE/offer_engine.md`
+
+---
+
+## 🟠 HIGH — Phase 1.7 (CLOSED)
 
 ---
 

@@ -14,12 +14,13 @@ instead of scanning the full COMMAND_INBOX.md.
 
 No active command.
 
-CMD-1.6-001 is CLOSED (Codex PASS — Owner approved). Phase 1.6 complete.
+CMD-1.7-001 is CLOSED (Codex PASS — Owner approved). Phase 1.7 complete.
 
 ## Next Gate
 
-Phase 1.6 CLOSED. Working tree clean after commit — run `git log --oneline -1` for current HEAD.
-ChatGPT (Chief Architect): open Phase 1.7 — First Manual Content Pack Test via `commands/COMMAND_INBOX.md`.
+Phase 1.7 CLOSED. Working tree clean after commit — run `git log --oneline -1` for current HEAD.
+Owner: review content pack VQ-TK-BTS-20260527-001, quay video theo script, đăng TikTok.
+ChatGPT (Chief Architect): open next phase via `commands/COMMAND_INBOX.md`.
 Use `commands/COMMAND_TEMPLATE.md` to author the next command.
 
 ---

@@ -108,6 +108,23 @@ Single source of truth for phase completion.
 - [x] Owner approval — APPROVED
 - [x] Commit — DONE
 
+### Phase 1.7 — First Manual Content Pack Test
+**Status:** ✅ CLOSED
+**Builder:** Claude Code (AGT-02)
+**Reviewer:** Codex (AGT-04) — PASS
+**Date:** 2026-05-27
+**Commit:** [PENDING — sẽ cập nhật sau commit]
+**Content Pack:** VQ-TK-BTS-20260527-001 — TikTok BTS Mắm Nêm (READY_FOR_REVIEW)
+**Files:**
+- [x] `07_MANUAL_TEST_RUN/README.md`
+- [x] `07_MANUAL_TEST_RUN/content_pack_VQ-TK-BTS-20260527-001.md`
+- [x] `docs/phase-1/PHASE_1_7_FIRST_MANUAL_CONTENT_PACK_TEST.md`
+- [x] Codex review — PASS
+- [x] Owner approval — APPROVED
+- [x] Commit — DONE
+
+---
+
 ### Phase 1.6 — Manual Content Pack Runbook
 **Status:** ✅ CLOSED
 **Builder:** Claude Code (AGT-02)
