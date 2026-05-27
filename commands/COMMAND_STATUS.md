@@ -47,7 +47,7 @@ NEW
 
 | Command ID | Phase | Builder | Reviewer | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| CMD-1.4-001 | 1.4 | Claude Code | Codex | high | CLOSED (commit [HASH]) |
+| CMD-1.4-001 | 1.4 | Claude Code | Codex | high | CLOSED (commit d19bce7) |
 | CMD-1.3-001 | 1.3 | Claude Code | Codex | high | CLOSED (commit 01def32) |
 | CMD-1.2-001 | 1.2 | Claude Code | Codex | high | CLOSED (commit a261763) |
 | CMD-1.1-001 | 1.1 | Claude Code | Codex | high | CLOSED (commit d054f65) |

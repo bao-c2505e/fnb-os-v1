@@ -74,11 +74,11 @@ Single source of truth for phase completion.
 - [x] Commit — DONE
 
 ### Phase 1.4 — Draft Content Pack Generator Schema
-**Status:** 🔄 REVIEW_REQUESTED
+**Status:** ✅ CLOSED
 **Builder:** Claude Code (AGT-02)
-**Reviewer:** Codex (AGT-04) — PENDING
+**Reviewer:** Codex (AGT-04) — PASS
 **Date:** 2026-05-27
-**Commit:** PENDING
+**Commit:** d19bce7
 **Files:**
 - [x] `04_CONTENT_PACK_GENERATOR/README.md`
 - [x] `04_CONTENT_PACK_GENERATOR/content_pack_generator_schema.md`
@@ -87,9 +87,9 @@ Single source of truth for phase completion.
 - [x] `04_CONTENT_PACK_GENERATOR/output_examples.md`
 - [x] `04_CONTENT_PACK_GENERATOR/safety_self_check.md`
 - [x] `docs/phase-1/PHASE_1_4_DRAFT_CONTENT_PACK_GENERATOR_SCHEMA.md`
-- [ ] Codex review — PENDING
-- [ ] Owner approval — PENDING
-- [ ] Commit — PENDING
+- [x] Codex review — PASS
+- [x] Owner approval — APPROVED
+- [x] Commit — d19bce7
 
 ---
 

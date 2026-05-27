@@ -16,7 +16,7 @@ None — CMD-1.4-001 CLOSED. Next: Phase 1.5 command to be opened by ChatGPT.
 ### latest_commit
 Run `git log --oneline -1` for current HEAD.
 Convention: exact HEAD hash is not stored in tracked snapshot files to avoid self-referential metadata loop.
-Phase-close commit (stable): `[HASH] — feat(phase-1.4): add draft content pack generator schema`
+Phase-close commit (stable): `d19bce7 — feat(phase-1.4): add draft content pack generator schema`
 
 ### files_changed
 Phase 1.4 (build → review → close):

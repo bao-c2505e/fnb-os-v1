@@ -26,7 +26,7 @@ Rules:
 | `command_id` | CMD-1.4-001 |
 | `phase` | 1.4 |
 | `status` | **CLOSED** |
-| `commit` | [HASH] |
+| `commit` | d19bce7 |
 
 *This command is closed. See `commands/COMMAND_STATUS.md` for history.*
 
