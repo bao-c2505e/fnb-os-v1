@@ -24,8 +24,8 @@ CMD-1.7-001 is CLOSED (Codex PASS — Owner approved). Phase 1.7 complete.
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | [PENDING — sẽ cập nhật sau commit] |
-| Working Tree | DIRTY — Phase 1.7 files staged, chờ commit |
+| Latest Commit | 7061560 (Phase 1.7 — first manual content pack test) |
+| Working Tree | DIRTY — Phase 1.7 metadata close pending |
 | .claude/ | Untracked — NEVER commit |
 
 ## Review & Approval State

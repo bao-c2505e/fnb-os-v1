@@ -113,7 +113,7 @@ Single source of truth for phase completion.
 **Builder:** Claude Code (AGT-02)
 **Reviewer:** Codex (AGT-04) — PASS
 **Date:** 2026-05-27
-**Commit:** [PENDING — sẽ cập nhật sau commit]
+**Commit:** 7061560
 **Content Pack:** VQ-TK-BTS-20260527-001 — TikTok BTS Mắm Nêm (READY_FOR_REVIEW)
 **Files:**
 - [x] `07_MANUAL_TEST_RUN/README.md`

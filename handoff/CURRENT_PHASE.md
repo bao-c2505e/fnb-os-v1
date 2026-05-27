@@ -40,7 +40,7 @@ ChatGPT (Chief Architect): open next phase via `commands/COMMAND_INBOX.md`.
 
 ## Previous Phase
 
-Phase 1.7 — CLOSED (commit [PENDING])
+Phase 1.7 — CLOSED (commit 7061560)
 Phase 1.6 — CLOSED (commit cd314bd, metadata: 9f5ceeb)
 Phase 1.5 — CLOSED (commit e18123b, metadata: 9dca816)
 Phase 1.4 — CLOSED (commit d19bce7, metadata: 898921d)

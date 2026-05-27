@@ -190,7 +190,7 @@ closed: 2026-05-28
 builder: Claude Code (AGT-02 — claude-sonnet-4-6)
 reviewer: Codex (AGT-04) — PASS
 owner_approved: APPROVED
-commit_hash: [PENDING — sẽ cập nhật sau commit]
+commit_hash: 7061560
 content_packs_created:
   - VQ-TK-BTS-20260527-001 (READY_FOR_REVIEW)
 files_created:

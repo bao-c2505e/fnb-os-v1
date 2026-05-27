@@ -26,7 +26,7 @@ Rules:
 | `command_id` | CMD-1.7-001 |
 | `phase` | 1.7 |
 | `status` | **CLOSED** |
-| `commit` | [PENDING — sẽ cập nhật sau commit] |
+| `commit` | 7061560 |
 
 *This command is closed. See `commands/COMMAND_STATUS.md` for history.*
 
