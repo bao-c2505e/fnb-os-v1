@@ -14,11 +14,11 @@ instead of scanning the full COMMAND_INBOX.md.
 
 No active command.
 
-CMD-1.1-001 is CLOSED (Codex PASS — Owner approved). Phase 1.1 complete.
+CMD-1.2-001 is CLOSED (Codex PASS — Owner approved). Phase 1.2 complete.
 
 ## Next Gate
 
-ChatGPT (Chief Architect): open Phase 1.2 — Content Pillar & Offer Engine via `commands/COMMAND_INBOX.md`.
+ChatGPT (Chief Architect): open Phase 1.3 — Approval Sheet & Pipeline Schema via `commands/COMMAND_INBOX.md`.
 Use `commands/COMMAND_TEMPLATE.md` to author the next command.
 
 ---

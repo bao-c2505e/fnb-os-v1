@@ -17,6 +17,21 @@ Rules:
 
 ---
 
+### CMD-1.2-001
+
+**Closed By:** Owner — 2026-05-27 (Codex PASS)
+
+| Field | Value |
+|-------|-------|
+| `command_id` | CMD-1.2-001 |
+| `phase` | 1.2 |
+| `status` | **CLOSED** |
+| `commit` | [pending — to be filled after commit] |
+
+*This command is closed. See `commands/COMMAND_STATUS.md` for history.*
+
+---
+
 ### CMD-1.1-001
 
 **Closed By:** Owner — 2026-05-27 (Codex PASS)
