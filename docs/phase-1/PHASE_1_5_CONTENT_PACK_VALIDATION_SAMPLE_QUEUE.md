@@ -173,13 +173,13 @@ REJECTED → Builder chỉnh lại
 
 ```
 phase: 1.5
-status: REVIEW_REQUESTED
+status: CLOSED
 opened: 2026-05-27
-closed: [PENDING — chờ Codex Review + Owner Approval]
+closed: 2026-05-27
 builder: Claude Code (AGT-02 — claude-sonnet-4-6)
-reviewer: Codex (PENDING)
-owner_approved: PENDING
-commit_hash: [PENDING — chưa commit]
+reviewer: Codex (AGT-04) — PASS
+owner_approved: APPROVED
+commit_hash: e18123b
 files_created:
   - 05_VALIDATION_QUEUE/README.md
   - 05_VALIDATION_QUEUE/content_pack_validation_rules.md

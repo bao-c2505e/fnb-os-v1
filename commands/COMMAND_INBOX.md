@@ -26,7 +26,7 @@ Rules:
 | `command_id` | CMD-1.5-001 |
 | `phase` | 1.5 |
 | `status` | **CLOSED** |
-| `commit` | [to-be-filled by metadata close commit] |
+| `commit` | e18123b |
 
 *This command is closed. See `commands/COMMAND_STATUS.md` for history.*
 

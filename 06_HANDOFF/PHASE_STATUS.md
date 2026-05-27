@@ -96,7 +96,7 @@ Single source of truth for phase completion.
 **Builder:** Claude Code (AGT-02)
 **Reviewer:** Codex (AGT-04) — PASS
 **Date:** 2026-05-27
-**Commit:** [to-be-filled by metadata close commit]
+**Commit:** e18123b
 **Files:**
 - [x] `05_VALIDATION_QUEUE/README.md`
 - [x] `05_VALIDATION_QUEUE/content_pack_validation_rules.md`
