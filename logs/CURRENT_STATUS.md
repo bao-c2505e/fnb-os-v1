@@ -1,35 +1,32 @@
 # Current Status — FnB OS V1
 
-Last Updated: 2026-05-27 by Claude Code (Builder — Phase 1.5 close)
+Last Updated: 2026-05-27 by Claude Code (Builder — Phase 1.6 CLOSED)
 
 ---
 
 ## Active Command
 
-| Field | Value |
-|-------|-------|
-| Phase | — |
-| Command ID | — |
-| Status | No active command |
-| Builder | — |
-| Reviewer | — |
+No active command.
+
+CMD-1.6-001 is CLOSED (Codex PASS — Owner approved). Phase 1.6 complete.
 
 ## Commit State
 
 | Field | Value |
 |-------|-------|
-| Latest Commit | Run: `git log --oneline -1` |
-| Working Tree | CLEAN (after Phase 1.5 commit; .claude/ untracked — never commit) |
+| Latest Commit | [PENDING — sẽ cập nhật sau commit] |
+| Working Tree | DIRTY — Phase 1.6 files staged, chờ commit |
+| .claude/ | Untracked — NEVER commit |
 
 ## Review & Approval State
 
 | Check | State |
 |-------|-------|
-| CMD-1.5-001 | CLOSED (Codex PASS — Owner approved) — Phase 1.5 complete |
+| CMD-1.6-001 | CLOSED (Codex PASS — Owner approved) |
+| CMD-1.5-001 | CLOSED (commit e18123b, metadata: 9dca816) |
 | CMD-1.4-001 | CLOSED (commit d19bce7, metadata: 898921d) |
 | CMD-1.3-001 | CLOSED (commit 01def32, metadata: bd55fab) |
 | CMD-1.2-001 | CLOSED (commit a261763, metadata: 75dd288) |
-| CMD-1.1-001 | CLOSED (commit d054f65) |
 
 ## Blockers
 
@@ -39,11 +36,10 @@ None.
 
 | Role | Next Action |
 |------|-------------|
-| Owner | Fill [FILL] fields in 01_BRAIN/ + 02_CONTENT_ENGINE/ (địa chỉ, SĐT, giá combo, offer status) khi sẵn sàng |
-| ChatGPT | Open Phase 1.6 — Manual Content Pack Runbook via `commands/COMMAND_INBOX.md` |
-| Builder | N/A — no active command |
-| Reviewer | N/A — no active command |
+| ChatGPT | Open Phase 1.7 — First Manual Content Pack Test via commands/COMMAND_INBOX.md |
+| Owner | Fill [FILL] fields (địa chỉ, SĐT, giá, offer status) để unblock 9/10 queue items |
+| Builder | N/A — chờ Phase 1.7 command |
 
 ---
-*Written by SHOW_CURRENT_STATUS (Phase 1.5 close).*
-*Sources: handoff/CURRENT_PHASE.md · commands/COMMAND_INBOX.md · commands/COMMAND_STATUS.md · commands/CURRENT_COMMAND.md*
+*Written by Claude Code (Builder — Phase 1.6 CLOSED 2026-05-27).*
+*Sources: 06_HANDOFF/PHASE_STATUS.md · 06_HANDOFF/NEXT_ACTIONS.md · docs/phase-1/PHASE_1_6_*.md*

@@ -108,6 +108,23 @@ Single source of truth for phase completion.
 - [x] Owner approval — APPROVED
 - [x] Commit — DONE
 
+### Phase 1.6 — Manual Content Pack Runbook
+**Status:** ✅ CLOSED
+**Builder:** Claude Code (AGT-02)
+**Reviewer:** Codex (AGT-04) — PASS
+**Date:** 2026-05-27
+**Commit:** [PENDING — sẽ cập nhật sau commit]
+**Files:**
+- [x] `06_MANUAL_RUNBOOK/README.md`
+- [x] `06_MANUAL_RUNBOOK/manual_content_pack_runbook.md`
+- [x] `06_MANUAL_RUNBOOK/manual_test_input_examples.md`
+- [x] `06_MANUAL_RUNBOOK/manual_output_template.md`
+- [x] `06_MANUAL_RUNBOOK/owner_approval_flow.md`
+- [x] `docs/phase-1/PHASE_1_6_MANUAL_CONTENT_PACK_RUNBOOK.md`
+- [x] Codex review — PASS
+- [x] Owner approval — APPROVED
+- [x] Commit — DONE
+
 ---
 
 ## Phase 2 — Agent Prompts & SOPs Finalized

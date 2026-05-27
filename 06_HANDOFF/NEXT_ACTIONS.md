@@ -13,7 +13,7 @@ Updated by Chief Architect or Builder Agents after each session.
 
 ---
 
-## CURRENT STATE: Phase 1.5 — CLOSED | Content Pack Validation & Sample Queue committed | Next: Phase 1.6
+## CURRENT STATE: Phase 1.6 — CLOSED | Manual Content Pack Runbook committed | Next: Phase 1.7
 
 **Phase 0.6–0.15:** CLOSED
 **Phase 1.1:** CLOSED (commit d054f65)
@@ -21,21 +21,22 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 1.3:** CLOSED (commit 01def32, metadata: bd55fab)
 **Phase 1.4:** CLOSED (commit d19bce7, metadata: 898921d)
 **Phase 1.5:** CLOSED (commit e18123b, Codex PASS — Owner approved)
-**Current command:** CMD-1.5-001 — Status: CLOSED
+**Phase 1.6:** CLOSED (commit [PENDING], Codex PASS — Owner approved)
+**Current command:** CMD-1.6-001 — Status: CLOSED
 
 ---
 
-## 🔴 IMMEDIATE — Open Phase 1.6
+## 🔴 IMMEDIATE — Open Phase 1.7
 
-### Step 1 — ChatGPT: Open Phase 1.6 — Manual Content Pack Runbook
+### Step 1 — ChatGPT: Open Phase 1.7 — First Manual Content Pack Test
 
-Phase 1.5 CLOSED. ChatGPT (Chief Architect) mở Phase 1.6 qua `commands/COMMAND_INBOX.md`.
+Phase 1.6 CLOSED. ChatGPT (Chief Architect) mở Phase 1.7 qua `commands/COMMAND_INBOX.md`.
 
-Phase 1.6 đề xuất: Manual Content Pack Runbook — hướng dẫn Owner chạy tay một Content Pack hoàn chỉnh từ đầu đến cuối sử dụng 05_VALIDATION_QUEUE + 04_CONTENT_PACK_GENERATOR + 03_APPROVAL_PIPELINE.
+Phase 1.7 đề xuất: First Manual Content Pack Test — Owner chạy tay Kịch bản 2 (TikTok BTS Mắm Nêm) theo đúng `06_MANUAL_RUNBOOK/manual_content_pack_runbook.md`. Đây là lần đầu tiên hệ thống được test end-to-end với input thực tế.
 
 ### Step 2 — Owner: Điền [FILL] ưu tiên cao để unblock queue
 
-Các [FILL] quan trọng nhất (ảnh hưởng 7–9/10 queue items):
+Các [FILL] quan trọng nhất (ảnh hưởng 9/10 queue items):
 1. Địa chỉ chi tiết → `01_BRAIN/brand_brain.md`
 2. Số điện thoại → `01_BRAIN/brand_brain.md`
 3. Giá Combo Trưa (OF-01) → `02_CONTENT_ENGINE/offer_engine.md`
@@ -43,7 +44,7 @@ Các [FILL] quan trọng nhất (ảnh hưởng 7–9/10 queue items):
 
 ---
 
-## 🟠 HIGH — Phase 1.5 (CLOSED)
+## 🟠 HIGH — Phase 1.6 (CLOSED)
 
 ---
 
