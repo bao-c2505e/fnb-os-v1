@@ -26,7 +26,7 @@ Rules:
 | `command_id` | CMD-1.1-001 |
 | `phase` | 1.1 |
 | `status` | **CLOSED** |
-| `commit` | see `git log --oneline` |
+| `commit` | d054f65 |
 
 *This command is closed. See `commands/COMMAND_STATUS.md` for history.*
 

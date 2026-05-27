@@ -25,7 +25,7 @@ Updated by Chief Architect or Builder Agents after each session.
 **Phase 0.13:** CLOSED (commit c014a25)
 **Phase 0.14:** CLOSED (commit 7305acb)
 **Phase 0.15:** CLOSED (commit 1239a1d)
-**Phase 1.1:** CLOSED (commit TBD)
+**Phase 1.1:** CLOSED (commit d054f65)
 **Current command:** None — no active command
 
 ---
