@@ -1,8 +1,69 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 14 Dry-Run Result Recorded)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 16 Sandbox Runtime Validation Plan)
 
-## Latest Session — Phase 14 Sandbox Import Dry-Run PASS Recorded
+## Latest Session — Phase 16 Sandbox Runtime Validation Plan
+
+### current_phase
+16 — Sandbox Runtime Validation Plan (PLAN_CREATED — READY FOR CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (plan/doc creation only — no execution)
+
+### active_command
+Phase 16 plan complete. Two Phase 16 files created: validation plan document and activity log. Awaiting Codex PASS and Owner OWNER_APPROVED. No execution performed, no n8n accessed, no credentials, no activation, no auto-post/auto-reply/ads.
+
+### latest_commit
+Last stable commit: `86099bb` — docs: record phase 14 sandbox import dry-run result
+
+### files_changed
+Phase 16 (build):
+- `docs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN.md` — created: full sandbox runtime validation plan; Section 1 purpose (dummy-data execution chain smoke test, not production readiness); Section 2 scope (6 workflows, manual trigger, node chain, approval gate, NoOp stubs, log output); Section 3 out of scope (12 explicit exclusions: real credentials, activation, live external services, real customer contact, real ad spend, production instance, real PII, workflow JSON modification, production readiness claim, live webhook endpoint); Section 4 safety rules SR-01–SR-12 (active=false always, no real credentials, no real customer data, no posting/messaging/ads, sandbox only, no REPLACE_WITH_* substitution, Owner approval required for execution, Owner-only approval_status=Approved); Section 5 preconditions PC-01–PC-12 (OWNER_APPROVED, Codex PASS, sandbox confirmed, 6 workflows present and inactive, no real credentials, dummy data prepared, 60-minute window, no live webhook); Section 6 per-workflow checklists for all 6 workflows (WF-01 content_auto 14+2 checks; WF-02 creative_asset_auto 14 checks; WF-03 ads_pack_auto 17 checks with 4 CRITICAL no-ads-API flags; WF-04 crm_followup_auto 17 checks with 4 CRITICAL no-messaging-API flags; WF-05 comment_inbox_reply 18 checks including standard + escalation paths and 4 CRITICAL no-reply-API flags; WF-06 approval_publishing 22 checks including approved path, not-approved path, 5-branch switch routing, 6 CRITICAL no-platform-publish flags; all CRITICAL checks trigger immediate STOP if failed); Section 7 dummy test data policy (7 rules: no real customer data, no real brand URLs, no real offer prices, no real credentials in test inputs, no live webhook, TEST-NNN ID format, real execution log); Section 8 credential placeholder policy (11 REPLACE_WITH_* entries all DO NOT REPLACE; expected credential warnings documented as non-failures); Section 9 expected logs (n8n execution panel + per-workflow log stub fields per log-entry.schema.json; no external log destination tested); Section 10 owner approval gate (8 items: plan read, Codex PASS, sandbox confirmed, 6 workflows present/inactive, no real credentials, dummy data prepared, OWNER_APPROVED sign-off with date/name fields); Section 11 rollback and stop conditions ST-01–ST-10 (accidental activation, real credential added, real API call, content posted, real customer message, ad campaign created, production instance, real PII in output, unexplained execution error, log not fillable; 5-step rollback procedure); Section 12 PASS/BLOCKED criteria (13-item PASS checklist; BLOCKED triggers; PARTIAL result procedure); Section 13 phase connections Phase 8–Phase 17 future; 6 known limitations.
+- `logs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN_LOG.md` — created: session details all NO (n8n accessed NO, executed NO, activated NO, credentials NO, JSON modified NO, commit NO, push NO); files created/updated/not-modified tables; safety confirmations 10 items CONFIRMED; plan summary by section; no-execution confirmation 10 explicit statements; next recommended phase (Phase 17 execution record).
+- `handoff/CURRENT_PHASE.md` — updated: Phase 16 PLAN_CREATED READY FOR CODEX REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+Both primary Phase 16 files untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Phase 16 is a plan-only phase — no execution performed. The plan is designed to be used by Owner as the session guide when Owner performs the actual sandbox runtime validation.
+- WF-06 (approval_publishing) requires special treatment: it uses a Webhook trigger, not a Manual Trigger. Plan explicitly documents the n8n "Test Webhook" approach (no activation needed, localhost only). This is the main non-obvious complexity of Phase 16 execution.
+- All per-workflow checklists include CRITICAL checks (labeled in uppercase) for high-risk workflows WF-03/04/05/06. CRITICAL check failure = immediate STOP. This is more explicit than prior phase checklists.
+- Escalation path for WF-05 (comment_inbox) is explicitly tested with a separate dummy payload (is_escalation: true, angry comment text). This path must confirm draft_reply=null and Owner-review routing.
+- Two approval paths for WF-06 are explicitly tested: Approved payload (approval_valid=true → Switch → NoOp) and Not Approved payload (approval_valid=false → Block → Stop and Error). This validates the core approval gate logic.
+- Dummy test data policy formalizes the TEST-NNN ID format for the first time in the project — gives Owner a clear convention to follow without inventing their own IDs.
+- Credential placeholder policy documents expected n8n "Credential not found" warnings as non-failures — prevents Owner from incorrectly interpreting warnings as test failures and entering real credentials to fix them.
+- Phase 17 is explicitly named in the plan as the future execution record phase — sets clear expectation for what comes after Phase 16 PASS.
+
+### open_issues
+- Actual sandbox runtime execution not yet performed — Owner must complete Phase 16 preconditions, obtain OWNER_APPROVED, then execute following the plan.
+- Error Trigger path testing (intentional error required) noted as potentially SKIPPED (non-blocking) in Section 6 known limitations.
+- WF-06 switch routing for non-Content-Output item types (Creative Brief, Ads Pack, CRM Follow-Up, Comment Reply) requires 4 additional test payloads — listed in WF06-22 but not individually detailed. Owner can use same structure with different `item_type` values.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then: (1) confirm all 12 preconditions (Section 5 of the plan), (2) open `docs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN.md` as session guide, (3) manually trigger each workflow using dummy test data from Section 6, (4) fill in Actual Result and Pass/Fail columns, (5) record any STOP conditions, (6) report final result to Builder.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit Phase 16 files.
+
+### next_reviewer_action
+Codex: review `docs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN.md` and `logs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN_LOG.md`. Confirm plan is safe (no execution performed, no credentials, no activation, no auto-post/ads), scope is appropriate, stop conditions are robust, dummy data policy is sound. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 16 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 16 plan files.
+
+---
+
+## Previous Session — Phase 14 Sandbox Import Dry-Run PASS Recorded
 
 ### current_phase
 14 — Owner n8n Sandbox Dry-Run Execution Log (PASS — DRY-RUN COMPLETE)
