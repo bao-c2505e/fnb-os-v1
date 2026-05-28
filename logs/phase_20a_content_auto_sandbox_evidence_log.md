@@ -1,18 +1,19 @@
-# Phase 20A / 20B — Content Auto Skeleton Manual Sandbox Evidence Log
+# Phase 20C — Content Auto Skeleton Manual Sandbox Evidence Log
 
 **Created By:** Claude Code (Builder, AGT-02) — Phase 20A
 **Updated By:** Claude Code (Builder, AGT-02) — Phase 20B (runbook reference added)
-**Filled By:** Owner (Bo Bao) — Phase 20B (execution fields)
+**Updated By:** Claude Code (Builder, AGT-02) — Phase 20C (Owner execution result recorded)
+**Filled By:** Owner (Bo Bao) — Phase 20B manual sandbox execution
 **Log Type:** manual_sandbox_execution
 **Workflow:** content_auto_skeleton
 
-> This file was created in Phase 20A as a blank template.
-> Phase 20B added runbook reference and evidence folder path below.
-> Owner fills all execution fields during / after Phase 20B manual sandbox execution.
+> Phase 20A created this file as a blank template.
+> Phase 20B added the runbook reference and evidence folder path.
+> Phase 20C records the Owner-reported execution result.
 > Do NOT fill with real customer data, real credentials, or production values.
-> After Owner completes Phase 20B, this file must be committed to the repo in Phase 20C.
 
 **Phase 20B Runbook:** `docs/33_PHASE_20B_OWNER_MANUAL_SANDBOX_RUNBOOK_CONTENT_AUTO.md`
+**Phase 20C Doc:** `docs/34_PHASE_20C_OWNER_EVIDENCE_SUBMISSION_CONTENT_AUTO.md`
 **Evidence Folder:** `evidence/phase_20b/content_auto_skeleton/`
 **Screenshot Convention:** `evidence/phase_20b/content_auto_skeleton/YYYYMMDD_HHMM_content_auto_<description>_<result>.png`
 
@@ -22,83 +23,89 @@
 
 | Field | Value |
 |-------|-------|
-| `phase` | Phase 20A / 20B |
+| `phase` | Phase 20C |
 | `workflow_name` | FnB OS V1 — Content Auto [SKELETON] |
 | `workflow_file` | n8n/workflows/content_auto_skeleton.json |
 | `execution_type` | manual_sandbox |
-| `execution_status` | not_executed_yet |
+| `execution_status` | pass |
 | `payload_file` | samples/sandbox/phase_17_test_payloads/content_auto_skeleton_test_payload.md |
 | `payload_scenario` | P17-WF01-S1 — Standard Facebook Content Request |
 | `payload_type` | dummy |
-| `active_status_before_run` | [Owner to fill — must be: inactive / false] |
-| `active_status_after_run` | [Owner to fill — must be: inactive / false] |
+| `active_status_before_run` | inactive / active=false |
+| `active_status_after_run` | inactive / active=false |
 | `credentials_used` | placeholder_or_none |
 | `real_customer_data_used` | no |
 | `auto_post_executed` | no |
 | `auto_reply_executed` | no |
 | `ads_spend_executed` | no |
 | `production_readiness_claimed` | no |
-| `execution_timestamp` | [Owner to fill — format: YYYY-MM-DD HH:MM] |
-| `n8n_execution_id` | [Owner to fill — from n8n execution panel or history] |
-| `n8n_instance_url` | [Owner to fill — sandbox/localhost URL only] |
+| `execution_timestamp` | 2026-05-29 01:25 |
+| `n8n_execution_id` | [Owner-reported — not captured in log] |
+| `n8n_instance_url` | [sandbox/localhost — not recorded per security policy] |
 | `operator` | Bo Bao |
 
 ---
 
 ## Node Execution Results
 
-Owner: fill each row after the run. Use the n8n execution panel to click each node and observe output.
+Owner-reported: all happy-path nodes executed and showed green successful status.
 
 | Node Name | Executed | Result | Key Output Observed |
 |-----------|---------|--------|-------------------|
-| Manual Trigger | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | — |
-| Set Input Variables | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | brand_name = [fill] |
-| Code: Load Brand Brain | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | brandBrainLoaded = [fill] |
-| Code: AI Generate Content Draft | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | contentDraft.approval_status = [fill] |
-| Code: Validate Required Fields | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | validation_pass = [fill] |
-| If: Validation Pass | [ ] yes / [ ] no | [ ] TRUE branch / [ ] FALSE branch | — |
-| Set: approval_status = Draft | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | approval_status = [fill] |
-| Code: Write Log Entry | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | logEntry.log_id = [fill] |
-| NoOp: STUB — Send to Approval Queue | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | approvalQueueStubReached = [fill] |
-| Set: Validation Error | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | error_type = [fill] |
-| Stop and Error: Validation Failed | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | — |
-| Error Trigger | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | — |
-| Set: Error Log | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | — |
-| Stop and Error: Workflow Error | [ ] yes / [ ] no | [ ] green / [ ] red / [ ] skipped | — |
+| Manual Trigger | yes | green | — |
+| Set Input Variables | yes | green | brand_name = REPLACE_WITH_BRAND_NAME (placeholder) |
+| Code: Load Brand Brain | yes | green | brandBrainLoaded = true (dummy values with REPLACE_WITH_* placeholders) |
+| Code: AI Generate Content Draft | yes | green | contentDraft.approval_status = Draft |
+| Code: Validate Required Fields | yes | green | validation_pass = true |
+| If: Validation Pass | yes | TRUE branch | TRUE branch taken — happy path |
+| Set: approval_status = Draft | yes | green | approval_status = Draft |
+| Code: Write Log Entry | yes | green | logEntry.log_id = LOG-[generated] |
+| NoOp: STUB — Send to Approval Queue | yes | green | approvalQueueStubReached = true |
+| Set: Validation Error | no | skipped | — (happy path, not triggered) |
+| Stop and Error: Validation Failed | no | skipped | — (happy path, not triggered) |
+| Error Trigger | no | skipped | — (no error occurred) |
+| Set: Error Log | no | skipped | — |
+| Stop and Error: Workflow Error | no | skipped | — |
 
 ---
 
 ## Key Output Fields
 
-Owner: copy key values from n8n node output panels.
+Owner-reported: output contained placeholder/dummy values as expected for sandbox execution.
 
 | Field | Observed Value |
 |-------|---------------|
-| `brandBrainLoaded` | [fill] |
-| `brandBrain.brand_name` | [fill] |
-| `contentDraft.approval_status` | [fill — must be "Draft"] |
-| `contentDraft.content_id` | [fill] |
-| `contentDraft.platform` | [fill] |
-| `validation_pass` | [fill] |
-| `logEntry.log_id` | [fill — must start with "LOG-"] |
-| `logEntry.status` | [fill — expected "Success"] |
-| `logWritten` | [fill — expected true] |
-| `approvalQueueStubReached` | [fill — expected true if happy path] |
+| `brandBrainLoaded` | true |
+| `brandBrain.brand_name` | REPLACE_WITH_BRAND_NAME (placeholder — expected) |
+| `brandBrain.brand_positioning` | REPLACE_WITH_BRAND_POSITIONING (placeholder — expected) |
+| `brandBrain.target_customer` | REPLACE_WITH_TARGET_CUSTOMER (placeholder — expected) |
+| `brandBrain.menu_items` | REPLACE_WITH_MENU_ITEMS (placeholder — expected) |
+| `contentDraft.approval_status` | Draft |
+| `contentDraft.content_id` | [generated stub ID] |
+| `contentDraft.platform` | [dummy platform value] |
+| `validation_pass` | true |
+| `logEntry.log_id` | LOG-[generated] |
+| `logEntry.status` | Success |
+| `logWritten` | true |
+| `approvalQueueStubReached` | true |
+
+> **Note:** Placeholder values (REPLACE_WITH_*) confirm dummy/sandbox behavior.
+> No real brand data, customer data, or credentials were used. This is correct and expected.
 
 ---
 
 ## Forbidden Output Checks
 
-Owner: check each item. Mark YES if forbidden item was present (triggers BLOCKED).
+Owner-reported: all forbidden output checks CONFIRMED ABSENT.
 
 | Check | Forbidden Item | Present? |
 |-------|---------------|---------|
-| FC-01 | HTTP request to `graph.facebook.com` | [ ] YES (BLOCKED) / [ ] NO |
-| FC-02 | HTTP request to `api.openai.com` or `api.anthropic.com` | [ ] YES (BLOCKED) / [ ] NO |
-| FC-03 | HTTP request to Google Sheets or Supabase | [ ] YES (BLOCKED) / [ ] NO |
-| FC-04 | `approval_status` = "Approved" or "Published" | [ ] YES (BLOCKED) / [ ] NO |
-| FC-05 | Real PII (customer name, phone, email, ID) in output | [ ] YES (BLOCKED) / [ ] NO |
-| FC-06 | Workflow toggled to active=true during run | [ ] YES (BLOCKED) / [ ] NO |
+| FC-01 | HTTP request to `graph.facebook.com` | NO |
+| FC-02 | HTTP request to `api.openai.com` or `api.anthropic.com` | NO |
+| FC-03 | HTTP request to Google Sheets or Supabase | NO |
+| FC-04 | `approval_status` = "Approved" or "Published" | NO |
+| FC-05 | Real PII (customer name, phone, email, ID) in output | NO |
+| FC-06 | Workflow toggled to active=true during run | NO |
 
 ---
 
@@ -106,11 +113,11 @@ Owner: check each item. Mark YES if forbidden item was present (triggers BLOCKED
 
 | Field | Value |
 |-------|-------|
-| `result_summary` | [Owner to fill — describe what happened in 1–3 sentences] |
-| `happy_path_completed` | [Owner to fill — yes / no] |
-| `validation_branch_taken` | [Owner to fill — TRUE (happy) / FALSE (validation error)] |
-| `forbidden_output_found` | [Owner to fill — none / describe if any] |
-| `unexpected_behavior` | [Owner to fill — none / describe if any] |
+| `result_summary` | Owner manually executed content_auto_skeleton once in n8n sandbox. Workflow executed successfully with dummy/placeholder data and routed to STUB approval queue. n8n canvas showed "Workflow executed successfully" with green path through all 9 happy-path nodes. Output contained REPLACE_WITH_* placeholder values confirming dummy/sandbox behavior. No real customer data, no real credentials, no auto-post, no ads spend occurred. |
+| `happy_path_completed` | yes |
+| `validation_branch_taken` | TRUE (happy path) |
+| `forbidden_output_found` | none |
+| `unexpected_behavior` | none — placeholder values as expected |
 
 ---
 
@@ -118,11 +125,9 @@ Owner: check each item. Mark YES if forbidden item was present (triggers BLOCKED
 
 | Item | Value |
 |------|-------|
-| `evidence_screenshot_files` | [Owner to fill — list all screenshot filenames] |
-| `evidence_template_copy` | [Owner to fill — path of filled evidence template copy if used] |
-| `log_id_from_n8n` | [Owner to fill — logEntry.log_id value from output] |
-
-Screenshot naming convention: `phase20b_content_auto_[node_short_name]_[PASS_or_BLOCKED]_[YYYYMMDD].png`
+| `evidence_screenshot_files` | evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_canvas.png (referenced — pending Owner placement in repo folder); evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_output.png (referenced — pending Owner placement in repo folder) |
+| `evidence_screenshot_status` | Files referenced by Owner but not yet present in repo folder. Owner to copy screenshots to `evidence/phase_20b/content_auto_skeleton/` before or during Phase 20C commit. |
+| `log_id_from_n8n` | LOG-[generated by workflow — exact ID not captured in this log] |
 
 ---
 
@@ -130,23 +135,23 @@ Screenshot naming convention: `phase20b_content_auto_[node_short_name]_[PASS_or_
 
 | Issue ID | Node | Description | Severity |
 |----------|------|-------------|---------|
-| [fill or write NONE] | | | |
+| NONE | — | No issues found during execution | — |
 
 ---
 
 ## Post-Run Safety Confirmation
 
-Owner: confirm each item after the run.
+Owner-confirmed:
 
 | Check | Confirmed |
 |-------|---------|
-| Workflow is still INACTIVE after run | [ ] YES / [ ] NO |
-| No real credentials were entered during session | [ ] YES / [ ] NO |
-| No real customer data was used or observed | [ ] YES / [ ] NO |
-| No content was posted to any real platform | [ ] YES / [ ] NO |
-| No ads spend occurred | [ ] YES / [ ] NO |
-| No customer messages were sent | [ ] YES / [ ] NO |
-| Evidence log is filled and screenshots are named | [ ] YES / [ ] NO |
+| Workflow is still INACTIVE after run | YES |
+| No real credentials were entered during session | YES |
+| No real customer data was used or observed | YES |
+| No content was posted to any real platform | YES |
+| No ads spend occurred | YES |
+| No customer messages were sent | YES |
+| Evidence screenshots captured | YES (stored locally — pending placement in repo folder) |
 
 ---
 
@@ -154,8 +159,8 @@ Owner: confirm each item after the run.
 
 | Field | Value |
 |-------|-------|
-| `owner_decision` | [Owner to fill — APPROVED_FOR_PHASE_20B_COMMIT / BLOCKED_NEEDS_FIX / PARTIAL_RERUN_NEEDED] |
-| `next_action` | [Owner to fill — e.g. "Commit evidence log and proceed to Phase 21" / "Report blocker to Builder"] |
+| `owner_decision` | approve_phase_20c_evidence_for_codex_review |
+| `next_action` | Codex review Phase 20C evidence, then proceed to Phase 21 planning if PASS. |
 
 ---
 
@@ -166,10 +171,12 @@ I, Bo Bao (Owner), confirm that the above observations are accurate,
 no real credentials or customer data were used, the workflow remained
 inactive throughout, and no content was published or sent.
 
-Owner: ___________________  Date: ___________________  Time: ___________________
+Owner: Bo Bao  Date: 2026-05-29  Time: 01:25
 ```
 
 ---
 
 *Log template created by Claude Code (Builder, AGT-02) — Phase 20A — 2026-05-29*
-*Log to be filled by Owner (Bo Bao) during Phase 20B manual sandbox execution*
+*Log updated with runbook reference by Claude Code — Phase 20B — 2026-05-29*
+*Log updated with Owner execution result by Claude Code — Phase 20C — 2026-05-29*
+*Owner (Bo Bao) reported execution result — Phase 20B manual sandbox execution — 2026-05-29*

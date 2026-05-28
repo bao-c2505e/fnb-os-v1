@@ -1,24 +1,23 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20B Owner Manual Sandbox Runbook: content_auto_skeleton)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20C Owner Evidence Submission: content_auto_skeleton)
 
 ## Phase
 
-Phase 20B — Owner Manual Sandbox Runbook (content_auto_skeleton)
+Phase 20C — Owner Evidence Submission and Codex Review Prep (content_auto_skeleton)
 
 ## Status
 
-**RUNBOOK_READY — AWAITING OWNER EXECUTION**
-Phase 20B Owner runbook created for `content_auto_skeleton`. Evidence folder placeholder created. Evidence log updated with runbook reference. Owner can now execute following `docs/33_PHASE_20B_OWNER_MANUAL_SANDBOX_RUNBOOK_CONTENT_AUTO.md`.
-No execution performed. No credentials. No activation. No real customer data. No workflow JSON modified.
-`execution_status` remains `not_executed_yet` in evidence log.
+**EVIDENCE_RECORDED — READY FOR CODEX REVIEW**
+Phase 20C Owner evidence recorded for `content_auto_skeleton`. Owner (Bo Bao) manually executed the workflow in n8n sandbox on 2026-05-29 and reported PASS. Evidence log updated with full execution result. Phase 20C docs created. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. Awaiting Codex review and Owner OWNER_APPROVED before commit.
 
 ## Current Command
 
-Phase 20B — Owner Manual Sandbox Runbook.
-1 runbook (docs/33) + 1 folder placeholder + evidence log update + handoff. 4 state files updated.
-No n8n execution. No activation. No real credentials. No real customer data. No auto-post/ads.
-Awaiting Codex review and Owner OWNER_APPROVED before commit. Owner executes after commit.
+Phase 20C — Owner Evidence Submission (content_auto_skeleton).
+Evidence log updated + docs/34 created + handoff created + 4 state files updated.
+Owner execution result: PASS — happy path, dummy/placeholder output, all safety constraints upheld.
+Evidence screenshots referenced (pending Owner placement in repo folder).
+No n8n execution by Builder. No workflow JSON modified. No credentials. No activation.
 
 ## Builder
 
@@ -30,47 +29,53 @@ Codex (AGT-03) — PENDING
 
 ## Next Gate
 
-Codex reviews Phase 17 pack → PASS → Owner approves commit → Owner executes sandbox runtime validation using Phase 16 plan + Phase 17 payloads + evidence template.
+Codex reviews Phase 20C evidence pack → PASS → Owner OWNER_APPROVED → commit → proceed to Phase 21 planning (sandbox execution expansion for remaining 5 workflows).
 
-## Phase 17 Files
+## Phase 20C Files
 
 | File | Status |
 |------|--------|
-| `docs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK.md` | Created |
-| `samples/sandbox/phase_17_test_payloads/content_auto_skeleton_test_payload.md` | Created |
-| `samples/sandbox/phase_17_test_payloads/creative_asset_auto_skeleton_test_payload.md` | Created |
-| `samples/sandbox/phase_17_test_payloads/ads_pack_auto_skeleton_test_payload.md` | Created |
-| `samples/sandbox/phase_17_test_payloads/crm_followup_auto_skeleton_test_payload.md` | Created |
-| `samples/sandbox/phase_17_test_payloads/comment_inbox_reply_assistant_skeleton_test_payload.md` | Created |
-| `samples/sandbox/phase_17_test_payloads/approval_publishing_skeleton_test_payload.md` | Created |
-| `logs/templates/SANDBOX_EXECUTION_EVIDENCE_TEMPLATE.md` | Created |
-| `logs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK_LOG.md` | Created |
+| `logs/phase_20a_content_auto_sandbox_evidence_log.md` | Updated — execution_status=pass, all fields filled |
+| `docs/34_PHASE_20C_OWNER_EVIDENCE_SUBMISSION_CONTENT_AUTO.md` | Created |
+| `handoff/PHASE_20C_HANDOFF.md` | Created |
+| `evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_canvas.png` | Referenced — pending Owner placement |
+| `evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_output.png` | Referenced — pending Owner placement |
 
-## Phase 17 Status
+## Phase 20C Status
 
 | Check | Status |
 |-------|--------|
-| Pack documents created | YES — 9 files |
-| n8n accessed | NO |
-| Workflow executed | NO |
-| Workflow activated | NO |
+| Owner execution result | PASS |
+| Execution type | manual_sandbox |
+| Workflow active=false confirmed | YES |
 | Real credentials added | NO |
 | Real customer data used | NO |
-| Auto-post / auto-reply / ads | NO |
-| Secrets present in repo | NONE — secret scan CLEAN |
-| Phase 8 JSON modified | NO — untouched at `ad867b3` |
+| Auto-post executed | NO |
+| Auto-reply executed | NO |
+| Ads spend occurred | NO |
+| Production readiness claimed | NO |
+| Phase 8 JSON modified | NO |
+| Secret scan | CLEAN |
 | Commit / Push | NO — awaiting Codex review + Owner OWNER_APPROVED |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
+| Phase 20B — Owner Manual Sandbox Runbook (content_auto_skeleton) | **DONE (commit `fb33e8c`)** |
+| Phase 20A — Manual Sandbox Evidence Capture Pack | **DONE (commit `f505dae`)** |
+| Phase 19 — Owner Manual Sandbox Execution Instructions | **DONE (commit `f04edba`)** |
+| Phase 17 — Sandbox Test Data + Evidence Pack | **DONE (commit `ac91976`)** |
 | Phase 16 — Sandbox Runtime Validation Plan | **DONE (commit `82a3ce3`)** |
 | Phase 14 — Sandbox Import Dry-Run | **PASS — 6/6 workflows imported, all inactive (commit `86099bb`)** |
 | Phase 15 — Codex Review Gate | **PASS** |
 
 ## Previous Phases
 
+Phase 20B — Owner Manual Sandbox Runbook: content_auto_skeleton (commit `fb33e8c`)
+Phase 20A — Manual Sandbox Evidence Capture Pack (commit `f505dae`)
+Phase 19 — Owner Manual Sandbox Execution Instructions (commit `f04edba`)
+Phase 17 — Sandbox Test Data + Evidence Pack (commit `ac91976`)
 Phase 16 — Sandbox Runtime Validation Plan (commit `82a3ce3`)
 Phase 15 — Codex Review Gate on Phase 14 (PASS)
 Phase 14 — Owner n8n Sandbox Dry-Run Execution Log (PASS — commit `86099bb`)
