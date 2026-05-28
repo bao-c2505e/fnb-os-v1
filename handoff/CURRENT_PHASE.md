@@ -1,20 +1,19 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 1.7 CLOSE)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 2 Build)
 
 ## Phase
 
-Phase 1.7 — First Manual Content Pack Test
+Phase 2 — Agent Prompts + SOP
 
 ## Status
 
-**CLOSED**
+**BUILDER_DONE_PENDING_REVIEW**
 
 ## Current Command
 
-No active command.
-
-CMD-1.7-001 is CLOSED (Codex PASS — Owner approved). Phase 1.7 complete.
+Phase 2 build complete. Awaiting Codex review.
+See `handoff/PHASE_2_HANDOFF.md` for full file list and validation checklist.
 
 ## Builder
 
@@ -22,21 +21,29 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex / GPT-4o (AGT-04) — PASS
+Codex / GPT-4o (AGT-04) — PENDING
 
 ## Next Gate
 
-Phase 1.7 CLOSED. Working tree clean after commit.
-Owner: review content pack VQ-TK-BTS-20260527-001, quay video theo script, đăng TikTok thủ công.
-ChatGPT (Chief Architect): open next phase via `commands/COMMAND_INBOX.md`.
+Codex reviews all 12 Phase 2 files → PASS → Owner approves commit.
+See `handoff/PHASE_2_HANDOFF.md` for Codex review instructions and commit instruction.
 
-## Phase 1.7 Files
+## Phase 2 Files
 
 | File | Status |
 |------|--------|
-| `07_MANUAL_TEST_RUN/README.md` | Complete — tổng quan thư mục, test run log |
-| `07_MANUAL_TEST_RUN/content_pack_VQ-TK-BTS-20260527-001.md` | Complete — content pack đầy đủ, READY_FOR_REVIEW |
-| `docs/phase-1/PHASE_1_7_FIRST_MANUAL_CONTENT_PACK_TEST.md` | Complete — báo cáo phase |
+| `agents/chief-architect.md` | Created |
+| `agents/builder-claude-code.md` | Created |
+| `agents/reviewer-codex.md` | Created |
+| `agents/content-agent.md` | Created |
+| `agents/creative-asset-agent.md` | Created |
+| `agents/ads-pack-agent.md` | Created |
+| `agents/crm-followup-agent.md` | Created |
+| `agents/comment-inbox-agent.md` | Created |
+| `agents/approval-publishing-agent.md` | Created |
+| `docs/07_AGENT_PROMPT_SYSTEM.md` | Created |
+| `docs/08_PHASE_2_SOP.md` | Created |
+| `handoff/PHASE_2_HANDOFF.md` | Created |
 
 ## Previous Phase
 

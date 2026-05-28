@@ -1,8 +1,77 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-27 (CREATE_SESSION_HANDOFF — Phase 0.14 close)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 2 Build)
 
-## Latest Session — Phase 1.4 Close
+## Latest Session — Phase 2 Agent Prompts + SOP Build
+
+### current_phase
+2 — Agent Prompts + SOP (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 2 build complete. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: ad202c0 — docs: add agent operation and repo validation rules
+
+### files_changed
+Phase 2 (build):
+- `agents/chief-architect.md` — created: Chief Architect role, mission, guardrails
+- `agents/builder-claude-code.md` — created: Builder role, mission, session cap, done criteria
+- `agents/reviewer-codex.md` — created: Reviewer role, 5 FAIL conditions, PASS/FAIL format
+- `agents/content-agent.md` — created: Content Agent, brand replacement note, draft output format
+- `agents/creative-asset-agent.md` — created: Creative briefs, AI prompts, QA checklist format
+- `agents/ads-pack-agent.md` — created: Ads pack drafts, compliance note, no real launch
+- `agents/crm-followup-agent.md` — created: CRM sequences, stop conditions, escalation paths
+- `agents/comment-inbox-agent.md` — created: Reply drafts, escalation rules, no auto-reply
+- `agents/approval-publishing-agent.md` — created: Approval state machine (DRAFT→PUBLISHED), Phase 3+ gate
+- `docs/07_AGENT_PROMPT_SYSTEM.md` — created: Agent map, brand replacement, I/O contracts, approval/logging/session principles
+- `docs/08_PHASE_2_SOP.md` — created: Phase 2 workflow SOP, role matrix, forbidden actions
+- `handoff/PHASE_2_HANDOFF.md` — created: Files list, validation checklist, Codex instructions, commit instruction
+- `handoff/CURRENT_PHASE.md` — updated: Phase 2 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row appended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 12 primary files built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- All agent files use markdown-only, no executable code, no n8n JSON.
+- Brand replacement documented as Brand Brain swap only — core agent roles unchanged.
+- SCHEDULED and PUBLISHED approval states locked behind Phase 3+ gate.
+- Escalation rules for Comment/Inbox Agent defined — angry/complaint cases never get auto-drafted replies.
+- CRM Agent: no PII stored, stop condition and opt-in compliance note required in every sequence.
+- Approval state machine covers 7 states; only Owner can set APPROVED.
+
+### open_issues
+- Brand Brain `[FILL]` placeholders (address, phone, some offer prices) — must be filled by Owner before content agents can produce accurate output.
+- AGT-03, AGT-05–AGT-09 reserved for future agents (LangGraph, Gemini, etc.) — not defined in Phase 2.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 2 files.
+
+### next_reviewer_action
+Codex: review all 12 files listed in `handoff/PHASE_2_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 2 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 1.4 Close
 
 ### current_phase
 1.4 — Draft Content Pack Generator Schema (CLOSED)

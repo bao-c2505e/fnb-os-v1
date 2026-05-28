@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 2 — Agent Prompts + SOP Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created 12 files: 9 agent prompt files (`agents/chief-architect.md` through `agents/approval-publishing-agent.md`), `docs/07_AGENT_PROMPT_SYSTEM.md`, `docs/08_PHASE_2_SOP.md`, `handoff/PHASE_2_HANDOFF.md`. Each agent file has 7 required sections: Role, Mission, Inputs, Outputs, Guardrails, Approval Requirements, Done Criteria. Brand replacement mechanism documented. Approval state machine defined (7 states, Phase 3+ gate for SCHEDULED/PUBLISHED). No secrets, no n8n code, no runtime automation. Awaiting Codex PASS and Owner approval before commit.
+
+---
+
 ### 2026-05-26 — Phase 0 — Initial Repo Foundation
 
 **By:** Claude Code (Builder Agent)
