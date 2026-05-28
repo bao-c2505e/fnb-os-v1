@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 6 — OS Readiness Pack Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created 4 primary files: `docs/14_OS_READINESS_CHECKLIST.md` (34-item checklist across 10 sections — repo governance, agents, brand brain, schemas, templates, samples, approval gate, logging, safety, pre-runtime; each item has required files, pass criteria, failure action); `docs/15_MANUAL_TEST_PACK.md` (9 manual tests TEST-01–09 covering all 6 modules plus approval state, log entry, handoff, and brand replacement); `docs/16_PRE_RUNTIME_PLAN.md` (what is ready, what is not, external systems table: n8n/Sheets/Drive/Telegram/Meta/TikTok/Zalo, Owner data needed list, runtime safety rules including `active=false` and credentials-as-placeholders); `tests/manual/phase-6-readiness-test.md` (80 checkboxes across 11 sections A–K — practical manual run by Owner or Codex). No n8n workflow, no scripts, no secrets, no commit, no push. Awaiting Codex PASS and Owner approval.
+
+---
+
 ### 2026-05-28 — Phase 5 — Sample Outputs for Vị Cuốn Build
 
 **By:** Claude Code (Builder, AGT-02)

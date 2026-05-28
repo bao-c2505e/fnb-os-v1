@@ -2,7 +2,69 @@
 
 Updated By: Claude Code (Builder) — 2026-05-28 (Phase 3 Build)
 
-## Latest Session — Phase 5 Sample Outputs for Vị Cuốn Build
+## Latest Session — Phase 6 OS Readiness Pack Build
+
+### current_phase
+6 — OS Readiness Pack (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 6 build complete. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: 761240f — docs: add phase 5 sample outputs
+
+### files_changed
+Phase 6 (build):
+- `docs/14_OS_READINESS_CHECKLIST.md` — created: 34-item checklist, 10 sections (repo governance, agents, brand brain, schemas, templates, samples, approval gate, logging, safety, pre-runtime), each item has required files + pass criteria + failure action
+- `docs/15_MANUAL_TEST_PACK.md` — created: 9 manual tests (TEST-01–TEST-09) covering content, creative brief, ads pack, CRM, inbox reply, approval state machine, log entry, handoff, brand replacement
+- `docs/16_PRE_RUNTIME_PLAN.md` — created: what is ready, what is not, external systems table (n8n/Sheets/Drive/Telegram/Meta/TikTok/Zalo), Owner data needed list, runtime safety rules table with `active=false` and credentials-as-placeholders rules
+- `tests/manual/phase-6-readiness-test.md` — created: 80-checkbox practical test, 11 sections A–K (repo state, folders, brand brain, schemas, templates, samples, approval_status, human_review_required, no n8n, no scripts, handoff/logs)
+- `handoff/PHASE_6_HANDOFF.md` — created: files list, scope, validation checklist, known limitations, Codex instructions, Phase 7 recommendation with prerequisites
+- `handoff/CURRENT_PHASE.md` — updated: Phase 6 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 4 primary Phase 6 files built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Checklist uses 34 items across 10 sections — practical scope, not exhaustive academic checklist.
+- Manual tests (TEST-01–09) map 1:1 to each module agent + structural tests — no overlap with readiness checklist.
+- Pre-runtime plan separates "Owner data needed" from "infrastructure not yet built" — two different types of blockers.
+- Runtime safety rules table uses `active: false` as a non-negotiable default — documented prominently.
+- Manual readiness test uses 80 checkboxes organized A–K so any section can be run independently.
+- Phase 7 prerequisites listed explicitly: Owner fills brand data, confirms approval channel, confirms n8n instance type.
+
+### open_issues
+- Brand data placeholders remain (prices, address, hours, offers) — known limitation, not a Phase 6 blocker.
+- Phase 7 scope (n8n blueprint) depends on Owner's infrastructure decisions.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then fill brand data placeholders and confirm Phase 7 infrastructure choices.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 6 files.
+
+### next_reviewer_action
+Codex: review all files listed in `handoff/PHASE_6_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 6 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 5 Sample Outputs for Vị Cuốn Build
 
 ### current_phase
 5 — Sample Outputs for Vị Cuốn (BUILDER_DONE_PENDING_REVIEW)
