@@ -1,8 +1,74 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 3 Build)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 7 Build)
 
-## Latest Session — Phase 6 OS Readiness Pack Build
+## Latest Session — Phase 7 n8n Runtime Blueprint Build
+
+### current_phase
+7 — n8n Runtime Blueprint (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 7 build complete. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: f66e2e9 — docs: add phase 6 OS readiness pack
+
+### files_changed
+Phase 7 (build):
+- `runtime-blueprints/n8n/content-auto-blueprint.md` — created: purpose, trigger options (manual/sheet/supabase/webhook), required inputs (7 fields), data sources, 8-step n8n node plan, output format, approval requirement, logging requirement, failure handling, done criteria
+- `runtime-blueprints/n8n/approval-gate-blueprint.md` — created: 7 approval states with who-sets-each, approval rules table, future channels (Telegram/Sheet/Supabase/manual), 7-step n8n node plan, Phase 7 no-auto-publish constraint, failure handling, done criteria
+- `runtime-blueprints/n8n/logging-blueprint.md` — created: schema refs, 10 required log fields, screenshot-not-a-log rule, 4 future log destinations, 5-step n8n log node plan, error log handling, done criteria
+- `runtime-blueprints/n8n/data-source-blueprint.md` — created: 17 current repo sources, 10 future runtime sources with credential placeholders, Owner data requirements, credential rule, source of truth hierarchy, done criteria
+- `runtime-blueprints/n8n/error-handling-blueprint.md` — created: 11 error types with blocking classification, 8 required behaviors for blocking errors, 7-step n8n error node plan, 4 hard-block code rules (missing approval/credential/schema/API), done criteria
+- `docs/17_N8N_RUNTIME_BLUEPRINT.md` — created: what blueprint is, why no JSON yet (5 reasons), modules covered, 10 future runtime principles, Phase 1–6 connection table
+- `docs/18_RUNTIME_DATA_FLOW.md` — created: 12-step full data flow (Owner Request → Handoff), each step with input ref, output ref, failure path; screenshot rule; failure path summary table
+- `docs/19_APPROVAL_GATE_RUNTIME_DESIGN.md` — created: ASCII state machine diagram, 7-state full definition, 10 allowed transitions, 7 blocked transitions, Owner-only approval rule, CRM/inbox manual review lock, ads spend lock, audit log event table, future channel ideas
+- `handoff/PHASE_7_HANDOFF.md` — created: files list, scope, validation checklist, known limitations, Codex instructions, Phase 8 recommendation, commit instruction
+- `handoff/CURRENT_PHASE.md` — updated: Phase 7 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 8 primary Phase 7 files built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Blueprint files are markdown only — no n8n JSON, no executable code, no scripts per Phase 7 strict scope.
+- content-auto-blueprint covers only Content Auto workflow in detail — other module workflows (ads, CRM, inbox) are noted as Phase 8 scope to keep Phase 7 bounded.
+- approval-gate-blueprint documents Phase 7 no-auto-publish constraint explicitly in its own section — makes the constraint visible and reviewable.
+- data-source-blueprint uses consistent `REPLACE_WITH_*` placeholder naming for all credentials — matches the pattern established in Phase 6 pre-runtime plan.
+- error-handling-blueprint includes specific pseudocode-style rules for the 4 hardest-to-enforce cases (missing approval, missing credential, schema fail, API fail) — more than a list, gives future implementers exact logic.
+- docs/19 includes an ASCII state machine diagram — visual reference that no prior phase document included.
+
+### open_issues
+- Only content-auto workflow fully blueprinted — creative-asset, ads-pack, CRM, and inbox-reply workflow blueprints deferred to Phase 8.
+- Owner has not yet confirmed n8n instance type, approval channel, or filled Brand Brain placeholders — Phase 8 cannot begin until these are resolved.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then confirm Phase 8 prerequisites (n8n instance, approval channel, brand data filled).
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 7 files.
+
+### next_reviewer_action
+Codex: review all files listed in `handoff/PHASE_7_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 7 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 6 OS Readiness Pack Build
 
 ### current_phase
 6 — OS Readiness Pack (BUILDER_DONE_PENDING_REVIEW)

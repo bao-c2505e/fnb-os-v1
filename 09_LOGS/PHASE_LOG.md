@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 7 — n8n Runtime Blueprint Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created `runtime-blueprints/n8n/` folder with 5 blueprint files: `content-auto-blueprint.md` (trigger options, required inputs, data sources, 8-step n8n node plan, approval and logging requirements, failure handling); `approval-gate-blueprint.md` (7-state machine, approval rules, future channels, 7-step n8n node plan, Phase 7 no-auto-publish constraint); `logging-blueprint.md` (log schema refs, 10 required log fields, screenshot prohibition, future log destinations, 5-step n8n log node plan, error log handling); `data-source-blueprint.md` (17 current repo sources, 10 future runtime sources, Owner data requirements, credential placeholder rule, source of truth hierarchy); `error-handling-blueprint.md` (10 error types, required behavior for all blocking errors, 7-step error node plan, hard-block rules for missing approval/credential/schema/API). Created `docs/17_N8N_RUNTIME_BLUEPRINT.md` (overview, why no JSON, modules, runtime principles, Phase 1–6 connection); `docs/18_RUNTIME_DATA_FLOW.md` (12-step full flow with input/output/approval/log refs and failure paths); `docs/19_APPROVAL_GATE_RUNTIME_DESIGN.md` (state machine diagram, allowed transitions, blocked transitions, Owner-only approval, CRM/inbox manual review lock, ads spend lock, audit log requirement, future channel ideas). No n8n workflow JSON, no executable code, no credentials, no commit, no push. Awaiting Codex PASS and Owner approval.
+
+---
+
 ### 2026-05-28 — Phase 6 — OS Readiness Pack Build
 
 **By:** Claude Code (Builder, AGT-02)
