@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-29 — Phase 20A — Manual Sandbox Evidence Capture Pack Created (content_auto_skeleton)
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** PACK_READY — READY FOR CODEX REVIEW
+**Detail:**
+Created Phase 20A evidence capture pack for `content_auto_skeleton` (WF-01, Standard risk). Phase 20A follows Phase 19 (general Owner execution instructions) and Phase 18 Codex PASS. Phase 20A objective: produce the specific evidence and log capture pack so Owner can confidently execute and document the first manual sandbox run. `docs/32_PHASE_20A_MANUAL_SANDBOX_EVIDENCE_CAPTURE_PACK.md`: Section A (purpose — documentation only, no execution, prepares Owner for Phase 20B); Section B (selected workflow — content_auto_skeleton file, n8n name, Standard risk, Manual Trigger, Phase 17 payload P17-WF01-S1); Section C (why first — Standard risk with no ads/messaging/webhook/platform-publish, Manual Trigger, linear node chain, unambiguous PASS signals); Section D (node chain reference — all 14 nodes documented from actual n8n/workflows/content_auto_skeleton.json: happy path 9 nodes, validation failure path 2 nodes, error handler 3 nodes); Section E (pre-run safety checklist SR-01–SR-10 + Owner sign-off block); Section F (Owner manual run checklist F-01–F-23: pre-trigger 6 steps, per-node observation 11 steps, forbidden output checks 6 steps); Section G (evidence capture checklist EC-01–EC-08: execution panel screenshot, Write Log Entry screenshot, NoOp screenshot, If: Validation Pass screenshot, logEntry JSON copy, n8n execution ID, node list, evidence log filled); Section H (screenshot naming convention with 4 examples); Section I (required log file path); Section J (required payload reference with exact JSON input values); Section K (PASS criteria 10 items + BLOCKED triggers 6 conditions including note that validation FALSE branch is still PASS if no forbidden output); Section L (13 explicit non-goals); Section M (Phase 20B recommendation with entry criteria + success criteria). `logs/phase_20a_content_auto_sandbox_evidence_log.md`: blank evidence log template with all required fields — Execution Record (20 fields including execution_status: not_executed_yet, credentials_used: placeholder_or_none, all auto_*/ads_* = no), Node Execution Results table for all 14 nodes, Key Output Fields 10 items, Forbidden Output Checks FC-01–FC-06, Result Summary, Evidence Files, Issues Found table, Post-Run Safety Confirmation 7 checkboxes, Owner Decision (owner_decision + next_action), Owner Sign-Off block. `handoff/PHASE_20A_HANDOFF.md`: phase distinction table; files created/updated/not-modified (6 Phase 8 JSONs untouched); no-execution confirmation all NO; 24 acceptance criteria all PASS; 8-pattern secret scan CLEAN. No n8n accessed. No Phase 8 JSON modified. No real credentials. No activation. No auto-publish, no auto-reply, no ads. No commit, no push. Validation: git status clean, branch main, latest commit f04edba, active=true not present in any workflow JSON.
+
+---
+
 ### 2026-05-29 — Phase 19 — Owner Manual Sandbox Execution Instructions Created
 
 **By:** Claude Code (Builder, AGT-02)

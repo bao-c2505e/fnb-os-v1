@@ -1,22 +1,23 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 19 Owner Manual Sandbox Execution Instructions)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20A Manual Sandbox Evidence Capture Pack)
 
 ## Phase
 
-Phase 19 — Owner Manual Sandbox Execution Instructions
+Phase 20A — Manual Sandbox Evidence Capture Pack (content_auto_skeleton)
 
 ## Status
 
-**INSTRUCTION_READY — READY FOR CODEX REVIEW**
-Phase 19 Owner execution instructions created. Provides step-by-step guide, pre-execution checklist, evidence requirements, and log file template for Owner to use in Phase 20 manual sandbox execution.
+**PACK_READY — READY FOR CODEX REVIEW**
+Phase 20A evidence capture pack created for `content_auto_skeleton` (WF-01, Standard risk).
+Pack includes: pre-run safety checklist, Owner manual run checklist (F-01–F-23), evidence capture checklist, screenshot naming convention, blank evidence log template, PASS/BLOCKED criteria, Phase 20B recommendation.
 No execution performed. No credentials. No activation. No real customer data. No workflow JSON modified.
-See `docs/31_PHASE_19_OWNER_MANUAL_SANDBOX_EXECUTION_INSTRUCTIONS.md`.
+See `docs/32_PHASE_20A_MANUAL_SANDBOX_EVIDENCE_CAPTURE_PACK.md` and `logs/phase_20a_content_auto_sandbox_evidence_log.md`.
 
 ## Current Command
 
-Phase 19 — Owner Manual Sandbox Execution Instructions.
-1 main instruction doc created (docs/31). Handoff + 4 state files updated.
+Phase 20A — Manual Sandbox Evidence Capture Pack.
+2 primary files created (docs/32 + evidence log template). Handoff + 4 state files updated.
 No n8n execution. No activation. No real credentials. No real customer data. No auto-post/ads.
 Awaiting Codex review and Owner OWNER_APPROVED before commit.
 

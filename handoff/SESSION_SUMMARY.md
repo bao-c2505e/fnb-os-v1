@@ -1,8 +1,67 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 19 Owner Manual Sandbox Execution Instructions)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20A Manual Sandbox Evidence Capture Pack)
 
-## Latest Session — Phase 19 Owner Manual Sandbox Execution Instructions
+## Latest Session — Phase 20A Manual Sandbox Evidence Capture Pack
+
+### current_phase
+20A — Manual Sandbox Evidence Capture Pack — content_auto_skeleton (PACK_READY — READY FOR CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (doc/template creation only — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 20A evidence pack complete. 2 primary files + 1 handoff created, 4 state files updated. Awaiting Codex PASS and Owner OWNER_APPROVED. No execution, no n8n accessed, no credentials, no activation, no real customer data, no auto-post/auto-reply/ads. No workflow JSON modified.
+
+### latest_commit
+Last stable commit: `f04edba` — docs: add phase 19 owner manual sandbox execution instructions
+
+### files_changed
+Phase 20A (build):
+- `docs/32_PHASE_20A_MANUAL_SANDBOX_EVIDENCE_CAPTURE_PACK.md` — created: Phase 20A evidence capture pack specific to `content_auto_skeleton`; Section A purpose (documentation only, does not execute, prepares Owner for Phase 20B); Section B selected workflow (file, n8n name, risk Standard, trigger Manual Trigger, Phase 17 payload P17-WF01-S1, evidence log path); Section C why this workflow first (6-reason table: Standard risk, Manual Trigger not webhook, no external platform API stubs, clear pass/fail signal, approval gate intact, linear node chain); Section D node chain reference (all 14 nodes: happy path → Manual Trigger → Set Input Variables → Code: Load Brand Brain → Code: AI Generate Content Draft → Code: Validate Required Fields → If: Validation Pass [TRUE] → Set: approval_status = Draft → Code: Write Log Entry → NoOp: STUB — Send to Approval Queue; validation failure path → IF [FALSE] → Set: Validation Error → Stop and Error: Validation Failed; error handler → Error Trigger → Set: Error Log → Stop and Error: Workflow Error); Section E pre-run safety checklist SR-01–SR-10 (sandbox instance, workflow inactive, sticky note visible, no real credentials, Phase 17 payload open, evidence log open, no real customer data, no activation, no platform post, git status clean) + Owner sign-off block; Section F Owner manual run checklist F-01–F-23 (before triggering F-01–F-06, triggering and observing F-07–F-17 per-node checks, forbidden output checks F-18–F-23); Section G evidence capture checklist EC-01–EC-08 (execution panel screenshot, Write Log Entry screenshot, NoOp screenshot, If: Validation Pass screenshot, logEntry JSON copy, n8n execution ID, node list, evidence log filled); Section H screenshot naming convention (`phase20b_content_auto_[node_short_name]_[PASS_or_BLOCKED]_[YYYYMMDD].png`) with examples; Section I required log file path; Section J required payload reference with exact JSON input values; Section K PASS/FAIL criteria (10-item PASS checklist including all required output fields + BLOCKED triggers table with 6 BLOCKED conditions); Section L explicit non-goals 13 items; Section M Phase 20B recommendation with entry criteria + success criteria; Phase Connections table Phase 8–Phase 20B; Safety Confirmation table 8 items all NO/CLEAN.
+- `logs/phase_20a_content_auto_sandbox_evidence_log.md` — created: blank evidence log template for Owner to fill in Phase 20B; Execution Record section with all required fields: phase, workflow_name, workflow_file, execution_type, execution_status (not_executed_yet), payload_file, payload_scenario, payload_type, active_status_before_run, active_status_after_run, credentials_used (placeholder_or_none), real_customer_data_used (no), auto_post_executed (no), auto_reply_executed (no), ads_spend_executed (no), production_readiness_claimed (no), execution_timestamp, n8n_execution_id, n8n_instance_url, operator; Node Execution Results table (per-node rows for all 14 nodes: executed, result green/red/skipped, key output observed); Key Output Fields table (10 fields: brandBrainLoaded, brand_name, contentDraft.approval_status, content_id, platform, validation_pass, logEntry.log_id, logEntry.status, logWritten, approvalQueueStubReached); Forbidden Output Checks FC-01–FC-06 (Facebook API, OpenAI/Anthropic API, Google Sheets/Supabase, approval_status Approved/Published, real PII, active=true); Result Summary (result_summary, happy_path_completed, validation_branch_taken, forbidden_output_found, unexpected_behavior); Evidence Files (evidence_screenshot_files, evidence_template_copy, log_id_from_n8n); Issues Found table; Post-Run Safety Confirmation 7 checkboxes; Owner Decision (owner_decision, next_action); Owner Sign-Off block.
+- `handoff/PHASE_20A_HANDOFF.md` — created: phase summary + phase distinction table Phase 17/19/20A/20B; selected workflow table; files created/updated/not-modified (6 Phase 8 JSONs untouched); evidence log template summary by section; no-execution confirmation 9 items all NO; 24 acceptance criteria all PASS; 8-pattern secret scan CLEAN; Codex review instructions 6 points; commit instruction.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 20A PACK_READY READY FOR CODEX REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+3 primary Phase 20A files untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- `content_auto_skeleton` selected first because it is the only Standard-risk workflow (others are HIGH RISK). It uses a Manual Trigger (not webhook), has no external platform API nodes, and its pass/fail signals are unambiguous (`logEntry.log_id` + `approvalQueueStubReached`). This minimises Owner risk on first run.
+- Evidence log has a per-node table for all 14 nodes — not just the happy-path 9. This allows Owner to record which branch was taken and which nodes ran without the builder needing to predict execution path in advance.
+- Phase 20A creates the blank log template; Phase 20B is when Owner fills it. This separation ensures the template is committed and reviewed before any execution happens.
+- Node chain documented from actual JSON (`n8n/workflows/content_auto_skeleton.json`) — names match exactly. No assumptions.
+- Validation failure path explicitly noted as still PASS-acceptable (if no forbidden output present and workflow remains inactive). This prevents Owner from marking a PASS run as BLOCKED just because the FALSE branch was taken.
+- `execution_status: not_executed_yet` is the initial value in the evidence log — this is the correct starting state. Owner must change it to PASS or BLOCKED during Phase 20B.
+
+### open_issues
+- `logs/phase_20a_content_auto_sandbox_evidence_log.md` is blank — Owner must fill during Phase 20B.
+- Other 5 workflows (WF-02 through WF-06) are not in Phase 20A scope — separate packs in future phases.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then: (1) confirm SR-01 through SR-10 (Section E), (2) sign pre-run sign-off, (3) open n8n, (4) follow F-01 through F-23 (Section F), (5) complete EC-01 through EC-08 (Section G), (6) fill `logs/phase_20a_content_auto_sandbox_evidence_log.md`.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit Phase 20A files.
+
+### next_reviewer_action
+Codex: review `docs/32_PHASE_20A_MANUAL_SANDBOX_EVIDENCE_CAPTURE_PACK.md`, `logs/phase_20a_content_auto_sandbox_evidence_log.md`, and `handoff/PHASE_20A_HANDOFF.md`. Confirm: node chain matches actual JSON, evidence log includes all required fields from task spec, non-goals complete, no secrets, no execution claimed. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 20A build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 20A files.
+
+---
+
+## Previous Session — Phase 19 Owner Manual Sandbox Execution Instructions
 
 ### current_phase
 19 — Owner Manual Sandbox Execution Instructions (INSTRUCTION_READY — READY FOR CODEX REVIEW)
