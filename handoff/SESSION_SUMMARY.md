@@ -1,8 +1,67 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 17 Sandbox Test Data + Evidence Pack)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 19 Owner Manual Sandbox Execution Instructions)
 
-## Latest Session — Phase 17 Sandbox Test Data + Evidence Pack
+## Latest Session — Phase 19 Owner Manual Sandbox Execution Instructions
+
+### current_phase
+19 — Owner Manual Sandbox Execution Instructions (INSTRUCTION_READY — READY FOR CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (doc creation only — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 19 instruction doc complete. 1 main instruction file + 1 handoff created. 4 state files updated. Awaiting Codex PASS and Owner OWNER_APPROVED. No execution, no n8n accessed, no credentials, no activation, no real customer data, no auto-post/auto-reply/ads. No workflow JSON modified.
+
+### latest_commit
+Last stable commit: `ac91976` — docs: add phase 17 sandbox test data evidence pack
+
+### files_changed
+Phase 19 (build):
+- `docs/31_PHASE_19_OWNER_MANUAL_SANDBOX_EXECUTION_INSTRUCTIONS.md` — created: Phase 19 instruction doc; Section A purpose (instruction/readiness only, prepares Owner for Phase 20, does not execute workflow); Section B pre-execution checklist PC-01–PC-14 (git status clean, latest commit verified, Phase 18 PASS, Owner approval, n8n sandbox accessible, all 6 workflows imported, all 6 inactive, sandbox confirmed, no real credentials, dummy payloads accessible, evidence folder ready, log file path selected, 60-minute window, Owner sign-off block); Section C workflow list (all 6 Phase 8 workflows: file path, n8n name, risk level, Phase 17 payload file reference); Section D manual sandbox execution rules — universal rules table (10 rules: manual only, dummy data, no real credentials, no publishing, no ads spend, no messaging, no comment reply, no activation, must capture evidence, must write log) + per-workflow extra rules for WF-03 ads pack (NO ADS SPEND sticky check, no Ad Account/Pixel/budget), WF-04 CRM (NO AUTO-SEND sticky check, no real customer PII, human_review_required=true verification), WF-05 inbox (no auto-reply, 2 mandatory scenarios, S2 escalation must produce draft_reply=null), WF-06 approval (test webhook only, 2 mandatory scenarios S1+S2, S1 approved path S2 blocked path, no real platform publish); Section E step-by-step 11-step Owner instructions (open n8n → confirm inactive → open canvas + sticky note check → select trigger/test webhook → use Phase 17 dummy payload → execute → observe node output → save evidence screenshot with naming convention → fill evidence template → create/update log file → do not fix inside n8n); Section F evidence requirements (13 required fields per run); Section G required log file format (`logs/phase_19_manual_sandbox_execution_log.md`; log entry template with all required fields including credentials_used, real_customer_data_used, auto_post_executed, auto_reply_executed, ads_spend_executed); Section H explicit non-goals (11 non-goals); Section I next phase recommendation Phase 20 (entry criteria, minimum viable scope, success criteria); Phase Connections table Phase 8–Phase 20; Safety Confirmation table 7 items all confirmed.
+- `handoff/PHASE_19_HANDOFF.md` — created: phase distinction table; files created/updated/not-modified tables; no-execution confirmation 9 items all NO; 21 acceptance criteria all PASS; 8-pattern secret scan CLEAN; 7-point Codex review instructions; commit instruction.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 19 INSTRUCTION_READY READY FOR CODEX REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+2 primary Phase 19 files untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Phase 19 is instruction-only — no execution whatsoever. The Owner manual execution itself is Phase 20. This separation gives Owner time to read and prepare before committing to a live session.
+- Pre-execution checklist has 14 items (PC-01–PC-14) including an Owner sign-off block. This mirrors the safety gate pattern from Phase 14 (SC-01–SC-08) and Phase 17 (evidence template Section 9). Makes Owner authorization explicit and traceable.
+- Log file format defined at `logs/phase_19_manual_sandbox_execution_log.md` — distinct from the Phase 17 evidence template (which is copied per workflow). The log file is the canonical session record; the evidence template copies are the per-run technical observations. Both are required.
+- Step 11 ("Do not fix manually inside n8n") is an explicit named step, not a footnote — matches the Owner-should-not-debug policy stated in the CLAUDE.md project instructions.
+- Screenshot naming convention defined (`phase19_WF0X_[scenario]_[PASS_or_BLOCKED]_[YYYYMMDD].png`) — prevents unnamed screenshots that cannot be traced back to a specific run.
+- Doc number `31_` selected as next sequential number (last numbered doc was `26_` in Phase 14; Phase 16/17 docs were unnumbered). Keeps docs directory consistent with original numbered scheme.
+
+### open_issues
+- Actual sandbox execution not yet performed — Owner must obtain OWNER_APPROVED after Codex PASS, then execute using Phase 19 instructions + Phase 17 payloads.
+- `logs/phase_19_manual_sandbox_execution_log.md` does not yet exist — Owner must create during Phase 20.
+- WF-06 Scenarios 3–6 optional — minimum viable scope is WF-01 + WF-06 mandatory scenarios.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then: (1) read Section B pre-execution checklist and confirm all 14 items, (2) sign Phase 19 Owner sign-off block, (3) create `logs/phase_19_manual_sandbox_execution_log.md`, (4) follow Section E 11-step instructions for each workflow, (5) report Phase 20 results to Builder.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit Phase 19 files.
+
+### next_reviewer_action
+Codex: review `docs/31_PHASE_19_OWNER_MANUAL_SANDBOX_EXECUTION_INSTRUCTIONS.md` and `handoff/PHASE_19_HANDOFF.md`. Confirm: instruction doc is safe (no execution, no credentials, no activation, no auto-post/ads), scope matches Phase 19 task, log template includes all required fields, non-goals section complete, no secrets present. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 19 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 19 files.
+
+---
+
+## Previous Session — Phase 17 Sandbox Test Data + Evidence Pack
 
 ### current_phase
 17 — Sandbox Test Data + Evidence Pack (PACK_CREATED — READY FOR CODEX REVIEW)

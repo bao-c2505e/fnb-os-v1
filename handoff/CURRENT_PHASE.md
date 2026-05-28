@@ -1,22 +1,24 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 17 Sandbox Test Data + Evidence Pack)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 19 Owner Manual Sandbox Execution Instructions)
 
 ## Phase
 
-Phase 17 — Sandbox Test Data + Evidence Pack
+Phase 19 — Owner Manual Sandbox Execution Instructions
 
 ## Status
 
-**PACK_CREATED — READY FOR CODEX REVIEW**
-Phase 17 test payloads, evidence template, and activity log created. Awaiting Codex review and Owner OWNER_APPROVED before any sandbox execution.
+**INSTRUCTION_READY — READY FOR CODEX REVIEW**
+Phase 19 Owner execution instructions created. Provides step-by-step guide, pre-execution checklist, evidence requirements, and log file template for Owner to use in Phase 20 manual sandbox execution.
+No execution performed. No credentials. No activation. No real customer data. No workflow JSON modified.
+See `docs/31_PHASE_19_OWNER_MANUAL_SANDBOX_EXECUTION_INSTRUCTIONS.md`.
 
 ## Current Command
 
-Phase 17 — Sandbox Test Data + Evidence Pack.
-6 dummy test payload files + evidence collection template + log created.
-No execution performed. No credentials. No activation. No real customer data.
-See `docs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK.md` and `logs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK_LOG.md`.
+Phase 19 — Owner Manual Sandbox Execution Instructions.
+1 main instruction doc created (docs/31). Handoff + 4 state files updated.
+No n8n execution. No activation. No real credentials. No real customer data. No auto-post/ads.
+Awaiting Codex review and Owner OWNER_APPROVED before commit.
 
 ## Builder
 

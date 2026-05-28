@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-29 — Phase 19 — Owner Manual Sandbox Execution Instructions Created
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** INSTRUCTION_READY — READY FOR CODEX REVIEW
+**Detail:**
+Created Phase 19 Owner Manual Sandbox Execution Instructions. Phase 19 follows Phase 18 (Codex PASS on Phase 17 sandbox test data pack). Phase 19 objective: produce the step-by-step Owner execution guide so Owner can safely run manual sandbox tests in Phase 20 using Phase 17 dummy payloads. No execution performed in this session. `docs/31_PHASE_19_OWNER_MANUAL_SANDBOX_EXECUTION_INSTRUCTIONS.md`: Section A (purpose — instruction/readiness only, does not execute); Section B (14-item pre-execution checklist PC-01–PC-14 including git status clean, all 6 workflows imported and inactive, no real credentials, Phase 17 payloads accessible, 60-minute window, Owner sign-off block); Section C (all 6 Phase 8 workflows listed with file path, n8n name, risk level, Phase 17 payload reference); Section D (10 universal execution rules + per-workflow extra rules for WF-03/04/05/06 HIGH RISK); Section E (11-step Owner instructions including screenshot naming convention, evidence template copy procedure, log file creation, and explicit do-not-fix-inside-n8n rule); Section F (13 required evidence fields per run); Section G (log file path `logs/phase_19_manual_sandbox_execution_log.md` + log entry template with all required fields: credentials_used, real_customer_data_used, auto_post_executed, auto_reply_executed, ads_spend_executed, result, evidence_files, owner_decision, next_action); Section H (11 explicit non-goals including production readiness, credential setup, activation, publishing automation, ads execution); Section I (Phase 20 recommendation with entry criteria, minimum viable scope, success criteria). `handoff/PHASE_19_HANDOFF.md`: phase distinction table Phase 16–20; files created/updated/not-modified (6 Phase 8 JSONs confirmed untouched); no-execution confirmation all NO; 21 acceptance criteria all PASS; 8-pattern secret scan CLEAN; Codex review instructions; commit instruction. Validation checks performed: `git status --short` (clean), `git branch --show-current` (main), `git log -1 --oneline` (ac91976), grep for `active: true` in n8n/workflows/*.json (no matches). No n8n accessed. No Phase 8 JSON modified. No real credentials. No activation. No auto-publish, no auto-reply, no ads. No commit, no push.
+
+---
+
 ## Log Format
 
 ```
