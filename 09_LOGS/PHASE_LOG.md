@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 3 — Brand Brain + Input/Output Schemas Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created 11 files: `brand-brain/vi-cuon.md` (default Brand Brain for Vị Cuốn — brand identity, target customers, tone, content pillars, offer rules, compliance, replacement guide); 7 JSON Schema Draft-07 files (`content-output`, `creative-brief`, `ads-pack`, `crm-followup`, `comment-inbox-reply`, `approval-status`, `log-entry`); `docs/09_BRAND_BRAIN_SYSTEM.md` (Brand Brain system doc — what agents must read, what must not be invented, how to replace for another brand); `docs/10_SCHEMA_SYSTEM.md` (schema registry, agent mapping, approval state machine, n8n/LangGraph forward-compatibility notes); `handoff/PHASE_3_HANDOFF.md`. All schemas include `approval_status` (7-state enum), `created_by_agent`, `created_at`. CRM and inbox reply schemas have `human_review_required: true` (const). No secrets, no n8n workflow, no runtime automation. Awaiting Codex PASS and Owner approval before commit.
+
+---
+
 ### 2026-05-28 — Phase 2 — Agent Prompts + SOP Build
 
 **By:** Claude Code (Builder, AGT-02)

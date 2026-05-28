@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "creative-brief.schema.json",
+  "title": "Creative Brief",
+  "description": "Schema for creative/image/video/design briefs produced by the Creative Asset Agent.",
+  "type": "object",
+  "required": [
+    "brief_id",
+    "brand_id",
+    "brand_name",
+    "asset_type",
+    "platform",
+    "format",
+    "objective",
+    "concept",
+    "visual_direction",
+    "approval_status",
+    "created_by_agent",
+    "created_at"
+  ],
+  "properties": {
+    "brief_id": {
+      "type": "string",
+      "description": "Unique ID. Format: CB-[BRAND]-[YYYYMMDD]-[NNN]",
+      "example": "CB-VQ-20260528-001"
+    },
+    "brand_id": {
+      "type": "string",
+      "description": "Brand identifier. Default: VQ for Vị Cuốn.",
+      "example": "VQ"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Human-readable brand name.",
+      "example": "Vị Cuốn"
+    },
+    "asset_type": {
+      "type": "string",
+      "enum": ["Photo", "Video", "Graphic", "Carousel", "Story Template", "Ad Creative", "Thumbnail"],
+      "description": "Type of creative asset to produce."
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["TikTok", "Instagram", "Facebook", "Zalo", "Multi-Platform"],
+      "description": "Target platform."
+    },
+    "format": {
+      "type": "string",
+      "description": "Aspect ratio and resolution. E.g., 9:16 vertical 1080x1920, 1:1 square 1080x1080.",
+      "example": "9:16 vertical 1080x1920"
+    },
+    "objective": {
+      "type": "string",
+      "enum": ["Awareness", "Engagement", "Conversion", "Retention", "Trust Building"],
+      "description": "Marketing objective this creative serves."
+    },
+    "concept": {
+      "type": "string",
+      "description": "High-level creative concept in 1-3 sentences."
+    },
+    "visual_direction": {
+      "type": "string",
+      "description": "Detailed visual direction: mood, color palette, lighting, shot composition."
+    },
+    "scene_description": {
+      "type": ["string", "null"],
+      "description": "Scene-by-scene description for video assets. Null for static assets."
+    },
+    "copy_overlay": {
+      "type": ["string", "null"],
+      "description": "Text overlay or subtitle copy to appear on-screen."
+    },
+    "ai_tool_prompt": {
+      "type": ["string", "null"],
+      "description": "AI image or video generation prompt. Safe for use with Midjourney, DALL-E, Kling, etc."
+    },
+    "required_inputs": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "List of inputs required before production. E.g., real food photos, brand colors confirmation.",
+      "example": ["Real dish photography of Bánh Tráng Cuốn Thịt Heo", "Brand palette confirmation from Owner"]
+    },
+    "output_specs": {
+      "type": ["string", "null"],
+      "description": "Delivery spec: file format, resolution, duration if video.",
+      "example": "MP4, 1080x1920, max 60 seconds, H.264"
+    },
+    "qa_checklist": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "QA items to verify before marking Ready for Review.",
+      "example": [
+        "No hardcoded prices without Owner confirmation",
+        "Brand colors match palette",
+        "No unverified health claims"
+      ]
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": ["Draft", "Ready for Review", "Needs Revision", "Approved", "Rejected", "Scheduled", "Published"],
+      "description": "Current approval state.",
+      "default": "Draft"
+    },
+    "created_by_agent": {
+      "type": "string",
+      "description": "Agent that created this brief.",
+      "example": "Creative Asset Agent (AGT-Creative)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime when this brief was created."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional notes for the Owner or Reviewer."
+    }
+  },
+  "additionalProperties": false
+}

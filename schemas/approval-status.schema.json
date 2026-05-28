@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "approval-status.schema.json",
+  "title": "Approval Status",
+  "description": "Schema for tracking approval state of any content item, ad, reply, or CRM sequence in FnB OS V1. RULES: Published requires prior Approved. Scheduled requires prior Approved. Ad spend requires Approved. Auto-reply requires Approved. Only Owner can set Approved.",
+  "type": "object",
+  "required": [
+    "item_id",
+    "item_type",
+    "approval_status"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "description": "ID of the item being tracked. References content_id, brief_id, ads_pack_id, sequence_id, or reply_id.",
+      "example": "CC-VQ-20260528-001"
+    },
+    "item_type": {
+      "type": "string",
+      "enum": ["Content Output", "Creative Brief", "Ads Pack", "CRM Follow-Up", "Comment Reply"],
+      "description": "Type of item being approved."
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": ["Draft", "Ready for Review", "Needs Revision", "Approved", "Rejected", "Scheduled", "Published"],
+      "description": "Current approval state. Only Owner can advance to Approved.",
+      "default": "Draft"
+    },
+    "owner_decision": {
+      "type": ["string", "null"],
+      "enum": ["Approved", "Rejected", "Needs Revision", null],
+      "description": "Owner's explicit decision. Only Owner can set Approved. Null if no decision yet."
+    },
+    "reviewer": {
+      "type": ["string", "null"],
+      "description": "Name or ID of the reviewer who checked this item before Owner.",
+      "example": "Codex (AGT-03)"
+    },
+    "review_notes": {
+      "type": ["string", "null"],
+      "description": "Notes from the reviewer. Required if owner_decision is Needs Revision or Rejected."
+    },
+    "approved_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Datetime when Owner set Approved. Required before Scheduled or Published can be set."
+    },
+    "scheduled_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Datetime scheduled for publishing. Requires prior Approved state and non-null approved_at."
+    },
+    "published_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Datetime when item was published. Requires prior Approved state and non-null approved_at."
+    },
+    "change_log": {
+      "type": ["array", "null"],
+      "description": "Ordered list of status changes with timestamps and actors.",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "from_status", "to_status", "by"],
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "from_status": {
+            "type": "string"
+          },
+          "to_status": {
+            "type": "string"
+          },
+          "by": {
+            "type": "string",
+            "description": "Agent or human who made this status change."
+          },
+          "note": {
+            "type": ["string", "null"]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

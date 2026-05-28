@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "crm-followup.schema.json",
+  "title": "CRM Follow-Up Sequence",
+  "description": "Schema for CRM follow-up message sequences produced by the CRM Follow-Up Agent. No auto-send without Owner Approved status.",
+  "type": "object",
+  "required": [
+    "sequence_id",
+    "brand_id",
+    "brand_name",
+    "lead_segment",
+    "customer_status",
+    "channel",
+    "trigger_event",
+    "message_sequence",
+    "human_review_required",
+    "approval_status",
+    "created_by_agent",
+    "created_at"
+  ],
+  "properties": {
+    "sequence_id": {
+      "type": "string",
+      "description": "Unique ID. Format: CRM-[BRAND]-[YYYYMMDD]-[NNN]",
+      "example": "CRM-VQ-20260528-001"
+    },
+    "brand_id": {
+      "type": "string",
+      "description": "Brand identifier. Default: VQ for Vị Cuốn.",
+      "example": "VQ"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Human-readable brand name.",
+      "example": "Vị Cuốn"
+    },
+    "lead_segment": {
+      "type": "string",
+      "enum": ["New Customer", "Returning Customer", "Lapsed Customer", "VIP", "Delivery Customer", "Walk-in Customer"],
+      "description": "Customer segment this sequence targets."
+    },
+    "customer_status": {
+      "type": "string",
+      "enum": ["New Lead", "Active", "At Risk", "Lapsed", "Churned", "Unsubscribed"],
+      "description": "CRM status of the customer at sequence start."
+    },
+    "channel": {
+      "type": "string",
+      "enum": ["Zalo", "Facebook Messenger", "SMS", "Email", "Telegram"],
+      "description": "Messaging channel for this sequence."
+    },
+    "trigger_event": {
+      "type": "string",
+      "description": "Event that triggers this sequence.",
+      "example": "First order completed"
+    },
+    "message_sequence": {
+      "type": "array",
+      "description": "Ordered list of messages in this sequence.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["step", "delay", "message_template"],
+        "properties": {
+          "step": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Step number in sequence order."
+          },
+          "delay": {
+            "type": "string",
+            "description": "Delay from trigger or previous step. E.g., 'Immediately', '1 day', '3 days'.",
+            "example": "1 day"
+          },
+          "message_template": {
+            "type": "string",
+            "description": "Message template text. Use [CUSTOMER_NAME] as placeholder for personalization."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "recommended_timing": {
+      "type": ["string", "null"],
+      "description": "Recommended send time windows.",
+      "example": "Weekdays 11am-1pm and 5pm-7pm (Vinh, Vietnam time)"
+    },
+    "human_review_required": {
+      "type": "boolean",
+      "description": "Always true. No CRM sequence can be sent without human review.",
+      "const": true
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": ["Draft", "Ready for Review", "Needs Revision", "Approved", "Rejected", "Scheduled", "Published"],
+      "description": "Auto-send cannot happen without Approved status.",
+      "default": "Draft"
+    },
+    "created_by_agent": {
+      "type": "string",
+      "description": "Agent that created this sequence.",
+      "example": "CRM Follow-Up Agent (AGT-CRM)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime when this sequence was created."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Notes for Owner or Reviewer. Include any opt-in compliance notes here."
+    }
+  },
+  "additionalProperties": false
+}

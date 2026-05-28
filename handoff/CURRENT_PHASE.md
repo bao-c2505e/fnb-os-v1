@@ -1,10 +1,10 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 2 Build)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 3 Build)
 
 ## Phase
 
-Phase 2 — Agent Prompts + SOP
+Phase 3 — Brand Brain + Input/Output Schemas
 
 ## Status
 
@@ -12,8 +12,8 @@ Phase 2 — Agent Prompts + SOP
 
 ## Current Command
 
-Phase 2 build complete. Awaiting Codex review.
-See `handoff/PHASE_2_HANDOFF.md` for full file list and validation checklist.
+Phase 3 build complete. Awaiting Codex review.
+See `handoff/PHASE_3_HANDOFF.md` for full file list and validation checklist.
 
 ## Builder
 
@@ -21,29 +21,28 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex / GPT-4o (AGT-04) — PENDING
+Codex (AGT-03) — PENDING
 
 ## Next Gate
 
-Codex reviews all 12 Phase 2 files → PASS → Owner approves commit.
-See `handoff/PHASE_2_HANDOFF.md` for Codex review instructions and commit instruction.
+Codex reviews all 11 Phase 3 files → PASS → Owner approves commit.
+See `handoff/PHASE_3_HANDOFF.md` for Codex review instructions and commit instruction.
 
-## Phase 2 Files
+## Phase 3 Files
 
 | File | Status |
 |------|--------|
-| `agents/chief-architect.md` | Created |
-| `agents/builder-claude-code.md` | Created |
-| `agents/reviewer-codex.md` | Created |
-| `agents/content-agent.md` | Created |
-| `agents/creative-asset-agent.md` | Created |
-| `agents/ads-pack-agent.md` | Created |
-| `agents/crm-followup-agent.md` | Created |
-| `agents/comment-inbox-agent.md` | Created |
-| `agents/approval-publishing-agent.md` | Created |
-| `docs/07_AGENT_PROMPT_SYSTEM.md` | Created |
-| `docs/08_PHASE_2_SOP.md` | Created |
-| `handoff/PHASE_2_HANDOFF.md` | Created |
+| `brand-brain/vi-cuon.md` | Created |
+| `schemas/content-output.schema.json` | Created |
+| `schemas/creative-brief.schema.json` | Created |
+| `schemas/ads-pack.schema.json` | Created |
+| `schemas/crm-followup.schema.json` | Created |
+| `schemas/comment-inbox-reply.schema.json` | Created |
+| `schemas/approval-status.schema.json` | Created |
+| `schemas/log-entry.schema.json` | Created |
+| `docs/09_BRAND_BRAIN_SYSTEM.md` | Created |
+| `docs/10_SCHEMA_SYSTEM.md` | Created |
+| `handoff/PHASE_3_HANDOFF.md` | Created |
 
 ## Previous Phase
 

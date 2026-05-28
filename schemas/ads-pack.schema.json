@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ads-pack.schema.json",
+  "title": "Ads Pack",
+  "description": "Schema for ad pack drafts produced by the Ads Pack Agent. No live ad spend without Owner Approved status.",
+  "type": "object",
+  "required": [
+    "ads_pack_id",
+    "brand_id",
+    "brand_name",
+    "campaign_objective",
+    "platform",
+    "funnel_stage",
+    "target_audience",
+    "angle",
+    "primary_text",
+    "headline",
+    "cta",
+    "approval_status",
+    "created_by_agent",
+    "created_at"
+  ],
+  "properties": {
+    "ads_pack_id": {
+      "type": "string",
+      "description": "Unique ID. Format: AP-[BRAND]-[YYYYMMDD]-[NNN]",
+      "example": "AP-VQ-20260528-001"
+    },
+    "brand_id": {
+      "type": "string",
+      "description": "Brand identifier. Default: VQ for Vị Cuốn.",
+      "example": "VQ"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Human-readable brand name.",
+      "example": "Vị Cuốn"
+    },
+    "campaign_objective": {
+      "type": "string",
+      "enum": ["Awareness", "Traffic", "Engagement", "Lead Generation", "Conversion", "Retargeting"],
+      "description": "Facebook/TikTok campaign objective."
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["Facebook Ads", "TikTok Ads", "Instagram Ads", "Multi-Platform"],
+      "description": "Ads platform."
+    },
+    "funnel_stage": {
+      "type": "string",
+      "enum": ["Top of Funnel (TOF)", "Middle of Funnel (MOF)", "Bottom of Funnel (BOF)"],
+      "description": "Where this ad sits in the customer funnel."
+    },
+    "target_audience": {
+      "type": "string",
+      "description": "Audience description. Must not contain PII.",
+      "example": "Office workers in Vinh, 22-40, interested in Vietnamese food and delivery"
+    },
+    "angle": {
+      "type": "string",
+      "description": "Creative angle and positioning hook for this ad.",
+      "example": "Fresh rolls, picked up in 5 minutes — lunchtime solved."
+    },
+    "primary_text": {
+      "type": "string",
+      "description": "Main ad body copy."
+    },
+    "headline": {
+      "type": "string",
+      "description": "Short headline shown in the ad unit.",
+      "example": "Bữa trưa tươi ngon — Giao nhanh tận nơi"
+    },
+    "description": {
+      "type": ["string", "null"],
+      "description": "Optional short description line below headline."
+    },
+    "cta": {
+      "type": "string",
+      "enum": ["Learn More", "Order Now", "Shop Now", "Contact Us", "See Menu", "Get Offer", "Sign Up"],
+      "description": "CTA button label."
+    },
+    "creative_brief_ref": {
+      "type": ["string", "null"],
+      "description": "Reference to the creative brief ID for the visual asset.",
+      "example": "CB-VQ-20260528-001"
+    },
+    "offer": {
+      "type": ["string", "null"],
+      "description": "Any offer included. Must be Owner-provided. Use [OWNER_TO_PROVIDE_OFFER] if pending.",
+      "example": "[OWNER_TO_PROVIDE_OFFER]"
+    },
+    "compliance_notes": {
+      "type": ["string", "null"],
+      "description": "Compliance flags or notes for this ad. E.g., no health claims, no fake scarcity."
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": ["Draft", "Ready for Review", "Needs Revision", "Approved", "Rejected", "Scheduled", "Published"],
+      "description": "Approval state. Ad spend cannot happen without Approved status.",
+      "default": "Draft"
+    },
+    "created_by_agent": {
+      "type": "string",
+      "description": "Agent that created this ads pack.",
+      "example": "Ads Pack Agent (AGT-Ads)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime when this ads pack was created."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional notes for the Owner or Reviewer."
+    }
+  },
+  "additionalProperties": false
+}

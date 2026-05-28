@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "comment-inbox-reply.schema.json",
+  "title": "Comment Inbox Reply Draft",
+  "description": "Schema for comment and inbox reply drafts produced by the Comment Inbox Agent. No auto-reply without Owner Approved status.",
+  "type": "object",
+  "required": [
+    "reply_id",
+    "brand_id",
+    "brand_name",
+    "channel",
+    "customer_message",
+    "detected_intent",
+    "sentiment",
+    "draft_reply",
+    "escalation_required",
+    "human_review_required",
+    "approval_status",
+    "created_by_agent",
+    "created_at"
+  ],
+  "properties": {
+    "reply_id": {
+      "type": "string",
+      "description": "Unique ID. Format: IR-[BRAND]-[YYYYMMDD]-[NNN]",
+      "example": "IR-VQ-20260528-001"
+    },
+    "brand_id": {
+      "type": "string",
+      "description": "Brand identifier. Default: VQ for Vị Cuốn.",
+      "example": "VQ"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Human-readable brand name.",
+      "example": "Vị Cuốn"
+    },
+    "channel": {
+      "type": "string",
+      "enum": ["TikTok Comment", "Instagram Comment", "Facebook Comment", "Facebook Messenger", "Zalo", "Google Review"],
+      "description": "Channel where the customer message originated."
+    },
+    "customer_message": {
+      "type": "string",
+      "description": "Verbatim customer message or comment. Do not modify or summarize."
+    },
+    "detected_intent": {
+      "type": "string",
+      "enum": [
+        "Menu Inquiry",
+        "Order Inquiry",
+        "Complaint",
+        "Compliment",
+        "Spam / Irrelevant",
+        "Sensitive / Legal",
+        "Price Inquiry",
+        "Location Inquiry",
+        "Other"
+      ],
+      "description": "Agent-detected intent of the customer message."
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": ["Positive", "Neutral", "Negative", "Angry", "Unclear"],
+      "description": "Agent-assessed sentiment of the customer message."
+    },
+    "draft_reply": {
+      "type": ["string", "null"],
+      "description": "Draft reply text. Set to null if escalation_required is true — never draft for escalation cases."
+    },
+    "escalation_required": {
+      "type": "boolean",
+      "description": "True if this case must be handled by Owner directly. True for: Complaint, Sensitive/Legal, Angry sentiment."
+    },
+    "escalation_reason": {
+      "type": ["string", "null"],
+      "description": "Required if escalation_required is true. Explain why escalation is needed."
+    },
+    "human_review_required": {
+      "type": "boolean",
+      "description": "Always true. No reply is ever sent without human review.",
+      "const": true
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": ["Draft", "Ready for Review", "Needs Revision", "Approved", "Rejected", "Scheduled", "Published"],
+      "description": "Auto-reply cannot happen without Approved status.",
+      "default": "Draft"
+    },
+    "created_by_agent": {
+      "type": "string",
+      "description": "Agent that created this reply draft.",
+      "example": "Comment Inbox Agent (AGT-Inbox)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime when this reply draft was created."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional notes for the Owner or Reviewer."
+    }
+  },
+  "additionalProperties": false
+}

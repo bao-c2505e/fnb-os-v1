@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "content-output.schema.json",
+  "title": "Content Output",
+  "description": "Schema for content outputs produced by the Content Agent. Covers captions, hooks, scripts, and CTAs for any platform.",
+  "type": "object",
+  "required": [
+    "content_id",
+    "brand_id",
+    "brand_name",
+    "content_type",
+    "platform",
+    "objective",
+    "target_audience",
+    "hook",
+    "caption",
+    "cta",
+    "approval_status",
+    "created_by_agent",
+    "created_at"
+  ],
+  "properties": {
+    "content_id": {
+      "type": "string",
+      "description": "Unique ID for this content item. Format: CC-[BRAND]-[YYYYMMDD]-[NNN]",
+      "example": "CC-VQ-20260528-001"
+    },
+    "brand_id": {
+      "type": "string",
+      "description": "Brand identifier. Default: VQ for Vị Cuốn.",
+      "example": "VQ"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Human-readable brand name.",
+      "example": "Vị Cuốn"
+    },
+    "content_type": {
+      "type": "string",
+      "enum": ["TikTok Video", "Reels", "Feed Post", "Story", "Ad Copy", "Caption Only", "Script Only"],
+      "description": "Type of content this output represents."
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["TikTok", "Instagram", "Facebook", "Zalo", "Multi-Platform"],
+      "description": "Target platform for publishing."
+    },
+    "objective": {
+      "type": "string",
+      "enum": ["Awareness", "Engagement", "Conversion", "Retention", "Trust Building"],
+      "description": "Marketing objective this content serves."
+    },
+    "target_audience": {
+      "type": "string",
+      "description": "Target audience segment. Must match a segment in Brand Brain.",
+      "example": "Office workers — lunch occasion"
+    },
+    "hook": {
+      "type": "string",
+      "description": "Opening hook line for caption or video. Must be attention-grabbing within first 1-2 seconds.",
+      "example": "Bữa trưa hôm nay chưa biết ăn gì?"
+    },
+    "caption": {
+      "type": "string",
+      "description": "Full post caption including hook, body, and CTA."
+    },
+    "script": {
+      "type": ["string", "null"],
+      "description": "Video script with scene breakdown and voiceover. Null if content type is not video."
+    },
+    "cta": {
+      "type": "string",
+      "description": "Call to action text.",
+      "example": "Đặt ngay hoặc ghé Vị Cuốn hôm nay!"
+    },
+    "visual_direction": {
+      "type": ["string", "null"],
+      "description": "Brief visual direction for this content. E.g., color palette suggestion, shot type, mood."
+    },
+    "offer": {
+      "type": ["string", "null"],
+      "description": "Any offer or promotion included. Must be Owner-provided. Use [OWNER_TO_PROVIDE_OFFER] if pending.",
+      "example": "[OWNER_TO_PROVIDE_OFFER]"
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": ["Draft", "Ready for Review", "Needs Revision", "Approved", "Rejected", "Scheduled", "Published"],
+      "description": "Current approval state. Published requires prior Approved state.",
+      "default": "Draft"
+    },
+    "created_by_agent": {
+      "type": "string",
+      "description": "Agent that created this output.",
+      "example": "Content Agent (AGT-Content)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime when this output was created.",
+      "example": "2026-05-28T09:00:00+07:00"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional notes for the Owner or Reviewer."
+    }
+  },
+  "additionalProperties": false
+}

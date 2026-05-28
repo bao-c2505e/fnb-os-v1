@@ -1,8 +1,76 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 2 Build)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 3 Build)
 
-## Latest Session — Phase 2 Agent Prompts + SOP Build
+## Latest Session — Phase 3 Brand Brain + I/O Schemas Build
+
+### current_phase
+3 — Brand Brain + Input/Output Schemas (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 3 build complete. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: b4863a1 — docs: add phase 2 agent prompts and SOP
+
+### files_changed
+Phase 3 (build):
+- `brand-brain/vi-cuon.md` — created: default Brand Brain, 8 sections, Vị Cuốn-specific, replaceable
+- `schemas/content-output.schema.json` — created: 16 fields, content outputs for all platforms
+- `schemas/creative-brief.schema.json` — created: 17 fields, image/video/design briefs
+- `schemas/ads-pack.schema.json` — created: 18 fields, ad copy and targeting, no-spend gate
+- `schemas/crm-followup.schema.json` — created: 14 fields, message sequences, human_review_required const true
+- `schemas/comment-inbox-reply.schema.json` — created: 15 fields, escalation rules, no auto-reply gate
+- `schemas/approval-status.schema.json` — created: 10 fields, 7-state machine, Owner-only Approved
+- `schemas/log-entry.schema.json` — created: 12 fields, structured logs for all agents
+- `docs/09_BRAND_BRAIN_SYSTEM.md` — created: Brand Brain explainer, agent reading requirements, what must not be invented, replacement guide
+- `docs/10_SCHEMA_SYSTEM.md` — created: schema registry, agent-to-schema map, approval state machine, n8n/LangGraph notes
+- `handoff/PHASE_3_HANDOFF.md` — created: files list, validation checklist, Codex instructions, commit instruction
+- `handoff/CURRENT_PHASE.md` — updated: Phase 3 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 11 primary files built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Brand Brain (`brand-brain/vi-cuon.md`) is a separate canonical file from Phase 1.1 `01_BRAIN/` files — it is the structured version for agent consumption.
+- All 7 schemas use JSON Schema Draft-07 with `additionalProperties: false` for strict validation.
+- `human_review_required` is a `const: true` in CRM and inbox reply schemas — not just a default, it cannot be overridden.
+- `approval-status.schema.json` uses `$comment` to embed approval rules visibly in the schema itself.
+- Offer placeholder `[OWNER_TO_PROVIDE_OFFER]` consistently used across all relevant schemas.
+- No sample/filled instances created in Phase 3 — kept to schema contracts only per scope.
+
+### open_issues
+- Offer details and exact pricing still need Owner confirmation before content agents can produce accurate offer-inclusive outputs.
+- Phase 4 will wire agents to schemas with sample instances and n8n planning.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 3 files.
+
+### next_reviewer_action
+Codex: review all 11 files listed in `handoff/PHASE_3_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 3 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 2 Agent Prompts + SOP Build
 
 ### current_phase
 2 — Agent Prompts + SOP (BUILDER_DONE_PENDING_REVIEW)
