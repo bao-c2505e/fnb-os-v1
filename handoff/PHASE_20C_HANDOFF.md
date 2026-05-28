@@ -71,11 +71,9 @@ Phase 20C committed the evidence record to the repo. No workflow was executed by
 
 | File | Status |
 |------|--------|
-| `evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_canvas.png` | Referenced — pending Owner placement in repo folder |
-| `evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_output.png` | Referenced — pending Owner placement in repo folder |
+| `evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_canvas.png` | Committed — Phase 20C cleanup |
+| `evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_output.png` | Committed — Phase 20C cleanup |
 | `evidence/phase_20b/content_auto_skeleton/.gitkeep` | Present — folder tracked in git |
-
-> **Action for Owner:** Copy screenshots from local storage to `evidence/phase_20b/content_auto_skeleton/` before or during the Phase 20C commit. The folder exists and is tracked. Screenshots will be included in the commit once placed there.
 
 ---
 

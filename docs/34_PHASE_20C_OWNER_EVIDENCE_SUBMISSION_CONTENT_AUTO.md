@@ -106,9 +106,7 @@ The Owner captured the following screenshots during execution:
 
 **Evidence Folder:** `evidence/phase_20b/content_auto_skeleton/`
 
-> **Note:** Screenshot files are referenced by Owner but are pending placement in the repo folder.
-> Owner to copy screenshots from local storage to `evidence/phase_20b/content_auto_skeleton/` before or during commit.
-> The `.gitkeep` placeholder is already present at the correct path.
+> Both screenshot files are committed to the repo at the paths above (Phase 20C cleanup commit).
 
 ---
 
