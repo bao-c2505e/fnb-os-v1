@@ -1,22 +1,22 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 16 Sandbox Runtime Validation Plan)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 17 Sandbox Test Data + Evidence Pack)
 
 ## Phase
 
-Phase 16 — Sandbox Runtime Validation Plan
+Phase 17 — Sandbox Test Data + Evidence Pack
 
 ## Status
 
-**PLAN_CREATED — READY FOR CODEX REVIEW**
-Phase 16 plan document and activity log created. Awaiting Codex review and Owner OWNER_APPROVED before any sandbox execution.
+**PACK_CREATED — READY FOR CODEX REVIEW**
+Phase 17 test payloads, evidence template, and activity log created. Awaiting Codex review and Owner OWNER_APPROVED before any sandbox execution.
 
 ## Current Command
 
-Phase 16 — Sandbox Runtime Validation Plan.
-Plan for manual trigger testing of all 6 Phase 8 workflow skeletons using dummy data.
-No execution performed. No credentials. No activation.
-See `docs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN.md` and `logs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN_LOG.md`.
+Phase 17 — Sandbox Test Data + Evidence Pack.
+6 dummy test payload files + evidence collection template + log created.
+No execution performed. No credentials. No activation. No real customer data.
+See `docs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK.md` and `logs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK_LOG.md`.
 
 ## Builder
 
@@ -28,25 +28,32 @@ Codex (AGT-03) — PENDING
 
 ## Next Gate
 
-Codex reviews Phase 16 plan → PASS → Owner approves commit → Owner executes sandbox runtime validation following the plan.
+Codex reviews Phase 17 pack → PASS → Owner approves commit → Owner executes sandbox runtime validation using Phase 16 plan + Phase 17 payloads + evidence template.
 
-## Phase 16 Files
+## Phase 17 Files
 
 | File | Status |
 |------|--------|
-| `docs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN.md` | Created |
-| `logs/PHASE_16_SANDBOX_RUNTIME_VALIDATION_PLAN_LOG.md` | Created |
+| `docs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK.md` | Created |
+| `samples/sandbox/phase_17_test_payloads/content_auto_skeleton_test_payload.md` | Created |
+| `samples/sandbox/phase_17_test_payloads/creative_asset_auto_skeleton_test_payload.md` | Created |
+| `samples/sandbox/phase_17_test_payloads/ads_pack_auto_skeleton_test_payload.md` | Created |
+| `samples/sandbox/phase_17_test_payloads/crm_followup_auto_skeleton_test_payload.md` | Created |
+| `samples/sandbox/phase_17_test_payloads/comment_inbox_reply_assistant_skeleton_test_payload.md` | Created |
+| `samples/sandbox/phase_17_test_payloads/approval_publishing_skeleton_test_payload.md` | Created |
+| `logs/templates/SANDBOX_EXECUTION_EVIDENCE_TEMPLATE.md` | Created |
+| `logs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK_LOG.md` | Created |
 
-## Phase 16 Status
+## Phase 17 Status
 
 | Check | Status |
 |-------|--------|
-| Plan document created | YES |
-| Activity log created | YES |
+| Pack documents created | YES — 9 files |
 | n8n accessed | NO |
 | Workflow executed | NO |
 | Workflow activated | NO |
 | Real credentials added | NO |
+| Real customer data used | NO |
 | Auto-post / auto-reply / ads | NO |
 | Secrets present in repo | NONE — secret scan CLEAN |
 | Phase 8 JSON modified | NO — untouched at `ad867b3` |
@@ -56,11 +63,13 @@ Codex reviews Phase 16 plan → PASS → Owner approves commit → Owner execute
 
 | Phase | Result |
 |-------|--------|
+| Phase 16 — Sandbox Runtime Validation Plan | **DONE (commit `82a3ce3`)** |
 | Phase 14 — Sandbox Import Dry-Run | **PASS — 6/6 workflows imported, all inactive (commit `86099bb`)** |
 | Phase 15 — Codex Review Gate | **PASS** |
 
 ## Previous Phases
 
+Phase 16 — Sandbox Runtime Validation Plan (commit `82a3ce3`)
 Phase 15 — Codex Review Gate on Phase 14 (PASS)
 Phase 14 — Owner n8n Sandbox Dry-Run Execution Log (PASS — commit `86099bb`)
 Phase 13 — Controlled n8n Import Dry-Run Handoff (commit `f8ca5f4`)

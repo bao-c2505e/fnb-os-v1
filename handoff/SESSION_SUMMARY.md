@@ -1,8 +1,74 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 16 Sandbox Runtime Validation Plan)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 17 Sandbox Test Data + Evidence Pack)
 
-## Latest Session — Phase 16 Sandbox Runtime Validation Plan
+## Latest Session — Phase 17 Sandbox Test Data + Evidence Pack
+
+### current_phase
+17 — Sandbox Test Data + Evidence Pack (PACK_CREATED — READY FOR CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (doc/pack creation only — no execution, no real data)
+
+### active_command
+Phase 17 pack complete. 9 files created (1 main doc + 6 test payloads + 1 evidence template + 1 activity log). Awaiting Codex PASS and Owner OWNER_APPROVED. No execution, no n8n accessed, no credentials, no activation, no real customer data, no auto-post/auto-reply/ads.
+
+### latest_commit
+Last stable commit: `82a3ce3` — docs: add phase 16 sandbox runtime validation plan
+
+### files_changed
+Phase 17 (build):
+- `docs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK.md` — created: pack overview; purpose (ready-to-use dummy test materials so Owner doesn't need to invent data); scope (6 payloads, expected/forbidden output, evidence template); out of scope (11 exclusions including real customer data, real credentials, activation, real platform APIs, production readiness claim); safety rules P17-SR-01–05; how pack relates to Phase 16 (payloads implement Phase 16 Section 7 dummy data policy); test data structure; evidence collection rules; Owner execution rules; PASS/BLOCKED criteria; Phase 18 recommendation; phase connections table Phase 8–Phase 18 future.
+- `samples/sandbox/phase_17_test_payloads/content_auto_skeleton_test_payload.md` — created: WF-01 Standard; 1 scenario; pre-set input fields from workflow Set node; expected output table (brandBrainLoaded, contentDraftGenerated, approval_status=Draft, logEntry.log_id, approvalQueueStubReached); forbidden output (no FB/OpenAI/Sheets API, no auto-approval); approval gate expectation; log expectation JSON structure; PASS/BLOCK criteria.
+- `samples/sandbox/phase_17_test_payloads/creative_asset_auto_skeleton_test_payload.md` — created: WF-02 Standard; 1 scenario; similar structure to WF-01; forbidden output adds no real image generation, no file upload; PASS/BLOCK criteria.
+- `samples/sandbox/phase_17_test_payloads/ads_pack_auto_skeleton_test_payload.md` — created: WF-03 HIGH RISK; pre-test safety checklist (NO ADS SPEND sticky, no Meta/TikTok Ads credential); 1 scenario; fake reference values table (ACT-TEST-000001 for docs only, labeled do not enter); expected output includes compliance_notes required; CRITICAL forbidden output table (Meta Ads /act_*/campaigns, TikTok Ads, Zalo Ads, real Ad Account ID/Pixel ID/budget); PASS requires compliance_notes present; BLOCK if any ads API call.
+- `samples/sandbox/phase_17_test_payloads/crm_followup_auto_skeleton_test_payload.md` — created: WF-04 HIGH RISK; pre-test safety checklist (NO AUTO-SEND sticky, no Zalo/Messenger/SMS credential); 2 scenarios (Scenario 1 new lead Messenger, Scenario 2 lapsed customer Zalo); fake reference table (Nguyen Test A, 0900000000, sandbox@example.com, TEST_FBUID_000001, TEST_ZALOID_000001 — all docs only); expected output human_review_required=true always; CRITICAL forbidden output (Zalo OA API, Facebook Messenger API, SMS gateway, real PSID, real PII); PASS requires human_review_required=true and no messaging API call.
+- `samples/sandbox/phase_17_test_payloads/comment_inbox_reply_assistant_skeleton_test_payload.md` — created: WF-05 HIGH RISK; pre-test safety checklist (NO AUTO-REPLY sticky, no comment reply credential); 2 MANDATORY scenarios (S1 standard menu query fake message "Menu của quán có những món gì vậy shop?" — non-escalation FALSE branch draft_reply non-null; S2 angry complaint fake message "Đồ ăn dở quá, tôi sẽ không quay lại nữa!" — escalation TRUE branch draft_reply=null); fake commenter reference table (Nguyen Test A, TEST_CMT_ID_000001, TEST_POST_ID_000001, TEST_PAGE_ID_000001 — docs only); CRITICAL forbidden output (FB/IG/TikTok/Zalo comment APIs, draft_reply non-null on escalation, human_review_required=false); both scenarios required for PASS.
+- `samples/sandbox/phase_17_test_payloads/approval_publishing_skeleton_test_payload.md` — created: WF-06 HIGH RISK; webhook trigger instructions (n8n test webhook URL — sandbox local only, no activation, not public internet); 2 mandatory scenarios (S1 approved payload approval_status=Approved owner_decision=Approved item_type=Content Output item_id=TEST-ITEM-001 session_id=TEST-SESSION-P17-WF06-S1 → TRUE branch → Switch Content Output branch → NoOp → approval log; S2 not-approved payload approval_status=Draft owner_decision=null item_id=TEST-ITEM-002 → FALSE branch → block path → Stop and Error); 4 optional S3–S6 item_type routing scenarios (Creative Brief, Ads Pack, CRM Follow-Up, Comment Reply); CRITICAL forbidden output (FB post API, IG publish, TikTok, Zalo content, Google Drive file create, Meta Ads campaign, TikTok Ads, Zalo messaging, comment reply API); PASS requires S1+S2 both complete and all 5 NoOp stubs confirmed.
+- `logs/templates/SANDBOX_EXECUTION_EVIDENCE_TEMPLATE.md` — created: 9-section evidence record template; Section 1 session identity (date/time/operator/instance); Section 2 workflow under test (ID/file/n8n name/payload/risk); Section 3 pre-test confirmation with per-workflow extra checks (WF-03 ads check, WF-04 CRM check, WF-05 inbox check, WF-06 approval check); Section 4 test execution — trigger method + per-node result table (all major nodes) + key output fields observed table; Section 5 post-execution safety checks (9 items); Section 6 issues/anomalies log table; Section 7 evidence references (screenshots, execution ID, checklist IDs completed, payload file); Section 8 verdict PASS/BLOCKED/PARTIAL/NOT_RUN with blocker description; Section 9 Owner sign-off with initials/date/confirmation statement; instructions to copy one per workflow per session.
+- `logs/PHASE_17_SANDBOX_TEST_DATA_EVIDENCE_PACK_LOG.md` — created: session details all NO; files created/updated/not-modified tables; dummy data policy compliance verification; safety confirmations; secret scan CLEAN; test payload summary table 6 rows; next recommended Phase 18 execution recording.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 17 PACK_CREATED READY FOR CODEX REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 9 primary Phase 17 files untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- WF-05 and WF-06 payloads require 2 mandatory scenarios each — non-optional, because both execution paths (escalation/non-escalation for WF-05; approved/not-approved for WF-06) are independent logic paths that cannot be inferred from testing only one.
+- WF-03/04/05/06 each have a pre-test safety checklist at the top of the payload file — extra friction added intentionally because these 4 are HIGH RISK (ads, messaging, reply, publishing). Owner must check before triggering.
+- Fake customer reference values in WF-04 and WF-05 payloads are labeled "for documentation purposes only — do NOT enter in n8n" — this is because the workflow Set nodes don't take external input for customer fields. The fake values are for the evidence template only, not for entering into n8n nodes.
+- WF-06 webhook instructions explicitly state: test webhook URL is sandbox-local only, not public internet, no activation required, temporary URL valid only in test mode. This is the main non-obvious step for WF-06 and deserves its own section.
+- Evidence template has 9 sections (more than prior evidence logs in Phase 11/14) because it must cover both execution result and safety sign-off for all 6 workflows in one reusable form.
+- Evidence template's Section 9 (Owner sign-off) includes a confirmation statement — this is a formal record that Owner vouches for the observations being accurate. Matches the safety gate pattern from Phase 14 Section 12.
+
+### open_issues
+- Actual sandbox execution not yet performed — Owner must obtain OWNER_APPROVED after Codex PASS, then execute using Phase 16 plan + Phase 17 payloads.
+- WF-06 Scenarios 3–6 (additional item_type routing) are marked optional in Phase 17 — recommended but not required for PASS. Full testing is recommended before Phase 18.
+- Error Trigger path testing (requires intentional node error) remains in the "SKIPPED non-blocking" category from Phase 16.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then: (1) open Phase 16 plan and Phase 17 payload files together, (2) confirm all Phase 16 preconditions (PC-01 through PC-12), (3) execute each workflow using the test payloads, (4) fill one copy of SANDBOX_EXECUTION_EVIDENCE_TEMPLATE.md per workflow, (5) report results to Builder for Phase 18.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 17 files.
+
+### next_reviewer_action
+Codex: review all 9 Phase 17 files. Confirm all dummy data is fake (no real PII, no real credentials), safety rules are enforced in each payload, evidence template is complete and usable, no secrets present. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 17 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 17 files.
+
+---
+
+## Previous Session — Phase 16 Sandbox Runtime Validation Plan
 
 ### current_phase
 16 — Sandbox Runtime Validation Plan (PLAN_CREATED — READY FOR CODEX REVIEW)
