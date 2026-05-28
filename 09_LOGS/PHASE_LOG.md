@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 5 — Sample Outputs for Vị Cuốn Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created 7 sample output files under `samples/vi-cuon/`: `content-sample.md` (3 outputs: Facebook feed post, TikTok video script, 3-post calendar), `creative-brief-sample.md` (2 briefs: food photo 1:1, TikTok video 9:16 with ASMR direction), `ads-pack-sample.md` (2 packs: TOF awareness, BOF message conversion), `crm-followup-sample.md` (2 sequences: new lead 3-step, lapsed 2-step, both `human_review_required: true`), `comment-inbox-reply-sample.md` (5 reply drafts: menu/price/address/booking/delivery, all `human_review_required: true`), `approval-status-sample.md` (5 approval records, all Draft or Ready for Review), `log-entry-sample.md` (4 structured log entries). Created `docs/13_SAMPLE_OUTPUT_SYSTEM.md`. All samples use Brand Brain data from `brand-brain/vi-cuon.md`. All missing brand data (prices, address, opening hours, delivery areas, offers) uses explicit placeholders. No fake reviews, no scarcity, no false claims. No n8n workflow, no scripts, no secrets, no commit, no push. Awaiting Codex PASS and Owner approval.
+
+---
+
 ### 2026-05-28 — Phase 4 — Module SOP + Output Templates Build
 
 **By:** Claude Code (Builder, AGT-02)

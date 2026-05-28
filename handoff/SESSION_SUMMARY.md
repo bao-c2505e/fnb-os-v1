@@ -2,7 +2,75 @@
 
 Updated By: Claude Code (Builder) — 2026-05-28 (Phase 3 Build)
 
-## Latest Session — Phase 4 Module SOP + Output Templates Build
+## Latest Session — Phase 5 Sample Outputs for Vị Cuốn Build
+
+### current_phase
+5 — Sample Outputs for Vị Cuốn (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 5 build complete. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: 8942fd7 — docs: add phase 4 module SOPs and templates
+
+### files_changed
+Phase 5 (build):
+- `samples/vi-cuon/content-sample.md` — created: 3 samples (Facebook feed post Bánh Tráng Cuốn Thịt Heo, TikTok BTS video script 5 scenes, 3-post content calendar Mon/Wed/Fri)
+- `samples/vi-cuon/creative-brief-sample.md` — created: 2 briefs (Facebook food photo 1:1, TikTok video 9:16 with 5-scene breakdown + ASMR audio direction)
+- `samples/vi-cuon/ads-pack-sample.md` — created: 2 ads packs (TOF awareness Facebook Ads, BOF message conversion Facebook Ads)
+- `samples/vi-cuon/crm-followup-sample.md` — created: 2 sequences (new lead Facebook Messenger 3-step, lapsed customer Zalo 2-step), human_review_required: true both
+- `samples/vi-cuon/comment-inbox-reply-sample.md` — created: 5 reply drafts (menu, price, address, booking/group, delivery), all human_review_required: true, all Draft
+- `samples/vi-cuon/approval-status-sample.md` — created: 5 approval records (content Draft, creative brief Ready for Review, ads pack Draft, CRM Draft, inbox reply Ready for Review)
+- `samples/vi-cuon/log-entry-sample.md` — created: 4 log entries (phase start, content draft, creative brief draft, phase complete)
+- `docs/13_SAMPLE_OUTPUT_SYSTEM.md` — created: explains sample system, validation chain, placeholder rationale, refresh process, no automation in Phase 5
+- `handoff/PHASE_5_HANDOFF.md` — created: files list, validation checklist, known limitations, brand data gaps table, Codex instructions, commit instruction
+- `handoff/CURRENT_PHASE.md` — updated: Phase 5 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 7 primary sample files + 1 doc + 1 handoff built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- All prices, addresses, opening hours, delivery areas, and offers use explicit placeholders — not guesses. Brand Brain is incomplete in these areas.
+- Real food photography recommended over AI-generated for creative briefs — noted explicitly in brief notes.
+- No escalation-required inbox reply included in samples — all 5 standard inquiries. Escalation sample can be added on Owner request.
+- CRM sequences are short (2–3 steps) to avoid spam — sequence ends with explicit "last message" note.
+- Ads pack compliance_notes field populated with explicit "no health claims, no scarcity, pricing placeholder" confirmations.
+- All approval-status samples kept at Draft or Ready for Review — no Approved/Published/Scheduled in Phase 5.
+- `[OWNER_TO_PROVIDE_DELIVERY_AREA]` used in ads pack and inbox reply — confirmed separately from address as delivery area may differ from physical location.
+
+### open_issues
+- All placeholder fields still need Owner confirmation before any sample can go to production.
+- No escalation inbox reply sample — add if Owner requests.
+- Creative briefs require physical filming/photography sessions to be arranged.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then fill Brand Brain placeholder fields when ready.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 5 files.
+
+### next_reviewer_action
+Codex: review all files listed in `handoff/PHASE_5_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 5 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 4 Module SOP + Output Templates Build
 
 ### current_phase
 4 — Module SOP + Output Templates (BUILDER_DONE_PENDING_REVIEW)
