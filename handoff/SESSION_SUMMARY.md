@@ -1,8 +1,71 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 9 Build)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 10 Build)
 
-## Latest Session — Phase 9 n8n Import Validation Pack Build
+## Latest Session — Phase 10 n8n Import Dry Run and Validation Build
+
+### current_phase
+10 — n8n Import Dry Run and Validation (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 10 build complete. Owner approved file plan with 14 conditions. All 4 Phase 10 files + 4 state file updates created. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: 56ed0c3 — docs: add phase 9 n8n import validation pack
+
+### files_changed
+Phase 10 (build):
+- `logs/N8N_STATIC_VALIDATION_RUN_PHASE_10.md` — created: session details table; Node.js status (BLOCKED_BY_ENVIRONMENT — not found); automated validator status (BLOCKED_BY_ENVIRONMENT); manual static inspection of all 6 Phase 8 workflow JSONs against 11 checks per file (66 total checks, all PASS); per-file inspection tables with additional high-risk checks (ads/CRM/inbox/publishing); secret scan (42 checks: 7 patterns × 6 files, ALL CLEAN); Phase 8 JSON integrity confirmation (untouched); next steps for Owner.
+- `docs/22_N8N_IMPORT_DRY_RUN_PROCEDURE.md` — created: what a dry run is; scope and hard constraints table; 7 pre-conditions including Node.js check + static validator run; 10-step procedure (Steps 1–10: open n8n → import each of 6 workflows → post-import verification → complete log → record issues); per-workflow import verification steps; STOP conditions table (6 conditions); PASS criteria; 5 known limitations; phase connections table.
+- `logs/templates/N8N_IMPORT_ISSUE_TEMPLATE.md` — created: issue ID format; issue details table (file, n8n version, type, severity, status); description fields (what happened, expected, actual); reproduction steps; affected checks table; STOP condition table; evidence table; resolution fields (root cause, fix, files modified, verified by); sign-off table with Owner approval.
+- `handoff/PHASE_10_HANDOFF.md` — created: files created/updated/not-modified tables; scope; validator status; manual inspection summary table; git status; acceptance criteria (14 items); checks; Codex review instructions (5 points); Phase 11 recommendation; commit instruction.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 10 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 4 primary Phase 10 files built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Validator run recorded as BLOCKED_BY_ENVIRONMENT per approved Phase 10 condition 11 — this is not a project failure.
+- Manual static inspection substitutes for automated validator run — covers all 11 checks per file (66 total) plus additional high-risk checks for ads/CRM/inbox/publishing workflows.
+- Secret scan performed manually across all 7 patterns × 6 files (42 checks) — ALL CLEAN confirmed.
+- `docs/22_N8N_IMPORT_DRY_RUN_PROCEDURE.md` is structured as an actionable step-by-step guide — Owner can follow it independently without needing further builder assistance for the basic import.
+- Issue template uses `II-[WORKFLOW_SHORT]-[DATE]-[SEQ]` ID format for traceability.
+- Phase 8 workflow JSON files: read only, not edited. Files remain at committed state (commit `ad867b3`) with no local modifications.
+- Overall working tree: PRE-COMMIT (not clean) — 4 modified tracked files + 4 untracked Phase 10 files. Working tree will be clean only after approved commit is executed.
+
+### open_issues
+- Automated validator not yet run — Owner must install Node.js >= 16 first.
+- n8n import not yet performed — Owner must run dry run procedure when ready.
+- Import log template blank — Owner must copy and fill after import session.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then: (1) install Node.js >= 16, (2) run `node scripts/validate_n8n_workflows.mjs`, (3) follow `docs/22_N8N_IMPORT_DRY_RUN_PROCEDURE.md` to import all 6 skeletons, (4) fill `logs/templates/N8N_IMPORT_VALIDATION_LOG_TEMPLATE.md` and `docs/checklists/PHASE_9_N8N_IMPORT_CHECKLIST.md`.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 10 files.
+
+### next_reviewer_action
+Codex: review all files listed in `handoff/PHASE_10_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 10 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 9 n8n Import Validation Pack Build
 
 ### current_phase
 9 — n8n Import Validation Pack (BUILDER_DONE_PENDING_REVIEW)

@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 10 — n8n Import Dry Run and Validation Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created Phase 10 dry run and validation pack. `logs/N8N_STATIC_VALIDATION_RUN_PHASE_10.md`: Node.js environment check (not found — BLOCKED_BY_ENVIRONMENT per approved condition 11); automated validator script status (BLOCKED_BY_ENVIRONMENT — not project failure); manual static inspection of all 6 Phase 8 workflow JSON files against 11 checks each (66 total checks, all PASS): file exists, valid JSON, active=false, name present, name contains [SKELETON], non-empty nodes array, Error Trigger node, Sticky Note node, secret scan (7 patterns), versionId placeholder, instanceId placeholder; additional high-risk checks for ads (no Ads API nodes, compliance_notes present), CRM (human_review_required=true hardcoded, no messaging API), inbox (escalation gate present, both paths human_review_required=true), approval (all 5 publish branches NoOp stubs, not-approved hard-block); secret scan 42 checks (7 patterns × 6 files) ALL CLEAN; Phase 8 JSON integrity confirmed (untouched, read-only). `docs/22_N8N_IMPORT_DRY_RUN_PROCEDURE.md`: 10-step dry run procedure covering open n8n → import each of 6 workflows with per-workflow verification criteria → post-import verification → log completion → issue recording; 7 pre-conditions (Node.js check, validator run, n8n instance); 6 STOP conditions; PASS criteria; 5 known limitations; phase connections table. `logs/templates/N8N_IMPORT_ISSUE_TEMPLATE.md`: issue ID format; details table; STOP condition table; evidence and resolution fields; Owner sign-off. `handoff/PHASE_10_HANDOFF.md`: full file inventory; scope; validator status; manual inspection summary; 14 acceptance criteria all PASS; 5-point Codex review instructions; Phase 11 recommendation; commit instruction. No Phase 8 workflow JSON modified. No real credentials. No workflows activated. No auto-publish, no auto-reply, no ads spend. No commit, no push.
+
+---
+
 ### 2026-05-28 — Phase 9 — n8n Import Validation Pack Build
 
 **By:** Claude Code (Builder, AGT-02)
