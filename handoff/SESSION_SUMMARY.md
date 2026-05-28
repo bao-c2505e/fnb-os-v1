@@ -1,8 +1,68 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 12 Build)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 13 Build)
 
-## Latest Session — Phase 12 n8n Import Dry-Run Execution Readiness Build
+## Latest Session — Phase 13 Controlled n8n Import Dry-Run Handoff Build
+
+### current_phase
+13 — Controlled n8n Import Dry-Run Handoff (READY FOR CODEX REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 13 build complete. All 3 Phase 13 files created. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Last stable commit: `98608e9` — docs: add phase 12 n8n import dry-run readiness gate
+
+### files_changed
+Phase 13 (build):
+- `docs/25_CONTROLLED_N8N_IMPORT_DRY_RUN_HANDOFF.md` — created: controlled operator handoff for the actual dry-run session; 10 non-negotiable rules table (sandbox only, import only, inactive, placeholder credentials, no production paths/posting/replying/ads, record results, record issues); 6-file open-during-session table (readiness gate → procedure → checklist → evidence log → issue template → this document); 13-item before-import checklist (B-01–B-13: readiness gate reviewed, n8n confirmed sandbox, accessible, credentials checked, n8n version noted, Node.js confirmed, validator passed, all 6 files accessible, evidence log open, Section 2 filled, Section 4 filled, start time noted, time allocated); per-workflow import order table (6 workflows with risk levels — Content Auto/Creative Asset Standard, Ads Pack/CRM/Inbox/Approval High); 10 per-workflow steps (D-01–D-10: import from file → confirm → open canvas → name check → inactive → node inspection → credential check → warnings → evidence log Section 6); per-workflow check table (import status, name, active, node count, Error Trigger, Sticky Note, warnings); high-risk extra checks for WF-03 ads (no Ads API, no budget), WF-04 CRM (human_review_required visible, no messaging API), WF-05 inbox (escalation gate, both branches human review, no reply API), WF-06 publishing (all 5 branches NoOp, not-approved Stop and Error, no platform publish); 14-item after-import checklist (A-01–A-14: all 6 imported, all inactive, no activation, no execution, no credentials, no posting, no replying, no ads spend, evidence Sections 6+7 filled, Section 8 filled with initials, Section 9 filled, Section 10 PASS or BLOCKED, issues filed if any, end time noted); 8 stop conditions (S-01–S-08) with immediate actions; 8-item evidence requirements table mapped to evidence log sections; 7-step issue recording procedure with file naming convention; credential placeholder behavior section (expected resolution failure, TEST_PLACEHOLDER guidance, not-a-failure note); post-success next steps (6 items including do NOT activate, do NOT configure real credentials); phase connections table (Phase 8–13); 5 known limitations.
+- `logs/N8N_IMPORT_DRY_RUN_HANDOFF_PHASE_13.md` — created: handoff log status READY_FOR_OWNER_DRY_RUN; session details table (all NO); handoff document content summary table (10 sections with content description); R-01–R-12 repo-side readiness all PASS; E-01–E-09 environment-side all NOT_VERIFIED; safety confirmation table (11 items all NO or NONE); secret scan (9 patterns × 3 Phase 13 files, ALL CLEAN); overall status table; 7-step Owner next steps.
+- `handoff/PHASE_13_HANDOFF.md` — created: phase distinction table (Phase 10/11/12/13); files created (3), updated (4), not-modified (6 Phase 8 JSONs) tables; git status table (4 modified tracked + 3 untracked + total 7 + Phase 8 zero local modifications); commit/push status NO/NO with breakdown; 18 acceptance criteria all PASS; 9-pattern secret scan CLEAN; 5-point Codex review instructions; commit instruction with exact git add list.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 13 READY FOR CODEX REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 3 primary Phase 13 files untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Phase 13 operator handoff is distinct from Phase 10 (procedure) and Phase 11 (checklist) — it is designed as the single document to have open during the actual import session, combining rules, before/during/after checklists, stop conditions, and evidence requirements in one place.
+- Import order table specifies risk levels (Standard for WF-01/02, High for WF-03/04/05/06) — operator knows which workflows require extra vigilance.
+- Before-import checklist has 13 items (not just 9 from Phase 10) — added evidence log pre-fill steps (Sections 2 and 4) as mandatory items so evidence is captured from the start, not after the fact.
+- After-import checklist has 14 items — expands on Phase 11 post-import checklist (8 items) with explicit evidence log completion steps and issue filing requirement.
+- Credential placeholder behavior section explicitly states that "Credential not found" warnings are expected and not failures — prevents operator from entering real credentials to resolve them.
+- Post-success next steps include Phase 14 note — sets expectation that production credential setup is a future phase, not part of this dry-run.
+- Status READY_FOR_OWNER_DRY_RUN (not PASS or NOT_RUN) — accurately reflects that repo is ready and handoff is prepared, but actual execution is owner-gated.
+
+### open_issues
+- Actual dry-run not yet executed — Owner must complete Phase 12 environment check (E-01–E-09) then follow Phase 13 handoff.
+- Node.js BLOCKED_BY_ENVIRONMENT from Phase 10 — Owner must install Node.js >= 16 (B-06 in before-import checklist).
+
+### blockers
+None — all repo-side criteria PASS.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then: (1) confirm Phase 12 GO conditions, (2) open all 6 session files, (3) complete B-01–B-13 checklist, (4) import all 6 workflows following D-01–D-10, (5) complete A-01–A-14 checklist, (6) set evidence log Section 10 to PASS or BLOCKED.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 13 files.
+
+### next_reviewer_action
+Codex: review all files listed in `handoff/PHASE_13_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 13 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 12 n8n Import Dry-Run Execution Readiness Build
 
 ### current_phase
 12 — n8n Import Dry-Run Execution Readiness (READY FOR CODEX REVIEW)
