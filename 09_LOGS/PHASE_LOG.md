@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 11 — n8n Import Dry-Run Evidence Pack Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** READY FOR CODEX REVIEW
+**Detail:**
+Created Phase 11 evidence pack. `logs/N8N_IMPORT_DRY_RUN_EVIDENCE_PHASE_11.md`: 10-section evidence log pre-structured for Owner/Operator to fill during the actual n8n import dry-run session — Section 1 metadata, Section 2 repo state at time of dry-run (fill fields at session start), Section 3 all 6 Phase 8 workflow files under test, Section 4 import environment placeholders (instance URL, n8n version, Node.js version, local instance confirmation), Section 5 pre-import checklist (P-01–P-09: Node.js check, static validator run, local instance, n8n accessible, files present, no real credentials, docs read, workflow count noted), Section 6 per-workflow observation tables for all 6 workflows (standard checks + additional high-risk checks for WF-03 ads pack: no Ads API node, no budget committed; WF-04 CRM: human_review_required visible, no messaging API; WF-05 inbox: escalation gate visible, two branches, no reply API; WF-06 approval gate: all 5 publish branches NoOp, not-approved Stop and Error, no platform publish node), Section 7 post-import checklist (Q-01–Q-08), Section 8 safety confirmation gate (8 items with operator initials), Section 9 issue summary, Section 10 final result (default NOT_RUN until session completed). `docs/23_N8N_IMPORT_DRY_RUN_CHECKLIST.md`: quick-reference human-readable companion checklist; 10 hard rules at top (import only, no activation, no real credentials, no execution, no posting/replying/ads, local instance only); 9 sections A–I (A-01–A-10 before-start including procedure read + static validator + local instance confirmation; B–G per-workflow checkboxes with risk-specific checks for D/E/F/G; H post-import 8 checks; I sign-off); table distinguishing Phase 10 procedure from Phase 11 checklist. `logs/templates/N8N_IMPORT_DRY_RUN_EVIDENCE_TEMPLATE.md`: generic reusable evidence template with same 10-section structure but all Phase-8-specific content replaced with [FILL] and module-agnostic placeholders; includes module-specific risk check extension block; suitable for future phases. `handoff/PHASE_11_HANDOFF.md`: full file inventory; Phase 10 vs Phase 11 distinction table; explicit no-import-claimed statement; pre-commit git status; 14 acceptance criteria; 9-pattern secret scan (CLEAN); 5-point Codex review instructions; commit instruction. No Phase 8 workflow JSON modified. No import executed. No n8n accessed. No real credentials. No workflows activated. No auto-publish, no auto-reply, no ads spend. No commit, no push.
+
+---
+
 ### 2026-05-28 — Phase 10 — n8n Import Dry Run and Validation Build
 
 **By:** Claude Code (Builder, AGT-02)
