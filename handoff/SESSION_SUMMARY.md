@@ -2,7 +2,83 @@
 
 Updated By: Claude Code (Builder) — 2026-05-28 (Phase 3 Build)
 
-## Latest Session — Phase 3 Brand Brain + I/O Schemas Build
+## Latest Session — Phase 4 Module SOP + Output Templates Build
+
+### current_phase
+4 — Module SOP + Output Templates (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 4 build complete. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: 93d7010 — docs: add phase 3 brand brain and schemas
+
+### files_changed
+Phase 4 (build):
+- `module-sops/content-auto-sop.md` — created: 8-section SOP for Content Agent, links brand-brain + content-output schema + template
+- `module-sops/creative-asset-auto-sop.md` — created: 8-section SOP for Creative Asset Agent, brief-only output, links creative-brief schema + template
+- `module-sops/ads-pack-auto-sop.md` — created: 8-section SOP for Ads Pack Agent, no-launch gate, links ads-pack schema + template
+- `module-sops/crm-followup-auto-sop.md` — created: 8-section SOP for CRM Agent, human_review_required always true, no-send gate
+- `module-sops/comment-inbox-assistant-sop.md` — created: 8-section SOP for Comment Inbox Agent, escalation table, no-auto-reply gate
+- `module-sops/approval-publishing-sop.md` — created: 8-section SOP for Approval Agent, 7-state machine table, Phase 4 no-automation constraint
+- `templates/content-output-template.md` — created: mirrors content-output.schema.json (16 fields), [TO_FILL] placeholders
+- `templates/creative-brief-template.md` — created: mirrors creative-brief.schema.json (17 fields), qa_checklist included
+- `templates/ads-pack-template.md` — created: mirrors ads-pack.schema.json (18 fields), compliance_notes required, WARNING footer
+- `templates/crm-followup-template.md` — created: mirrors crm-followup.schema.json (14 fields), human_review_required: true literal, WARNING footer
+- `templates/comment-inbox-reply-template.md` — created: mirrors comment-inbox-reply.schema.json (15 fields), escalation rules inline, WARNING footer
+- `templates/approval-status-template.md` — created: mirrors approval-status.schema.json (10 fields + change_log array), state rules table
+- `templates/log-entry-template.md` — created: mirrors log-entry.schema.json (12 fields), used by all agents
+- `docs/11_MODULE_SOP_SYSTEM.md` — created: SOP registry table, approval flow, why no Owner debugging, why no screenshots, no runtime automation note
+- `docs/12_OUTPUT_TEMPLATE_SYSTEM.md` — created: template registry, schema mapping rules, n8n/LangGraph forward-compat, brand replacement guide, required approval_status + logging
+- `handoff/PHASE_4_HANDOFF.md` — created: files list, validation checklist, known limitations, Codex instructions, commit instruction
+- `handoff/CURRENT_PHASE.md` — updated: Phase 4 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 15 primary files built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- SOPs use a consistent 8-section structure across all 6 modules — easier for Codex to review and agents to consume.
+- Templates mirror schema fields 1:1 using `## field_name` headings — agents fill fields by heading, system can parse by heading.
+- `human_review_required: true` written as literal constant in CRM and inbox templates — matches schema `const: true`, not a placeholder.
+- All offer fields use `[OWNER_TO_PROVIDE_OFFER]` — no pricing is hardcoded anywhere in Phase 4.
+- Escalation table in comment-inbox SOP uses a clear trigger/action format — unambiguous for agents.
+- Ads pack template includes a WARNING footer block — human-visible guard against accidental launch.
+- CRM and inbox reply templates include WARNING footer blocks — human-visible guard against accidental send.
+- Phase 4 constraint note in approval-publishing SOP explicitly states Scheduled/Published states exist in schema but no automation runs them in Phase 4.
+
+### open_issues
+- Offer details and pricing still need Owner confirmation before content agents can produce offer-inclusive outputs.
+- Brand Brain `[FILL]` placeholders (address, phone, confirmed pricing) still need Owner to fill before production.
+- Sample filled instances not created — these are Phase 5 scope.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 4 files.
+
+### next_reviewer_action
+Codex: review all 15 files listed in `handoff/PHASE_4_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 4 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 3 Brand Brain + I/O Schemas Build
 
 ### current_phase
 3 — Brand Brain + Input/Output Schemas (BUILDER_DONE_PENDING_REVIEW)

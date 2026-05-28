@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 4 — Module SOP + Output Templates Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created 15 files: 6 module SOP files (`module-sops/content-auto-sop.md`, `creative-asset-auto-sop.md`, `ads-pack-auto-sop.md`, `crm-followup-auto-sop.md`, `comment-inbox-assistant-sop.md`, `approval-publishing-sop.md`) — each with 8 required sections (Purpose, Required Inputs, Process Steps, Output Template, Approval Gate, Logging Requirements, Human Escalation Rules, Done Criteria); 7 output templates mirroring Phase 3 schemas (`templates/content-output-template.md`, `creative-brief-template.md`, `ads-pack-template.md`, `crm-followup-template.md`, `comment-inbox-reply-template.md`, `approval-status-template.md`, `log-entry-template.md`); `docs/11_MODULE_SOP_SYSTEM.md` (SOP registry, approval rules, why no Owner debugging, why no screenshots); `docs/12_OUTPUT_TEMPLATE_SYSTEM.md` (template-schema map, n8n/LangGraph forward-compat notes, brand replacement guide); `handoff/PHASE_4_HANDOFF.md`. All templates include `approval_status: Draft`. CRM and inbox reply templates have `human_review_required: true`. No secrets, no n8n workflow, no runtime code, no commit, no push. Awaiting Codex PASS and Owner approval before commit.
+
+---
+
 ### 2026-05-28 — Phase 3 — Brand Brain + Input/Output Schemas Build
 
 **By:** Claude Code (Builder, AGT-02)
