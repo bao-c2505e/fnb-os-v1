@@ -1,8 +1,67 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20A Manual Sandbox Evidence Capture Pack)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20B Owner Manual Sandbox Runbook: content_auto_skeleton)
 
-## Latest Session — Phase 20A Manual Sandbox Evidence Capture Pack
+## Latest Session — Phase 20B Owner Manual Sandbox Runbook: content_auto_skeleton
+
+### current_phase
+20B — Owner Manual Sandbox Runbook — content_auto_skeleton (RUNBOOK_READY — AWAITING OWNER EXECUTION)
+
+### current_role
+Builder — Claude Code (runbook/folder creation + evidence log update — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 20B runbook complete. 1 runbook (docs/33) + 1 evidence folder placeholder + evidence log update + 1 handoff created. 4 state files updated. Awaiting Codex PASS and Owner OWNER_APPROVED. execution_status remains not_executed_yet. No execution, no n8n accessed, no credentials, no activation, no real customer data, no auto-post/auto-reply/ads. No workflow JSON modified.
+
+### latest_commit
+Last stable commit: `f505dae` — docs: add phase 20a manual sandbox evidence capture pack for content_auto_skeleton
+
+### files_changed
+Phase 20B (build):
+- `docs/33_PHASE_20B_OWNER_MANUAL_SANDBOX_RUNBOOK_CONTENT_AUTO.md` — created: 12-section Owner runbook for content_auto_skeleton; Section A purpose (first actual manual sandbox execution — Owner executes independently, Builder does not execute); Section B selected workflow (file, n8n name, Standard risk, Manual Trigger, Phase 17 payload P17-WF01-S1, evidence log path, evidence folder path); Section C pre-run state PRE-01–PRE-10 + Owner sign-off block (repo clean, latest commit f505dae, workflow imported and inactive, sandbox confirmed, payload accessible, evidence log accessible, evidence folder present, no real credentials, Owner confirmed); Section D 12 exact n8n UI steps (Step 1 open n8n sandbox; Step 2 open content_auto_skeleton; Step 3 confirm inactive — STOP if active; Step 4 do NOT add real credentials — proceed with Credential not found warnings; Step 5 do NOT activate; Step 6 locate Manual Trigger — note input values pre-set in Set Input Variables; Step 7 confirm Phase 17 dummy payload P17-WF01-S1 — no workflow modification needed — REPLACE_WITH_* are expected stubs; Step 8 run once only; Step 9 observe per-node output table for 8 happy-path nodes with expected values; Step 10 capture 4 screenshots with full naming convention; Step 11 fill all evidence log fields including execution_status, per-node table, key output fields, forbidden output checks, result summary, evidence files, issues, post-run safety, owner decision, sign-off; Step 12 if any node fails stop and record — do not debug inside n8n); Section E 8 stop conditions (real credential prompt, active toggle, post/publish, customer message, ad campaign, real customer data in output, unexpected external API, unclear node output); Section F 11 required evidence fields; Section G screenshot naming convention with 4 token definitions and 4 full examples; Section H log file path + note to commit in Phase 20C not 20B; Section I 11 pass criteria; Section J 10 fail/blocked triggers; Section K 10 explicit non-goals; Section L Phase 20C recommendation with entry criteria; Phase Connections Phase 8–Phase 20C; Safety Confirmation 8 items all NO/CLEAN.
+- `evidence/phase_20b/content_auto_skeleton/.gitkeep` — created: empty folder placeholder to track evidence directory in git.
+- `logs/phase_20a_content_auto_sandbox_evidence_log.md` — updated: header now references Phase 20B; added `Phase 20B Runbook:` field pointing to docs/33; added `Evidence Folder:` field; added `Screenshot Convention:` full path template; `execution_status` remains `not_executed_yet` — no execution claimed.
+- `handoff/PHASE_20B_HANDOFF.md` — created: phase summary; phase distinction table Phase 20A/20B/20C; selected workflow; files created/updated/not-modified (6 Phase 8 JSONs untouched); runbook section summary; evidence log update summary; safety constraints table (10 items); no-execution confirmation 10 items all NO; Owner next action 6 steps; Phase 20C recommendation with entry criteria; 22 acceptance criteria all PASS; 8-pattern secret scan CLEAN; Codex review instructions 6 points; commit instruction.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 20B RUNBOOK_READY AWAITING OWNER EXECUTION
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+4 primary Phase 20B files (docs/33, .gitkeep, evidence log update, handoff) + 4 state file updates. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Evidence folder created as `evidence/phase_20b/content_auto_skeleton/` with `.gitkeep` — this matches the screenshot naming convention defined in the runbook. Owner stores screenshots locally; the `.gitkeep` ensures the path exists in repo so Owner does not encounter a "folder not found" issue.
+- Evidence log update adds only three header fields (runbook reference, evidence folder, screenshot convention) — the rest of the log remains as-is from Phase 20A. `execution_status` is explicitly NOT changed from `not_executed_yet`. No execution is claimed.
+- Runbook Step 7 explicitly states "no workflow modification needed" and explains that `REPLACE_WITH_*` values are expected stubs. This prevents Owner from misreading placeholder strings as errors requiring action.
+- Runbook Step 12 is a named step (not a footnote) — "stop and record blocker, do not debug inside n8n". Matches the Owner-should-not-debug policy from CLAUDE.md.
+- Pass criteria allow BLOCKED outcome: if execution is BLOCKED, Phase 20B is still considered complete (not failed) as long as evidence is captured and the blocker is documented. A BLOCKED result gates Phase 20C on a Builder fix rather than on a re-run.
+
+### open_issues
+- `logs/phase_20a_content_auto_sandbox_evidence_log.md` is still blank (execution_status: not_executed_yet) — Owner must fill during Phase 20B execution.
+- Phase 20C cannot begin until Owner has executed and filled the evidence log.
+
+### blockers
+None.
+
+### next_owner_action
+After Codex PASS + OWNER_APPROVED commit: (1) read docs/33 fully, (2) confirm PRE-01–PRE-10, (3) sign pre-run sign-off, (4) follow Steps 1–12 in Section D, (5) fill evidence log, (6) report result to Builder for Phase 20C.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit Phase 20B files (docs/33, .gitkeep, evidence log update, handoff, 4 state files).
+
+### next_reviewer_action
+Codex: review docs/33, evidence log update, and handoff. Confirm: runbook is safe (no execution, no credentials, no activation), stop conditions cover all critical risks, evidence log execution_status is still not_executed_yet, no secrets present. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 20B build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 20B files.
+
+---
+
+## Previous Session — Phase 20A Manual Sandbox Evidence Capture Pack
 
 ### current_phase
 20A — Manual Sandbox Evidence Capture Pack — content_auto_skeleton (PACK_READY — READY FOR CODEX REVIEW)

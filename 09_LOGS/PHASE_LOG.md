@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-29 — Phase 20B — Owner Manual Sandbox Runbook Created (content_auto_skeleton)
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** RUNBOOK_READY — AWAITING OWNER EXECUTION
+**Detail:**
+Created Phase 20B Owner manual sandbox runbook for `content_auto_skeleton`. Phase 20B follows Phase 20A (evidence capture pack) and Phase 19 (general sandbox instructions). Phase 20B objective: provide the exact 12-step Owner execution guide so Owner can perform the first manual sandbox run independently. `docs/33_PHASE_20B_OWNER_MANUAL_SANDBOX_RUNBOOK_CONTENT_AUTO.md`: Section A (purpose — first actual manual sandbox execution, Owner executes independently); Section B (selected workflow, evidence log, evidence folder); Section C (PRE-01–PRE-10 pre-run checklist + Owner sign-off block); Section D (12 exact n8n UI steps including: confirm inactive STOP if active, no real credentials with Credential-not-found-expected note, no activation, Manual Trigger with pre-set input note, Phase 17 P17-WF01-S1 no modification needed, run once, per-node observation table for 8 happy-path nodes, 4 required screenshots with full naming convention, fill all evidence log fields, stop-and-record not debug on failure); Section E (8 stop conditions); Section F (11 required evidence fields); Section G (screenshot naming convention — `evidence/phase_20b/content_auto_skeleton/YYYYMMDD_HHMM_content_auto_<description>_<result>.png` with 4 examples); Section H (log file path, commit in Phase 20C not 20B); Section I (11 pass criteria); Section J (10 fail/blocked triggers); Section K (10 explicit non-goals); Section L (Phase 20C recommendation). `evidence/phase_20b/content_auto_skeleton/.gitkeep`: empty placeholder to track screenshot folder in git. `logs/phase_20a_content_auto_sandbox_evidence_log.md` updated: Phase 20B runbook reference, evidence folder path, screenshot convention added — `execution_status` remains `not_executed_yet`. No n8n accessed. No Phase 8 JSON modified. No real credentials. No activation. No auto-publish, no auto-reply, no ads. No commit, no push. Validation: git status clean, branch main, latest commit f505dae, active=true not present in any workflow JSON.
+
+---
+
 ### 2026-05-29 — Phase 20A — Manual Sandbox Evidence Capture Pack Created (content_auto_skeleton)
 
 **By:** Claude Code (Builder, AGT-02)

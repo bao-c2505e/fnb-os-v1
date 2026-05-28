@@ -1,14 +1,20 @@
 # Phase 20A / 20B — Content Auto Skeleton Manual Sandbox Evidence Log
 
 **Created By:** Claude Code (Builder, AGT-02) — Phase 20A
-**Filled By:** Owner (Bo Bao) — Phase 20B
+**Updated By:** Claude Code (Builder, AGT-02) — Phase 20B (runbook reference added)
+**Filled By:** Owner (Bo Bao) — Phase 20B (execution fields)
 **Log Type:** manual_sandbox_execution
 **Workflow:** content_auto_skeleton
 
-> This file is created in Phase 20A as a blank template.
-> Owner fills all fields during / after Phase 20B manual sandbox execution.
+> This file was created in Phase 20A as a blank template.
+> Phase 20B added runbook reference and evidence folder path below.
+> Owner fills all execution fields during / after Phase 20B manual sandbox execution.
 > Do NOT fill with real customer data, real credentials, or production values.
-> After Owner completes Phase 20B, this file must be committed to the repo.
+> After Owner completes Phase 20B, this file must be committed to the repo in Phase 20C.
+
+**Phase 20B Runbook:** `docs/33_PHASE_20B_OWNER_MANUAL_SANDBOX_RUNBOOK_CONTENT_AUTO.md`
+**Evidence Folder:** `evidence/phase_20b/content_auto_skeleton/`
+**Screenshot Convention:** `evidence/phase_20b/content_auto_skeleton/YYYYMMDD_HHMM_content_auto_<description>_<result>.png`
 
 ---
 

@@ -1,25 +1,24 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20A Manual Sandbox Evidence Capture Pack)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20B Owner Manual Sandbox Runbook: content_auto_skeleton)
 
 ## Phase
 
-Phase 20A — Manual Sandbox Evidence Capture Pack (content_auto_skeleton)
+Phase 20B — Owner Manual Sandbox Runbook (content_auto_skeleton)
 
 ## Status
 
-**PACK_READY — READY FOR CODEX REVIEW**
-Phase 20A evidence capture pack created for `content_auto_skeleton` (WF-01, Standard risk).
-Pack includes: pre-run safety checklist, Owner manual run checklist (F-01–F-23), evidence capture checklist, screenshot naming convention, blank evidence log template, PASS/BLOCKED criteria, Phase 20B recommendation.
+**RUNBOOK_READY — AWAITING OWNER EXECUTION**
+Phase 20B Owner runbook created for `content_auto_skeleton`. Evidence folder placeholder created. Evidence log updated with runbook reference. Owner can now execute following `docs/33_PHASE_20B_OWNER_MANUAL_SANDBOX_RUNBOOK_CONTENT_AUTO.md`.
 No execution performed. No credentials. No activation. No real customer data. No workflow JSON modified.
-See `docs/32_PHASE_20A_MANUAL_SANDBOX_EVIDENCE_CAPTURE_PACK.md` and `logs/phase_20a_content_auto_sandbox_evidence_log.md`.
+`execution_status` remains `not_executed_yet` in evidence log.
 
 ## Current Command
 
-Phase 20A — Manual Sandbox Evidence Capture Pack.
-2 primary files created (docs/32 + evidence log template). Handoff + 4 state files updated.
+Phase 20B — Owner Manual Sandbox Runbook.
+1 runbook (docs/33) + 1 folder placeholder + evidence log update + handoff. 4 state files updated.
 No n8n execution. No activation. No real credentials. No real customer data. No auto-post/ads.
-Awaiting Codex review and Owner OWNER_APPROVED before commit.
+Awaiting Codex review and Owner OWNER_APPROVED before commit. Owner executes after commit.
 
 ## Builder
 
