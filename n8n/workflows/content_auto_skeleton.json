@@ -1,0 +1,251 @@
+{
+  "id": "a1000001-0000-4000-a000-100000000001",
+  "meta": {
+    "instanceId": "REPLACE_WITH_INSTANCE_ID"
+  },
+  "name": "FnB OS V1 — Content Auto [SKELETON]",
+  "active": false,
+  "nodes": [
+    {
+      "id": "a1000001-0015-4001-a001-100000000015",
+      "name": "Sticky Note: WARNING",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [250, 50],
+      "parameters": {
+        "content": "## PHASE 8 SKELETON — DO NOT ACTIVATE\n\n**active: false** — This workflow must remain inactive until:\n1. All REPLACE_WITH_* credential placeholders are replaced with real credentials\n2. All REPLACE_WITH_* data fields are filled with real values\n3. Owner has reviewed and approved the workflow\n4. Codex has reviewed and issued PASS\n\n**HARD CONSTRAINTS:**\n- No auto-publishing to any platform\n- No real AI API calls in skeleton — Code nodes are stubs\n- Approval Gate is mandatory before any publish action\n- Logging step is mandatory in every execution\n- Do NOT add hashtags or human_review_required — not in content-output.schema.json\n\n**Schema:** schemas/content-output.schema.json\n**Blueprint:** runtime-blueprints/n8n/content-auto-blueprint.md\n**Phase:** 8 — n8n Importable Workflow Skeletons\n**Status:** SKELETON_IMPORTABLE — NOT PRODUCTION READY",
+        "height": 300,
+        "width": 620,
+        "color": 7
+      }
+    },
+    {
+      "id": "a1000001-0001-4001-a001-100000000001",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 420],
+      "parameters": {}
+    },
+    {
+      "id": "a1000001-0002-4001-a001-100000000002",
+      "name": "Set Input Variables",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [500, 420],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "a1-set-001", "name": "brand_id", "value": "VQ", "type": "string" },
+            { "id": "a1-set-002", "name": "brand_name", "value": "Vị Cuốn", "type": "string" },
+            { "id": "a1-set-003", "name": "content_request", "value": "REPLACE_WITH_OWNER_CONTENT_REQUEST", "type": "string" },
+            { "id": "a1-set-004", "name": "platform", "value": "Facebook", "type": "string" },
+            { "id": "a1-set-005", "name": "objective", "value": "Awareness", "type": "string" },
+            { "id": "a1-set-006", "name": "target_audience", "value": "REPLACE_WITH_TARGET_AUDIENCE", "type": "string" },
+            { "id": "a1-set-007", "name": "offer", "value": "[OWNER_TO_PROVIDE_OFFER]", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "notes": "Mock input — replace all REPLACE_WITH_* values with real Owner request data before production use."
+    },
+    {
+      "id": "a1000001-0003-4001-a001-100000000003",
+      "name": "Code: Load Brand Brain",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [750, 420],
+      "parameters": {
+        "jsCode": "// STUB — Phase 8 Skeleton\n// PURPOSE: Load Brand Brain data for Vị Cuốn\n// PRODUCTION: Read from brand-brain/vi-cuon.md via filesystem, Google Sheets, or Supabase\n// CREDENTIAL NEEDED: REPLACE_WITH_GOOGLE_SHEETS_CREDENTIAL or REPLACE_WITH_SUPABASE_CREDENTIAL\n// CONSTRAINT: No real credential in skeleton. Returns placeholder Brand Brain object.\n\nconst inputData = $input.first().json;\n\n// Placeholder Brand Brain — matches safe placeholder fields defined in Phase 8 scope\nconst brandBrain = {\n  brand_name: inputData.brand_name || 'Vị Cuốn',\n  brand_positioning: 'REPLACE_WITH_BRAND_POSITIONING',\n  target_customer: 'REPLACE_WITH_TARGET_CUSTOMER',\n  menu_items: 'REPLACE_WITH_MENU_ITEMS',\n  price_range: 'REPLACE_WITH_PRICE_RANGE',\n  address: 'REPLACE_WITH_ADDRESS',\n  opening_hours: 'REPLACE_WITH_OPENING_HOURS',\n  key_offers: 'REPLACE_WITH_KEY_OFFERS',\n  tone_of_voice: 'REPLACE_WITH_TONE_OF_VOICE',\n  forbidden_claims: 'REPLACE_WITH_FORBIDDEN_CLAIMS',\n  approval_status: 'REPLACE_WITH_APPROVAL_STATUS'\n};\n\n// STUB: Production code would load from file or database using configured credential\nreturn [{ json: { ...inputData, brandBrain, brandBrainLoaded: true } }];",
+        "mode": "runOnceForAllItems"
+      },
+      "notes": "STUB — no real file or API read. Replace with actual Brand Brain loader in production."
+    },
+    {
+      "id": "a1000001-0004-4001-a001-100000000004",
+      "name": "Code: AI Generate Content Draft",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1000, 420],
+      "parameters": {
+        "jsCode": "// STUB — Phase 8 Skeleton\n// PURPOSE: Call AI model to generate content draft\n// PRODUCTION: HTTP Request to Claude API (claude-sonnet-4-6) or equivalent LLM\n// CREDENTIAL NEEDED: REPLACE_WITH_ANTHROPIC_API_KEY\n// CONSTRAINT: No real API call in skeleton. Returns mock content object.\n// SCHEMA: Output must conform to schemas/content-output.schema.json\n// CODEX NOTE: Do NOT include hashtags or human_review_required — not in content-output.schema.json\n\nconst inputData = $input.first().json;\n\n// Mock content output — all required fields from content-output.schema.json\nconst contentDraft = {\n  content_id: 'CC-VQ-STUB-001',\n  brand_id: inputData.brand_id || 'VQ',\n  brand_name: inputData.brand_name || 'Vị Cuốn',\n  content_type: 'Feed Post',\n  platform: inputData.platform || 'Facebook',\n  objective: inputData.objective || 'Awareness',\n  target_audience: inputData.target_audience || 'REPLACE_WITH_TARGET_AUDIENCE',\n  hook: 'STUB_HOOK — Replace with AI-generated opening hook',\n  caption: 'STUB_CAPTION — Replace with AI-generated caption body including hook, body, and CTA.',\n  script: null,\n  cta: 'STUB_CTA — Replace with AI-generated call to action',\n  visual_direction: 'STUB_VISUAL_DIRECTION — Replace with AI-generated visual direction',\n  offer: inputData.offer || '[OWNER_TO_PROVIDE_OFFER]',\n  approval_status: 'Draft',\n  created_by_agent: 'n8n-content-auto (STUB)',\n  created_at: new Date().toISOString(),\n  notes: 'Phase 8 skeleton stub output. No real AI call made.'\n};\n\n// STUB: Production code would call AI API with Brand Brain + template + content_request\nreturn [{ json: { ...inputData, contentDraft, aiCallCompleted: true } }];",
+        "mode": "runOnceForAllItems"
+      },
+      "notes": "STUB — no real AI call. Replace with HTTP Request to Claude API in production."
+    },
+    {
+      "id": "a1000001-0005-4001-a001-100000000005",
+      "name": "Code: Validate Required Fields",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 420],
+      "parameters": {
+        "jsCode": "// STUB — Phase 8 Skeleton\n// PURPOSE: Validate content draft against content-output.schema.json required fields\n// SCHEMA REF: schemas/content-output.schema.json\n// REQUIRED FIELDS: content_id, brand_id, brand_name, content_type, platform,\n//   objective, target_audience, hook, caption, cta, approval_status,\n//   created_by_agent, created_at\n// NOTE: hashtags and human_review_required are NOT in schema — do not validate them\n\nconst inputData = $input.first().json;\nconst draft = inputData.contentDraft || {};\n\nconst requiredFields = [\n  'content_id', 'brand_id', 'brand_name', 'content_type',\n  'platform', 'objective', 'target_audience', 'hook',\n  'caption', 'cta', 'approval_status', 'created_by_agent', 'created_at'\n];\n\nconst missingFields = requiredFields.filter(f => !draft[f] || draft[f] === '');\nconst validationPass = missingFields.length === 0;\nconst validationErrors = missingFields.map(f => `SCHEMA_VALIDATION_FAIL: Missing required field: ${f}`);\n\nreturn [{ json: { ...inputData, validation_pass: validationPass, validation_errors: validationErrors } }];",
+        "mode": "runOnceForAllItems"
+      }
+    },
+    {
+      "id": "a1000001-0006-4001-a001-100000000006",
+      "name": "If: Validation Pass",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1500, 420],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "a1-if-cond-001",
+              "leftValue": "={{ $json.validation_pass }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "equals", "rightType": "any" }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "a1000001-0007-4001-a001-100000000007",
+      "name": "Set: approval_status = Draft",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [1750, 300],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "a1-set2-001", "name": "approval_status", "value": "Draft", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "notes": "Approval Gate — sets initial state. No publishing allowed until Owner sets approval_status=Approved."
+    },
+    {
+      "id": "a1000001-0008-4001-a001-100000000008",
+      "name": "Code: Write Log Entry",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2000, 300],
+      "parameters": {
+        "jsCode": "// STUB — Phase 8 Skeleton\n// PURPOSE: Write structured log entry per schemas/log-entry.schema.json\n// PRODUCTION: Append row to Google Sheets log tab or Supabase logs table\n// CREDENTIAL NEEDED: REPLACE_WITH_GOOGLE_SHEETS_CREDENTIAL or REPLACE_WITH_SUPABASE_CREDENTIAL\n// CONSTRAINT: No real write in skeleton. Builds and returns log object only.\n\nconst inputData = $input.first().json;\nconst draft = inputData.contentDraft || {};\n\n// Log entry conforms to schemas/log-entry.schema.json\nconst logEntry = {\n  log_id: 'LOG-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-STUB-001',\n  timestamp: new Date().toISOString(),\n  phase: '8',\n  agent_name: 'n8n-content-auto (STUB)',\n  action_type: 'Content Draft',\n  input_ref: inputData.content_request || 'STUB_INPUT',\n  output_ref: draft.content_id || 'STUB_OUTPUT',\n  status: 'Success',\n  summary: 'Content Auto skeleton executed. Draft created with approval_status=Draft. No real AI call.',\n  errors: (inputData.validation_errors && inputData.validation_errors.length) ? inputData.validation_errors : null,\n  next_action: 'Send draft to approval queue. Owner to review and set approval_status=Approved before publishing.',\n  owner_action_required: false\n};\n\n// STUB: Production code would write logEntry to Google Sheets or Supabase here\nreturn [{ json: { ...inputData, logEntry, logWritten: true } }];",
+        "mode": "runOnceForAllItems"
+      },
+      "notes": "STUB — no real log write. Replace with Google Sheets or Supabase append node in production."
+    },
+    {
+      "id": "a1000001-0009-4001-a001-100000000009",
+      "name": "NoOp: STUB — Send to Approval Queue",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [2250, 300],
+      "parameters": {},
+      "notes": "STUB DISABLED — PRODUCTION: Replace with Google Sheets node to append contentDraft row to approval queue sheet. Requires REPLACE_WITH_GOOGLE_SHEETS_CREDENTIAL. Do not activate until credential is configured and Owner has reviewed workflow. No auto-publishing from this node."
+    },
+    {
+      "id": "a1000001-0010-4001-a001-100000000010",
+      "name": "Set: Validation Error",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [1750, 560],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "a1-set3-001", "name": "error_type", "value": "SCHEMA_VALIDATION_FAIL", "type": "string" },
+            { "id": "a1-set3-002", "name": "owner_action_required", "value": true, "type": "boolean" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a1000001-0011-4001-a001-100000000011",
+      "name": "Stop and Error: Validation Failed",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [2000, 560],
+      "parameters": {
+        "errorMessage": "SCHEMA_VALIDATION_FAIL — Content draft missing required fields per content-output.schema.json. See validation_errors in payload. Owner action required."
+      }
+    },
+    {
+      "id": "a1000001-0012-4001-a001-100000000012",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [250, 760],
+      "parameters": {}
+    },
+    {
+      "id": "a1000001-0013-4001-a001-100000000013",
+      "name": "Set: Error Log",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [500, 760],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "a1-set4-001", "name": "error_type", "value": "WORKFLOW_ERROR", "type": "string" },
+            { "id": "a1-set4-002", "name": "owner_action_required", "value": true, "type": "boolean" },
+            { "id": "a1-set4-003", "name": "workflow_name", "value": "FnB OS V1 — Content Auto [SKELETON]", "type": "string" },
+            { "id": "a1-set4-004", "name": "next_action", "value": "Owner to review n8n execution log and resolve error before re-running.", "type": "string" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a1000001-0014-4001-a001-100000000014",
+      "name": "Stop and Error: Workflow Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [750, 760],
+      "parameters": {
+        "errorMessage": "WORKFLOW_ERROR — Unhandled error in Content Auto workflow. owner_action_required=true. Review n8n execution log. No publishing has occurred."
+      }
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [ [{ "node": "Set Input Variables", "type": "main", "index": 0 }] ]
+    },
+    "Set Input Variables": {
+      "main": [ [{ "node": "Code: Load Brand Brain", "type": "main", "index": 0 }] ]
+    },
+    "Code: Load Brand Brain": {
+      "main": [ [{ "node": "Code: AI Generate Content Draft", "type": "main", "index": 0 }] ]
+    },
+    "Code: AI Generate Content Draft": {
+      "main": [ [{ "node": "Code: Validate Required Fields", "type": "main", "index": 0 }] ]
+    },
+    "Code: Validate Required Fields": {
+      "main": [ [{ "node": "If: Validation Pass", "type": "main", "index": 0 }] ]
+    },
+    "If: Validation Pass": {
+      "main": [
+        [{ "node": "Set: approval_status = Draft", "type": "main", "index": 0 }],
+        [{ "node": "Set: Validation Error", "type": "main", "index": 0 }]
+      ]
+    },
+    "Set: approval_status = Draft": {
+      "main": [ [{ "node": "Code: Write Log Entry", "type": "main", "index": 0 }] ]
+    },
+    "Code: Write Log Entry": {
+      "main": [ [{ "node": "NoOp: STUB — Send to Approval Queue", "type": "main", "index": 0 }] ]
+    },
+    "Set: Validation Error": {
+      "main": [ [{ "node": "Stop and Error: Validation Failed", "type": "main", "index": 0 }] ]
+    },
+    "Error Trigger": {
+      "main": [ [{ "node": "Set: Error Log", "type": "main", "index": 0 }] ]
+    },
+    "Set: Error Log": {
+      "main": [ [{ "node": "Stop and Error: Workflow Error", "type": "main", "index": 0 }] ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {},
+  "versionId": "REPLACE_WITH_VERSION_ID"
+}

@@ -1,8 +1,84 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 7 Build)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 8 Build)
 
-## Latest Session — Phase 7 n8n Runtime Blueprint Build
+## Latest Session — Phase 8 n8n Importable Workflow Skeletons Build
+
+### current_phase
+8 — n8n Importable Workflow Skeletons (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 8 build complete. Owner approved file plan. All 6 skeleton JSONs + docs + handoff created. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: 4bfbe96 — docs: add phase 7 n8n runtime blueprint
+
+### files_changed
+Phase 8 (build):
+- `n8n/workflows/content_auto_skeleton.json` — created: 15-node workflow (Manual Trigger → Set Input → Load Brand Brain stub → AI Draft stub → Validate Fields → If Validation → Set Draft Status → Write Log stub → NoOp Approval Queue stub + error chain + sticky note). Schema: content-output.schema.json. No hashtags or human_review_required (Codex constraint).
+- `n8n/workflows/creative_asset_auto_skeleton.json` — created: 15-node workflow (same structure). Output: creative brief only, not actual asset. Schema: creative-brief.schema.json.
+- `n8n/workflows/ads_pack_auto_skeleton.json` — created: 15-node workflow with NO ADS SPEND sticky note. compliance_notes required. Schema: ads-pack.schema.json.
+- `n8n/workflows/crm_followup_auto_skeleton.json` — created: 15-node workflow with NO AUTO-SEND sticky note. human_review_required=true (schema const). Schema: crm-followup.schema.json.
+- `n8n/workflows/comment_inbox_reply_assistant_skeleton.json` — created: 13-node workflow with escalation gate (If: Escalation Required → true=no draft, false=generate draft). human_review_required=true. Schema: comment-inbox-reply.schema.json.
+- `n8n/workflows/approval_publishing_skeleton.json` — created: 18-node workflow (Webhook placeholder → Check Approval Status → If Is Approved → Switch Item Type → 5 NoOp publish stubs + block path + approval log + error chain). All publish nodes NoOp stubs.
+- `docs/20_N8N_WORKFLOW_SKELETONS.md` — created: import instructions (6 steps), workflow node structure diagrams, required credentials table, schema alignment notes, approval gate summary, safety checklist (11 items), validation notes table, known limitations (7), phase connection table.
+- `handoff/PHASE_8_HANDOFF.md` — created: files list, scope, scope boundaries table, workflow summary table, validation checklist (18 items), known limitations, Codex instructions (10 review points), Phase 9 recommendation, commit instruction.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 8 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 8 primary Phase 8 files built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- All 6 workflow JSONs use `active: false` — hard-coded, not configurable per Owner constraint.
+- Code nodes are JavaScript stubs — no real AI or API calls in skeleton per Owner constraint.
+- All publish/send/spend actions are NoOp stubs — clearly labeled STUB DISABLED in node notes.
+- Sticky Note warnings use n8n color code 7 (light) for info modules and 4 (orange) for high-risk modules (ads, CRM, inbox).
+- Approval publishing uses color 5 (blue) to distinguish it as the gate workflow.
+- `hashtags` and `human_review_required` absent from content_auto workflow output — Codex Phase 7 constraint enforced.
+- `human_review_required: true` IS included in CRM and inbox workflows — it IS in those schemas as `const: true`.
+- `compliance_notes` included in ads_pack mock output — required by module SOP.
+- Comment inbox workflow has dedicated escalation routing (If: Escalation Required) — Complaint/Angry → draft_reply=null, Owner handles directly.
+- approval_publishing workflow uses Webhook trigger (placeholder, not active) rather than Manual Trigger — reflects production design intent.
+- Switch node in approval_publishing has 5 branches matching all 5 item_types in approval-status.schema.json enum.
+- Error chain (Error Trigger → Set Error Log → Stop and Error) present in all 6 workflows.
+- UUID format for all node IDs: `a[wf-num]0000[wf-num]-[node-num]-4001-a00[wf-num]-[wf-num]00000000[node-num]` — deterministic, human-readable.
+- docs/20 includes safety checklist with 11 items Owner must verify before activating any workflow.
+
+### open_issues
+- All `REPLACE_WITH_*` placeholders require Owner to fill before production use.
+- Webhook in approval_publishing requires path configuration and authentication setup.
+- Code nodes require replacement with real AI API HTTP Request nodes in production.
+- n8n typeVersion numbers may need minor adjustment for specific n8n instance version.
+- Error notifications (Telegram) not wired — placeholder comment only.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then import skeletons into local n8n instance to confirm import without errors.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 8 files.
+
+### next_reviewer_action
+Codex: review all files listed in `handoff/PHASE_8_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 8 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 7 n8n Runtime Blueprint Build
 
 ### current_phase
 7 — n8n Runtime Blueprint (BUILDER_DONE_PENDING_REVIEW)

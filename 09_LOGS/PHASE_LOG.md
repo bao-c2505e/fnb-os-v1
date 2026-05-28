@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 8 — n8n Importable Workflow Skeletons Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created `n8n/workflows/` directory with 6 importable n8n skeleton JSON files: `content_auto_skeleton.json` (15 nodes: Manual Trigger, Set Input, Load Brand Brain stub, AI Generate Draft stub, Validate Fields, If Validation, Set Draft Status, Write Log stub, NoOp Approval Queue stub, error chain, sticky note — schema: content-output.schema.json — no hashtags/human_review_required per Codex constraint); `creative_asset_auto_skeleton.json` (15 nodes, same structure — schema: creative-brief.schema.json — brief only, no real asset); `ads_pack_auto_skeleton.json` (15 nodes — schema: ads-pack.schema.json — compliance_notes required, NO ADS SPEND sticky note); `crm_followup_auto_skeleton.json` (15 nodes — schema: crm-followup.schema.json — human_review_required=true const, NO AUTO-SEND sticky note); `comment_inbox_reply_assistant_skeleton.json` (13 nodes — schema: comment-inbox-reply.schema.json — escalation gate: Complaint/Angry → draft_reply=null, Owner handles, human_review_required=true const); `approval_publishing_skeleton.json` (18 nodes — Webhook placeholder trigger, If Is Approved hard block, Switch Item Type with 5 NoOp publish stubs covering all 5 item_types, approval log, error chain). All workflows: active=false, no real credentials, all publishing/sending/spending as NoOp stubs, approval gate and log step mandatory. Created `docs/20_N8N_WORKFLOW_SKELETONS.md` (import guide 6 steps, node structure diagrams, credentials table, schema alignment, approval gate summary, 11-item safety checklist, validation table, known limitations). No real API calls, no auto-publish, no auto-reply, no ads spend, no commit, no push. Awaiting Codex PASS and Owner approval.
+
+---
+
 ### 2026-05-28 — Phase 7 — n8n Runtime Blueprint Build
 
 **By:** Claude Code (Builder, AGT-02)

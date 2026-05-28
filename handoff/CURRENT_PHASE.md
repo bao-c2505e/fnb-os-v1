@@ -1,10 +1,10 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 7 Build)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 8 Build)
 
 ## Phase
 
-Phase 7 — n8n Runtime Blueprint
+Phase 8 — n8n Importable Workflow Skeletons
 
 ## Status
 
@@ -12,8 +12,8 @@ Phase 7 — n8n Runtime Blueprint
 
 ## Current Command
 
-Phase 7 build complete. Awaiting Codex review.
-See `handoff/PHASE_7_HANDOFF.md` for full file list and validation checklist.
+Phase 8 build complete. Awaiting Codex review.
+See `handoff/PHASE_8_HANDOFF.md` for full file list and validation checklist.
 
 ## Builder
 
@@ -25,25 +25,25 @@ Codex (AGT-03) — PENDING
 
 ## Next Gate
 
-Codex reviews all Phase 7 files → PASS → Owner approves commit.
-See `handoff/PHASE_7_HANDOFF.md` for Codex review instructions and commit instruction.
+Codex reviews all Phase 8 files → PASS → Owner approves commit.
+See `handoff/PHASE_8_HANDOFF.md` for Codex review instructions and commit instruction.
 
-## Phase 7 Files
+## Phase 8 Files
 
 | File | Status |
 |------|--------|
-| `runtime-blueprints/n8n/content-auto-blueprint.md` | Created |
-| `runtime-blueprints/n8n/approval-gate-blueprint.md` | Created |
-| `runtime-blueprints/n8n/logging-blueprint.md` | Created |
-| `runtime-blueprints/n8n/data-source-blueprint.md` | Created |
-| `runtime-blueprints/n8n/error-handling-blueprint.md` | Created |
-| `docs/17_N8N_RUNTIME_BLUEPRINT.md` | Created |
-| `docs/18_RUNTIME_DATA_FLOW.md` | Created |
-| `docs/19_APPROVAL_GATE_RUNTIME_DESIGN.md` | Created |
-| `handoff/PHASE_7_HANDOFF.md` | Created |
+| `n8n/workflows/content_auto_skeleton.json` | Created |
+| `n8n/workflows/creative_asset_auto_skeleton.json` | Created |
+| `n8n/workflows/ads_pack_auto_skeleton.json` | Created |
+| `n8n/workflows/crm_followup_auto_skeleton.json` | Created |
+| `n8n/workflows/comment_inbox_reply_assistant_skeleton.json` | Created |
+| `n8n/workflows/approval_publishing_skeleton.json` | Created |
+| `docs/20_N8N_WORKFLOW_SKELETONS.md` | Created |
+| `handoff/PHASE_8_HANDOFF.md` | Created |
 
 ## Previous Phase
 
+Phase 7 — n8n Runtime Blueprint (commit 4bfbe96)
 Phase 6 — OS Readiness Pack (commit f66e2e9)
 Phase 5 — Sample Outputs for Vị Cuốn (commit 761240f)
 Phase 4 — Module SOP + Output Templates (commit 8942fd7)

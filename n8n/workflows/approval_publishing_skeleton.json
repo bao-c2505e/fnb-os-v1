@@ -1,0 +1,352 @@
+{
+  "id": "a6000006-0000-4000-a000-600000000006",
+  "meta": {
+    "instanceId": "REPLACE_WITH_INSTANCE_ID"
+  },
+  "name": "FnB OS V1 — Approval and Publishing Gate [SKELETON]",
+  "active": false,
+  "nodes": [
+    {
+      "id": "a6000006-0016-4001-a006-600000000016",
+      "name": "Sticky Note: WARNING",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [250, 50],
+      "parameters": {
+        "content": "## PHASE 8 SKELETON — DO NOT ACTIVATE\n\n**active: false** — This workflow must remain inactive until:\n1. All REPLACE_WITH_* credential placeholders are replaced with real credentials\n2. Webhook path is configured and secured\n3. Owner has reviewed and approved the workflow\n4. Codex has reviewed and issued PASS\n\n**THIS IS THE APPROVAL GATE:**\nAll items must pass through this workflow before ANY publishing action.\nOnly items with approval_status='Approved' (set by Owner) proceed.\nAll publishing nodes are NoOp stubs — permanently disabled in skeleton.\n\n**HARD CONSTRAINTS:**\n- NO auto-publishing to any platform\n- Only approval_status='Approved' items can reach publish path (currently all stubs)\n- No Meta / TikTok / Zalo / Telegram API call in skeleton\n- No ads budget committed\n- No customer messages sent\n- Logging step is mandatory at every approval decision\n- Only Owner (Bo Bao) can set approval_status=Approved\n\n**Schema:** schemas/approval-status.schema.json\n**Blueprint:** runtime-blueprints/n8n/approval-gate-blueprint.md\n**Blueprint:** docs/19_APPROVAL_GATE_RUNTIME_DESIGN.md\n**Phase:** 8 — n8n Importable Workflow Skeletons\n**Status:** SKELETON_IMPORTABLE — NOT PRODUCTION READY",
+        "height": 400,
+        "width": 680,
+        "color": 5
+      }
+    },
+    {
+      "id": "a6000006-0001-4001-a006-600000000001",
+      "name": "Webhook: Receive Approval Request",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 540],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "REPLACE_WITH_WEBHOOK_PATH",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "notes": "Placeholder webhook — configure path after Owner review. Requires secure authentication in production. Do not expose to public internet without auth."
+    },
+    {
+      "id": "a6000006-0002-4001-a006-600000000002",
+      "name": "Code: Check Approval Status",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [500, 540],
+      "parameters": {
+        "jsCode": "// STUB — Phase 8 Skeleton\n// PURPOSE: Read approval_status from incoming item and validate it\n// PRODUCTION: Read from Google Sheets approval queue row or Supabase record\n// CREDENTIAL NEEDED: REPLACE_WITH_GOOGLE_SHEETS_CREDENTIAL or REPLACE_WITH_SUPABASE_CREDENTIAL\n// APPROVAL RULE: Only 'Approved' status allows proceed to publish path\n// OWNER RULE: Only Owner (Bo Bao) can set approval_status='Approved'\n\nconst inputData = $input.first().json;\n\n// Read fields from incoming approval request\nconst approval_status = inputData.approval_status || 'Draft';\nconst item_type = inputData.item_type || 'UNKNOWN';\nconst item_id = inputData.item_id || 'UNKNOWN';\nconst owner_decision = inputData.owner_decision || null;\n\n// Hard block check — missing approval\nconst approvalValid = (\n  approval_status === 'Approved' &&\n  owner_decision === 'Approved'\n);\n\nconst approvalBlockReason = !approvalValid\n  ? `MISSING_APPROVAL — approval_status=${approval_status}, owner_decision=${owner_decision}. Owner must set both to Approved.`\n  : null;\n\nreturn [{\n  json: {\n    ...inputData,\n    approval_status,\n    item_type,\n    item_id,\n    owner_decision,\n    approval_valid: approvalValid,\n    approval_block_reason: approvalBlockReason,\n    approvalCheckCompleted: true\n  }\n}];",
+        "mode": "runOnceForAllItems"
+      }
+    },
+    {
+      "id": "a6000006-0003-4001-a006-600000000003",
+      "name": "If: Is Approved",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [750, 540],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "a6-if-cond-001",
+              "leftValue": "={{ $json.approval_valid }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "equals", "rightType": "any" }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "notes": "TRUE = approved — route to item type switch for publish path (all stubs). FALSE = not approved — route to block message."
+    },
+    {
+      "id": "a6000006-0004-4001-a006-600000000004",
+      "name": "Set: Block — Not Approved",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [1000, 400],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "a6-set-001", "name": "block_reason", "value": "MISSING_APPROVAL — item cannot proceed to publish path", "type": "string" },
+            { "id": "a6-set-002", "name": "owner_action_required", "value": true, "type": "boolean" },
+            { "id": "a6-set-003", "name": "next_action", "value": "Owner must set approval_status=Approved and owner_decision=Approved before this item can proceed.", "type": "string" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a6000006-0005-4001-a006-600000000005",
+      "name": "Code: Write Block Log",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 400],
+      "parameters": {
+        "jsCode": "// STUB — Phase 8 Skeleton\n// PURPOSE: Write log entry for blocked (not-approved) items\n// PRODUCTION: Append to Google Sheets log tab or Supabase logs table\n\nconst inputData = $input.first().json;\n\nconst logEntry = {\n  log_id: 'LOG-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-BLOCK-001',\n  timestamp: new Date().toISOString(),\n  phase: '8',\n  agent_name: 'n8n-approval-publishing-gate (STUB)',\n  action_type: 'Approval Decision',\n  input_ref: inputData.item_id || 'STUB_INPUT',\n  output_ref: 'BLOCKED_NOT_APPROVED',\n  status: 'Blocked',\n  summary: `Item ${inputData.item_id} blocked: approval_status=${inputData.approval_status}. No publishing action taken.`,\n  errors: [inputData.approval_block_reason || 'MISSING_APPROVAL'],\n  next_action: 'Owner to set approval_status=Approved before item can proceed.',\n  owner_action_required: true\n};\n\nreturn [{ json: { ...inputData, logEntry, logWritten: true, publishingBlocked: true } }];",
+        "mode": "runOnceForAllItems"
+      }
+    },
+    {
+      "id": "a6000006-0006-4001-a006-600000000006",
+      "name": "Stop and Error: Not Approved",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [1500, 400],
+      "parameters": {
+        "errorMessage": "MISSING_APPROVAL — Publishing blocked. Item does not have Owner-approved status. No content published, no messages sent, no ads spent. Owner action required."
+      }
+    },
+    {
+      "id": "a6000006-0007-4001-a006-600000000007",
+      "name": "Switch: Item Type",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [1000, 680],
+      "parameters": {
+        "mode": "rules",
+        "rules": {
+          "rules": [
+            {
+              "conditions": {
+                "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+                "conditions": [
+                  {
+                    "id": "sw-cond-001",
+                    "leftValue": "={{ $json.item_type }}",
+                    "rightValue": "Content Output",
+                    "operator": { "type": "string", "operation": "equals" }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Content Output"
+            },
+            {
+              "conditions": {
+                "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+                "conditions": [
+                  {
+                    "id": "sw-cond-002",
+                    "leftValue": "={{ $json.item_type }}",
+                    "rightValue": "Creative Brief",
+                    "operator": { "type": "string", "operation": "equals" }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Creative Brief"
+            },
+            {
+              "conditions": {
+                "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+                "conditions": [
+                  {
+                    "id": "sw-cond-003",
+                    "leftValue": "={{ $json.item_type }}",
+                    "rightValue": "Ads Pack",
+                    "operator": { "type": "string", "operation": "equals" }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Ads Pack"
+            },
+            {
+              "conditions": {
+                "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+                "conditions": [
+                  {
+                    "id": "sw-cond-004",
+                    "leftValue": "={{ $json.item_type }}",
+                    "rightValue": "CRM Follow-Up",
+                    "operator": { "type": "string", "operation": "equals" }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "CRM Follow-Up"
+            },
+            {
+              "conditions": {
+                "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+                "conditions": [
+                  {
+                    "id": "sw-cond-005",
+                    "leftValue": "={{ $json.item_type }}",
+                    "rightValue": "Comment Reply",
+                    "operator": { "type": "string", "operation": "equals" }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Comment Reply"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "notes": "Routes approved items by item_type to per-module publishing stubs. All publish nodes are NoOp in skeleton."
+    },
+    {
+      "id": "a6000006-0008-4001-a006-600000000008",
+      "name": "NoOp: STUB — Publish Content to Platform",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1250, 560],
+      "parameters": {},
+      "notes": "STUB DISABLED — PRODUCTION: Replace with Facebook / Instagram / TikTok / Zalo publish node. Requires REPLACE_WITH_PLATFORM_CREDENTIAL. No auto-publishing in skeleton."
+    },
+    {
+      "id": "a6000006-0009-4001-a006-600000000009",
+      "name": "NoOp: STUB — Archive Creative Brief",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1250, 640],
+      "parameters": {},
+      "notes": "STUB DISABLED — PRODUCTION: Replace with Google Drive or Supabase node to archive approved creative brief. Requires REPLACE_WITH_GOOGLE_DRIVE_CREDENTIAL."
+    },
+    {
+      "id": "a6000006-0010-4001-a006-600000000010",
+      "name": "NoOp: STUB — Launch Ads Campaign",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1250, 720],
+      "parameters": {},
+      "notes": "STUB DISABLED — PRODUCTION: Replace with Meta Ads / TikTok Ads node. Requires REPLACE_WITH_META_ADS_CREDENTIAL or REPLACE_WITH_TIKTOK_ADS_CREDENTIAL. CRITICAL: No ads spend committed in skeleton."
+    },
+    {
+      "id": "a6000006-0011-4001-a006-600000000011",
+      "name": "NoOp: STUB — Send CRM Messages",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1250, 800],
+      "parameters": {},
+      "notes": "STUB DISABLED — PRODUCTION: Replace with Zalo / Facebook Messenger / SMS node. Requires REPLACE_WITH_MESSAGING_CREDENTIAL. CRITICAL: No messages sent to real customers in skeleton."
+    },
+    {
+      "id": "a6000006-0012-4001-a006-600000000012",
+      "name": "NoOp: STUB — Post Reply to Channel",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1250, 880],
+      "parameters": {},
+      "notes": "STUB DISABLED — PRODUCTION: Replace with Facebook / Instagram / TikTok comment reply node. Requires REPLACE_WITH_PLATFORM_CREDENTIAL. CRITICAL: No auto-reply to real customers in skeleton."
+    },
+    {
+      "id": "a6000006-0013-4001-a006-600000000013",
+      "name": "Code: Write Approval Log",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1500, 720],
+      "parameters": {
+        "jsCode": "// STUB — Phase 8 Skeleton\n// PURPOSE: Write structured approval log entry per schemas/log-entry.schema.json\n// PRODUCTION: Append to Google Sheets log tab or Supabase logs table\n// CREDENTIAL NEEDED: REPLACE_WITH_GOOGLE_SHEETS_CREDENTIAL or REPLACE_WITH_SUPABASE_CREDENTIAL\n\nconst inputData = $input.first().json;\n\nconst logEntry = {\n  log_id: 'LOG-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-APPR-001',\n  timestamp: new Date().toISOString(),\n  phase: '8',\n  agent_name: 'n8n-approval-publishing-gate (STUB)',\n  action_type: 'Approval Decision',\n  input_ref: inputData.item_id || 'STUB_INPUT',\n  output_ref: `APPROVED_${inputData.item_type || 'UNKNOWN'}_STUB`,\n  status: 'Success',\n  summary: `Item ${inputData.item_id} passed approval gate with status=${inputData.approval_status}. Publish stub executed (no real publish in skeleton).`,\n  errors: null,\n  next_action: 'Item routed to publish stub. In production, replace NoOp stubs with real platform publish nodes.',\n  owner_action_required: false\n};\n\nreturn [{ json: { ...inputData, logEntry, logWritten: true, approvalLogged: true } }];",
+        "mode": "runOnceForAllItems"
+      }
+    },
+    {
+      "id": "a6000006-0014-4001-a006-600000000014",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [250, 940],
+      "parameters": {}
+    },
+    {
+      "id": "a6000006-0015-4001-a006-600000000015",
+      "name": "Set: Error Log",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [500, 940],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "a6-set2-001", "name": "error_type", "value": "WORKFLOW_ERROR", "type": "string" },
+            { "id": "a6-set2-002", "name": "owner_action_required", "value": true, "type": "boolean" },
+            { "id": "a6-set2-003", "name": "workflow_name", "value": "FnB OS V1 — Approval and Publishing Gate [SKELETON]", "type": "string" },
+            { "id": "a6-set2-004", "name": "publishing_occurred", "value": false, "type": "boolean" },
+            { "id": "a6-set2-005", "name": "next_action", "value": "Owner to review n8n execution log. No publishing, sending, or spending occurred.", "type": "string" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a6000006-0017-4001-a006-600000000017",
+      "name": "Stop and Error: Workflow Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [750, 940],
+      "parameters": {
+        "errorMessage": "WORKFLOW_ERROR — Unhandled error in Approval and Publishing Gate. owner_action_required=true. No publishing, no ads spend, no customer messages. Review n8n execution log."
+      }
+    }
+  ],
+  "connections": {
+    "Webhook: Receive Approval Request": {
+      "main": [ [{ "node": "Code: Check Approval Status", "type": "main", "index": 0 }] ]
+    },
+    "Code: Check Approval Status": {
+      "main": [ [{ "node": "If: Is Approved", "type": "main", "index": 0 }] ]
+    },
+    "If: Is Approved": {
+      "main": [
+        [{ "node": "Switch: Item Type", "type": "main", "index": 0 }],
+        [{ "node": "Set: Block — Not Approved", "type": "main", "index": 0 }]
+      ]
+    },
+    "Set: Block — Not Approved": {
+      "main": [ [{ "node": "Code: Write Block Log", "type": "main", "index": 0 }] ]
+    },
+    "Code: Write Block Log": {
+      "main": [ [{ "node": "Stop and Error: Not Approved", "type": "main", "index": 0 }] ]
+    },
+    "Switch: Item Type": {
+      "main": [
+        [{ "node": "NoOp: STUB — Publish Content to Platform", "type": "main", "index": 0 }],
+        [{ "node": "NoOp: STUB — Archive Creative Brief", "type": "main", "index": 0 }],
+        [{ "node": "NoOp: STUB — Launch Ads Campaign", "type": "main", "index": 0 }],
+        [{ "node": "NoOp: STUB — Send CRM Messages", "type": "main", "index": 0 }],
+        [{ "node": "NoOp: STUB — Post Reply to Channel", "type": "main", "index": 0 }]
+      ]
+    },
+    "NoOp: STUB — Publish Content to Platform": {
+      "main": [ [{ "node": "Code: Write Approval Log", "type": "main", "index": 0 }] ]
+    },
+    "NoOp: STUB — Archive Creative Brief": {
+      "main": [ [{ "node": "Code: Write Approval Log", "type": "main", "index": 0 }] ]
+    },
+    "NoOp: STUB — Launch Ads Campaign": {
+      "main": [ [{ "node": "Code: Write Approval Log", "type": "main", "index": 0 }] ]
+    },
+    "NoOp: STUB — Send CRM Messages": {
+      "main": [ [{ "node": "Code: Write Approval Log", "type": "main", "index": 0 }] ]
+    },
+    "NoOp: STUB — Post Reply to Channel": {
+      "main": [ [{ "node": "Code: Write Approval Log", "type": "main", "index": 0 }] ]
+    },
+    "Error Trigger": {
+      "main": [ [{ "node": "Set: Error Log", "type": "main", "index": 0 }] ]
+    },
+    "Set: Error Log": {
+      "main": [ [{ "node": "Stop and Error: Workflow Error", "type": "main", "index": 0 }] ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {},
+  "versionId": "REPLACE_WITH_VERSION_ID"
+}
