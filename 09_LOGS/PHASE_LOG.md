@@ -16,6 +16,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-28 — Phase 9 — n8n Import Validation Pack Build
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILDER_DONE_PENDING_REVIEW
+**Detail:**
+Created Phase 9 validation pack: `docs/21_N8N_IMPORT_VALIDATION.md` (guide: 2-layer validation model, 17-check static validator table, manual import steps, PASS criteria, what Phase 9 does NOT validate, guardrails, phase connection table); `docs/checklists/PHASE_9_N8N_IMPORT_CHECKLIST.md` (9 sections A–I, pre-import environment check including Node.js version + static validator run, per-workflow sections B–G with node count verification + active=OFF + Sticky Note + empty credential slots + workflow-specific STOP conditions for ads/CRM/inbox/publishing, post-import verification H, log and sign-off I, STOP conditions table at end); `scripts/validate_n8n_workflows.mjs` (Node.js ESM, static read-only, 60 total checks across 6 Phase 8 workflow files: file exists, valid JSON, active=false, has name, name contains [SKELETON], non-empty nodes array, Error Trigger node, Sticky Note node, 7 secret scan patterns (sk-ant-, sk-, BEGIN PRIVATE KEY, ghp_, JWT eyJhbGciOi, Telegram token pattern, Google service account type field), versionId placeholder, instanceId placeholder; exit 0 = all pass, exit 1 = failures; static only — no exec/network/writes); `logs/templates/N8N_IMPORT_VALIDATION_LOG_TEMPLATE.md` (session details, static validator result block, per-workflow tables all 6 workflows with risk-level fields for ads/CRM/inbox/publishing, overall result table, blockers, screenshots optional note, sign-off including "Ready for Phase 10?" gate); `handoff/PHASE_9_HANDOFF.md` (files + directories created, scope boundaries, script summary with 17 check-type table, 19-item validation checklist all PASS, 9-pattern secret scan all CLEAN, 5 known limitations, Codex 8-point review instructions, Phase 10 recommendation). No Phase 8 workflow JSON modified. Script NOT run (Owner to confirm Node.js env first per approved constraint). No real credentials, no active=true, no auto-publish, no auto-reply, no ads spend, no commit, no push. Awaiting Codex PASS and Owner approval.
+
+---
+
 ### 2026-05-28 — Phase 8 — n8n Importable Workflow Skeletons Build
 
 **By:** Claude Code (Builder, AGT-02)

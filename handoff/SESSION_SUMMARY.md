@@ -1,8 +1,74 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-28 (Phase 8 Build)
+Updated By: Claude Code (Builder) — 2026-05-28 (Phase 9 Build)
 
-## Latest Session — Phase 8 n8n Importable Workflow Skeletons Build
+## Latest Session — Phase 9 n8n Import Validation Pack Build
+
+### current_phase
+9 — n8n Import Validation Pack (BUILDER_DONE_PENDING_REVIEW)
+
+### current_role
+Builder — Claude Code
+
+### active_command
+Phase 9 build complete. Owner approved file plan. All 5 Phase 9 files + 3 new directories created. Awaiting Codex PASS and Owner approval to commit.
+
+### latest_commit
+Run `git log --oneline -1` for current HEAD.
+Last stable commit: ad867b3 — feat: add phase 8 n8n importable workflow skeletons
+
+### files_changed
+Phase 9 (build):
+- `docs/21_N8N_IMPORT_VALIDATION.md` — created: Phase 9 scope overview, static validator description, 17-check table, manual import steps (summary), PASS criteria table, what is NOT validated in Phase 9, guardrails, phase connection table.
+- `docs/checklists/PHASE_9_N8N_IMPORT_CHECKLIST.md` — created: 9 sections (A–I), pre-import environment check (A), one section per workflow (B–G) with workflow-specific STOP conditions for ads/CRM/inbox/publishing, post-import verification (H), log and sign-off (I), STOP conditions table.
+- `scripts/validate_n8n_workflows.mjs` — created: Node.js ESM static analyzer, 60 total checks (10 per workflow × 6 files), checks: file exists, valid JSON, active=false, has name, name contains [SKELETON], has nodes array, Error Trigger node, Sticky Note node, 7 secret scan patterns (sk-ant-, sk-, private key, GitHub PAT, JWT, Telegram token, Google service account), versionId placeholder, instanceId placeholder. Static only — no exec, no network, no file writes. Exit 0 = all pass, exit 1 = failures found.
+- `logs/templates/N8N_IMPORT_VALIDATION_LOG_TEMPLATE.md` — created: session details table, static validator result table, per-workflow import result table (all 6 workflows with workflow-specific risk fields), overall result table, blockers section, screenshots section, sign-off.
+- `handoff/PHASE_9_HANDOFF.md` — created: files list, directories created, scope, validation script summary, validation checklist (19 items), secret scan (9 patterns all CLEAN), known limitations, Codex review instructions, Phase 10 recommendation, commit instruction.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 9 BUILDER_DONE_PENDING_REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All 5 primary Phase 9 files built and untracked. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Validation script is Node.js ESM (`validate_n8n_workflows.mjs`) not CommonJS — matches modern Node.js best practice and avoids require() issues.
+- Script uses 10 checks per workflow (17 total check types, some only run if earlier checks pass) — 60 total check operations across 6 files.
+- Secret scan patterns are conservative — they match real leaked credential formats, not placeholder strings (`REPLACE_WITH_*` is explicitly allowed).
+- Script NOT run — per approved Phase 9 constraint: only run after Owner confirms Node.js >= 16 is available.
+- docs/checklists/ created as a new subdirectory under docs/ — logical home for manual checklists separate from main docs.
+- scripts/ created as a new directory — separate from docs and logs, standard pattern for utility scripts.
+- logs/templates/ created as a new subdirectory under logs/ — separates blank templates from filled log files.
+- Import checklist has STOP conditions table at the end — Owner must not proceed to Phase 10 if any STOP condition is true.
+- Log template has sign-off row: "Ready for Phase 10?" — explicit gate before proceeding.
+
+### open_issues
+- Validation script not yet run — Owner must confirm Node.js >= 16 before running.
+- Import checklist not yet filled — Owner must run n8n import session.
+- Log template is blank — Owner must copy and fill after import session.
+
+### blockers
+None.
+
+### next_owner_action
+Review Codex verdict. If PASS: approve commit with `OWNER_APPROVED`. Then: (1) confirm Node.js version (`node --version`), (2) run `node scripts/validate_n8n_workflows.mjs`, (3) import all 6 skeletons into n8n and fill the import checklist, (4) fill the log template.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit all Phase 9 files.
+
+### next_reviewer_action
+Codex: review all files listed in `handoff/PHASE_9_HANDOFF.md`. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 9 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before commit.
+
+---
+
+## Previous Session — Phase 8 n8n Importable Workflow Skeletons Build
 
 ### current_phase
 8 — n8n Importable Workflow Skeletons (BUILDER_DONE_PENDING_REVIEW)
