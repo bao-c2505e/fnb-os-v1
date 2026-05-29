@@ -1,23 +1,20 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20C Owner Evidence Submission: content_auto_skeleton)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 21 Sandbox Manual Execution Expansion Plan)
 
 ## Phase
 
-Phase 20C — Owner Evidence Submission and Codex Review Prep (content_auto_skeleton)
+Phase 21 — Sandbox Manual Execution Expansion Plan (Remaining 5 Workflows)
 
 ## Status
 
-**EVIDENCE_RECORDED — READY FOR CODEX REVIEW**
-Phase 20C Owner evidence recorded for `content_auto_skeleton`. Owner (Bo Bao) manually executed the workflow in n8n sandbox on 2026-05-29 and reported PASS. Evidence log updated with full execution result. Phase 20C docs created. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. Awaiting Codex review and Owner OWNER_APPROVED before commit.
+**PLAN_READY — AWAITING OWNER REVIEW**
+Phase 21 expansion plan created. docs/35 + logs/phase_21 + handoff/PHASE_21 created. 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No workflow execution performed or claimed. No production readiness claimed.
 
 ## Current Command
 
-Phase 20C — Owner Evidence Submission (content_auto_skeleton).
-Evidence log updated + docs/34 created + handoff created + 4 state files updated.
-Owner execution result: PASS — happy path, dummy/placeholder output, all safety constraints upheld.
-Evidence screenshots referenced (pending Owner placement in repo folder).
-No n8n execution by Builder. No workflow JSON modified. No credentials. No activation.
+Phase 21 — Sandbox Manual Execution Expansion Plan.
+Planning docs/logs created. All 5 remaining workflows documented with execution order, risk levels, safety constraints, stop conditions, pass/fail criteria, and non-goals.
 
 ## Builder
 
@@ -25,43 +22,52 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex (AGT-03) — PENDING
+Awaiting Owner review / Codex review
 
 ## Next Gate
 
-Codex reviews Phase 20C evidence pack → PASS → Owner OWNER_APPROVED → commit → proceed to Phase 21 planning (sandbox execution expansion for remaining 5 workflows).
+Owner reviews Phase 21 plan → confirms execution order → Codex reviews → OWNER_APPROVED → commit → proceed to Phase 22A (evidence capture pack for creative_asset_auto_skeleton).
 
-## Phase 20C Files
+## Phase 21 Files
 
 | File | Status |
 |------|--------|
-| `logs/phase_20a_content_auto_sandbox_evidence_log.md` | Updated — execution_status=pass, all fields filled |
-| `docs/34_PHASE_20C_OWNER_EVIDENCE_SUBMISSION_CONTENT_AUTO.md` | Created |
-| `handoff/PHASE_20C_HANDOFF.md` | Created |
-| `evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_canvas.png` | Referenced — pending Owner placement |
-| `evidence/phase_20b/content_auto_skeleton/20260529_0125_content_auto_manual_sandbox_pass_output.png` | Referenced — pending Owner placement |
+| `docs/35_PHASE_21_SANDBOX_MANUAL_EXECUTION_EXPANSION_PLAN.md` | Created |
+| `logs/phase_21_remaining_workflows_sandbox_plan.md` | Created |
+| `handoff/PHASE_21_HANDOFF.md` | Created |
 
-## Phase 20C Status
+## Phase 21 Status
 
 | Check | Status |
 |-------|--------|
-| Owner execution result | PASS |
-| Execution type | manual_sandbox |
-| Workflow active=false confirmed | YES |
+| Workflow JSON modified | NO |
+| active=true introduced | NO |
 | Real credentials added | NO |
-| Real customer data used | NO |
-| Auto-post executed | NO |
-| Auto-reply executed | NO |
-| Ads spend occurred | NO |
+| Real customer data | NO |
+| Workflow execution performed | NO |
+| Auto-post | NO |
+| Auto-reply | NO |
+| Ads spend | NO |
 | Production readiness claimed | NO |
-| Phase 8 JSON modified | NO |
 | Secret scan | CLEAN |
-| Commit / Push | NO — awaiting Codex review + Owner OWNER_APPROVED |
+| Branch | main |
+| Latest commit | 50df2af |
+
+## Remaining Workflow Execution Order
+
+| Order | Workflow | Risk Level | Next Phase |
+|-------|----------|------------|------------|
+| 1st | creative_asset_auto_skeleton | Standard | Phase 22A |
+| 2nd | ads_pack_auto_skeleton | HIGH RISK | Phase 23A |
+| 3rd | crm_followup_auto_skeleton | HIGH RISK | Phase 24A |
+| 4th | comment_inbox_reply_assistant | HIGH RISK | Phase 25A |
+| 5th | approval_publishing_skeleton | HIGH RISK | Phase 26A |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
+| Phase 20C — Owner Evidence Submission (content_auto_skeleton) | **PASS (commit `50df2af`)** |
 | Phase 20B — Owner Manual Sandbox Runbook (content_auto_skeleton) | **DONE (commit `fb33e8c`)** |
 | Phase 20A — Manual Sandbox Evidence Capture Pack | **DONE (commit `f505dae`)** |
 | Phase 19 — Owner Manual Sandbox Execution Instructions | **DONE (commit `f04edba`)** |
@@ -72,6 +78,7 @@ Codex reviews Phase 20C evidence pack → PASS → Owner OWNER_APPROVED → comm
 
 ## Previous Phases
 
+Phase 20C — Owner Evidence Submission: content_auto_skeleton (PASS — commit `50df2af`)
 Phase 20B — Owner Manual Sandbox Runbook: content_auto_skeleton (commit `fb33e8c`)
 Phase 20A — Manual Sandbox Evidence Capture Pack (commit `f505dae`)
 Phase 19 — Owner Manual Sandbox Execution Instructions (commit `f04edba`)

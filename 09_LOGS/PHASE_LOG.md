@@ -5,6 +5,21 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-29 — Phase 21 — Sandbox Manual Execution Expansion Plan Created
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** PLAN_READY — AWAITING OWNER REVIEW
+**Detail:**
+Created Phase 21 Sandbox Manual Execution Expansion Plan. Phase 21 follows Phase 20C (content_auto_skeleton manual sandbox execution PASS, commit `50df2af`, Codex PASS). Phase 21 objective: create the expansion plan for manual sandbox execution of the remaining 5 workflow skeletons — creative_asset_auto_skeleton, ads_pack_auto_skeleton, crm_followup_auto_skeleton, comment_inbox_reply_assistant, approval_publishing_skeleton. No execution performed. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post, auto-reply, or ads. No production readiness claimed.
+
+`docs/35_PHASE_21_SANDBOX_MANUAL_EXECUTION_EXPANSION_PLAN.md`: Section A (purpose — planning only, no execution, no activation, no JSON modification); Section B (Phase 20C PASS reference — content_auto_skeleton, Owner Bo Bao, 2026-05-29, 9 happy-path nodes green, dummy output, all forbidden checks NO, commit 50df2af, Codex PASS); Section C (remaining 5 workflows with file path, n8n name, risk level, trigger type); Section D (recommended execution order with rationale — creative_asset_auto first as only Standard-risk remaining, ads_pack second as non-spending planning output, crm_followup third for messaging stubs, comment_inbox_reply fourth for reply stubs, approval_publishing last for highest production-side-effect risk with webhook trigger); Section E (risk levels — creative_asset Standard, all others HIGH RISK); Section F (safety constraints per workflow — 6 per-workflow subsections: F.1 creative_asset Standard no real image/upload/post; F.2 ads_pack NO ADS SPEND sticky/no Meta/TikTok/Zalo Ads API/compliance_notes required; F.3 crm_followup NO AUTO-SEND sticky/2 mandatory scenarios/human_review_required=true/no Zalo-Messenger-SMS; F.4 comment_inbox NO AUTO-REPLY sticky/2 mandatory scenarios/draft_reply=null on escalation/no comment reply API; F.5 approval_publishing test webhook only no activation/2 mandatory scenarios/all 5 NoOp stubs/Stop-and-Error on not-approved/no publish API); Section G (required evidence/log — 13 items including screenshot naming convention and evidence log path pattern); Section H (stop conditions SC-01–SC-10 covering active workflow, real credential, platform API, auto-post, customer message, ads spend, comment reply, approval_status change, real PII, live internet webhook); Section I (pass/fail criteria per workflow — 5 subsections with PASS checklists and FAIL/BLOCKED triggers); Section J (12 explicit non-goals — no production readiness, no production execution, no activation, no real credentials, no real customer data, no auto-post, no real inbox/comment reply, no ads spend, no workflow logic fixes, no schema changes, no production instance testing, no Phase 22A+ execution in this phase); Section K (Phase 22A recommendation — creative_asset_auto_skeleton with entry criteria and pass criteria); Phase Connections Phase 8–26C; Safety Confirmation all NO/CLEAN.
+
+`logs/phase_21_remaining_workflows_sandbox_plan.md`: plan table with all 5 workflows — execution_status not_executed_yet / payload_type dummy / active_status_required inactive/active=false / credentials_allowed placeholder_or_none / real_customer_data_allowed no / production_side_effect_allowed no / evidence_required yes / log_required yes — plus per-workflow detail sections and Phase 20C reference row.
+
+`handoff/PHASE_21_HANDOFF.md`: phase summary; Phase 20C PASS reference; remaining workflow execution order; safety constraints; files created/updated/not-modified tables (6 Phase 8 JSONs confirmed untouched); no-execution confirmation all NO; 32 acceptance criteria all PASS; 8-pattern secret scan CLEAN; next Phase 22A entry criteria. No n8n accessed. No Phase 8 JSON modified. No real credentials. No activation. No auto-publish, no auto-reply, no ads. No commit, no push. Validation: git status clean, branch main, latest commit 50df2af, active=true not present in any workflow JSON.
+
+---
+
 ### 2026-05-29 — Phase 20C — Owner Evidence Submission Recorded (content_auto_skeleton)
 
 **By:** Claude Code (Builder, AGT-02)

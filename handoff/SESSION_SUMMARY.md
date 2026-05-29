@@ -1,8 +1,64 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 20C Owner Evidence Submission: content_auto_skeleton)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 21 Sandbox Manual Execution Expansion Plan)
 
-## Latest Session — Phase 20C Owner Evidence Submission: content_auto_skeleton
+## Latest Session — Phase 21 Sandbox Manual Execution Expansion Plan
+
+### current_phase
+21 — Sandbox Manual Execution Expansion Plan (PLAN_READY — AWAITING OWNER REVIEW)
+
+### current_role
+Builder — Claude Code (planning docs only — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 21 expansion plan complete. docs/35 + logs/phase_21 + handoff/PHASE_21 created. 4 state files updated. All 5 remaining workflows documented with execution order, risk levels, safety constraints, stop conditions, pass/fail criteria, and non-goals. No workflow JSON modified. No credentials. No activation. No real customer data. No workflow execution claimed. No production readiness claimed.
+
+### latest_commit
+Last stable commit: `50df2af` — docs: normalize phase 20c evidence screenshot filenames
+
+### files_changed
+Phase 21 (build):
+- `docs/35_PHASE_21_SANDBOX_MANUAL_EXECUTION_EXPANSION_PLAN.md` — created: Section A purpose (planning only, no execution); Section B Phase 20C PASS reference (content_auto_skeleton PASS, commit 50df2af); Section C remaining 5 workflows (creative_asset_auto_skeleton Standard, ads_pack_auto_skeleton HIGH RISK, crm_followup_auto_skeleton HIGH RISK, comment_inbox_reply_assistant HIGH RISK, approval_publishing_skeleton HIGH RISK) with file path, n8n name, risk level, trigger type; Section D recommended execution order (Standard first, HIGH RISK in ascending complexity, rationale per workflow); Section E risk level per workflow; Section F safety constraints per workflow (6 per-workflow subsections); Section G required evidence/log per workflow (13 items, screenshot naming convention, evidence log path pattern); Section H stop conditions (10 universal stop conditions SC-01–SC-10); Section I pass/fail criteria per workflow (5 subsections with PASS checklist and FAIL/BLOCKED triggers); Section J explicit non-goals (12 items — no production readiness, no activation, no real credentials, no real customer data, no auto-post/reply/ads, no workflow logic fixes, no Phase 22A+ execution); Section K recommended next phase (Phase 22A — creative_asset_auto_skeleton); Phase Connections Phase 8–26C; Safety Confirmation all NO/CLEAN.
+- `logs/phase_21_remaining_workflows_sandbox_plan.md` — created: plan table with all 5 workflows (workflow_name, risk_level, planned_order, execution_status not_executed_yet, payload_type dummy, active_status_required inactive/active=false, credentials_allowed placeholder_or_none, real_customer_data_allowed no, production_side_effect_allowed no, evidence_required yes, log_required yes, next_phase); per-workflow detail sections; Phase 20C reference row; safety checks all NO/CLEAN.
+- `handoff/PHASE_21_HANDOFF.md` — created: phase summary; Phase 20C PASS reference; remaining workflow execution order; safety constraints table; files created/updated/not-modified tables (6 Phase 8 JSONs untouched); no-execution confirmation 10 items all NO; 32 acceptance criteria all PASS; 8-pattern secret scan CLEAN; next recommended Phase 22A.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 21 PLAN_READY AWAITING OWNER REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+3 primary Phase 21 files + 4 state file updates. Awaiting Owner review + Codex PASS + Owner OWNER_APPROVED before commit.
+
+### decisions_made
+- creative_asset_auto_skeleton selected first (Phase 22A) — only Standard-risk remaining workflow. Preserves pattern of testing lower-risk first (content_auto was Standard and PASSED).
+- ads_pack_auto_skeleton second despite HIGH RISK — output is non-spending planning document; skeleton has no real ads API node.
+- approval_publishing_skeleton last — most complex trigger (webhook), 5-branch switch, highest production-side-effect risk.
+- Evidence log path pattern: `logs/phase_[XY][subphase]_[workflow_name]_sandbox_evidence_log.md` — consistent with Phase 20A.
+
+### open_issues
+None. Phase 21 planning complete.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review Phase 21 plan in docs/35. (2) Confirm execution order. (3) Review Codex verdict. (4) If PASS: approve commit with OWNER_APPROVED. (5) After commit: proceed to Phase 22A.
+
+### next_builder_action
+Await Owner review + Codex PASS + Owner OWNER_APPROVED. Then commit Phase 21 files.
+
+### next_reviewer_action
+Codex: review docs/35, logs/phase_21, handoff/PHASE_21. Confirm: execution order sound, risk levels match Phase 8/17, safety constraints complete, non-goals complete, no secrets, no execution claimed, no production readiness claimed. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 21 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 21 files.
+
+---
+
+## Previous Session — Phase 20C Owner Evidence Submission: content_auto_skeleton
 
 ### current_phase
 20C — Owner Evidence Submission — content_auto_skeleton (EVIDENCE_RECORDED — READY FOR CODEX REVIEW)
