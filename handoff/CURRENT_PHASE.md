@@ -1,20 +1,20 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 21 Sandbox Manual Execution Expansion Plan)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 22A Owner Manual Sandbox Evidence Capture Pack — creative_asset_auto_skeleton)
 
 ## Phase
 
-Phase 21 — Sandbox Manual Execution Expansion Plan (Remaining 5 Workflows)
+Phase 22A — Owner Manual Sandbox Evidence Capture Pack (creative_asset_auto_skeleton)
 
 ## Status
 
-**PLAN_READY — AWAITING OWNER REVIEW**
-Phase 21 expansion plan created. docs/35 + logs/phase_21 + handoff/PHASE_21 created. 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No workflow execution performed or claimed. No production readiness claimed.
+**PACK_READY — READY FOR CODEX REVIEW**
+Phase 22A evidence capture pack created. docs/36 + logs/phase_22a + evidence/.gitkeep + handoff/PHASE_22A created. 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No workflow execution performed or claimed. No production readiness claimed.
 
 ## Current Command
 
-Phase 21 — Sandbox Manual Execution Expansion Plan.
-Planning docs/logs created. All 5 remaining workflows documented with execution order, risk levels, safety constraints, stop conditions, pass/fail criteria, and non-goals.
+Phase 22A — Owner Manual Sandbox Evidence Capture Pack for creative_asset_auto_skeleton.
+Pack/log/folder/handoff created. All required sections present. Awaiting Codex PASS and Owner OWNER_APPROVED before commit.
 
 ## Builder
 
@@ -22,21 +22,22 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Awaiting Owner review / Codex review
+Awaiting Codex review
 
 ## Next Gate
 
-Owner reviews Phase 21 plan → confirms execution order → Codex reviews → OWNER_APPROVED → commit → proceed to Phase 22A (evidence capture pack for creative_asset_auto_skeleton).
+Codex reviews docs/36 + logs/phase_22a + handoff/PHASE_22A → PASS → Owner OWNER_APPROVED → commit → proceed to Phase 22B (Owner Manual Sandbox Runbook for creative_asset_auto_skeleton).
 
-## Phase 21 Files
+## Phase 22A Files
 
 | File | Status |
 |------|--------|
-| `docs/35_PHASE_21_SANDBOX_MANUAL_EXECUTION_EXPANSION_PLAN.md` | Created |
-| `logs/phase_21_remaining_workflows_sandbox_plan.md` | Created |
-| `handoff/PHASE_21_HANDOFF.md` | Created |
+| `docs/36_PHASE_22A_CREATIVE_ASSET_SANDBOX_EVIDENCE_CAPTURE_PACK.md` | Created |
+| `logs/phase_22a_creative_asset_sandbox_evidence_log.md` | Created |
+| `evidence/phase_22b/creative_asset_auto_skeleton/.gitkeep` | Created |
+| `handoff/PHASE_22A_HANDOFF.md` | Created |
 
-## Phase 21 Status
+## Phase 22A Status
 
 | Check | Status |
 |-------|--------|
@@ -48,16 +49,17 @@ Owner reviews Phase 21 plan → confirms execution order → Codex reviews → O
 | Auto-post | NO |
 | Auto-reply | NO |
 | Ads spend | NO |
+| External paid generation | NO |
 | Production readiness claimed | NO |
 | Secret scan | CLEAN |
 | Branch | main |
-| Latest commit | 50df2af |
+| Latest commit | 07ef58b |
 
 ## Remaining Workflow Execution Order
 
 | Order | Workflow | Risk Level | Next Phase |
 |-------|----------|------------|------------|
-| 1st | creative_asset_auto_skeleton | Standard | Phase 22A |
+| 1st | creative_asset_auto_skeleton | Standard | **Phase 22A → 22B → 22C (IN PROGRESS)** |
 | 2nd | ads_pack_auto_skeleton | HIGH RISK | Phase 23A |
 | 3rd | crm_followup_auto_skeleton | HIGH RISK | Phase 24A |
 | 4th | comment_inbox_reply_assistant | HIGH RISK | Phase 25A |

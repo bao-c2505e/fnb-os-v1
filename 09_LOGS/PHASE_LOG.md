@@ -5,6 +5,23 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-29 — Phase 22A — Owner Manual Sandbox Evidence Capture Pack Created (creative_asset_auto_skeleton)
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** PACK_READY — READY FOR CODEX REVIEW
+**Detail:**
+Created Phase 22A Owner Manual Sandbox Evidence Capture Pack for `creative_asset_auto_skeleton`. Phase 22A follows Phase 21 (Sandbox Manual Execution Expansion Plan, commit `07ef58b`, Codex PASS). Phase 22A objective: create the evidence capture pack and blank evidence log template so Owner can manually execute `creative_asset_auto_skeleton` in Phase 22B and record evidence in Phase 22C. No execution performed. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post, auto-reply, or ads. No external paid generation. No production readiness claimed.
+
+`docs/36_PHASE_22A_CREATIVE_ASSET_SANDBOX_EVIDENCE_CAPTURE_PACK.md`: Section A (purpose — documentation only, no execution, prepares Owner for Phase 22B); Section B (selected workflow — creative_asset_auto_skeleton, Standard risk, Manual Trigger, P17-WF02-S1); Section C (Phase 20C PASS reference — content_auto_skeleton PASS commit 50df2af, 9 nodes green, all forbidden NO); Section D (why creative_asset_auto is next — 9 reasons: Standard risk only remaining non-HIGH-RISK, Manual Trigger, no real asset generation, no image generation API, no cloud storage, clear pass/fail, approval gate intact, parallel structure to content_auto, Standard-before-HIGH-RISK pattern); Section E (node chain — 9 happy-path nodes, validation failure path, error handler, REPLACE_WITH_* = expected stubs); Section F (SR-01–SR-10 pre-run safety checklist with Owner sign-off block); Section G (F-01–F-26 Owner manual run checklist — pre-trigger, per-node observation, forbidden output checks); Section H (EC-01–EC-08 evidence capture checklist); Section I (screenshot naming convention YYYYMMDD_HHMM_creative_asset_[description]_[result].png with 4 examples); Section J (required log file path); Section K (required payload reference P17-WF02-S1 with REPLACE_WITH_* stub note); Section L (SC-01–SC-10 stop conditions); Section M (12-item PASS checklist + 6 BLOCKED triggers + validation FALSE branch = still PASS if no forbidden output); Section N (12 explicit non-goals — no production readiness/execution/activation/real credentials/real customer data/auto-post/real asset/real inbox reply/ads/external paid generation/JSON modification/Phase 22B execution); Section O (Phase 22B recommendation with entry criteria); Phase Connections Phase 8–22C; Safety Confirmation all NO/CLEAN.
+
+`logs/phase_22a_creative_asset_sandbox_evidence_log.md`: blank evidence log template with all required fields — execution_status not_executed_yet, payload_type dummy, credentials_used placeholder_or_none, all forbidden fields no, 14-node execution table, 10 key output fields, FC-01–FC-06 forbidden checks, 4 screenshot placeholder paths, Post-Run Safety 7 checkboxes, Owner Sign-Off block.
+
+`evidence/phase_22b/creative_asset_auto_skeleton/.gitkeep`: empty placeholder to track evidence folder in git.
+
+`handoff/PHASE_22A_HANDOFF.md`: phase summary; phase distinction table; selected workflow; files created/updated/not-modified (6 Phase 8 JSONs confirmed untouched); docs/36 content summary 15 sections; evidence log summary; safety constraints 10 items CONFIRMED; no-execution confirmation 10 items all NO; 31 acceptance criteria all PASS; 8-pattern secret scan CLEAN; Codex review instructions 8 points; commit instruction. No n8n accessed. No Phase 8 JSON modified. No real credentials. No activation. No auto-publish, no auto-reply, no ads. No commit, no push. Validation: git status clean, branch main, latest commit 07ef58b, active=true not present in any workflow JSON.
+
+---
+
 ### 2026-05-29 — Phase 21 — Sandbox Manual Execution Expansion Plan Created
 
 **By:** Claude Code (Builder, AGT-02)

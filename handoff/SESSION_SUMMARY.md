@@ -1,8 +1,68 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 21 Sandbox Manual Execution Expansion Plan)
+Updated By: Claude Code (Builder) — 2026-05-29 (Phase 22A Owner Manual Sandbox Evidence Capture Pack — creative_asset_auto_skeleton)
 
-## Latest Session — Phase 21 Sandbox Manual Execution Expansion Plan
+## Latest Session — Phase 22A Owner Manual Sandbox Evidence Capture Pack (creative_asset_auto_skeleton)
+
+### current_phase
+22A — Owner Manual Sandbox Evidence Capture Pack — creative_asset_auto_skeleton (PACK_READY — READY FOR CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (pack/log/folder/handoff creation only — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 22A evidence pack complete. docs/36 + logs/phase_22a + evidence/.gitkeep + handoff/PHASE_22A created. 4 state files updated. Awaiting Codex PASS and Owner OWNER_APPROVED. No workflow JSON modified. No credentials. No activation. No real customer data. No workflow execution claimed. No production readiness claimed.
+
+### latest_commit
+Last stable commit: `07ef58b` — docs: add phase 21 sandbox manual execution expansion plan for remaining workflows
+
+### files_changed
+Phase 22A (build):
+- `docs/36_PHASE_22A_CREATIVE_ASSET_SANDBOX_EVIDENCE_CAPTURE_PACK.md` — created: Phase 22A evidence capture pack for creative_asset_auto_skeleton; Section A purpose (documentation only, does not execute, prepares Owner for Phase 22B); Section B selected workflow (file n8n/workflows/creative_asset_auto_skeleton.json, n8n name FnB OS V1 — Creative Asset Auto [SKELETON], risk Standard, trigger Manual Trigger, Phase 17 payload P17-WF02-S1, evidence log path); Section C Phase 20C PASS reference (content_auto_skeleton PASS commit 50df2af, Codex PASS, 9 nodes green, all forbidden NO); Section D why creative_asset_auto is next — 9-reason table: Standard risk not HIGH RISK, Manual Trigger familiar to Owner, no real asset generation, no image generation API, no cloud storage upload, clear pass/fail signal (logEntry.log_id + approvalQueueStubReached), approval gate intact, parallel structure to content_auto, Standard before HIGH RISK pattern; Section E node chain reference — happy path 9 nodes (Manual Trigger → Set Input Variables → Code: Load Brand Brain → Code: AI Generate Creative Brief → Code: Validate Required Fields → If: Validation Pass [TRUE] → Set: approval_status = Draft → Code: Write Log Entry → NoOp: STUB — Send to Approval Queue), validation failure path (FALSE → Set: Validation Error → Stop and Error: Validation Failed), error handler path (Error Trigger → Set: Error Log → Stop and Error: Workflow Error), REPLACE_WITH_* = expected stubs note; Section F pre-run safety checklist SR-01–SR-10 with Owner sign-off block; Section G Owner manual run checklist F-01–F-07 pre-trigger + F-08–F-20 trigger and observe + F-21–F-26 forbidden output checks (real image/URL/binary, image API, cloud storage, approval_status non-Draft, real PII, active=true); Section H evidence capture checklist EC-01–EC-08; Section I screenshot naming convention YYYYMMDD_HHMM_creative_asset_[description]_[result].png with 4 token definitions and 4 examples; Section J required log file path; Section K required payload reference P17-WF02-S1 input JSON with REPLACE_WITH_* stub note; Section L stop conditions SC-01–SC-10 (activation, credentials, image API, cloud storage, binary output, approval_status, PII, publish API, production instance, unclear output); Section M PASS/FAIL criteria — 12-item PASS checklist + 6 BLOCKED triggers + validation FALSE branch acceptable note; Section N 12 explicit non-goals (no production readiness, activation, real credentials, real customer data, auto-post, real creative asset, real inbox/reply, ads, external paid generation, JSON modification, Phase 22B execution); Section O Phase 22B recommendation with entry criteria; Phase Connections Phase 8–22C; Safety Confirmation all NO/CLEAN.
+- `logs/phase_22a_creative_asset_sandbox_evidence_log.md` — created: blank evidence log template for Owner to fill in Phase 22B; Execution Record section with all required fields (phase Phase 22A / 22B, workflow_name creative_asset_auto_skeleton, workflow_file, execution_type manual_sandbox, execution_status not_executed_yet, payload_file, payload_scenario P17-WF02-S1, payload_type dummy, active_status_before/after blank, credentials_used placeholder_or_none, real_customer_data_used no, auto_post_executed no, auto_reply_executed no, ads_spend_executed no, external_paid_generation_executed no, production_readiness_claimed no, execution_timestamp blank, n8n_execution_id blank, n8n_instance_url blank, operator blank); Node Execution Results table 14 nodes (Manual Trigger through Stop and Error: Workflow Error); Key Output Fields table 10 fields (brandBrainLoaded, contentDraftGenerated, draft_brief, asset_type_confirmed, approval_status, validationPassed, logWritten, logEntry.log_id, logEntry.status, approvalQueueStubReached); Forbidden Output Checks FC-01–FC-06 (real image/URL/binary, image API, cloud storage, approval_status non-Draft, real PII, active=true); Result Summary 5 fields; Evidence Screenshot Files 4 rows with placeholder paths; Issues Found empty table; Post-Run Safety Confirmation 7 checkboxes; Owner Decision owner_decision + next_action blank; Owner Sign-Off block.
+- `evidence/phase_22b/creative_asset_auto_skeleton/.gitkeep` — created: empty folder placeholder to track evidence directory in git.
+- `handoff/PHASE_22A_HANDOFF.md` — created: phase summary; phase distinction table 20A/20B/20C/21/22A/22B/22C; selected workflow; files created/updated/not-modified (6 Phase 8 JSONs untouched); docs/36 content summary 15 sections; evidence log template summary; safety constraints 10 items; no-execution confirmation 10 items all NO; Owner next action 5 steps; 31 acceptance criteria all PASS; secret scan 8 patterns CLEAN; Codex review instructions 8 points; commit instruction with exact git add list; next Phase 22B.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 22A PACK_READY READY FOR CODEX REVIEW
+- `handoff/SESSION_SUMMARY.md` — this file
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+4 primary Phase 22A files + 4 state file updates. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- `creative_asset_auto_skeleton` selected as second workflow (first after content_auto_skeleton PASS) because it is the only remaining Standard-risk workflow. All other 4 remaining workflows are HIGH RISK. Pattern: complete Standard before HIGH RISK.
+- Node chain documented from Phase 17 test payload P17-WF02-S1 structure — parallel to content_auto_skeleton but generates creative brief (not content draft). REPLACE_WITH_* values explicitly noted as expected stubs not failures.
+- Evidence log has `external_paid_generation_executed: no` field added (not present in Phase 20A log) because creative_asset workflow has potential for external image generation API calls that must be explicitly confirmed absent.
+- Evidence folder created as `evidence/phase_22b/creative_asset_auto_skeleton/` (phase_22b not phase_22a) — matches screenshot naming convention. Owner stores screenshots locally; .gitkeep ensures path exists before execution.
+- Phase 20C PASS reference section (Section C) added to docs/36 — not present in Phase 20A doc. This makes the progression from content_auto to creative_asset explicit for Codex review.
+- Validation FALSE branch explicitly noted as still PASS-acceptable in PASS criteria — same policy as Phase 20A, prevents Owner from misreading branch-path outcome as failure.
+
+### open_issues
+- `logs/phase_22a_creative_asset_sandbox_evidence_log.md` is blank (execution_status: not_executed_yet) — Owner must fill during Phase 22B execution.
+- Phase 22B runbook not yet created — requires Phase 22A Codex PASS + Owner OWNER_APPROVED + commit.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review Codex verdict on Phase 22A. (2) If PASS: approve commit with OWNER_APPROVED. (3) After commit: wait for Phase 22B runbook from Builder. (4) Do NOT execute workflow until Phase 22B runbook is committed and ready.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit Phase 22A files (docs/36, evidence log, .gitkeep, handoff, 4 state files). After commit: build Phase 22B runbook.
+
+### next_reviewer_action
+Codex: review docs/36, logs/phase_22a, handoff/PHASE_22A. Confirm: pack is documentation only (no execution claimed, no activation, no real credentials), evidence log template has all required fields with execution_status=not_executed_yet, node chain consistent with Phase 17 payload P17-WF02-S1, stop conditions cover all critical risks, non-goals complete, no secrets present. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 22A build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 22A files.
+
+---
+
+## Previous Session — Phase 21 Sandbox Manual Execution Expansion Plan
 
 ### current_phase
 21 — Sandbox Manual Execution Expansion Plan (PLAN_READY — AWAITING OWNER REVIEW)
