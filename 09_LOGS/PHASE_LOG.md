@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-30 — Phase 21 — ECC Lite Brief Intake & Adoption Plan Created
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** PLAN_READY — READY FOR OWNER REVIEW
+**Detail:**
+Created Phase 21 ECC Lite Brief Intake & Adoption Plan. Brief moved from repo root to `docs/proposals/` (not deleted). `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` created (12 sections A–L): executive summary — ECC-lite vs full ECC rationale; what ECC-lite means for OS V1 with 5-row comparison table; adopt-now/delay/reject scope tables; detail on /00_AGENT_OS structure + 8 agents + memory layer + hooks checklist + 8 schemas; repo structure updates; workflow/runtime governance gates; safety rules; future phases Phase 21 Agent through Phase 24+; owner approval gates; non-goals; safety confirmations all NO/CLEAN; Codex review checklist CR-01–CR-10. Codex unavailable this session. No workflow JSON modified. No credentials. No activation. No commit, no push.
+
+---
+
 ### 2026-05-30 — Phase 20 CI — Repository CI & Runtime Safety Gate Created
 
 **By:** Claude Code (Builder, AGT-02)

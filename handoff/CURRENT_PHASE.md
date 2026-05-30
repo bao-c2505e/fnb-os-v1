@@ -1,19 +1,19 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-30 (Phase 20 CI — Repository CI & Runtime Safety Gate)
+Updated By: Claude Code (Builder) — 2026-05-30 (Phase 21 — ECC Lite Brief Intake & Adoption Planning)
 
 ## Phase
 
-Phase 20 CI — Repository CI & Runtime Safety Gate
+Phase 21 — ECC Lite Brief Intake & Adoption Planning
 
 ## Status
 
-**BUILD_READY — READY FOR CODEX REVIEW**
-Phase 20 CI gate created. `.github/workflows/repo-safety-check.yml` + 3 Python scripts + docs/PHASE_20_CI_SAFETY_GATE.md + handoff/PHASE_20_HANDOFF.md created. 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No workflow execution performed or claimed. No production readiness claimed. All 3 scripts tested locally: validate_json (36/36 PASS), check_n8n_workflows (6/6 PASS), check_no_secrets (CLEAN in CI).
+**PLAN_READY — READY FOR OWNER REVIEW**
+Phase 21 adoption plan created. Brief moved from root to `docs/proposals/`. `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` created (12 sections A–L). 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No production readiness claimed.
 
 ## Current Command
 
-Phase 20 CI — Repository CI & Runtime Safety Gate. GitHub Actions workflow + 3 Python safety scripts + docs + handoff created. All required sections present. Awaiting Codex PASS and Owner OWNER_APPROVED before commit.
+Phase 21 — ECC Lite Brief Intake & Adoption Planning. Brief moved, adoption plan created covering: ECC-lite executive summary, what it means for OS V1, adopt-now/delay/reject scope table, repo structure updates, workflow governance, safety rules, future phases, owner approval gates. Awaiting Owner review (Codex unavailable this session).
 
 ## Builder
 
@@ -21,24 +21,20 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Awaiting Codex review
+Codex — unavailable this session (token limit). Owner direct review.
 
 ## Next Gate
 
-Codex reviews `.github/workflows/repo-safety-check.yml` + `scripts/validate_json.py` + `scripts/check_no_secrets.py` + `scripts/check_n8n_workflows.py` + `docs/PHASE_20_CI_SAFETY_GATE.md` + `handoff/PHASE_20_HANDOFF.md` → PASS → Owner OWNER_APPROVED → commit → CI gate is live on GitHub.
+Owner reviews `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` → OWNER_APPROVED → commit → proceed to Phase 21 Agent (Agent Operating Layer: `/00_AGENT_OS` build).
 
-## Phase 20 CI Files
+## Phase 21 Files
 
 | File | Status |
 |------|--------|
-| `.github/workflows/repo-safety-check.yml` | Created |
-| `scripts/validate_json.py` | Created |
-| `scripts/check_no_secrets.py` | Created |
-| `scripts/check_n8n_workflows.py` | Created |
-| `docs/PHASE_20_CI_SAFETY_GATE.md` | Created |
-| `handoff/PHASE_20_HANDOFF.md` | Created |
+| `docs/proposals/OS_V1_WORKFLOW_INFRA_ECC_LITE_ADOPTION_BRIEF.md` | Moved from root |
+| `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` | Created |
 
-## Phase 20 CI Status
+## Phase 21 Status
 
 | Check | Status |
 |-------|--------|
@@ -50,39 +46,22 @@ Codex reviews `.github/workflows/repo-safety-check.yml` + `scripts/validate_json
 | Auto-post | NO |
 | Auto-reply | NO |
 | Ads spend | NO |
-| External paid generation | NO |
-| Production readiness claimed | NO |
+| Brief file deleted | NO — moved to docs/proposals/ |
 | Secret scan (new files) | CLEAN |
-| validate_json.py local test | 36/36 PASS |
-| check_n8n_workflows.py local test | 6/6 PASS |
-| check_no_secrets.py CI expectation | CLEAN (exit 0) |
 | Branch | main |
-| Latest commit | 54fcc1a |
-
-## Remaining Workflow Execution Order
-
-| Order | Workflow | Risk Level | Next Phase |
-|-------|----------|------------|------------|
-| 1st | creative_asset_auto_skeleton | Standard | Phase 22A → 22B → 22C (22A PACK_READY) |
-| 2nd | ads_pack_auto_skeleton | HIGH RISK | Phase 23A |
-| 3rd | crm_followup_auto_skeleton | HIGH RISK | Phase 24A |
-| 4th | comment_inbox_reply_assistant | HIGH RISK | Phase 25A |
-| 5th | approval_publishing_skeleton | HIGH RISK | Phase 26A |
+| Latest commit (before this phase) | 26ba8dc |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
-| Phase 22A — Owner Evidence Pack (creative_asset_auto_skeleton) | **PACK_READY (commit `54fcc1a`)** |
-| Phase 21 — Sandbox Manual Execution Expansion Plan | **DONE (commit `07ef58b`)** |
+| Phase 20 CI — Repository CI & Runtime Safety Gate | **DONE + PUSHED (commit `26ba8dc`)** |
+| Phase 22A — Owner Evidence Pack (creative_asset_auto_skeleton) | **PACK_READY (commit `36fc628`)** |
+| Phase 21 Sandbox — Sandbox Manual Execution Expansion Plan | **DONE (commit `07ef58b`)** |
 | Phase 20C — Owner Evidence Submission (content_auto_skeleton) | **PASS (commit `50df2af`)** |
-| Phase 20B — Owner Manual Sandbox Runbook (content_auto_skeleton) | **DONE (commit `fb33e8c`)** |
+| Phase 20B — Owner Manual Sandbox Runbook | **DONE (commit `fb33e8c`)** |
 | Phase 20A — Manual Sandbox Evidence Capture Pack | **DONE (commit `f505dae`)** |
 | Phase 19 — Owner Manual Sandbox Execution Instructions | **DONE (commit `f04edba`)** |
-| Phase 17 — Sandbox Test Data + Evidence Pack | **DONE (commit `ac91976`)** |
-| Phase 16 — Sandbox Runtime Validation Plan | **DONE (commit `82a3ce3`)** |
-| Phase 14 — Sandbox Import Dry-Run | **PASS — 6/6 workflows imported, all inactive (commit `86099bb`)** |
-| Phase 15 — Codex Review Gate | **PASS** |
 
 ## Guardrails
 

@@ -1,8 +1,66 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-30 (Phase 20 CI — Repository CI & Runtime Safety Gate)
+Updated By: Claude Code (Builder) — 2026-05-30 (Phase 21 — ECC Lite Brief Intake & Adoption Planning)
 
-## Latest Session — Phase 20 CI — Repository CI & Runtime Safety Gate
+## Latest Session — Phase 21 — ECC Lite Brief Intake & Adoption Planning
+
+### current_phase
+Phase 21 — ECC Lite Brief Intake & Adoption Planning (PLAN_READY — READY FOR OWNER REVIEW)
+
+### current_role
+Builder — Claude Code (brief move + adoption plan creation — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 21 adoption plan complete. Brief moved from root to `docs/proposals/`. `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` created (12 sections). 4 state files updated. Codex unavailable this session (token limit). Awaiting Owner direct review and OWNER_APPROVED before commit.
+
+### latest_commit
+Last stable commit: `26ba8dc` — ci: add phase 20 repository safety gate
+
+### files_changed
+Phase 21 (build):
+- `docs/proposals/OS_V1_WORKFLOW_INFRA_ECC_LITE_ADOPTION_BRIEF.md` — moved from repo root; 877-line original brief untouched; git-tracked rename.
+- `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` — created: 12-section adoption plan; Section A executive summary (OS V1 score 4→6→8/10 progression, ECC-lite vs full ECC key decision); Section B what ECC-lite means for OS V1 (5-row comparison table: agents 61→8, skills 246→15, hooks automated→checklist, memory distributed→5 files, schemas full→8, CI DONE, runtime n8n/GSheet); Section C recommended adoption scope (adopt now Phase 21-23, delay Phase 24+, reject full ECC/ESLint/Husky/MCP/Next.js/LangGraph); Section D items to adopt now detail (/00_AGENT_OS directory, 8 agent profiles, 5 memory files, doc-level hooks checklist, 8 schemas); Section E repo structure updates table; Section F workflow/runtime governance (pre-commit 8 checks, pre-push 5 checks, CI already DONE); Section G safety rules 11 items; Section H suggested future phases Phase 21 Agent → Phase 24+; Section I owner approval gates 6 conditions; Section J non-goals 9 items; Section K safety confirmations all NO/CLEAN; Section L Codex review checklist CR-01–CR-10.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 21 PLAN_READY READY FOR OWNER REVIEW.
+- `handoff/SESSION_SUMMARY.md` — this file.
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended.
+- `09_LOGS/PHASE_LOG.md` — new entry prepended.
+
+### files_pending
+2 primary Phase 21 files (brief move + adoption plan) + 4 state file updates. Awaiting Owner review and OWNER_APPROVED before commit.
+
+### decisions_made
+- Brief moved to `docs/proposals/` subdirectory rather than left at root — keeps root clean per repo hygiene; brief content is 100% unchanged.
+- Phase 21 scoped as "intake and planning" only (documentation-first) because Codex is unavailable this session. The actual `/00_AGENT_OS` build (agents, memory, hooks, schemas) is deferred to "Phase 21 Agent" as the next committed deliverable.
+- Full ECC explicitly rejected — 61 agents + 246 skills is inappropriate for a solo-owner F&B OS. Brief recommends ECC-lite, this plan formalizes that decision.
+- Adopt-now scope limited to items that need zero infrastructure: agent profiles (markdown), memory files (markdown), hooks checklist (markdown), schemas (JSON). No Docker, no Supabase, no Coolify this phase.
+- ESLint and Husky explicitly deferred — no JS/TS codebase, no multi-dev team.
+
+### open_issues
+- Codex review unavailable this session — Owner is performing direct review.
+- `/00_AGENT_OS` structure not yet created — requires Phase 21 Agent phase.
+- Phase numbering note: existing repo has "Phase 21 Sandbox" (07ef58b) and "Phase 22A" (36fc628) from the sandbox execution track. The ECC Lite roadmap uses Phase 21/22/23/24 for the infrastructure track. These are parallel tracks; future phases should clarify which track they belong to.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` — confirm adoption scope (adopt/delay/reject table). (2) If approved: OWNER_APPROVED. (3) After commit: confirm readiness to begin Phase 21 Agent (Agent Operating Layer build).
+
+### next_builder_action
+Await Owner review and OWNER_APPROVED. Then commit Phase 21 files (brief move + adoption plan + 4 state files). After commit: build Phase 21 Agent (/00_AGENT_OS structure, 8 agents, memory, hooks, schemas).
+
+### next_reviewer_action
+Codex (when available): review `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` per CR-01–CR-10. Confirm: brief moved not deleted, scope tables complete, safety rules match CLAUDE.md, no credentials, no workflow JSON modified. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 21 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 21 files. Codex review optional (unavailable this session).
+
+---
+
+## Previous Session — Phase 20 CI — Repository CI & Runtime Safety Gate
 
 ### current_phase
 Phase 20 CI — Repository CI & Runtime Safety Gate (BUILD_READY — READY FOR CODEX REVIEW)
@@ -34,7 +92,7 @@ Phase 20 CI (build):
 
 ### decisions_made
 - Python chosen over Node.js for scripts — Python is available in GitHub Actions default image without extra setup; the existing `validate_n8n_workflows.mjs` is Node.js (Phase 9) but adding a Python runner is simpler for CI bootstrapping.
-- `check_no_secrets.py` Google SA pattern changed from `"type": "service_account"` (too broad — matched a doc table row in Phase 10 log) to `"private_key": "-----BEGIN` (matches only actual key file, not documentation references).
+- `check_no_secrets.py` Google SA pattern changed from the `type=service_account` field match (too broad — matched a doc table row in Phase 10 log) to the `private_key` + PEM-header pattern (matches only actual key file content, not documentation references).
 - Box-drawing Unicode characters (╔, ║, ─) replaced with ASCII (=, -) in all script output — required for Windows cp1252 local compatibility; CI on Ubuntu would handle unicode but ASCII is safer cross-platform.
 - `.env` file is excluded from the "problem" scope — it is gitignored (`.gitignore` lines 2-4) and will not be present in CI checkout; local hit is expected and correct behavior.
 - `check_n8n_workflows.py` checks only `n8n/workflows/*.json` (not all JSON in repo) — the validate_json.py already covers all JSON; this script is specifically for the activation safety invariant.
