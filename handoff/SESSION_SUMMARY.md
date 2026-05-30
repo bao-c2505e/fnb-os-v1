@@ -1,8 +1,69 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-30 (Phase 21 — ECC Lite Brief Intake & Adoption Planning)
+Updated By: Claude Code (Builder) — 2026-05-30 (Phase 22 — ECC Lite Repo Governance Integration)
 
-## Latest Session — Phase 21 — ECC Lite Brief Intake & Adoption Planning
+## Latest Session — Phase 22 — ECC Lite Repo Governance Integration
+
+### current_phase
+Phase 22 — ECC Lite Repo Governance Integration (BUILD_READY — AWAITING OWNER REVIEW)
+
+### current_role
+Builder — Claude Code (governance documentation creation — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 22 governance build complete. 5 governance files created in `docs/governance/`. 1 phase handoff created. 4 state files updated. Codex unavailable this session (token limit). Awaiting Owner direct review and OWNER_APPROVED before commit.
+
+### latest_commit
+Last stable commit: `7f8c7d2` — docs: add phase 21 ecc lite adoption plan
+
+### files_changed
+Phase 22 (build):
+- `docs/governance/AGENT_OPERATION_RULES.md` — created: 11-section governance doc; Section 1 agent roster 7 roles (Owner, ChatGPT, Claude Code, Codex, GitHub, n8n, LangGraph) with responsibilities and restrictions; Section 2 one-phase-one-builder rule; Section 3 scope compliance — Builder must stay within scope_files, list of prohibited file types; Section 4 reviewer rules — Codex cannot commit/push, output must be PASS/PASS WITH NOTES/FAIL; Section 5 no secrets policy — 13 patterns to scan, REPLACE_WITH_* exception; Section 6 no runtime execution without Owner approval; Section 7 no customer-facing automation without Owner approval — 6-row prohibited actions table; Section 8 session limit — max 10 exchanges, exchange 8 update SESSION_SUMMARY, exchange 10 stop; Section 9 end-of-session report format; Section 10 commit and push gates table; Section 11 guardrails summary 10-row table.
+- `docs/governance/REPO_VALIDATION_CHECKLIST.md` — created: 9-section pre-commit checklist; Section A before starting work 7 checks (git status, branch, HEAD, command, CURRENT_PHASE, SESSION_SUMMARY, scope_files); Section B inspect changed files 5 checks (git diff, git status, manual review, scope compliance, .claude/ not staged); Section C secret scan 13-pattern table with actions (API_KEY, SECRET, TOKEN, PASSWORD, PRIVATE_KEY, sk-, xoxb, ghp_, github_pat_, anthropic, openai, AKIA, -----BEGIN) + REPLACE_WITH_* exception + CLEAN/BLOCKED result options; Section D workflow JSON check 4 checks (diff name-only, workflow JSON in diff, active=true in diff, active:true YAML form); Section E runtime execution confirmation 4 checks (no n8n, no external API, no live workflow, no production); Section F handoff and log updates 5 checks (CURRENT_PHASE, SESSION_SUMMARY, phase handoff, AGENT_ACTIVITY_LOG, PHASE_LOG); Section G commit message 3 checks; Section H final pre-commit gate table all 9 items; Section I push gate 6 checks (Owner OWNER_APPROVED, git status clean, commit hash recorded, no unreviewed runtime, no secrets, no force push).
+- `docs/governance/PRE_COMMIT_PRE_PUSH_CHECKLIST.md` — created: quick-reference checklist; Pre-commit 7 sections in checkbox format (review changes, secret check, runtime file check, workflow JSON check, log/handoff updated, scope compliance, commit message); Pre-push 5 sections in checkbox format (Owner approval, post-commit state, no unreviewed runtime, final safety, push command); Quick summary table 4 gates (pre-commit, pre-push, runtime execution, customer-facing output).
+- `docs/governance/OWNER_APPROVAL_GATE.md` — created: 10 named approval gates with trigger conditions, blocking conditions, and recording locations; Gate 1 Planning, Gate 2 Build, Gate 3 Commit, Gate 4 Push, Gate 5 Runtime Import, Gate 6 Runtime Execution, Gate 7 Customer-Facing Output, Gate 8 Ads Spend, Gate 9 Publishing, Gate 10 Emergency Rollback; Gate summary table 10 rows showing commit/push/Owner-approval requirements per gate; Key notes: local commit ≠ push authorization, runtime requires explicit Owner approval per session.
+- `docs/governance/SESSION_HANDOFF_RULES.md` — created: 9-section session continuity protocol; Section 1 session limit — max 10 exchanges, exchange 8 update SESSION_SUMMARY, exchange 10 stop; Section 2 before ending session — SESSION_SUMMARY fields table (14 fields), AGENT_ACTIVITY_LOG update, phase handoff update, CURRENT_PHASE update; Section 3 starting new session — 6 files to read in order; Section 4 source-of-truth hierarchy — repo files > chat history, not-source-of-truth list (screenshots, copy-paste, agent memory); Section 5 avoiding long-context degradation — stay within 10 exchanges, write to repo not chat, start from SESSION_SUMMARY; Section 6 switching builders; Section 7 reviewer (Codex) handoff — READY FOR CODEX REVIEW signal, output format, Codex unavailable fallback; Section 8 handoff file naming convention; Section 9 emergency session stop procedure.
+- `handoff/PHASE_22_HANDOFF.md` — created: phase summary; objective; files created table 6 rows; files updated table 4 rows; files not modified table 8 rows; governance rules added — summary per file (5 subsections); validation checklist results 11 checks all CLEAN/NO; known limitations 5 items; no-execution confirmation 11 items all NO; 21 acceptance criteria all PASS; Owner next action 5 steps; Codex review instructions 7 points; next recommended phase 3 options; phase connections table.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 22 BUILD_READY AWAITING OWNER REVIEW.
+- `handoff/SESSION_SUMMARY.md` — this file.
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended.
+- `09_LOGS/PHASE_LOG.md` — new entry prepended.
+
+### files_pending
+5 primary governance files + 1 phase handoff + 4 state file updates. Awaiting Owner review and OWNER_APPROVED before commit.
+
+### decisions_made
+- New `docs/governance/` directory created to isolate governance files from operational docs. This keeps the 5 governance files together and clearly labeled.
+- OWNER_APPROVAL_GATE.md defines 10 gates (not just 6 as initially suggested) — added Emergency Rollback as Gate 10 because rollback is a high-stakes action that requires Owner decision, not Builder judgment.
+- SESSION_HANDOFF_RULES.md explicitly names the source-of-truth hierarchy and lists what is NOT a source of truth (screenshots, copy-paste, agent memory) — directly addresses the SOLO Business direction stated in the Phase 22 spec.
+- PRE_COMMIT_PRE_PUSH_CHECKLIST.md is in checkbox format (`- [ ]`) to match how Owner would physically use it — unlike the full checklist which uses tables.
+- REPO_VALIDATION_CHECKLIST.md covers all 13 secret patterns from `scripts/check_no_secrets.py` (Phase 20 CI) to ensure manual checks are consistent with automated CI checks.
+
+### open_issues
+- Codex review unavailable this session — Owner is performing direct review.
+- Phase 22 governance files are documentation-only — programmatic enforcement is already provided by Phase 20 CI scripts.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review 5 files in `docs/governance/`. (2) Review `handoff/PHASE_22_HANDOFF.md`. (3) If approved: OWNER_APPROVED. (4) Authorize local commit. (5) Decide whether to push (separate authorization required).
+
+### next_builder_action
+Await Owner review and OWNER_APPROVED. Then commit Phase 22 files. After commit: proceed to whichever track Owner prioritizes (Phase 23 Agent OS, or Phase 22B Sandbox Runbook for creative_asset).
+
+### next_reviewer_action
+Codex (when available): review 5 files in `docs/governance/` and `handoff/PHASE_22_HANDOFF.md`. Confirm: governance rules consistent with CLAUDE.md; no secrets; no workflow JSON modified; OWNER_APPROVAL_GATE distinguishes commit vs push; SESSION_HANDOFF_RULES identifies repo as source of truth; secret scan patterns match Phase 20 CI scripts. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 22 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 22 files. Codex review optional (unavailable this session).
+
+---
+
+## Previous Session — Phase 21 — ECC Lite Brief Intake & Adoption Planning
 
 ### current_phase
 Phase 21 — ECC Lite Brief Intake & Adoption Planning (PLAN_READY — READY FOR OWNER REVIEW)

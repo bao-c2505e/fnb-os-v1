@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-30 — Phase 22 — ECC Lite Repo Governance Integration Created
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILD_READY — AWAITING OWNER REVIEW
+**Detail:**
+Created Phase 22 ECC Lite Repo Governance Integration. New `docs/governance/` directory created with 5 governance markdown files: `AGENT_OPERATION_RULES.md` (7-role roster, scope rules, session limit, no-secrets, no-runtime, commit/push gates); `REPO_VALIDATION_CHECKLIST.md` (9-section pre-commit checklist: before-work, changed files, 13-pattern secret scan, workflow JSON, runtime execution, handoff/log, commit message, gate table, push gate); `PRE_COMMIT_PRE_PUSH_CHECKLIST.md` (checkbox-format quick-reference with 4-gate summary table); `OWNER_APPROVAL_GATE.md` (10 named gates: Planning, Build, Commit, Push, Runtime Import, Runtime Execution, Customer Output, Ads Spend, Publishing, Emergency Rollback); `SESSION_HANDOFF_RULES.md` (10-exchange limit, before-ending checklist, new-session start procedure, source-of-truth hierarchy, long-context degradation mitigation, builder switching, Codex handoff, emergency stop). Created `handoff/PHASE_22_HANDOFF.md`. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/reply/ads. No commit, no push.
+
+---
+
 ### 2026-05-30 — Phase 21 — ECC Lite Brief Intake & Adoption Plan Created
 
 **By:** Claude Code (Builder, AGT-02)

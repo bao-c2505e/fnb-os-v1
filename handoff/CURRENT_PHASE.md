@@ -1,19 +1,19 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-30 (Phase 21 — ECC Lite Brief Intake & Adoption Planning)
+Updated By: Claude Code (Builder) — 2026-05-30 (Phase 22 — ECC Lite Repo Governance Integration)
 
 ## Phase
 
-Phase 21 — ECC Lite Brief Intake & Adoption Planning
+Phase 22 — ECC Lite Repo Governance Integration
 
 ## Status
 
-**PLAN_READY — READY FOR OWNER REVIEW**
-Phase 21 adoption plan created. Brief moved from root to `docs/proposals/`. `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` created (12 sections A–L). 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No production readiness claimed.
+**BUILD_READY — AWAITING OWNER REVIEW AND APPROVAL**
+Phase 22 governance documentation created. 5 governance files created in `docs/governance/`. 1 phase handoff created. 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No production readiness claimed. Codex unavailable this session — Owner direct review.
 
 ## Current Command
 
-Phase 21 — ECC Lite Brief Intake & Adoption Planning. Brief moved, adoption plan created covering: ECC-lite executive summary, what it means for OS V1, adopt-now/delay/reject scope table, repo structure updates, workflow governance, safety rules, future phases, owner approval gates. Awaiting Owner review (Codex unavailable this session).
+Phase 22 — ECC Lite Repo Governance Integration. Created `docs/governance/` directory with 5 governance markdown files: AGENT_OPERATION_RULES.md, REPO_VALIDATION_CHECKLIST.md, PRE_COMMIT_PRE_PUSH_CHECKLIST.md, OWNER_APPROVAL_GATE.md, SESSION_HANDOFF_RULES.md. Created `handoff/PHASE_22_HANDOFF.md`. Updated 4 state files. Awaiting Owner review and OWNER_APPROVED before commit.
 
 ## Builder
 
@@ -25,16 +25,20 @@ Codex — unavailable this session (token limit). Owner direct review.
 
 ## Next Gate
 
-Owner reviews `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` → OWNER_APPROVED → commit → proceed to Phase 21 Agent (Agent Operating Layer: `/00_AGENT_OS` build).
+Owner reviews `docs/governance/` (5 files) + `handoff/PHASE_22_HANDOFF.md` → OWNER_APPROVED → local commit → decide push or continue to next phase.
 
-## Phase 21 Files
+## Phase 22 Files
 
 | File | Status |
 |------|--------|
-| `docs/proposals/OS_V1_WORKFLOW_INFRA_ECC_LITE_ADOPTION_BRIEF.md` | Moved from root |
-| `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` | Created |
+| `docs/governance/AGENT_OPERATION_RULES.md` | Created |
+| `docs/governance/REPO_VALIDATION_CHECKLIST.md` | Created |
+| `docs/governance/PRE_COMMIT_PRE_PUSH_CHECKLIST.md` | Created |
+| `docs/governance/OWNER_APPROVAL_GATE.md` | Created |
+| `docs/governance/SESSION_HANDOFF_RULES.md` | Created |
+| `handoff/PHASE_22_HANDOFF.md` | Created |
 
-## Phase 21 Status
+## Phase 22 Status
 
 | Check | Status |
 |-------|--------|
@@ -46,15 +50,15 @@ Owner reviews `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` → OWNER_APPROVED → c
 | Auto-post | NO |
 | Auto-reply | NO |
 | Ads spend | NO |
-| Brief file deleted | NO — moved to docs/proposals/ |
 | Secret scan (new files) | CLEAN |
 | Branch | main |
-| Latest commit (before this phase) | 26ba8dc |
+| Latest commit (before this phase) | 7f8c7d2 — docs: add phase 21 ecc lite adoption plan |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
+| Phase 21 — ECC Lite Brief Intake & Adoption Planning | **PLAN_READY (commit `7f8c7d2`)** |
 | Phase 20 CI — Repository CI & Runtime Safety Gate | **DONE + PUSHED (commit `26ba8dc`)** |
 | Phase 22A — Owner Evidence Pack (creative_asset_auto_skeleton) | **PACK_READY (commit `36fc628`)** |
 | Phase 21 Sandbox — Sandbox Manual Execution Expansion Plan | **DONE (commit `07ef58b`)** |
