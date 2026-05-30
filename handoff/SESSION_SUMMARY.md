@@ -1,8 +1,69 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 22A Owner Manual Sandbox Evidence Capture Pack — creative_asset_auto_skeleton)
+Updated By: Claude Code (Builder) — 2026-05-30 (Phase 20 CI — Repository CI & Runtime Safety Gate)
 
-## Latest Session — Phase 22A Owner Manual Sandbox Evidence Capture Pack (creative_asset_auto_skeleton)
+## Latest Session — Phase 20 CI — Repository CI & Runtime Safety Gate
+
+### current_phase
+Phase 20 CI — Repository CI & Runtime Safety Gate (BUILD_READY — READY FOR CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (GitHub Actions + Python scripts + docs creation — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 20 CI gate complete. `.github/workflows/repo-safety-check.yml` + 3 Python scripts + docs/PHASE_20_CI_SAFETY_GATE.md + handoff/PHASE_20_HANDOFF.md created. 4 state files updated. All 3 scripts tested locally: validate_json (36/36 PASS), check_n8n_workflows (6/6 PASS), check_no_secrets (CLEAN in CI). Awaiting Codex PASS and Owner OWNER_APPROVED. No workflow JSON modified. No credentials. No activation. No real customer data. No workflow execution claimed. No production readiness claimed.
+
+### latest_commit
+Last stable commit: `54fcc1a` — docs: add phase 22a owner manual sandbox evidence capture pack for creative_asset_auto_skeleton
+
+### files_changed
+Phase 20 CI (build):
+- `.github/workflows/repo-safety-check.yml` — created: GitHub Actions CI workflow; triggers on push, pull_request, workflow_dispatch; runner ubuntu-latest; Python 3.11; 3 steps (validate_json, check_no_secrets, check_n8n_workflows); no secrets/env vars required; static analysis only; no external services contacted.
+- `scripts/validate_json.py` — created: Python 3 standard-library-only JSON validator; recursively finds all .json files skipping .git/node_modules/__pycache__/.venv; json.loads() per file; PASS/FAIL per file with line/col on error; local test 36/36 PASS exit 0.
+- `scripts/check_no_secrets.py` — created: Python 3 standard-library-only secret scanner; 11 patterns (Anthropic sk-ant-api, OpenAI sk-48+, GitHub PAT ghp_, GitHub fine-grained github_pat_, AWS AKIA, PEM private key, JWT eyJhbGciOiJ, Telegram bot token, Google SA private_key field, Slack xox, Meta EAA); REPLACE_WITH_* explicitly allowed; binary files skipped; truncated 8-char preview in output; local test CLEAN in CI (.env hit gitignored not committed); exits 0 in CI.
+- `scripts/check_n8n_workflows.py` — created: Python 3 standard-library-only n8n workflow checker; reads all .json in n8n/workflows/; FAIL only if active field is Python bool True; advisory warning if name lacks [SKELETON]; local test 6/6 PASS active=false exit 0.
+- `docs/PHASE_20_CI_SAFETY_GATE.md` — created: 10-section Phase 20 CI documentation; Section A purpose (3 invariants — JSON valid, no secrets, no active=true); Section B files created; Section C GitHub Actions workflow (triggers, runner, steps); Section D validate_json.py behavior + local result; Section E check_no_secrets.py 11-pattern table + REPLACE_WITH_* policy + CI expectation note; Section F check_n8n_workflows.py behavior + local result; Section G safety confirmations all NO/CLEAN; Section H local test results table + .env note; Section I explicit non-goals 8 items; Section J phase connections; Section K Codex review checklist CR-01–CR-10.
+- `handoff/PHASE_20_HANDOFF.md` — created: phase summary; files created/updated/not-modified tables; local test results; no-execution confirmation 12 items all NO; 15 acceptance criteria all PASS; 5 checks all CLEAN; Codex review instructions 8 points; commit instruction; next phase recommendation.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 20 CI BUILD_READY READY FOR CODEX REVIEW.
+- `handoff/SESSION_SUMMARY.md` — this file.
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended.
+- `09_LOGS/PHASE_LOG.md` — new entry prepended.
+
+### files_pending
+6 primary Phase 20 CI files + 4 state file updates. Awaiting Codex review and Owner approval before commit.
+
+### decisions_made
+- Python chosen over Node.js for scripts — Python is available in GitHub Actions default image without extra setup; the existing `validate_n8n_workflows.mjs` is Node.js (Phase 9) but adding a Python runner is simpler for CI bootstrapping.
+- `check_no_secrets.py` Google SA pattern changed from `"type": "service_account"` (too broad — matched a doc table row in Phase 10 log) to `"private_key": "-----BEGIN` (matches only actual key file, not documentation references).
+- Box-drawing Unicode characters (╔, ║, ─) replaced with ASCII (=, -) in all script output — required for Windows cp1252 local compatibility; CI on Ubuntu would handle unicode but ASCII is safer cross-platform.
+- `.env` file is excluded from the "problem" scope — it is gitignored (`.gitignore` lines 2-4) and will not be present in CI checkout; local hit is expected and correct behavior.
+- `check_n8n_workflows.py` checks only `n8n/workflows/*.json` (not all JSON in repo) — the validate_json.py already covers all JSON; this script is specifically for the activation safety invariant.
+
+### open_issues
+- CI will only become active after commit + push to GitHub. The gate is currently defined but not yet running on the remote repo.
+- Branch protection rules (require CI checks to pass before merge) are not configured — Owner may wish to enable these in GitHub repository settings after commit.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review Codex verdict on Phase 20 CI files. (2) If PASS: approve commit with OWNER_APPROVED. (3) After commit + push: verify CI runs on GitHub Actions tab. (4) Optionally enable branch protection rules requiring CI to pass.
+
+### next_builder_action
+Await Codex PASS + Owner OWNER_APPROVED. Then commit Phase 20 CI files. After commit: continue with Phase 22B (Owner Manual Sandbox Runbook for creative_asset_auto_skeleton).
+
+### next_reviewer_action
+Codex: review `.github/workflows/repo-safety-check.yml`, `scripts/validate_json.py`, `scripts/check_no_secrets.py`, `scripts/check_n8n_workflows.py`, `docs/PHASE_20_CI_SAFETY_GATE.md`, `handoff/PHASE_20_HANDOFF.md`. Confirm: static analysis only (no execution, no credentials, no external services), scripts exit with correct codes, REPLACE_WITH_* not flagged, active=true detection logic correct, no secrets in new files, no workflow JSON modified. Output PASS / PASS WITH NOTES / FAIL.
+
+### session_limit_note
+Phase 20 CI build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 20 CI files.
+
+---
+
+## Previous Session — Phase 22A Owner Manual Sandbox Evidence Capture Pack (creative_asset_auto_skeleton)
 
 ### current_phase
 22A — Owner Manual Sandbox Evidence Capture Pack — creative_asset_auto_skeleton (PACK_READY — READY FOR CODEX REVIEW)

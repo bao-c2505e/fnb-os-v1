@@ -1,20 +1,19 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-05-29 (Phase 22A Owner Manual Sandbox Evidence Capture Pack — creative_asset_auto_skeleton)
+Updated By: Claude Code (Builder) — 2026-05-30 (Phase 20 CI — Repository CI & Runtime Safety Gate)
 
 ## Phase
 
-Phase 22A — Owner Manual Sandbox Evidence Capture Pack (creative_asset_auto_skeleton)
+Phase 20 CI — Repository CI & Runtime Safety Gate
 
 ## Status
 
-**PACK_READY — READY FOR CODEX REVIEW**
-Phase 22A evidence capture pack created. docs/36 + logs/phase_22a + evidence/.gitkeep + handoff/PHASE_22A created. 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No workflow execution performed or claimed. No production readiness claimed.
+**BUILD_READY — READY FOR CODEX REVIEW**
+Phase 20 CI gate created. `.github/workflows/repo-safety-check.yml` + 3 Python scripts + docs/PHASE_20_CI_SAFETY_GATE.md + handoff/PHASE_20_HANDOFF.md created. 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No workflow execution performed or claimed. No production readiness claimed. All 3 scripts tested locally: validate_json (36/36 PASS), check_n8n_workflows (6/6 PASS), check_no_secrets (CLEAN in CI).
 
 ## Current Command
 
-Phase 22A — Owner Manual Sandbox Evidence Capture Pack for creative_asset_auto_skeleton.
-Pack/log/folder/handoff created. All required sections present. Awaiting Codex PASS and Owner OWNER_APPROVED before commit.
+Phase 20 CI — Repository CI & Runtime Safety Gate. GitHub Actions workflow + 3 Python safety scripts + docs + handoff created. All required sections present. Awaiting Codex PASS and Owner OWNER_APPROVED before commit.
 
 ## Builder
 
@@ -26,18 +25,20 @@ Awaiting Codex review
 
 ## Next Gate
 
-Codex reviews docs/36 + logs/phase_22a + handoff/PHASE_22A → PASS → Owner OWNER_APPROVED → commit → proceed to Phase 22B (Owner Manual Sandbox Runbook for creative_asset_auto_skeleton).
+Codex reviews `.github/workflows/repo-safety-check.yml` + `scripts/validate_json.py` + `scripts/check_no_secrets.py` + `scripts/check_n8n_workflows.py` + `docs/PHASE_20_CI_SAFETY_GATE.md` + `handoff/PHASE_20_HANDOFF.md` → PASS → Owner OWNER_APPROVED → commit → CI gate is live on GitHub.
 
-## Phase 22A Files
+## Phase 20 CI Files
 
 | File | Status |
 |------|--------|
-| `docs/36_PHASE_22A_CREATIVE_ASSET_SANDBOX_EVIDENCE_CAPTURE_PACK.md` | Created |
-| `logs/phase_22a_creative_asset_sandbox_evidence_log.md` | Created |
-| `evidence/phase_22b/creative_asset_auto_skeleton/.gitkeep` | Created |
-| `handoff/PHASE_22A_HANDOFF.md` | Created |
+| `.github/workflows/repo-safety-check.yml` | Created |
+| `scripts/validate_json.py` | Created |
+| `scripts/check_no_secrets.py` | Created |
+| `scripts/check_n8n_workflows.py` | Created |
+| `docs/PHASE_20_CI_SAFETY_GATE.md` | Created |
+| `handoff/PHASE_20_HANDOFF.md` | Created |
 
-## Phase 22A Status
+## Phase 20 CI Status
 
 | Check | Status |
 |-------|--------|
@@ -51,15 +52,18 @@ Codex reviews docs/36 + logs/phase_22a + handoff/PHASE_22A → PASS → Owner OW
 | Ads spend | NO |
 | External paid generation | NO |
 | Production readiness claimed | NO |
-| Secret scan | CLEAN |
+| Secret scan (new files) | CLEAN |
+| validate_json.py local test | 36/36 PASS |
+| check_n8n_workflows.py local test | 6/6 PASS |
+| check_no_secrets.py CI expectation | CLEAN (exit 0) |
 | Branch | main |
-| Latest commit | 07ef58b |
+| Latest commit | 54fcc1a |
 
 ## Remaining Workflow Execution Order
 
 | Order | Workflow | Risk Level | Next Phase |
 |-------|----------|------------|------------|
-| 1st | creative_asset_auto_skeleton | Standard | **Phase 22A → 22B → 22C (IN PROGRESS)** |
+| 1st | creative_asset_auto_skeleton | Standard | Phase 22A → 22B → 22C (22A PACK_READY) |
 | 2nd | ads_pack_auto_skeleton | HIGH RISK | Phase 23A |
 | 3rd | crm_followup_auto_skeleton | HIGH RISK | Phase 24A |
 | 4th | comment_inbox_reply_assistant | HIGH RISK | Phase 25A |
@@ -69,6 +73,8 @@ Codex reviews docs/36 + logs/phase_22a + handoff/PHASE_22A → PASS → Owner OW
 
 | Phase | Result |
 |-------|--------|
+| Phase 22A — Owner Evidence Pack (creative_asset_auto_skeleton) | **PACK_READY (commit `54fcc1a`)** |
+| Phase 21 — Sandbox Manual Execution Expansion Plan | **DONE (commit `07ef58b`)** |
 | Phase 20C — Owner Evidence Submission (content_auto_skeleton) | **PASS (commit `50df2af`)** |
 | Phase 20B — Owner Manual Sandbox Runbook (content_auto_skeleton) | **DONE (commit `fb33e8c`)** |
 | Phase 20A — Manual Sandbox Evidence Capture Pack | **DONE (commit `f505dae`)** |
@@ -77,28 +83,6 @@ Codex reviews docs/36 + logs/phase_22a + handoff/PHASE_22A → PASS → Owner OW
 | Phase 16 — Sandbox Runtime Validation Plan | **DONE (commit `82a3ce3`)** |
 | Phase 14 — Sandbox Import Dry-Run | **PASS — 6/6 workflows imported, all inactive (commit `86099bb`)** |
 | Phase 15 — Codex Review Gate | **PASS** |
-
-## Previous Phases
-
-Phase 20C — Owner Evidence Submission: content_auto_skeleton (PASS — commit `50df2af`)
-Phase 20B — Owner Manual Sandbox Runbook: content_auto_skeleton (commit `fb33e8c`)
-Phase 20A — Manual Sandbox Evidence Capture Pack (commit `f505dae`)
-Phase 19 — Owner Manual Sandbox Execution Instructions (commit `f04edba`)
-Phase 17 — Sandbox Test Data + Evidence Pack (commit `ac91976`)
-Phase 16 — Sandbox Runtime Validation Plan (commit `82a3ce3`)
-Phase 15 — Codex Review Gate on Phase 14 (PASS)
-Phase 14 — Owner n8n Sandbox Dry-Run Execution Log (PASS — commit `86099bb`)
-Phase 13 — Controlled n8n Import Dry-Run Handoff (commit `f8ca5f4`)
-Phase 12 — n8n Import Dry-Run Execution Readiness (commit `98608e9`)
-Phase 11 — n8n Import Dry-Run Evidence Pack (commit `7399a95`)
-Phase 10 — n8n Import Dry Run and Validation (commit `e4ea363`)
-Phase 9 — n8n Import Validation Pack (commit `56ed0c3`)
-Phase 8 — n8n Importable Workflow Skeletons (commit `ad867b3`)
-Phase 7 — n8n Runtime Blueprint (commit `4bfbe96`)
-Phase 6 — OS Readiness Pack (commit `f66e2e9`)
-Phase 5 — Sample Outputs for Vị Cuốn (commit `761240f`)
-Phase 4 — Module SOP + Output Templates (commit `8942fd7`)
-Phase 3 — Brand Brain + Input/Output Schemas (commit `93d7010`)
 
 ## Guardrails
 

@@ -1,0 +1,45 @@
+# FnB OS V1 — Repository CI & Runtime Safety Gate
+# Phase 20 — CI Safety Check
+#
+# Runs three static checks on every push and pull request:
+#   1. validate_json.py      — every .json file in the repo must parse without error
+#   2. check_no_secrets.py   — no hardcoded API keys, tokens, or passwords
+#   3. check_n8n_workflows.py — no n8n workflow JSON has active: true
+#
+# SAFETY RULES:
+# - Static analysis only. No workflows are executed.
+# - No external services are contacted.
+# - No credentials are read or written.
+# - REPLACE_WITH_* placeholder strings are explicitly allowed.
+
+name: Repo Safety Check
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch:
+
+jobs:
+  safety-check:
+    name: Static Safety Gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate all JSON files
+        run: python scripts/validate_json.py
+
+      - name: Check for hardcoded secrets
+        run: python scripts/check_no_secrets.py
+
+      - name: Check n8n workflows — no active=true
+        run: python scripts/check_n8n_workflows.py
