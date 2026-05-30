@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-30 — Phase 24A — Sandbox Runbook Index & Owner Runtime Readiness Created
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILD_READY — AWAITING OWNER REVIEW
+**Detail:**
+Created Phase 24A Sandbox Runbook Index & Owner Runtime Readiness. New `docs/runbooks/` directory created with 5 files: `README.md` (directory overview, four readiness levels — documentation/sandbox import/sandbox execution/production runtime, runbook index table, key principles, relationship to governance docs); `SANDBOX_RUNBOOK_INDEX.md` (master index: 6-workflow status table across 4 stages, existing runbooks Phase 20A–22A mapped, future runbooks listed, role permissions table Owner/Builder/Codex/LangGraph, allowed vs. forbidden actions table, evidence log locations); `OWNER_RUNTIME_READINESS_CHECKLIST.md` (12-section pre-action checklist A–L: repo state checks, phase handoff exists, Codex PASS or Owner direct review, no secrets in repo, workflow JSON safety checks, approval gate documentation, sandbox/test data confirmation, output safety, rollback/fallback note, evidence capture plan, explicit approval phrase templates for import/execution/production, final pre-action sign-off with Owner sign-off block); `SANDBOX_IMPORT_TEST_RUNBOOK.md` (13 preconditions, allowed actions, forbidden actions, 10-step import flow, evidence capture items, failure handling for import fail/credential errors/active=true/node version mismatch, stop conditions, strong warning that import ≠ execution approval); `RUNTIME_APPROVAL_DECISION_TREE.md` (Q1–Q9 decision tree: documentation only → sandbox import → sandbox execution → production runtime → production credentials → real customers → public posting → ads/campaign/budget → session-specific approval; 4 outcomes — documentation allowed/sandbox import allowed/sandbox execution allowed/production runtime allowed; BLOCKED default; auto-post/auto-reply/ads blocked by default; approval phrases reference table). Updated `docs/governance/README.md` (added "Owner Runtime Runbooks" section with link to `docs/runbooks/`) and `docs/governance/OWNER_APPROVAL_GATE.md` (added runbook links at end of Related section). Created `handoff/PHASE_24A_HANDOFF.md`. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/reply/ads. No commit, no push.
+
+---
+
 ### 2026-05-30 — Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index Created
 
 **By:** Claude Code (Builder, AGT-02)

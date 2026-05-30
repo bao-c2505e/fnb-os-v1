@@ -216,3 +216,9 @@ No AI agent (Builder, Reviewer, or Architect) may self-authorize any gate.
 - `docs/governance/REPO_VALIDATION_CHECKLIST.md` — Pre-commit validation
 - `docs/governance/PRE_COMMIT_PRE_PUSH_CHECKLIST.md` — Quick-reference checklist
 - `docs/governance/SESSION_HANDOFF_RULES.md` — Session handoff protocol
+
+*Owner Runtime Runbooks (Gate 5 and Gate 6 detail):*
+- `docs/runbooks/OWNER_RUNTIME_READINESS_CHECKLIST.md` — Pre-action checklist with explicit approval phrase templates
+- `docs/runbooks/RUNTIME_APPROVAL_DECISION_TREE.md` — Decision tree for determining which gate applies
+- `docs/runbooks/SANDBOX_RUNBOOK_INDEX.md` — Which workflows have runbooks and at which readiness stage
+- `docs/runbooks/SANDBOX_IMPORT_TEST_RUNBOOK.md` — Step-by-step guide for sandbox import (Gate 5)

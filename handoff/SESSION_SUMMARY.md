@@ -1,8 +1,72 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-30 (Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index)
+Updated By: Claude Code (Builder) — 2026-05-30 (Phase 24A — Sandbox Runbook Index & Owner Runtime Readiness)
 
-## Latest Session — Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index
+## Latest Session — Phase 24A — Sandbox Runbook Index & Owner Runtime Readiness
+
+### current_phase
+Phase 24A — Sandbox Runbook Index & Owner Runtime Readiness (BUILD_READY — AWAITING OWNER REVIEW)
+
+### current_role
+Builder — Claude Code (runbook documentation creation — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 24A Sandbox Runbook Index build complete. 5 new files created in `docs/runbooks/`. 2 governance docs updated (light-touch links). 1 phase handoff created. 4 state files updated. Codex unavailable this session (token limit). Awaiting Owner direct review and OWNER_APPROVED before commit.
+
+### latest_commit
+Last stable commit: `41186df` — docs: add phase 23 agent os operating manual
+
+### files_changed
+Phase 24A (build):
+- `docs/runbooks/README.md` — created: directory overview; purpose of runbooks; four readiness levels table (documentation/sandbox import/sandbox execution/production runtime) with who acts and whether runtime action occurs; runbook index table 5 files; reading order 4 steps; key principles 5 items; relationship to governance docs table; phase history.
+- `docs/runbooks/SANDBOX_RUNBOOK_INDEX.md` — created: master index; four readiness stages table with entry criteria and required approval; workflow runbook status table 6 workflows × 4 stages (content_auto DONE through Phase 20C PASS, creative_asset DONE through Phase 22A, remaining 4 NOT STARTED); existing runbooks table 5 prior-phase docs with commit references; Phase 24A runbooks table 4 files; future runbooks table 10 items; role permissions table Owner/Builder/Codex/LangGraph × 4 stages; allowed actions per stage; forbidden actions table with reason; evidence log locations table 6 workflows; related documents.
+- `docs/runbooks/OWNER_RUNTIME_READINESS_CHECKLIST.md` — created: 12-section pre-action checklist A–L (A repo state 4-command table; B latest phase handoff 4 checks; C Codex PASS or direct review 3 checks; D no secrets 4 checks including CI; E workflow JSON safety 5 checks; F approval gate documentation 3 checks; G sandbox/test data 7 checks; H output safety 5 checks; I rollback/fallback note 3 checks with blank field; J evidence capture plan 4 checks with blank field; K explicit approval phrase templates — import phrase, execution phrase separate, production phrase separate; L final sign-off table 12 items with Owner sign-off block; failure table 6 failure scenarios with required action).
+- `docs/runbooks/SANDBOX_IMPORT_TEST_RUNBOOK.md` — created: purpose with strong import≠execution warning; 13 preconditions with how-to-verify; allowed actions table; forbidden actions table; 10-step import flow (repo confirm → JSON verify → open sandbox → import → confirm INACTIVE → inspect canvas → document result → screenshots → fill evidence log → decide next action); evidence to capture table 5 items; what to do if import fails table 5 scenarios; credential errors explanation (warning vs error — expected behavior); what to do if active=true (4 steps); node version mismatch guidance (3 steps); what to do before manual execution (5 steps with reminder that import ≠ execution); 8 stop conditions.
+- `docs/runbooks/RUNTIME_APPROVAL_DECISION_TREE.md` — created: ASCII decision tree Q1–Q9 with branches (Q1 documentation, Q2 sandbox import with Q2a–Q2d, Q3 sandbox execution with Q3a–Q3g, Q4 production runtime with Q4a–Q4b, Q5 production credentials, Q6 real customers, Q7 public posting, Q8 ads/budget, Q9 session approval); 4 outcomes table; default outcome blocked; auto-post/auto-reply/ads blocked by default table; approval phrases reference table 7 phrases.
+- `docs/governance/README.md` — updated: added "Owner Runtime Runbooks" section before Phase History with link to `docs/runbooks/README.md` and one-line description; added Phase 24A row to Phase History table.
+- `docs/governance/OWNER_APPROVAL_GATE.md` — updated: added 4 runbook links at end of existing Related section (OWNER_RUNTIME_READINESS_CHECKLIST, RUNTIME_APPROVAL_DECISION_TREE, SANDBOX_RUNBOOK_INDEX, SANDBOX_IMPORT_TEST_RUNBOOK).
+- `handoff/PHASE_24A_HANDOFF.md` — created: phase summary; files created 6 rows; files updated 6 rows; files not modified 15 rows; what Phase 24A adds comparison table (before/after 6 rows); runtime safety confirmation 13 checks all NO/CLEAN; acceptance criteria 35 items all PASS; no-execution confirmation 11 items all NO; Owner next action 5 steps; Codex review instructions 7 points; recommended next phase 4 options; phase connections table.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 24A BUILD_READY AWAITING OWNER REVIEW.
+- `handoff/SESSION_SUMMARY.md` — this file.
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended.
+- `09_LOGS/PHASE_LOG.md` — new entry prepended.
+
+### files_pending
+5 primary Phase 24A runbook files + 2 governance updates + 1 phase handoff + 4 state file updates. Awaiting Owner review and OWNER_APPROVED before commit.
+
+### decisions_made
+- `docs/runbooks/` created as a separate directory from `docs/governance/` — runbooks are Owner-facing (guidance for specific actions), while governance docs are agent-facing (rules for builder/reviewer behavior). Keeping them separate prevents confusion.
+- Four readiness levels defined (documentation / sandbox import / sandbox execution / production) — matches the progression of existing phases (Phase 8 = documentation, Phase 14 = sandbox import, Phase 20B/C = sandbox execution, production = future). Each level gets its own approval gate.
+- Approval phrase templates are explicit and require workflow name + date — prevents vague approvals like "yes go ahead" that are ambiguous in future sessions.
+- RUNTIME_APPROVAL_DECISION_TREE.md uses ASCII art tree rather than a table — decision trees are non-linear and a table cannot express branching logic clearly. ASCII tree is parseable by agents and readable by humans.
+- `docs/governance/README.md` and `docs/governance/OWNER_APPROVAL_GATE.md` updated with light-touch links only — no rewrite of existing content. Phase 24A follows the "light touch" instruction from the phase spec.
+
+### open_issues
+- Codex review unavailable this session — Owner is performing direct review.
+- `commands/COMMAND_INBOX.md` still has all commands CLOSED — Phase 24A was executed from Owner direct instruction, consistent with Phase 23.
+- Phase 22B creative_asset sandbox execution runbook not yet created — deferred to Phase 22B (one of the recommended next phases).
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review 5 new files in `docs/runbooks/`. (2) Review governance doc updates (README + OWNER_APPROVAL_GATE). (3) Review `handoff/PHASE_24A_HANDOFF.md`. (4) If approved: OWNER_APPROVED. (5) Authorize local commit. (6) Decide whether to push (separate authorization required).
+
+### next_builder_action
+Await Owner review and OWNER_APPROVED. Then commit Phase 24A files. After commit: proceed to Phase 22B (creative_asset execution runbook), Phase 24B (evidence pack templates), or Phase 25 (runtime observability) per Owner decision.
+
+### next_reviewer_action
+Codex (when available): review 5 files in `docs/runbooks/` and `handoff/PHASE_24A_HANDOFF.md`. Confirm: four readiness levels clearly defined; approval phrases explicit; import ≠ execution warning present; decision tree logic matches OWNER_APPROVAL_GATE.md gates; no secrets, no workflow JSON modified, no active=true; governance doc updates are light-touch only. Output PASS / PASS WITH NOTES / BLOCK.
+
+### session_limit_note
+Phase 24A build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 24A files. Codex review optional (unavailable this session).
+
+---
+
+## Previous Session — Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index
 
 ### current_phase
 Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index (BUILD_READY — AWAITING OWNER REVIEW)

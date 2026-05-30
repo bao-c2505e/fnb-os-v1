@@ -66,12 +66,25 @@ These principles are enforced by every document in this directory:
 
 ---
 
+## Owner Runtime Runbooks
+
+Owner-facing runtime readiness materials are in a separate directory:
+
+| Directory | Purpose |
+|-----------|---------|
+| [docs/runbooks/](../runbooks/README.md) | Runbooks for sandbox import, sandbox execution, production runtime decisions. Owner-facing. Includes runtime readiness checklist, sandbox runbook index, import runbook, and approval decision tree. |
+
+See [docs/runbooks/README.md](../runbooks/README.md) for the full runbook index.
+
+---
+
 ## Phase History
 
 | Phase | Contribution |
 |-------|-------------|
 | Phase 22 | Created this `docs/governance/` directory. Created: AGENT_OPERATION_RULES.md, REPO_VALIDATION_CHECKLIST.md, PRE_COMMIT_PRE_PUSH_CHECKLIST.md, OWNER_APPROVAL_GATE.md, SESSION_HANDOFF_RULES.md. |
 | Phase 23 | Added Agent OS Layer. Created: AGENT_OS_OPERATING_MANUAL.md, AGENT_STARTUP_CHECKLIST.md, README.md (this file). |
+| Phase 24A | Added Owner Runtime Runbooks directory (`docs/runbooks/`). Created: README.md, SANDBOX_RUNBOOK_INDEX.md, OWNER_RUNTIME_READINESS_CHECKLIST.md, SANDBOX_IMPORT_TEST_RUNBOOK.md, RUNTIME_APPROVAL_DECISION_TREE.md. |
 
 ---
 
