@@ -1,8 +1,67 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-05-30 (Phase 22 — ECC Lite Repo Governance Integration)
+Updated By: Claude Code (Builder) — 2026-05-30 (Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index)
 
-## Latest Session — Phase 22 — ECC Lite Repo Governance Integration
+## Latest Session — Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index
+
+### current_phase
+Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index (BUILD_READY — AWAITING OWNER REVIEW)
+
+### current_role
+Builder — Claude Code (governance documentation creation — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 23 Agent OS Layer build complete. 3 new governance files created in `docs/governance/`. 1 phase handoff created. 4 state files updated. Codex unavailable this session (token limit). Awaiting Owner direct review and OWNER_APPROVED before commit.
+
+### latest_commit
+Last stable commit: `d34306e` — docs: add phase 22 ecc lite repo governance
+
+### files_changed
+Phase 23 (build):
+- `docs/governance/AGENT_OS_OPERATING_MANUAL.md` — created: 11-section main operating manual; Section 1 purpose (single entry point — indexes governance docs, gives startup procedure); Section 2 agent roles 8-row table (Owner, ChatGPT, Claude Code, Codex, GitHub, n8n, LangGraph, worker agents) with authority and restrictions; Section 3 agent hierarchy diagram and 4 key rules; Section 4 standard phase lifecycle 10-step table (proposal → Owner approval → implementation → validation → local commit → reviewer validation → push approval → push → handoff → next phase) with notes on commit ≠ push separation; Section 5 session startup procedure 7-file table with why-to-read + git confirmation steps; Section 6 operating constraints 10-row table (no secrets, no auto-post, no auto-reply, no ads, no runtime, no active:true, no workflow JSON outside scope, no push without approval, no CI unless requested, no scope creep, session limit); Section 7 builder rules before/during/after + end-of-session report items; Section 8 reviewer rules — read only, no commit/push/execute, output PASS/PASS WITH NOTES/BLOCK; Section 9 owner approval gates summary 9-row table with key rule commit ≠ push; Section 10 session handoff rule — 10-exchange limit, 5 files to update before ending, new session from repo artifacts; Section 11 related governance documents table with when-to-read.
+- `docs/governance/AGENT_STARTUP_CHECKLIST.md` — created: 5-step quick-start checklist; Step 1 identity check — role checkbox (Builder/Reviewer/Architect/worker), current phase, approved scope/scope_files, BLOCKED status; Step 2 repo check — command table for branch/status/log + 3 confirmation items + if-not-clean procedure; Step 3 source-of-truth check — 5 files to read in order + 4 post-read confirmations; Step 4 safety check — 10-row checkbox table (no secrets, no workflow JSON, no active:true, no runtime, no auto-post, no auto-reply, no ads, no push without approval, only scope_files, update logs/handoff); Step 5 output checklist — files changed (4 items), validation results (6 items), commit and push (4 items), handoff updated (5 items), next action (3 items); quick-reference approval gate table at end.
+- `docs/governance/README.md` — created: governance directory index; Start Here table 2 rows (AGENT_OS_OPERATING_MANUAL.md as first file every session, AGENT_STARTUP_CHECKLIST.md as quick-start); Detailed Reference table 5 rows (AGENT_OPERATION_RULES.md, REPO_VALIDATION_CHECKLIST.md, PRE_COMMIT_PRE_PUSH_CHECKLIST.md, OWNER_APPROVAL_GATE.md, SESSION_HANDOFF_RULES.md) with description and when-to-use; 5-step reading order for new session; 7 key principles; phase history table Phase 22 + Phase 23.
+- `handoff/PHASE_23_HANDOFF.md` — created: phase summary; objective; files created 4 rows; files updated 4 rows; files not modified 12 rows; what Agent OS Layer adds — Phase 22 vs Phase 23 comparison table 5 rows; validation 11 checks all CLEAN/NO; no-execution 11 items all NO; 24 acceptance criteria all PASS; Owner next action 5 steps; Codex review instructions 6 points; next recommended phase (Phase 24A Sandbox Index preferred over Phase 24B Governance QA — rationale: no Codex dependency); phase connections table.
+- `handoff/CURRENT_PHASE.md` — updated: Phase 23 BUILD_READY AWAITING OWNER REVIEW.
+- `handoff/SESSION_SUMMARY.md` — this file.
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended.
+- `09_LOGS/PHASE_LOG.md` — new entry prepended.
+
+### files_pending
+3 primary Phase 23 files + 1 phase handoff + 4 state file updates. Awaiting Owner review and OWNER_APPROVED before commit.
+
+### decisions_made
+- `AGENT_OS_OPERATING_MANUAL.md` includes LangGraph and Gemini/Antigravity in the agent roster (as future/optional roles) — makes the full planned system visible to agents even though these are not active. Prevents future agents from being confused by references to these roles in other documents.
+- `AGENT_STARTUP_CHECKLIST.md` includes a "BLOCKED status" check in Step 1 (identity check) — catches the case where a session starts on a phase that is already blocked, preventing wasted work.
+- `docs/governance/README.md` named as `README.md` (not `GOVERNANCE_INDEX.md`) — markdown renderers on GitHub and editors automatically surface README.md in directory views, making it discoverable without additional navigation.
+- Phase 24A (Sandbox Runbook Index) recommended over Phase 24B (Governance QA) because Phase 24B requires Codex availability; Phase 24A can proceed with Owner direct review.
+
+### open_issues
+- Codex review unavailable this session — Owner is performing direct review.
+- `commands/COMMAND_INBOX.md` has all commands CLOSED — Phase 23 was executed from Owner direct instruction. Future phases should follow the command intake process.
+- `creative_asset_auto_skeleton` Phase 22B runbook not yet created — deferred to Phase 24A track.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review 3 new files in `docs/governance/`. (2) Review `handoff/PHASE_23_HANDOFF.md`. (3) If approved: OWNER_APPROVED. (4) Authorize local commit. (5) Decide whether to push (separate authorization required).
+
+### next_builder_action
+Await Owner review and OWNER_APPROVED. Then commit Phase 23 files. After commit: proceed to Phase 24A (Sandbox Runbook Index) or Phase 24B (Governance QA) per Owner decision.
+
+### next_reviewer_action
+Codex (when available): review 3 files in `docs/governance/` (AGENT_OS_OPERATING_MANUAL.md, AGENT_STARTUP_CHECKLIST.md, README.md) and `handoff/PHASE_23_HANDOFF.md`. Confirm: manual consistent with Phase 22 docs; startup checklist covers all 5 steps; README links all 7 docs correctly; no secrets, no workflow JSON modified, no active:true. Output PASS / PASS WITH NOTES / BLOCK.
+
+### session_limit_note
+Phase 23 build complete in one session. No turn limit reached.
+
+### owner_approval_needed
+true — OWNER_APPROVED required before committing Phase 23 files. Codex review optional (unavailable this session).
+
+---
+
+## Previous Session — Phase 22 — ECC Lite Repo Governance Integration
 
 ### current_phase
 Phase 22 — ECC Lite Repo Governance Integration (BUILD_READY — AWAITING OWNER REVIEW)

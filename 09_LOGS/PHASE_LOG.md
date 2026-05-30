@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-05-30 — Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index Created
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILD_READY — AWAITING OWNER REVIEW
+**Detail:**
+Created Phase 23 Agent OS Layer. Added 3 new files to `docs/governance/`: `AGENT_OS_OPERATING_MANUAL.md` (11-section main operating manual: agent roles, hierarchy, phase lifecycle, startup procedure, operating constraints, builder/reviewer rules, approval gates summary, session handoff rule); `AGENT_STARTUP_CHECKLIST.md` (5-step quick-start checklist: identity/repo/source-of-truth/safety/output); `README.md` (governance directory index: Start Here section, Detailed Reference table, reading order, 7 key principles, phase history). Created `handoff/PHASE_23_HANDOFF.md`. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/reply/ads. No commit, no push.
+
+---
+
 ### 2026-05-30 — Phase 22 — ECC Lite Repo Governance Integration Created
 
 **By:** Claude Code (Builder, AGT-02)
