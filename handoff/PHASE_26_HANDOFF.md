@@ -1,17 +1,33 @@
-# Phase 26 Handoff — First Sandbox Import: Creative Asset Auto Skeleton
+# Phase 26 Handoff — Pre-Import Framework: Creative Asset Auto Skeleton
 
 Created By: Claude Code (Builder, AGT-02) — 2026-06-01
+Updated By: Claude Code (Builder, AGT-02) — 2026-06-01 (Codex FAIL correction — PATH B)
 Phase: 26 — First Sandbox Import: Creative Asset Auto Skeleton
-Type: Sandbox Import — documentation and evidence framework
+Type: PRE-IMPORT FRAMEWORK ONLY — sandbox import not yet completed
 Branch: main
+
+---
+
+## Codex Review Result
+
+**FAIL (2026-06-01)**
+
+Reason: Phase 26 docs did not document a completed sandbox import. Post-import conditions (active status, execution count, sandbox URL, API calls, Owner sign-off, final result) could not be verified.
+
+Resolution: PATH B — Reframed as pre-import framework only. Phase 26 is BLOCKED until Owner performs manual sandbox import and fills evidence log.
 
 ---
 
 ## Phase Name and Objective
 
-**Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton**
+**Phase 26 — Pre-Import Framework: Creative Asset Auto Skeleton**
 
-Perform the first sandbox import of `creative_asset_auto_skeleton`. Owner approval phrase received. Builder creates evidence documentation (import instructions, evidence log, phase docs, state files). Owner performs the actual n8n sandbox import manually. Execution is NOT authorized in this phase.
+Phase 26 is authorized (Owner approval phrase received) but the import has NOT been completed. Builder (Claude Code, AGT-02) has no access to the n8n sandbox UI and cannot perform the import. The Owner must perform the import manually in the n8n sandbox.
+
+This handoff documents:
+- The pre-import framework Builder created
+- Why the import is BLOCKED
+- What Owner must do to unblock
 
 ---
 
@@ -21,7 +37,7 @@ Perform the first sandbox import of `creative_asset_auto_skeleton`. Owner approv
 APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01
 ```
 
-Issued: this session, 2026-06-01. Session-specific. Does not carry forward to future sessions without re-issuance.
+Issued: 2026-06-01. Session-specific. Does not carry forward to future sessions without re-issuance.
 
 ---
 
@@ -29,37 +45,44 @@ Issued: this session, 2026-06-01. Session-specific. Does not carry forward to fu
 
 | Item | Confirmed | Detail |
 |------|-----------|--------|
-| git branch | main | `git branch --show-current` → `main` |
-| HEAD | 9bfaeecc | HEAD = origin/main |
-| Working tree | CLEAN | `git status --short` → (no output) |
+| git branch | main | confirmed |
+| HEAD before Phase 26 commit | `9bfaeecc` | = origin/main |
 | Workflow JSON path | EXISTS | `n8n/workflows/creative_asset_auto_skeleton.json` |
-| `"active": false` in JSON | YES | Line 7 of JSON confirmed |
-| n8n name in JSON | `[SKELETON]` | `FnB OS V1 — Creative Asset Auto [SKELETON]` |
-| No real credentials in JSON | YES | All `REPLACE_WITH_*` |
+| `"active": false` in JSON | YES | confirmed at line 7 |
+| n8n name | `[SKELETON]` | `FnB OS V1 — Creative Asset Auto [SKELETON]` |
+| No real credentials in JSON | YES | all `REPLACE_WITH_*` |
 | Phase 25 gate DONE | YES | commit `9bfaeecc` |
 | Phase 22A evidence pack DONE | YES | `docs/36_PHASE_22A_CREATIVE_ASSET_SANDBOX_EVIDENCE_CAPTURE_PACK.md` |
-| CI check_no_secrets CLEAN | YES | Phase 20 CI — no workflow JSON modified since |
 
 ---
 
-## Files Created
+## What BLOCKED Means
 
-| File | Description |
-|------|-------------|
-| `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` | Main Phase 26 evidence document. Sections: Owner Approval Phrase captured; A Purpose; B Pre-Import Verification (repo state, workflow identity, credentials, phase boundary — all Builder-confirmed); C Import Instructions (14-step Owner manual import guide); D Expected Post-Import State (workflow name, active=false, exec=zero, credential=REPLACE_WITH_*, node count 14); E Evidence Log Reference; F Stop Conditions (7 stop conditions with required action); G Safety Confirmation (12 items all NO — Builder pre-import); H Related Documents (9 links); I Phase Connections table. |
-| `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` | Phase 26 sandbox import evidence log. Based on `SANDBOX_EVIDENCE_PACK_TEMPLATE.md`. Evidence Pack ID: EP-26-CREATIVE-2026-06-01. Sections: Header (approval phrase captured, sandbox only, date, operator); A Pre-Check Summary (12 checks — 11 Builder-confirmed PASS, 1 Owner to confirm sandbox URL); B Action Performed (Owner fills after import); C Expected Result (pre-filled); D Actual Result (Owner fills); E Screenshots (3 screenshot rows with naming convention); F Errors (NONE pre-import); G Safety Checks Post-Import (10 items Owner confirms); H Final Status (result, exec count, credential status, API calls=none, workflow JSON changed=NO, next recommended); I Owner Review Notes; Owner Sign-Off block. |
-| `handoff/PHASE_26_HANDOFF.md` | This file. |
+**Import has NOT been performed.**
 
----
-
-## Files Updated
-
-| File | Change |
+| Item | Status |
 |------|--------|
-| `handoff/CURRENT_PHASE.md` | Updated to Phase 26 IMPORT_EVIDENCE_READY. |
-| `handoff/SESSION_SUMMARY.md` | New Phase 26 entry prepended. |
-| `09_LOGS/PHASE_LOG.md` | New Phase 26 entry prepended. |
-| `logs/AGENT_ACTIVITY_LOG.md` | New Phase 26 row prepended. |
+| Workflow imported into n8n sandbox | NOT DONE — Owner must do this manually |
+| Workflow active status post-import | UNKNOWN — Owner must confirm |
+| Execution count post-import | UNKNOWN — Owner must confirm = 0 |
+| Sandbox URL | UNKNOWN — Owner must record |
+| API calls | UNKNOWN — Owner must confirm = none |
+| Owner sign-off | NOT DONE |
+| Final result | NOT DONE |
+
+---
+
+## Files Created / Updated (PATH B)
+
+| File | Status | Description |
+|------|--------|-------------|
+| `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` | UPDATED | Reframed as PRE-IMPORT FRAMEWORK ONLY. Codex FAIL note added. Status = BLOCKED. Phase boundary section clarifies Builder has no n8n access. |
+| `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` | UPDATED | All post-import fields explicitly marked `[OWNER TO FILL]`. Header shows INCOMPLETE — IMPORT HAS NOT BEEN PERFORMED. Owner sign-off section marked incomplete. |
+| `handoff/PHASE_26_HANDOFF.md` | UPDATED (this file) | Codex FAIL noted. Path B taken. BLOCKED status. Owner next action updated. |
+| `handoff/CURRENT_PHASE.md` | UPDATED | Status = BLOCKED — OWNER MANUAL SANDBOX IMPORT REQUIRED. |
+| `handoff/SESSION_SUMMARY.md` | UPDATED | Phase 26 entry reflects BLOCKED, PATH B, Codex FAIL. |
+| `logs/AGENT_ACTIVITY_LOG.md` | UPDATED | Correction entry prepended. |
+| `09_LOGS/PHASE_LOG.md` | UPDATED | Correction entry prepended. |
 
 ---
 
@@ -80,23 +103,11 @@ Issued: this session, 2026-06-01. Session-specific. Does not carry forward to fu
 
 ---
 
-## What Phase 26 Adds
-
-| Before Phase 26 | After Phase 26 |
-|----------------|----------------|
-| Owner approval phrase issued but no evidence documentation | Approval phrase captured in 3 documents (main evidence doc, handoff, activity log) |
-| No import instructions for creative_asset_auto_skeleton | 14-step manual import guide in Section C of main evidence doc |
-| No Phase 26-specific evidence log | `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` — Owner fills after import |
-| Phase 25 gate says "READY for import approval" | Phase 26 documents the approved import event with full evidence framework |
-| No distinction between import and execution authorization | Phase 26 clearly documents import ≠ execution; execution requires new phrase |
-
----
-
-## Runtime Safety Confirmation (Builder — Pre-Import)
+## Runtime Safety Confirmation (PATH B)
 
 | Confirmation | Status |
 |-------------|--------|
-| Workflow imported into n8n by Builder | NO — Owner performs import manually |
+| Workflow imported into n8n by Builder | NO — Builder has no n8n UI access |
 | Workflow activated | NO |
 | Workflow executed | NO |
 | External API called | NO |
@@ -108,77 +119,38 @@ Issued: this session, 2026-06-01. Session-specific. Does not carry forward to fu
 | Ad spend committed | NO |
 | Workflow JSON modified | NO |
 | `"active": true` introduced | NO |
-| Secret scan (new files) | CLEAN — all new files contain only documentation text |
-
----
-
-## Acceptance Criteria
-
-| Criterion | Status |
-|-----------|--------|
-| Owner approval phrase present in instruction/context | PASS |
-| Approval phrase captured in main evidence doc | PASS |
-| Approval phrase captured in handoff | PASS |
-| Approval phrase captured in activity log | PASS |
-| git branch confirmed main | PASS |
-| HEAD confirmed = origin/main = `9bfaeecc` | PASS |
-| Working tree confirmed clean | PASS |
-| Workflow JSON path identified: `n8n/workflows/creative_asset_auto_skeleton.json` | PASS |
-| `"active": false` confirmed in workflow JSON | PASS |
-| No real credentials in workflow JSON confirmed | PASS |
-| Phase 25 readiness gate confirmed DONE | PASS |
-| Phase 22A evidence pack confirmed DONE | PASS |
-| `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` created | PASS |
-| Import instructions (14 steps) included | PASS |
-| Expected post-import state documented | PASS |
-| Stop conditions documented | PASS |
-| `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` created | PASS |
-| Evidence log based on SANDBOX_EVIDENCE_PACK_TEMPLATE format | PASS |
-| Owner sign-off block included | PASS |
-| Screenshot naming convention provided | PASS |
-| `handoff/PHASE_26_HANDOFF.md` created | PASS |
-| `handoff/CURRENT_PHASE.md` updated | PASS |
-| `handoff/SESSION_SUMMARY.md` updated | PASS |
-| `09_LOGS/PHASE_LOG.md` updated | PASS |
-| `logs/AGENT_ACTIVITY_LOG.md` updated | PASS |
-| No workflow JSON modified | PASS |
-| No runtime action performed by Builder | PASS |
-| No secrets added | PASS |
+| Secret scan (new/updated files) | CLEAN — documentation text only |
 
 ---
 
 ## Owner Next Action
 
-1. Review `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` — confirm import instructions.
-2. Review `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` — confirm evidence log format.
-3. Open n8n **sandbox** (not production).
-4. Follow the 14-step import guide in Section C of the main evidence doc.
-5. Fill the evidence log after import.
-6. If import PASS: confirm commit authorization (`OWNER_APPROVED`).
-7. After Codex review PASS and push: issue `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — [date]` to authorize Phase 27.
-
-**Do NOT activate the workflow. Do NOT execute the workflow. Import ≠ execution.**
-
----
-
-## Codex Review Instructions (when available)
-
-1. Verify `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md`: approval phrase captured exactly; pre-import checks all confirmed; import instructions do not instruct activation or execution; stop conditions present; safety confirmation all NO.
-2. Verify `logs/phase_26_creative_asset_sandbox_import_evidence_log.md`: evidence pack ID present; approval phrase recorded; Builder-confirmed pre-checks show PASS; Owner-to-fill sections correctly marked as placeholders; safety checks include execution count = zero confirmation; Owner sign-off block present.
-3. Verify `handoff/PHASE_26_HANDOFF.md`: approval phrase captured; pre-import state table complete; files created/updated/not-modified tables complete; runtime safety all NO; acceptance criteria all PASS.
-4. Confirm no workflow JSON modified, no `active=true`, no secrets, no runtime action by Builder.
-5. Output: PASS / PASS WITH NOTES / BLOCK.
+1. Open [docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md](../docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md) — read Section C import instructions carefully.
+2. Open `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` — this is the form to fill.
+3. Open n8n **sandbox** (NOT production — confirm URL).
+4. Follow the 14-step import guide in Section C of the evidence doc.
+5. Fill ALL `[OWNER TO FILL]` fields in the evidence log, including:
+   - import date/time
+   - n8n sandbox URL
+   - workflow name as shown in n8n after import
+   - active status (must be INACTIVE)
+   - execution count (must be 0)
+   - screenshots (3 required: canvas/status/exec-count)
+   - Section G safety checks (all must be NO)
+   - Section H final status
+   - Section I owner review notes
+   - Owner sign-off block
+6. If import PASS: issue `OWNER_APPROVED` → Builder creates new commit → Codex re-review.
+7. Do NOT activate. Do NOT execute. Import ≠ execution.
 
 ---
 
-## Recommended Next Phase
+## Codex Re-Review Instructions (after Owner fills evidence log)
 
-**Phase 27 — Sandbox Manual Execution: creative_asset_auto_skeleton**
-
-After Phase 26 import is confirmed PASS by Owner and pushed to GitHub, Owner may authorize Phase 27 with:
-`APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — [date]`
-
-Phase 27 is the first manual sandbox execution of this workflow (following the Phase 22A evidence pack and Phase 22B runbook-to-be-created flow). Execution runbook may need to be created as a pre-step.
+1. Verify `logs/phase_26_creative_asset_sandbox_import_evidence_log.md`: all `[OWNER TO FILL]` fields completed; sandbox URL recorded; workflow active status = INACTIVE; execution count = 0; API calls = none; auto-post/reply/ads = none; screenshots attached; Owner sign-off complete.
+2. Verify `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md`: BLOCKED status updated to reflect completed import; all pre-import checks confirmed; stop conditions not triggered.
+3. Confirm no workflow JSON modified, no `active=true`, no secrets, no runtime action beyond import.
+4. Output: PASS / PASS WITH NOTES / BLOCK.
 
 ---
 
@@ -190,5 +162,5 @@ Phase 27 is the first manual sandbox execution of this workflow (following the P
 | Phase 24A | Sandbox Runbook Index & Owner Runtime Readiness | DONE + PUSHED |
 | Phase 24B | Sandbox Evidence Pack Template & Execution Log Standardization | DONE + PUSHED |
 | Phase 25 | Sandbox Import Readiness Gate | DONE + PUSHED (commit `9bfaeecc`) |
-| **Phase 26** | **First Sandbox Import — creative_asset_auto_skeleton (this phase)** | **IMPORT_EVIDENCE_READY — awaiting Owner sandbox import + evidence fill + commit authorization** |
-| Phase 27 (next) | Sandbox Manual Execution — creative_asset_auto_skeleton | FUTURE — requires Phase 26 DONE + PUSHED + new Owner execution approval phrase |
+| **Phase 26** | **Pre-Import Framework — creative_asset_auto_skeleton (this phase)** | **BLOCKED — Owner manual import required** |
+| Phase 27 (future) | Sandbox Manual Execution — creative_asset_auto_skeleton | BLOCKED — requires Phase 26 DONE first |

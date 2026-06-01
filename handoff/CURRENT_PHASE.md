@@ -1,6 +1,6 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-01 (Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton)
+Updated By: Claude Code (Builder) — 2026-06-01 (Phase 26 — PATH B correction after Codex FAIL)
 
 ## Phase
 
@@ -8,12 +8,15 @@ Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton
 
 ## Status
 
-**IMPORT_EVIDENCE_READY — AWAITING OWNER SANDBOX IMPORT + CONFIRMATION**
-Phase 26 documentation and evidence framework complete. Owner approval phrase captured: `APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01`. Builder confirmed: git branch main, HEAD = origin/main = `9bfaeecc`, working tree clean, workflow JSON at `n8n/workflows/creative_asset_auto_skeleton.json` with `"active": false`, no real credentials, Phase 25 gate DONE. 2 new files created in repo: `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` (import instructions, pre-import verification, stop conditions, expected post-import state, safety confirmation) and `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` (evidence log for Owner to fill after performing import). `handoff/PHASE_26_HANDOFF.md` created. State files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/reply/ads. No execution.
+**BLOCKED — OWNER MANUAL SANDBOX IMPORT REQUIRED**
+
+Codex review result: FAIL (2026-06-01). Reason: Phase 26 docs did not document a completed sandbox import — post-import conditions (active status, execution count, sandbox URL, API calls, Owner sign-off) could not be verified.
+
+Resolution taken: PATH B — all Phase 26 docs reframed as PRE-IMPORT FRAMEWORK ONLY. Status updated to BLOCKED. Owner must perform manual sandbox import in n8n sandbox, fill evidence log (`logs/phase_26_creative_asset_sandbox_import_evidence_log.md`), and provide OWNER_APPROVED for a new commit.
 
 ## Current Command
 
-Phase 26 — First Sandbox Import: creative_asset_auto_skeleton. Owner approval phrase received and documented. Builder evidence framework ready. Owner next: perform manual sandbox import in n8n sandbox, fill evidence log, authorize commit.
+Phase 26 — BLOCKED. Import has NOT been performed. Builder (Claude Code) has no access to n8n sandbox UI. Owner must perform the manual sandbox import following instructions in `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` Section C.
 
 ## Builder
 
@@ -21,24 +24,27 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — to be assigned after Owner confirms import PASS.
+Codex — re-review required after Owner performs import and fills evidence log.
 
 ## Next Gate
 
-Owner performs sandbox import → fills evidence log → OWNER_APPROVED → local commit → Codex review → push → Phase 27 (sandbox manual execution) may be authorized.
+Owner performs manual sandbox import → fills evidence log → OWNER_APPROVED → Builder new commit → Codex re-review → push (separate Owner authorization).
 
 ## Phase 26 Files
 
 | File | Status |
 |------|--------|
-| `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` | Created |
-| `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` | Created — Owner to fill |
-| `handoff/PHASE_26_HANDOFF.md` | Created |
+| `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` | Updated — PRE-IMPORT FRAMEWORK ONLY, BLOCKED status |
+| `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` | Updated — INCOMPLETE, all post-import fields [OWNER TO FILL] |
+| `handoff/PHASE_26_HANDOFF.md` | Updated — Codex FAIL noted, PATH B taken |
 
 ## Phase 26 Status
 
 | Check | Status |
 |-------|--------|
+| Codex review | FAIL — post-import conditions unverifiable |
+| Path taken | PATH B — pre-import framework only |
+| Import completed | NO — Owner must perform manually |
 | Owner approval phrase captured | YES — `APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01` |
 | Workflow JSON modified | NO |
 | `active=true` introduced | NO |
@@ -48,9 +54,9 @@ Owner performs sandbox import → fills evidence log → OWNER_APPROVED → loca
 | Auto-post | NO |
 | Auto-reply | NO |
 | Ads spend | NO |
-| Secret scan (new files) | CLEAN |
+| Secret scan (new/updated files) | CLEAN |
 | Branch | main |
-| Latest commit | `9bfaeecc` — docs: add phase 25 sandbox import readiness gate |
+| Latest commit (Phase 26 corrections) | pending new commit after this session |
 
 ## Prior Phase Results
 

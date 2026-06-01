@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-01 — Phase 26 — PATH B Correction After Codex FAIL — Pre-Import Framework Only
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BLOCKED — OWNER MANUAL SANDBOX IMPORT REQUIRED
+**Detail:**
+Codex review FAIL received for Phase 26 initial build. Reason: import not completed, post-import conditions (active status, execution count, sandbox URL, API calls, Owner sign-off, final result) could not be verified. PATH B taken: all Phase 26 docs reframed as PRE-IMPORT FRAMEWORK ONLY. Builder (Claude Code) has no access to n8n sandbox UI — cannot perform import from this environment. Updated `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` (status BLOCKED, Codex FAIL note added, title changed to "Pre-Import Framework", Phase boundary section clarifies Builder has no n8n access, Section H current phase status table added). Updated `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` (header status = INCOMPLETE — IMPORT HAS NOT BEEN PERFORMED, warning block added, all post-import fields marked [OWNER TO FILL], Owner sign-off = [OWNER TO FILL], footer note confirms log is incomplete). Updated `handoff/PHASE_26_HANDOFF.md` (Codex FAIL section added, type = PRE-IMPORT FRAMEWORK ONLY, "What BLOCKED Means" table added). Updated CURRENT_PHASE (BLOCKED), SESSION_SUMMARY (PATH B), PHASE_LOG, AGENT_ACTIVITY_LOG. No workflow JSON modified. No credentials. No activation. No execution. No auto-post/reply/ads. Import NOT performed by Builder.
+
+---
+
 ### 2026-06-01 — Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton — Evidence Framework Created
 
 **By:** Claude Code (Builder, AGT-02)
