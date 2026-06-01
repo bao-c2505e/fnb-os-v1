@@ -1,8 +1,54 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-01 (Phase 25 — Sandbox Import Readiness Gate)
+Updated By: Claude Code (Builder) — 2026-06-01 (Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton)
 
-## Latest Session — Phase 25 — Sandbox Import Readiness Gate
+## Latest Session — Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton
+
+### current_phase
+Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton (IMPORT_EVIDENCE_READY — AWAITING OWNER SANDBOX IMPORT + CONFIRMATION)
+
+### current_role
+Builder — Claude Code (evidence framework documentation — no execution, no activation, no real data, no JSON modification)
+
+### active_command
+Phase 26 build complete. Owner approval phrase captured: `APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01`. 2 new files created (`docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md`, `logs/phase_26_creative_asset_sandbox_import_evidence_log.md`). 1 phase handoff created. State files updated. Awaiting Owner sandbox import, evidence fill, and OWNER_APPROVED before commit.
+
+### latest_commit
+`9bfaeecc` — docs: add phase 25 sandbox import readiness gate (current HEAD = origin/main)
+
+### files_changed
+Phase 26 (build):
+- `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` — created: 9-section main Phase 26 evidence document; approval phrase `APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01` captured; A Purpose (import only, not execution, not activation); B Pre-Import Verification (B1 Repo State — 6 items all confirmed PASS; B2 Workflow Identity — 7 items all confirmed; B3 Credential Safety — 4 items all confirmed; B4 Phase Boundary — 6 forbidden actions confirmed); C Import Instructions (14-step Owner manual import guide); D Expected Post-Import State (inactive/exec=zero/REPLACE_WITH_*/14 nodes); E Evidence Log Reference; F Stop Conditions (7 conditions with required action); G Safety Confirmation (12 items all NO — Builder pre-import); H Related Documents (9 links); I Phase Connections.
+- `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` — created: Evidence Pack ID EP-26-CREATIVE-2026-06-01; Header (approval phrase captured, sandbox only, Owner to fill timestamps and n8n URL); A Pre-Check (12 checks — 11 Builder PASS, 1 Owner sandbox URL confirm); B Action Performed (Owner fills); C Expected Result (pre-filled); D Actual Result (Owner fills); E Screenshots (3 rows with naming convention); F Errors (NONE pre-import); G Post-Import Safety Checks (10 items Owner confirms including exec count=0); H Final Status (next=Codex review+push+Phase 27 phrase); I Owner Review Notes; Owner Sign-Off block with sandbox URL field.
+- `handoff/PHASE_26_HANDOFF.md` — created: phase name and objective; Owner approval phrase; Pre-Import State 10 items; Files Created/Updated/Not-Modified tables; What Phase 26 Adds comparison table; Runtime Safety 13 items all NO/CLEAN; 27 acceptance criteria all PASS; Owner Next Action 7 steps; Codex Review Instructions; Recommended Next Phase (Phase 27); Phase Connections.
+- `handoff/CURRENT_PHASE.md` — updated to Phase 26 IMPORT_EVIDENCE_READY.
+- `handoff/SESSION_SUMMARY.md` — this file.
+- `logs/AGENT_ACTIVITY_LOG.md` — new Phase 26 row prepended.
+- `09_LOGS/PHASE_LOG.md` — new Phase 26 entry prepended.
+
+### files_pending
+2 new doc files + 1 handoff + state files. Awaiting Owner sandbox import, evidence fill, and OWNER_APPROVED before commit.
+
+### decisions_made
+- Owner performs the actual n8n sandbox import manually (Builder cannot access n8n UI) — Phase 26 documents the authorization and provides the evidence framework.
+- Separate evidence log (`logs/phase_26_...`) created rather than updating Phase 22A log — Phase 22A log is the execution evidence template; Phase 26 is the import evidence. Keeping them separate prevents confusion.
+- Phase 27 identified as next phase (sandbox manual execution) — requires new approval phrase `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — [date]`.
+- Evidence log uses Evidence Pack ID format (EP-26-CREATIVE-2026-06-01) matching SANDBOX_EVIDENCE_PACK_TEMPLATE standards from Phase 24B.
+
+### open_issues
+- Owner must perform actual n8n sandbox import and fill `logs/phase_26_creative_asset_sandbox_import_evidence_log.md`.
+- Codex review not yet performed — to be done after Owner confirms import PASS.
+- Phase 22B execution runbook still not created — execution requires a runbook as a pre-step to Phase 27.
+
+### blockers
+None — Owner approval phrase received, all pre-import checks PASS.
+
+### next_owner_action
+(1) Review `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md`. (2) Review `logs/phase_26_creative_asset_sandbox_import_evidence_log.md`. (3) Open n8n sandbox and perform 14-step import. (4) Fill evidence log. (5) If PASS: OWNER_APPROVED → authorize local commit. (6) After Codex review and push: issue `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — [date]` for Phase 27.
+
+---
+
+## Previous Session — Phase 25 — Sandbox Import Readiness Gate
 
 ### current_phase
 Phase 25 — Sandbox Import Readiness Gate (BUILD_READY — AWAITING OWNER REVIEW)
