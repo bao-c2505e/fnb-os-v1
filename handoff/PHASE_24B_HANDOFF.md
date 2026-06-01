@@ -209,7 +209,7 @@ Build the execution runbook for `creative_asset_auto_skeleton` (Phase 22A create
 | Phase 22A | Creative Asset Evidence Pack | DONE — commit `41186df` |
 | Phase 23 | Agent OS Layer | DONE — commit `41186df` |
 | Phase 24A | Sandbox Runbook Index & Owner Runtime Readiness | DONE — commits `8bc18f2` + `0d75c70` |
-| **Phase 24B** | **Sandbox Evidence Pack Template & Execution Log Standardization (this phase)** | **BUILD_READY** |
+| **Phase 24B** | **Sandbox Evidence Pack Template & Execution Log Standardization (this phase)** | **COMMITTED — `23299d8` — Codex PASS WITH NOTES — pending Owner push authorization** |
 | Phase 25 | Sandbox Import Readiness Gate | FUTURE |
 | Phase 22B | Creative Asset Sandbox Execution Runbook | FUTURE |
 | Phase 26 | Sandbox Manual Execution (first workflow, with Owner approval) | FUTURE |
