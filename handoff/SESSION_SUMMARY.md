@@ -14,7 +14,8 @@ Builder — Claude Code (runbook documentation creation — no execution, no rea
 Phase 24A Sandbox Runbook Index build complete. 5 new files created in `docs/runbooks/`. 2 governance docs updated (light-touch links). 1 phase handoff created. 4 state files updated. Codex unavailable this session (token limit). Awaiting Owner direct review and OWNER_APPROVED before commit.
 
 ### latest_commit
-Last stable commit: `41186df` — docs: add phase 23 agent os operating manual
+`8bc18f2` — docs: add phase 24a sandbox runtime readiness runbooks (local commit — push to origin pending Owner authorization)
+Previous: `41186df` — docs: add phase 23 agent os operating manual
 
 ### files_changed
 Phase 24A (build):
@@ -32,7 +33,7 @@ Phase 24A (build):
 - `09_LOGS/PHASE_LOG.md` — new entry prepended.
 
 ### files_pending
-5 primary Phase 24A runbook files + 2 governance updates + 1 phase handoff + 4 state file updates. Awaiting Owner review and OWNER_APPROVED before commit.
+All Phase 24A files committed locally in `8bc18f2`. Push to GitHub pending Owner authorization.
 
 ### decisions_made
 - `docs/runbooks/` created as a separate directory from `docs/governance/` — runbooks are Owner-facing (guidance for specific actions), while governance docs are agent-facing (rules for builder/reviewer behavior). Keeping them separate prevents confusion.

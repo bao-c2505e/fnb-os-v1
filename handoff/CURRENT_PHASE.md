@@ -8,8 +8,9 @@ Phase 24A — Sandbox Runbook Index & Owner Runtime Readiness
 
 ## Status
 
-**BUILD_READY — AWAITING OWNER REVIEW AND APPROVAL**
+**COMMITTED — AWAITING OWNER REVIEW AND PUSH AUTHORIZATION**
 Phase 24A Sandbox Runbook Index created. 5 new files in `docs/runbooks/`: README.md, SANDBOX_RUNBOOK_INDEX.md, OWNER_RUNTIME_READINESS_CHECKLIST.md, SANDBOX_IMPORT_TEST_RUNBOOK.md, RUNTIME_APPROVAL_DECISION_TREE.md. 1 phase handoff created. 2 governance docs updated (light-touch links). 4 state files updated. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/auto-reply/ads. No production readiness claimed.
+Local commit: `8bc18f2` — docs: add phase 24a sandbox runtime readiness runbooks. Branch is 1 commit ahead of origin/main. Push pending Owner authorization.
 
 ## Current Command
 
@@ -25,7 +26,7 @@ Codex — unavailable this session (token limit). Owner direct review.
 
 ## Next Gate
 
-Owner reviews `docs/runbooks/` (5 new files) + governance doc updates + `handoff/PHASE_24A_HANDOFF.md` → OWNER_APPROVED → local commit → decide push or continue to next phase.
+Owner reviews `docs/runbooks/` (5 new files) + governance doc updates + `handoff/PHASE_24A_HANDOFF.md` → OWNER_APPROVED → authorize push to GitHub → decide next phase.
 
 ## Phase 24A Files
 
