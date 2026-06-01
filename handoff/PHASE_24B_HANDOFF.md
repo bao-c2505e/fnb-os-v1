@@ -170,9 +170,9 @@ Phase 24A created the runbook index and Owner-facing runtime readiness layer. Ph
 
 1. Review 4 new template files in `docs/runbooks/`: `SANDBOX_EVIDENCE_PACK_TEMPLATE.md`, `SANDBOX_EXECUTION_LOG_TEMPLATE.md`, `SANDBOX_TEST_DATA_REGISTER_TEMPLATE.md`, `SANDBOX_ISSUE_REPORT_TEMPLATE.md`.
 2. Review 3 updated files: `docs/runbooks/README.md`, `docs/runbooks/SANDBOX_RUNBOOK_INDEX.md`, `docs/governance/README.md`.
-3. Review `handoff/PHASE_24B_HANDOFF.md`.
-4. If approved: say `OWNER_APPROVED` and authorize local commit.
-5. Decide whether to push to GitHub (separate authorization required from commit authorization).
+3. Review Codex result: **PASS WITH NOTES** — confirm notes are non-blocking before proceeding.
+4. If accepted: authorize `git push origin main` to publish commit `23299d8` to GitHub.
+5. After push, Phase 24B is marked **DONE + PUSHED**. Proceed to Phase 25 — Sandbox Import Readiness Gate.
 
 ---
 
