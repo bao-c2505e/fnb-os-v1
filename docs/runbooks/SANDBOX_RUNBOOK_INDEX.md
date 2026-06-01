@@ -71,6 +71,16 @@ This index tracks all sandbox runbooks created for FnB OS V1 workflows, shows wh
 | Sandbox Test Data Register Template | Register and approve test data before sandbox execution | 3 | `docs/runbooks/SANDBOX_TEST_DATA_REGISTER_TEMPLATE.md` | Phase 24B — DONE |
 | Sandbox Issue Report Template | Document issues found during sandbox import or execution | 2 and 3 | `docs/runbooks/SANDBOX_ISSUE_REPORT_TEMPLATE.md` | Phase 24B — DONE |
 
+### Phase 25 Import Readiness Gate
+
+> **Phase 25 is documentation and readiness only.** This section does not authorize sandbox import.
+> Import requires explicit Owner approval: `APPROVED FOR SANDBOX IMPORT ONLY — [workflow] — [date]`
+
+| Document | Stage | Doc Path | Status |
+|----------|-------|----------|--------|
+| Sandbox Import Readiness Gate | 2 (Pre-import) | `docs/PHASE_25_SANDBOX_IMPORT_READINESS_GATE.md` | Phase 25 — DONE |
+| Sandbox Import Readiness Checklist | 2 (Pre-import) | `docs/runbooks/SANDBOX_IMPORT_READINESS_CHECKLIST.md` | Phase 25 — DONE |
+
 ### Future Runbooks (Not Yet Created)
 
 | Runbook | Workflow | Stage | Future Phase |

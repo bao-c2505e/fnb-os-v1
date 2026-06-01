@@ -1,5 +1,56 @@
 # Session Summary
 
+Updated By: Claude Code (Builder) — 2026-06-01 (Phase 25 — Sandbox Import Readiness Gate)
+
+## Latest Session — Phase 25 — Sandbox Import Readiness Gate
+
+### current_phase
+Phase 25 — Sandbox Import Readiness Gate (BUILD_READY — AWAITING OWNER REVIEW)
+
+### current_role
+Builder — Claude Code (readiness gate documentation — no execution, no real data, no JSON modification)
+
+### active_command
+Phase 25 build complete. 2 new files created (`docs/PHASE_25_SANDBOX_IMPORT_READINESS_GATE.md`, `docs/runbooks/SANDBOX_IMPORT_READINESS_CHECKLIST.md`). 2 runbook index files updated. 1 phase handoff created. State files updated. Awaiting Owner review and OWNER_APPROVED before commit.
+
+### latest_commit
+`69eef55` — docs: tidy phase 24b handoff connection status (current HEAD = origin/main)
+
+### files_changed
+Phase 25 (build):
+- `docs/PHASE_25_SANDBOX_IMPORT_READINESS_GATE.md` — created: 11-section main gate document; A Purpose (10 gate questions); B Import Approval Gate (exact phrase `APPROVED FOR SANDBOX IMPORT ONLY — [workflow] — [date]`, vague-approval rejection table, documentation requirements); C Pre-Import Checklist (7 sub-sections C1–C7: repo state 5 items, workflow identity 5 items, sandbox target 3 items, credential safety 4 items, forbidden actions 6 items, evidence/rollback 4 items, approval phrase 3 items); D Import Boundary (allowed vs. forbidden table); E Evidence Pack Expectation (10 evidence items, active=false/exec=zero/credential=sandbox required); F Stop Conditions (9 stop conditions with required action); G Decision Outcomes (3: READY/NOT READY/BLOCKED); H Phase 25 Status (12 no-execution confirmations); I Workflow Readiness Status (6-workflow table with Phase 25 readiness assessment); J Rollback/Non-Import Path; K Related Documents.
+- `docs/runbooks/SANDBOX_IMPORT_READINESS_CHECKLIST.md` — created: copy-fillable pre-import checklist template; Checklist Header (ID, workflow, phase, approval status/phrase fields); Section 1 Repo State (5 checks, how-to-verify, pass/fail); Section 2 Workflow/Module Identity (5 checks); Section 3 Import Target/Sandbox Confirmation (3 checks); Section 4 Credential/Secret Safety (4 checks); Section 5 Forbidden Actions (8 understood checks); Section 6 Evidence/Rollback Readiness (4 checks); Section 7 Owner Approval Phrase (5 checks, phrase format); Final Decision (3 outcomes); Quick Stop-Condition Reference; Related Documents.
+- `docs/runbooks/README.md` — updated: added Phase 25 Import Readiness Gate section with SANDBOX_IMPORT_READINESS_CHECKLIST.md row and link to PHASE_25 gate doc; added Phase 25 row to Phase History.
+- `docs/runbooks/SANDBOX_RUNBOOK_INDEX.md` — updated: added Phase 25 Import Readiness Gate section with documentation-only warning, 2-row table (gate doc + checklist).
+- `handoff/PHASE_25_HANDOFF.md` — created: phase summary; files created 3 rows; files updated 6 rows; files not modified 13 rows; what Phase 25 adds comparison table 7 rows; runtime safety 13 checks all NO/CLEAN; 25 acceptance criteria all PASS; Owner next action 6 steps; Codex review 5 points; recommended next phase 2 options; phase connections table.
+- `handoff/CURRENT_PHASE.md` — updated to Phase 25 BUILD_READY.
+- `handoff/SESSION_SUMMARY.md` — this file.
+- `logs/AGENT_ACTIVITY_LOG.md` — new Phase 25 row prepended.
+- `09_LOGS/PHASE_LOG.md` — new Phase 25 entry prepended.
+
+### files_pending
+2 new doc files + 2 updated runbook index files + 1 handoff + state files. Awaiting Owner review and OWNER_APPROVED before commit.
+
+### decisions_made
+- Main gate doc placed in `docs/` with `PHASE_XX_` prefix (matching `docs/PHASE_20_CI_SAFETY_GATE.md` and `docs/PHASE_21_ECC_LITE_ADOPTION_PLAN.md` convention), not in `docs/runbooks/` — it is a phase doc, not a runbook template.
+- Copy-fillable checklist placed in `docs/runbooks/` (matching Phase 24B template convention) — it is a per-event template, not a phase doc.
+- Vague-approval rejection table added explicitly — addresses real risk that Vietnamese phrases ("triển khai", "import đi") or casual approvals are mistaken for formal authorization.
+- Workflow readiness status table included in gate doc — Owner can see at a glance which workflows are ready vs. need runbooks first.
+- HIGH RISK workflows (ads_pack, crm_followup, comment_inbox_reply, approval_publishing) explicitly marked NOT READY — import runbooks must be created first.
+
+### open_issues
+- Phase 22B (creative_asset sandbox import) not yet authorized — waiting for Owner to issue exact approval phrase.
+- HIGH RISK workflow import runbooks not yet created — deferred to Phase 26A or equivalent.
+- Codex review not performed this session — Owner may perform direct review.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review `docs/PHASE_25_SANDBOX_IMPORT_READINESS_GATE.md`. (2) Review `docs/runbooks/SANDBOX_IMPORT_READINESS_CHECKLIST.md`. (3) Review `handoff/PHASE_25_HANDOFF.md`. (4) If approved: OWNER_APPROVED + authorize local commit. (5) Decide push to GitHub. (6) To begin sandbox import of `creative_asset_auto_skeleton`: issue `APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — [date]`.
+
+---
+
 Updated By: Claude Code (Builder) — 2026-06-01 (Phase 24B — Sandbox Evidence Pack Template & Execution Log Standardization)
 
 ## Latest Session — Phase 24B — Sandbox Evidence Pack Template & Execution Log Standardization

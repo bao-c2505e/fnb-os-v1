@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-01 — Phase 25 — Sandbox Import Readiness Gate Created
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILD_READY — AWAITING OWNER REVIEW
+**Detail:**
+Created Phase 25 Sandbox Import Readiness Gate. 2 new files: `docs/PHASE_25_SANDBOX_IMPORT_READINESS_GATE.md` (11-section main gate doc: A Purpose — 10 gate questions; B Import Approval Gate — exact phrase `APPROVED FOR SANDBOX IMPORT ONLY — [workflow] — [date]`, vague-approval rejection table, documentation requirements; C Pre-Import Checklist — 7 sub-sections C1–C7 covering repo state/workflow identity/sandbox target/credential safety/forbidden actions/evidence readiness/approval phrase, 30+ individual checks; D Import Boundary — allowed vs. forbidden table; E Evidence Pack Expectation — 10 items, active=false/exec=zero/credential=sandbox required; F Stop Conditions — 9 conditions with required action; G Decision Outcomes — READY/NOT READY/BLOCKED; H Phase 25 no-execution confirmation 12 items; I Workflow Readiness Status — 6-workflow table, creative_asset READY, 4 HIGH RISK NOT READY; J Rollback/Non-Import Path; K Related Documents); `docs/runbooks/SANDBOX_IMPORT_READINESS_CHECKLIST.md` (7-section copy-fillable checklist template: repo state/workflow identity/sandbox target/credential safety/forbidden actions/evidence readiness/approval phrase; Final Decision 3 outcomes; Quick Stop-Condition Reference). Updated `docs/runbooks/README.md` (Phase 25 section added). Updated `docs/runbooks/SANDBOX_RUNBOOK_INDEX.md` (Phase 25 section added). Created `handoff/PHASE_25_HANDOFF.md`. No workflow JSON modified. No credentials. No activation. No real customer data. No auto-post/reply/ads. No commit, no push.
+
+---
+
 ### 2026-06-01 — Phase 24B — Sandbox Evidence Pack Template & Execution Log Standardization Created
 
 **By:** Claude Code (Builder, AGT-02)

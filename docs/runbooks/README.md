@@ -41,6 +41,14 @@ They do not contain runtime automation logic, workflow JSON, or credentials.
 | [SANDBOX_IMPORT_TEST_RUNBOOK.md](SANDBOX_IMPORT_TEST_RUNBOOK.md) | Step-by-step guide for future safe sandbox import and test. Covers preconditions, allowed actions, forbidden actions, evidence capture, and failure handling. | When Owner is preparing for or executing sandbox import. |
 | [RUNTIME_APPROVAL_DECISION_TREE.md](RUNTIME_APPROVAL_DECISION_TREE.md) | Decision tree for determining whether a runtime action is allowed. Answers: Is this documentation? Sandbox import? Sandbox execution? Production? Touches real customers? | Before any runtime action to confirm what approval level applies. |
 
+**Phase 25 Import Readiness Gate** — *documentation and readiness only; does not authorize import:*
+
+| File | Purpose | When to Use |
+|------|---------|------------|
+| [SANDBOX_IMPORT_READINESS_CHECKLIST.md](SANDBOX_IMPORT_READINESS_CHECKLIST.md) | Copy-fillable pre-import readiness checklist. 7 sections covering repo state, workflow identity, sandbox target, credential safety, forbidden actions, evidence readiness, and Owner approval phrase. | Copy and fill before requesting Owner sandbox import approval. |
+
+See also: [`docs/PHASE_25_SANDBOX_IMPORT_READINESS_GATE.md`](../PHASE_25_SANDBOX_IMPORT_READINESS_GATE.md) for the full gate reference.
+
 **Phase 24B Evidence and Log Templates** — *templates only; do not authorize runtime action:*
 
 | File | Purpose | When to Use |
@@ -94,6 +102,7 @@ See [docs/governance/README.md](../governance/README.md) for the full governance
 |-------|-------------|
 | Phase 24A | Created this `docs/runbooks/` directory. Created: README.md, SANDBOX_RUNBOOK_INDEX.md, OWNER_RUNTIME_READINESS_CHECKLIST.md, SANDBOX_IMPORT_TEST_RUNBOOK.md, RUNTIME_APPROVAL_DECISION_TREE.md. |
 | Phase 24B | Added evidence and log templates (documentation-only). Created: SANDBOX_EVIDENCE_PACK_TEMPLATE.md, SANDBOX_EXECUTION_LOG_TEMPLATE.md, SANDBOX_TEST_DATA_REGISTER_TEMPLATE.md, SANDBOX_ISSUE_REPORT_TEMPLATE.md. |
+| Phase 25 | Added sandbox import readiness gate (documentation-only). Created: SANDBOX_IMPORT_READINESS_CHECKLIST.md. Full gate doc at `docs/PHASE_25_SANDBOX_IMPORT_READINESS_GATE.md`. |
 
 ---
 
