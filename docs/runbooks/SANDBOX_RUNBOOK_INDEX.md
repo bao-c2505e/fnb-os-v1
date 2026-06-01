@@ -50,14 +50,26 @@ This index tracks all sandbox runbooks created for FnB OS V1 workflows, shows wh
 | Sandbox Manual Execution Expansion Plan | All 5 remaining workflows | 1 (Plan) | Phase 21 | `docs/35_PHASE_21_SANDBOX_MANUAL_EXECUTION_EXPANSION_PLAN.md` | COMMITTED (commit `7f8c7d2`) |
 | Creative Asset Evidence Capture Pack | `creative_asset_auto_skeleton` | 2 (Import Readiness) | Phase 22A | `docs/36_PHASE_22A_CREATIVE_ASSET_SANDBOX_EVIDENCE_CAPTURE_PACK.md` | COMMITTED (commit `41186df`) |
 
-### Current Phase Runbooks (Phase 24A)
+### Phase 24A Runbooks
 
 | Runbook | Stage | Doc Path | Status |
 |---------|-------|----------|--------|
-| Sandbox Runbook Index (this file) | All | `docs/runbooks/SANDBOX_RUNBOOK_INDEX.md` | Phase 24A |
-| Owner Runtime Readiness Checklist | All | `docs/runbooks/OWNER_RUNTIME_READINESS_CHECKLIST.md` | Phase 24A |
-| Sandbox Import Test Runbook | 2 | `docs/runbooks/SANDBOX_IMPORT_TEST_RUNBOOK.md` | Phase 24A |
-| Runtime Approval Decision Tree | All | `docs/runbooks/RUNTIME_APPROVAL_DECISION_TREE.md` | Phase 24A |
+| Sandbox Runbook Index (this file) | All | `docs/runbooks/SANDBOX_RUNBOOK_INDEX.md` | Phase 24A — DONE |
+| Owner Runtime Readiness Checklist | All | `docs/runbooks/OWNER_RUNTIME_READINESS_CHECKLIST.md` | Phase 24A — DONE |
+| Sandbox Import Test Runbook | 2 | `docs/runbooks/SANDBOX_IMPORT_TEST_RUNBOOK.md` | Phase 24A — DONE |
+| Runtime Approval Decision Tree | All | `docs/runbooks/RUNTIME_APPROVAL_DECISION_TREE.md` | Phase 24A — DONE |
+
+### Phase 24B Evidence and Log Templates
+
+> **Phase 24B is documentation-only.** These templates do not authorize sandbox import or sandbox execution.
+> Templates become usable in Phase 25+ (import) or Phase 26+ (execution) with explicit Owner approval.
+
+| Template | Purpose | Stage | Doc Path | Status |
+|----------|---------|-------|----------|--------|
+| Sandbox Evidence Pack Template | Standard evidence record for any sandbox import or execution event | 2 and 3 | `docs/runbooks/SANDBOX_EVIDENCE_PACK_TEMPLATE.md` | Phase 24B — DONE |
+| Sandbox Execution Log Template | Per-run detail log for Phase 26+ sandbox manual execution only | 3 | `docs/runbooks/SANDBOX_EXECUTION_LOG_TEMPLATE.md` | Phase 24B — DONE |
+| Sandbox Test Data Register Template | Register and approve test data before sandbox execution | 3 | `docs/runbooks/SANDBOX_TEST_DATA_REGISTER_TEMPLATE.md` | Phase 24B — DONE |
+| Sandbox Issue Report Template | Document issues found during sandbox import or execution | 2 and 3 | `docs/runbooks/SANDBOX_ISSUE_REPORT_TEMPLATE.md` | Phase 24B — DONE |
 
 ### Future Runbooks (Not Yet Created)
 

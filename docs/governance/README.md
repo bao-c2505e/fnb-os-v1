@@ -72,9 +72,18 @@ Owner-facing runtime readiness materials are in a separate directory:
 
 | Directory | Purpose |
 |-----------|---------|
-| [docs/runbooks/](../runbooks/README.md) | Runbooks for sandbox import, sandbox execution, production runtime decisions. Owner-facing. Includes runtime readiness checklist, sandbox runbook index, import runbook, and approval decision tree. |
+| [docs/runbooks/](../runbooks/README.md) | Runbooks for sandbox import, sandbox execution, production runtime decisions. Owner-facing. Includes runtime readiness checklist, sandbox runbook index, import runbook, approval decision tree, and Phase 24B evidence/log templates. |
 
 See [docs/runbooks/README.md](../runbooks/README.md) for the full runbook index.
+
+**Phase 24B templates** (documentation-only — do not authorize runtime action):
+
+| Template | Path |
+|----------|------|
+| Sandbox Evidence Pack Template | [docs/runbooks/SANDBOX_EVIDENCE_PACK_TEMPLATE.md](../runbooks/SANDBOX_EVIDENCE_PACK_TEMPLATE.md) |
+| Sandbox Execution Log Template | [docs/runbooks/SANDBOX_EXECUTION_LOG_TEMPLATE.md](../runbooks/SANDBOX_EXECUTION_LOG_TEMPLATE.md) |
+| Sandbox Test Data Register Template | [docs/runbooks/SANDBOX_TEST_DATA_REGISTER_TEMPLATE.md](../runbooks/SANDBOX_TEST_DATA_REGISTER_TEMPLATE.md) |
+| Sandbox Issue Report Template | [docs/runbooks/SANDBOX_ISSUE_REPORT_TEMPLATE.md](../runbooks/SANDBOX_ISSUE_REPORT_TEMPLATE.md) |
 
 ---
 
@@ -85,6 +94,7 @@ See [docs/runbooks/README.md](../runbooks/README.md) for the full runbook index.
 | Phase 22 | Created this `docs/governance/` directory. Created: AGENT_OPERATION_RULES.md, REPO_VALIDATION_CHECKLIST.md, PRE_COMMIT_PRE_PUSH_CHECKLIST.md, OWNER_APPROVAL_GATE.md, SESSION_HANDOFF_RULES.md. |
 | Phase 23 | Added Agent OS Layer. Created: AGENT_OS_OPERATING_MANUAL.md, AGENT_STARTUP_CHECKLIST.md, README.md (this file). |
 | Phase 24A | Added Owner Runtime Runbooks directory (`docs/runbooks/`). Created: README.md, SANDBOX_RUNBOOK_INDEX.md, OWNER_RUNTIME_READINESS_CHECKLIST.md, SANDBOX_IMPORT_TEST_RUNBOOK.md, RUNTIME_APPROVAL_DECISION_TREE.md. |
+| Phase 24B | Added evidence and log templates to `docs/runbooks/`. Created: SANDBOX_EVIDENCE_PACK_TEMPLATE.md, SANDBOX_EXECUTION_LOG_TEMPLATE.md, SANDBOX_TEST_DATA_REGISTER_TEMPLATE.md, SANDBOX_ISSUE_REPORT_TEMPLATE.md. Documentation-only. |
 
 ---
 
