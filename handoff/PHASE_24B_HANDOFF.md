@@ -36,7 +36,7 @@ Documentation and templates only. No runtime automation. No n8n workflow changes
 | `docs/runbooks/README.md` | Added Phase 24B template table (4 new templates) in Runbook Index section. Added Phase 24B row to Phase History. |
 | `docs/runbooks/SANDBOX_RUNBOOK_INDEX.md` | Renamed "Current Phase Runbooks" to "Phase 24A Runbooks" (DONE status). Added "Phase 24B Evidence and Log Templates" section with warning that Phase 24B is documentation-only, template table 4 rows. |
 | `docs/governance/README.md` | Updated Owner Runtime Runbooks description to mention Phase 24B templates. Added Phase 24B template table (4 rows) under runbooks section. Added Phase 24B row to Phase History. |
-| `handoff/CURRENT_PHASE.md` | Updated to Phase 24B BUILD_READY AWAITING OWNER REVIEW. |
+| `handoff/CURRENT_PHASE.md` | Updated to Phase 24B COMMITTED — local commit `23299d8`, push pending Owner authorization. |
 | `handoff/SESSION_SUMMARY.md` | New Phase 24B entry prepended. |
 | `09_LOGS/PHASE_LOG.md` | New Phase 24B entry prepended. |
 | `logs/AGENT_ACTIVITY_LOG.md` | New Phase 24B row prepended. |

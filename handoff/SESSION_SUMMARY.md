@@ -5,16 +5,17 @@ Updated By: Claude Code (Builder) — 2026-06-01 (Phase 24B — Sandbox Evidence
 ## Latest Session — Phase 24B — Sandbox Evidence Pack Template & Execution Log Standardization
 
 ### current_phase
-Phase 24B — Sandbox Evidence Pack Template & Execution Log Standardization (BUILD_READY — AWAITING OWNER REVIEW)
+Phase 24B — Sandbox Evidence Pack Template & Execution Log Standardization (COMMITTED — AWAITING CODEX FINAL REVIEW / OWNER PUSH AUTHORIZATION)
 
 ### current_role
 Builder — Claude Code (evidence/log template creation — no execution, no real data, no JSON modification)
 
 ### active_command
-Phase 24B build complete. 4 new template files created in `docs/runbooks/`. 3 existing files updated (runbooks README, SANDBOX_RUNBOOK_INDEX, governance README). 1 phase handoff created. State files updated. Awaiting Owner review and OWNER_APPROVED before commit.
+Phase 24B build complete. 4 new template files created in `docs/runbooks/`. 3 existing files updated (runbooks README, SANDBOX_RUNBOOK_INDEX, governance README). 1 phase handoff created. State files updated. Committed locally: `23299d8`. Awaiting Codex final review and Owner push authorization.
 
 ### latest_commit
-`0d75c70` — docs: update phase 24a state files to reflect committed status (current HEAD = origin/main)
+`23299d8` — docs: add phase 24b sandbox evidence templates (local commit — push to origin pending Owner authorization)
+Previous: `0d75c70` — docs: update phase 24a state files to reflect committed status
 
 ### files_changed
 Phase 24B (build):
@@ -32,7 +33,7 @@ Phase 24B (build):
 - `09_LOGS/PHASE_LOG.md` — new Phase 24B entry prepended.
 
 ### files_pending
-4 new template files + 3 updated runbook/governance files + 1 handoff + state files. Awaiting Owner review and OWNER_APPROVED before commit.
+All Phase 24B files committed locally in `23299d8`. Push to GitHub pending Owner authorization.
 
 ### decisions_made
 - Evidence pack, execution log, test data register, and issue report are kept as separate templates rather than merged — each serves a distinct purpose and will be used at different times and by different actors. Merging would make each file harder to copy-fill per event.
@@ -49,7 +50,7 @@ Phase 24B (build):
 None.
 
 ### next_owner_action
-(1) Review 4 new templates in `docs/runbooks/`. (2) Review 3 updated files (README, SANDBOX_RUNBOOK_INDEX, governance README). (3) Review `handoff/PHASE_24B_HANDOFF.md`. (4) If approved: OWNER_APPROVED. (5) Authorize local commit. (6) Decide whether to push (separate authorization).
+(1) Review 4 new templates in `docs/runbooks/`. (2) Review 3 updated files (README, SANDBOX_RUNBOOK_INDEX, governance README). (3) Review `handoff/PHASE_24B_HANDOFF.md`. (4) If satisfied: authorize push to GitHub. (5) Decide next phase (recommended: Phase 25 — Sandbox Import Readiness Gate).
 
 ---
 
