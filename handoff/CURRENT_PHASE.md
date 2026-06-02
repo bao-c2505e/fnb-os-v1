@@ -1,6 +1,6 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-01 (Phase 26 — PATH B correction after Codex FAIL)
+Updated By: Claude Code (Builder) — 2026-06-02 (Phase 26 — State file correction: commit 08382d5 confirmed HEAD)
 
 ## Phase
 
@@ -56,7 +56,7 @@ Owner performs manual sandbox import → fills evidence log → OWNER_APPROVED �
 | Ads spend | NO |
 | Secret scan (new/updated files) | CLEAN |
 | Branch | main |
-| Latest commit (Phase 26 corrections) | pending new commit after this session |
+| Latest commit (Phase 26 PATH B) | `08382d5` — docs: reframe phase 26 as pre-import framework after codex fail (path b) |
 
 ## Prior Phase Results
 
