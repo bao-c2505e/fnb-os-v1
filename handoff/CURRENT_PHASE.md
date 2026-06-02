@@ -1,6 +1,6 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-02 (Phase 27 — Sandbox Manual Execution Runbook + Evidence Template)
+Updated By: Claude Code (Builder) — 2026-06-02 (Phase 27 — Owner Execution Evidence Recorded — PASS WITH NOTES)
 
 ## Phase
 
@@ -8,14 +8,15 @@ Phase 27 — Sandbox Manual Execution Only: Creative Asset Auto Skeleton
 
 ## Status
 
-**RUNBOOK_READY — AWAITING OWNER MANUAL EXECUTION**
+**EVIDENCE_RECORDED — PASS WITH NOTES — AWAITING CODEX REVIEW**
 
-Phase 26 (sandbox import) DONE + PUSHED (commit `4a001bc`). Workflow INACTIVE, execution count = 0.
-Phase 27 runbook and evidence template created. Owner must issue approval phrase and perform manual execution.
+Phase 26 (sandbox import) DONE + PUSHED (commit `4a001bc`). Phase 27 Owner manual execution completed 2026-06-02.
+Execution result: PASS WITH NOTES. Note: Set Input Variables showed empty skeleton fields; downstream code generated required sandbox stub data; validation passed TRUE branch; approval_status = Draft confirmed.
+Evidence log filled. Ready for Codex review. Pending local commit + Codex review + Owner push authorization + push.
 
 ## Current Command
 
-Phase 27 runbook and evidence template created. Awaiting Owner: (1) issue approval phrase, (2) perform manual execution, (3) fill evidence log, (4) issue OWNER_APPROVED for Builder commit.
+Phase 27 Owner manual execution complete. Evidence recorded. Awaiting: (1) Codex review, (2) Owner push authorization, (3) push to origin/main, (4) Phase 28.
 
 ## Builder
 
@@ -27,13 +28,12 @@ Codex — not yet started for Phase 27. (Phase 26 Codex result: PASS WITH NOTES 
 
 ## Next Gate
 
-Owner issues: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — 2026-06-02`
-→ Owner opens n8n sandbox, executes workflow manually
-→ Owner fills evidence log
-→ Owner issues OWNER_APPROVED
-→ Builder commits Phase 27 evidence
+Owner execution: COMPLETE — 2026-06-02 — PASS WITH NOTES
+→ Builder committed Phase 27 evidence (this commit — pending)
 → Codex review
-→ push
+→ Owner issues push authorization
+→ push to origin/main
+→ Phase 28
 
 ## Phase 27 Files
 
@@ -47,12 +47,13 @@ Owner issues: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_aut
 
 | Check | Status |
 |-------|--------|
-| Owner approval phrase required | `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — 2026-06-02` |
+| Owner approval phrase issued | `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — 2026-06-02` — CONFIRMED |
 | Runbook created | YES |
 | Evidence template created | YES |
-| Owner manual execution performed | NO — awaiting Owner |
-| Workflow active status | INACTIVE |
-| Execution count | 0 (pre-execution) |
+| Owner manual execution performed | YES — 2026-06-02 |
+| Execution result | PASS WITH NOTES |
+| Workflow active status | INACTIVE (before and after execution) |
+| Execution count | 1 (post-execution) |
 | Workflow JSON modified | NO |
 | `active=true` introduced | NO |
 | Real credentials added | NO |
@@ -60,10 +61,11 @@ Owner issues: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_aut
 | Auto-post | NO |
 | Auto-reply | NO |
 | Ads spend | NO |
+| External API calls | NONE |
 | Secret scan (new files) | CLEAN |
 | Branch | main |
-| Latest commit (HEAD) | `165e43d` — docs: update phase 27 state files with commit hash e169821 |
-| Phase 27 content commit | `e169821` — docs: add phase 27 sandbox manual execution runbook |
+| Latest commit (HEAD) | `165e43d` — docs: update phase 27 state files with commit hash e169821 (pre-evidence) |
+| Phase 27 evidence commit | pending — docs: record phase 27 sandbox manual execution evidence |
 
 ## Prior Phase Results
 
