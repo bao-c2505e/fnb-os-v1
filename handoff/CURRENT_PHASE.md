@@ -1,6 +1,6 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-02 (Phase 26 — Owner import PASS, awaiting Codex review)
+Updated By: Claude Code (Builder) — 2026-06-02 (Phase 26 — Codex PASS WITH NOTES tidy: metadata corrected, .gitignore updated)
 
 ## Phase
 
@@ -8,15 +8,16 @@ Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton
 
 ## Status
 
-**PASS — SANDBOX IMPORT COMPLETED — AWAITING CODEX REVIEW**
+**PASS — CODEX REVIEW: PASS WITH NOTES (2026-06-02) — READY FOR PUSH**
 
 Owner (Bo Bao) performed manual sandbox import of `creative_asset_auto_skeleton` on 2026-06-02.
-Result: PASS. Evidence log complete. Builder has verified and committed evidence files.
-Codex re-review required before push.
+Result: PASS. Evidence log complete. Codex reviewed and returned PASS WITH NOTES.
+Notes resolved: `.gitignore` updated (added `*.code-workspace`); commit metadata corrected.
+Ready for Owner push authorization.
 
 ## Current Command
 
-Phase 26 — IMPORT COMPLETE. Evidence committed. Awaiting Codex re-review.
+Phase 26 — COMPLETE. Codex PASS WITH NOTES. Notes resolved. Awaiting Owner push authorization.
 
 ## Builder
 
@@ -24,11 +25,12 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — re-review required. See `handoff/PHASE_26_HANDOFF.md` Section "Codex Re-Review Instructions".
+Codex — PASS WITH NOTES (2026-06-02). Notes resolved this session.
 
 ## Next Gate
 
-Codex re-review → PASS → push (separate Owner authorization) → Phase 27 (sandbox execution, requires new approval phrase).
+Owner authorizes push → push → Phase 27 (sandbox execution, requires new approval phrase:
+`APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — [date]`).
 
 ## Phase 26 Files
 
@@ -58,7 +60,7 @@ Codex re-review → PASS → push (separate Owner authorization) → Phase 27 (s
 | Ads spend | NO |
 | Secret scan (new/updated files) | CLEAN |
 | Branch | main |
-| Latest commit | `d9a6324` — docs: update phase 26 state files to reflect committed path b framework |
+| Latest commit | `bd418c1` — docs: add phase 26 owner sandbox import evidence and update to pass |
 
 ## Prior Phase Results
 
