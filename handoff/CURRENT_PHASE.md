@@ -1,6 +1,6 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-02 (Phase 26 — State file correction: commit 08382d5 confirmed HEAD)
+Updated By: Claude Code (Builder) — 2026-06-02 (Phase 26 — Owner import PASS, awaiting Codex review)
 
 ## Phase
 
@@ -8,15 +8,15 @@ Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton
 
 ## Status
 
-**BLOCKED — OWNER MANUAL SANDBOX IMPORT REQUIRED**
+**PASS — SANDBOX IMPORT COMPLETED — AWAITING CODEX REVIEW**
 
-Codex review result: FAIL (2026-06-01). Reason: Phase 26 docs did not document a completed sandbox import — post-import conditions (active status, execution count, sandbox URL, API calls, Owner sign-off) could not be verified.
-
-Resolution taken: PATH B — all Phase 26 docs reframed as PRE-IMPORT FRAMEWORK ONLY. Status updated to BLOCKED. Owner must perform manual sandbox import in n8n sandbox, fill evidence log (`logs/phase_26_creative_asset_sandbox_import_evidence_log.md`), and provide OWNER_APPROVED for a new commit.
+Owner (Bo Bao) performed manual sandbox import of `creative_asset_auto_skeleton` on 2026-06-02.
+Result: PASS. Evidence log complete. Builder has verified and committed evidence files.
+Codex re-review required before push.
 
 ## Current Command
 
-Phase 26 — BLOCKED. Import has NOT been performed. Builder (Claude Code) has no access to n8n sandbox UI. Owner must perform the manual sandbox import following instructions in `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` Section C.
+Phase 26 — IMPORT COMPLETE. Evidence committed. Awaiting Codex re-review.
 
 ## Builder
 
@@ -24,28 +24,30 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — re-review required after Owner performs import and fills evidence log.
+Codex — re-review required. See `handoff/PHASE_26_HANDOFF.md` Section "Codex Re-Review Instructions".
 
 ## Next Gate
 
-Owner performs manual sandbox import → fills evidence log → OWNER_APPROVED → Builder new commit → Codex re-review → push (separate Owner authorization).
+Codex re-review → PASS → push (separate Owner authorization) → Phase 27 (sandbox execution, requires new approval phrase).
 
 ## Phase 26 Files
 
 | File | Status |
 |------|--------|
-| `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` | Updated — PRE-IMPORT FRAMEWORK ONLY, BLOCKED status |
-| `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` | Updated — INCOMPLETE, all post-import fields [OWNER TO FILL] |
-| `handoff/PHASE_26_HANDOFF.md` | Updated — Codex FAIL noted, PATH B taken |
+| `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` | UPDATED — status PASS; Owner import result section added |
+| `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` | COMPLETE — Owner filled all fields; result PASS |
+| `handoff/PHASE_26_HANDOFF.md` | UPDATED — PASS, history table, post-import state confirmed |
 
 ## Phase 26 Status
 
 | Check | Status |
 |-------|--------|
-| Codex review | FAIL — post-import conditions unverifiable |
-| Path taken | PATH B — pre-import framework only |
-| Import completed | NO — Owner must perform manually |
-| Owner approval phrase captured | YES — `APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01` |
+| Codex review | FAIL (2026-06-01) — initial; re-review REQUIRED |
+| Path taken | PATH B (pre-import framework) → Owner import PASS (2026-06-02) |
+| Import completed | **YES — 2026-06-02 (Owner: Bo Bao)** |
+| Owner approval phrase | `APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01` |
+| Workflow active status post-import | **INACTIVE** |
+| Execution count post-import | **0** |
 | Workflow JSON modified | NO |
 | `active=true` introduced | NO |
 | Real credentials added | NO |
@@ -56,7 +58,7 @@ Owner performs manual sandbox import → fills evidence log → OWNER_APPROVED �
 | Ads spend | NO |
 | Secret scan (new/updated files) | CLEAN |
 | Branch | main |
-| Latest commit (Phase 26 PATH B) | `08382d5` — docs: reframe phase 26 as pre-import framework after codex fail (path b) |
+| Latest commit | `d9a6324` — docs: update phase 26 state files to reflect committed path b framework |
 
 ## Prior Phase Results
 
@@ -74,5 +76,5 @@ Owner performs manual sandbox import → fills evidence log → OWNER_APPROVED �
 - Do not auto-post, auto-reply, or auto-spend.
 - Do not activate n8n workflows.
 - Do not run ads or spend money.
-- Do not commit until `OWNER_APPROVED`.
+- Do not push without OWNER_APPROVED for push.
 - .claude/ must NEVER be committed.

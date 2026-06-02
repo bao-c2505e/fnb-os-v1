@@ -4,17 +4,18 @@
 **Phase:** 26 — First Sandbox Import: Creative Asset Auto Skeleton
 **By:** Claude Code (Builder, AGT-02)
 **Date:** 2026-06-01
-**Status:** BLOCKED — OWNER MANUAL SANDBOX IMPORT REQUIRED
+**Updated:** 2026-06-02 (Owner import PASS — awaiting Codex review)
+**Status:** PASS — SANDBOX IMPORT COMPLETED — AWAITING CODEX REVIEW
 
-> **CODEX REVIEW RESULT: FAIL (2026-06-01)**
-> Reason: Phase 26 docs did not document a completed sandbox import. Post-import conditions
-> (active status, execution count, sandbox URL, API calls, Owner sign-off) could not be verified.
-> Resolution: PATH B — Reframed as pre-import framework only. Owner must perform manual sandbox
-> import and fill evidence log. Phase 26 is BLOCKED until Owner completes import and evidence.
+> **OWNER IMPORT RESULT: PASS (2026-06-02)**
+> Owner (Bo Bao) performed sandbox import of `creative_asset_auto_skeleton` on 2026-06-02.
+> Workflow imported into n8n sandbox. Active status: INACTIVE. Execution count: 0.
+> No real credentials, no production side effects. Owner sign-off complete.
+> Evidence log: `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` — COMPLETE.
 
-> **IMPORT HAS NOT BEEN PERFORMED.**
-> Builder (Claude Code) has no access to the n8n sandbox UI. This document is a PRE-IMPORT
-> FRAMEWORK ONLY. It does not claim import was completed.
+> **HISTORY: Codex FAIL (2026-06-01) → PATH B (pre-import framework) → Owner import PASS (2026-06-02)**
+> Initial Codex FAIL was because import had not been performed. PATH B was taken to reframe
+> docs as pre-import framework only. Owner has now performed the import and filled the evidence log.
 
 ---
 
@@ -26,24 +27,39 @@ APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01
 
 Approval recorded in: this document, `handoff/PHASE_26_HANDOFF.md`, `logs/AGENT_ACTIVITY_LOG.md`.
 
+## Owner Import Result — Captured
+
+| Field | Value |
+|-------|-------|
+| Import performed by | Bo Bao — Owner / Approver |
+| Import date | 2026-06-02 |
+| n8n sandbox URL | `https://n8n.baon8n.blog/workflow/VW5PDkOOtrjLQBps` (sandbox project) |
+| Workflow name post-import | `FnB OS V1 — Creative Asset Auto [SKELETON]` |
+| Active status post-import | INACTIVE |
+| Execution count post-import | 0 |
+| Credentials | None — REPLACE_WITH_* placeholders only |
+| API calls made | NONE |
+| Auto-post / reply / ad spend | NONE |
+| Workflow JSON modified | NO |
+| Overall result | **PASS** |
+| Owner sign-off | Complete — `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` |
+
 ---
 
 ## Section A — Purpose
 
-Phase 26 authorizes and prepares the first sandbox import of `creative_asset_auto_skeleton`.
+Phase 26 authorizes and documents the first sandbox import of `creative_asset_auto_skeleton`.
 
-**This document is a PRE-IMPORT FRAMEWORK ONLY.**
+**Import has been completed by Owner on 2026-06-02. Result: PASS.**
 
-Builder (Claude Code, AGT-02) cannot access the n8n sandbox UI. The Owner must perform the import manually. This document provides:
+This document records:
 - Pre-import state verification (Builder-confirmed from repo)
-- Step-by-step import instructions for Owner
-- Expected post-import state
-- Evidence log for Owner to fill after import
-- Stop conditions
+- Step-by-step import instructions provided to Owner (Section C)
+- Expected post-import state (Section D)
+- Evidence log reference (Owner-filled after import — `logs/phase_26_creative_asset_sandbox_import_evidence_log.md`)
+- Stop conditions (Section F)
 
-**Import has NOT been performed. Phase 26 is BLOCKED until Owner performs the import and submits evidence.**
-
-This phase does NOT execute, activate, or call APIs. A separate approval phrase is required for execution.
+This phase does NOT execute, activate, or call APIs. A separate approval phrase is required for execution (Phase 27).
 
 ---
 
@@ -177,22 +193,23 @@ If any of the following occur during import, stop immediately:
 
 ---
 
-## Section G — Safety Confirmation (Builder — Pre-Import)
+## Section G — Safety Confirmation
 
-| Confirmation | Status |
-|-------------|--------|
-| Import performed by Builder | NO — Builder has no n8n UI access |
-| Workflow activated | NO |
-| Workflow executed | NO |
-| Real API called | NO |
-| Production credentials added | NO |
-| Real customer data used | NO |
-| Auto-post performed | NO |
-| Auto-reply performed | NO |
-| Ad spend committed | NO |
-| Workflow JSON modified | NO |
-| `"active": true` introduced | NO |
-| Secrets added to repo | NO |
+| Confirmation | Builder (pre-import) | Owner (post-import) |
+|-------------|---------------------|---------------------|
+| Import performed by Builder | NO — Builder has no n8n UI access | N/A |
+| Import performed by Owner | N/A | YES — Bo Bao, 2026-06-02 |
+| Workflow activated | NO | NO (confirmed INACTIVE) |
+| Workflow executed | NO | NO (exec count = 0) |
+| Real API called | NO | NO |
+| Production credentials added | NO | NO |
+| Real customer data used | NO | NO |
+| Auto-post performed | NO | NO |
+| Auto-reply performed | NO | NO |
+| Ad spend committed | NO | NO |
+| Workflow JSON modified | NO | NO |
+| `"active": true` introduced | NO | NO |
+| Secrets added to repo | NO | NO |
 
 ---
 
@@ -200,12 +217,12 @@ If any of the following occur during import, stop immediately:
 
 | Field | Value |
 |-------|-------|
-| Phase 26 status | **BLOCKED — OWNER MANUAL SANDBOX IMPORT REQUIRED** |
-| Codex review | FAIL (2026-06-01) — reason: import not completed, post-import conditions unverifiable |
-| Path taken | PATH B — Pre-import framework only |
-| Import completed | **NO** |
-| Evidence log status | **INCOMPLETE — Owner must fill after import** |
-| Next action | Owner performs import → fills evidence log → OWNER_APPROVED → new commit → Codex re-review |
+| Phase 26 status | **PASS — SANDBOX IMPORT COMPLETED — AWAITING CODEX REVIEW** |
+| Initial Codex review | FAIL (2026-06-01) — reason: import not completed, post-import conditions unverifiable |
+| Path taken | PATH B (pre-import framework) → Owner import PASS (2026-06-02) |
+| Import completed | **YES — 2026-06-02 by Owner (Bo Bao)** |
+| Evidence log status | **COMPLETE — `logs/phase_26_creative_asset_sandbox_import_evidence_log.md`** |
+| Next action | OWNER_APPROVED received → Builder committed evidence → Codex re-review required → push (separate Owner authorization) |
 
 ---
 
@@ -238,5 +255,5 @@ If any of the following occur during import, stop immediately:
 ---
 
 *FnB OS V1 — Vị Cuốn Growth OS*
-*Phase 26 — PRE-IMPORT FRAMEWORK ONLY. Import has NOT been completed.*
-*Execution requires a separate approval phrase: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — [date]`*
+*Phase 26 — SANDBOX IMPORT COMPLETE. Result: PASS. Awaiting Codex review.*
+*Execution (Phase 27) requires a separate approval phrase: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — [date]`*
