@@ -65,7 +65,7 @@ Owner execution: COMPLETE — 2026-06-02 — PASS WITH NOTES
 | Secret scan (new files) | CLEAN |
 | Branch | main |
 | Latest commit (HEAD) | `165e43d` — docs: update phase 27 state files with commit hash e169821 (pre-evidence) |
-| Phase 27 evidence commit | pending — docs: record phase 27 sandbox manual execution evidence |
+| Phase 27 evidence commit | `fa83df5` — docs: record phase 27 sandbox manual execution evidence |
 
 ## Prior Phase Results
 
