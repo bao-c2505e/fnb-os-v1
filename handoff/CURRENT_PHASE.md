@@ -8,15 +8,15 @@ Phase 27 — Sandbox Manual Execution Only: Creative Asset Auto Skeleton
 
 ## Status
 
-**EVIDENCE_RECORDED — PASS WITH NOTES — AWAITING CODEX REVIEW**
+**DONE + PUSHED — PASS WITH NOTES**
 
 Phase 26 (sandbox import) DONE + PUSHED (commit `4a001bc`). Phase 27 Owner manual execution completed 2026-06-02.
-Execution result: PASS WITH NOTES. Note: Set Input Variables showed empty skeleton fields; downstream code generated required sandbox stub data; validation passed TRUE branch; approval_status = Draft confirmed.
-Evidence log filled. Ready for Codex review. Pending local commit + Codex review + Owner push authorization + push.
+Execution result: PASS WITH NOTES. Codex review: PASS WITH NOTES. Pushed to origin/main — commit `779103c`.
+Note: Set Input Variables showed empty skeleton fields; downstream code generated required sandbox stub data; validation passed TRUE branch; approval_status = Draft confirmed.
 
 ## Current Command
 
-Phase 27 Owner manual execution complete. Evidence recorded. Awaiting: (1) Codex review, (2) Owner push authorization, (3) push to origin/main, (4) Phase 28.
+Phase 27 DONE + PUSHED. Ready for Phase 28.
 
 ## Builder
 
@@ -28,12 +28,9 @@ Codex — not yet started for Phase 27. (Phase 26 Codex result: PASS WITH NOTES 
 
 ## Next Gate
 
-Owner execution: COMPLETE — 2026-06-02 — PASS WITH NOTES
-→ Builder committed Phase 27 evidence (this commit — pending)
-→ Codex review
-→ Owner issues push authorization
-→ push to origin/main
-→ Phase 28
+Phase 27 DONE + PUSHED — 2026-06-02 — PASS WITH NOTES
+origin/main: `779103c`
+→ Phase 28 (next)
 
 ## Phase 27 Files
 
