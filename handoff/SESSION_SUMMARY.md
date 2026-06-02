@@ -1,8 +1,51 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-02 (Phase 27 — Owner Execution Evidence Recorded — PASS WITH NOTES)
+Updated By: Claude Code (Builder) — 2026-06-02 (Phase 28 — Sandbox I/O Standardization — BUILD_READY)
 
-## Latest Session — Phase 27 — Owner Sandbox Execution Evidence: Creative Asset Auto Skeleton
+## Latest Session — Phase 28 — Creative Asset Auto Sandbox I/O Standardization
+
+### current_phase
+Phase 28 — Creative Asset Auto Sandbox Input/Output Standardization (BUILD_READY — AWAITING CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (documentation only — no execution, no activation, no workflow JSON modification, no credentials)
+
+### active_command
+Phase 27 DONE + PUSHED (commit `0b7ce07`). Phase 27 result: PASS WITH NOTES. Phase 28 build: created `docs/PHASE_28_CREATIVE_ASSET_AUTO_SANDBOX_IO_STANDARDIZATION.md` (9 sections: A sandbox input contract with 7 fields, classification table, input rules; B sandbox output contract covering brandBrain, creativeBrief, validation_pass, approval_status, logEntry, approvalQueueStub, output summary table; C Phase 27 PASS WITH NOTES explanation — root cause of Set Input Variables "empty" display, why acceptable, classification table, future improvement path; D pass/fail criteria — 17-condition PASS checklist, 4 PASS WITH NOTES note types, 12 FAIL conditions, 5 BLOCKED conditions; E safety constraints 10-item table; F Phase 27 reference; G related documents; H phase connections; I safety confirmation all NO/CLEAN). Created `docs/specs/creative_asset_auto_sandbox_io_spec.md` (8 sections: 1 workflow identity; 2 input spec — trigger, 7 fields, 8 input validation rules, skeleton UI behavior note; 3 node chain — happy path 9 nodes, validation failure path, error handler path; 4 output spec — brandBrain, creativeBrief, validation result, approval status, logEntry, approval queue stub; 5 forbidden outputs 13-row table; 6 pass/fail summary table 13 checks; 7 credential constraints; 8 version history). Created `handoff/PHASE_28_HANDOFF.md`. Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, 09_LOGS/PHASE_LOG.md. No workflow JSON modified. No credentials. No activation. Committing locally: `docs: standardize phase 28 creative asset sandbox io`.
+
+### latest_commit
+HEAD before Phase 28 commit: `0b7ce07` (= origin/main)
+
+### files_changed
+Phase 28 (build — this session — 2026-06-02):
+- `docs/PHASE_28_CREATIVE_ASSET_AUTO_SANDBOX_IO_STANDARDIZATION.md` — CREATED: main phase doc (9 sections)
+- `docs/specs/creative_asset_auto_sandbox_io_spec.md` — CREATED: formal I/O spec (8 sections); `docs/specs/` directory created
+- `handoff/PHASE_28_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 28 BUILD_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 28 files. Awaiting Codex review and Owner push authorization.
+
+### decisions_made
+- `docs/specs/` created as a new directory for formal I/O specs — no existing spec directory was found. Consistent with `docs/governance/` and `docs/runbooks/` pattern.
+- Set Input Variables "empty" display classified as PASS WITH NOTES — root cause documented (Manual Trigger carries empty body; Set node displays input state not output state; downstream Code nodes use hardcoded stubs not dependent on Set output).
+- PASS/FAIL/PASS WITH NOTES/BLOCKED criteria fully specified for future sandbox runs.
+
+### open_issues
+None.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review `docs/PHASE_28_CREATIVE_ASSET_AUTO_SANDBOX_IO_STANDARDIZATION.md`. (2) Review `docs/specs/creative_asset_auto_sandbox_io_spec.md`. (3) Review `handoff/PHASE_28_HANDOFF.md`. (4) If approved: OWNER_APPROVED → commit → Codex review → push. (5) Decide Phase 29 with ChatGPT Architect.
+
+---
+
+## Previous Session — Phase 27 — Owner Sandbox Execution Evidence: Creative Asset Auto Skeleton
 
 ### current_phase
 Phase 27 — Sandbox Manual Execution Only: Creative Asset Auto Skeleton (DONE + PUSHED — PASS WITH NOTES)

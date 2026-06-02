@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-02 — Phase 28 — Sandbox I/O Standardization — BUILD_READY
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILD_READY — AWAITING CODEX REVIEW
+**Detail:**
+Phase 27 DONE + PUSHED (commit `0b7ce07`, PASS WITH NOTES). Phase 28 documentation build complete. Created `docs/PHASE_28_CREATIVE_ASSET_AUTO_SANDBOX_IO_STANDARDIZATION.md` (9 sections: input contract, output contract, Phase 27 PASS WITH NOTES explanation, pass/fail criteria, safety constraints, related docs, phase connections, safety confirmation). Created `docs/specs/creative_asset_auto_sandbox_io_spec.md` in new `docs/specs/` directory (8 sections: workflow identity, input spec with 7 fields, node chain, output spec, forbidden outputs, pass/fail table, credential constraints, version history). Created `handoff/PHASE_28_HANDOFF.md`. Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, PHASE_LOG.md. No workflow JSON modified. No credentials. No activation. No execution by Builder. No auto-post/reply/ads. Committing locally: `docs: standardize phase 28 creative asset sandbox io`. Push pending Codex review + Owner authorization.
+
+---
+
 ### 2026-06-02 — Phase 27 — Owner Execution Evidence Recorded — PASS WITH NOTES — AWAITING CODEX REVIEW
 
 **By:** Claude Code (Builder, AGT-02)
