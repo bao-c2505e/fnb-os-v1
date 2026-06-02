@@ -62,7 +62,7 @@ Owner issues: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_aut
 | Ads spend | NO |
 | Secret scan (new files) | CLEAN |
 | Branch | main |
-| Latest commit (Phase 27 docs) | pending — not yet committed |
+| Latest commit (Phase 27 docs) | `e169821` — docs: add phase 27 sandbox manual execution runbook |
 
 ## Prior Phase Results
 
