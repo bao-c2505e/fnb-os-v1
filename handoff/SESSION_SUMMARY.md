@@ -14,8 +14,9 @@ Builder — Claude Code (runbook + evidence template creation — no execution, 
 Phase 26 DONE + PUSHED (commit `4a001bc`). Phase 27 build: created runbook `docs/PHASE_27_SANDBOX_MANUAL_EXECUTION_CREATIVE_ASSET_AUTO.md` (14 sections — objective, workflow identity, approval phrase, pre-execution checklist PE-01–PE-14, 11-step manual execution guide, node chain reference, evidence capture checklist EC-01–EC-08, pass/fail criteria, rollback/no-op statement, prohibited actions, stop conditions SC-01–SC-10, related docs, phase connections, safety confirmation). Created evidence log template `logs/phase_27_creative_asset_auto_sandbox_manual_execution_evidence.md` (all [OWNER TO FILL] fields — header, sections A–L, owner sign-off). Created `handoff/PHASE_27_HANDOFF.md`. Updated state files. Awaiting Owner: approval phrase → manual execution → evidence fill → OWNER_APPROVED → commit.
 
 ### latest_commit
-`e169821` — docs: add phase 27 sandbox manual execution runbook (local only — push pending Owner authorization)
-Previous: `4a001bc` — docs: tidy phase 26 metadata after codex review (= origin/main)
+HEAD: `165e43d` — docs: update phase 27 state files with commit hash e169821 (local only — push pending Owner authorization)
+Phase 27 content commit: `e169821` — docs: add phase 27 sandbox manual execution runbook
+origin/main: `4a001bc` — docs: tidy phase 26 metadata after codex review
 
 ### files_changed
 Phase 27 (build — this session — 2026-06-02):

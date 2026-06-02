@@ -62,7 +62,8 @@ Owner issues: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_aut
 | Ads spend | NO |
 | Secret scan (new files) | CLEAN |
 | Branch | main |
-| Latest commit (Phase 27 docs) | `e169821` — docs: add phase 27 sandbox manual execution runbook |
+| Latest commit (HEAD) | `165e43d` — docs: update phase 27 state files with commit hash e169821 |
+| Phase 27 content commit | `e169821` — docs: add phase 27 sandbox manual execution runbook |
 
 ## Prior Phase Results
 
