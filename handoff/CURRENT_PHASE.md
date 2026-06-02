@@ -1,23 +1,21 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-02 (Phase 26 — Codex PASS WITH NOTES tidy: metadata corrected, .gitignore updated)
+Updated By: Claude Code (Builder) — 2026-06-02 (Phase 27 — Sandbox Manual Execution Runbook + Evidence Template)
 
 ## Phase
 
-Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton
+Phase 27 — Sandbox Manual Execution Only: Creative Asset Auto Skeleton
 
 ## Status
 
-**PASS — CODEX REVIEW: PASS WITH NOTES (2026-06-02) — READY FOR PUSH**
+**RUNBOOK_READY — AWAITING OWNER MANUAL EXECUTION**
 
-Owner (Bo Bao) performed manual sandbox import of `creative_asset_auto_skeleton` on 2026-06-02.
-Result: PASS. Evidence log complete. Codex reviewed and returned PASS WITH NOTES.
-Notes resolved: `.gitignore` updated (added `*.code-workspace`); commit metadata corrected.
-Ready for Owner push authorization.
+Phase 26 (sandbox import) DONE + PUSHED (commit `4a001bc`). Workflow INACTIVE, execution count = 0.
+Phase 27 runbook and evidence template created. Owner must issue approval phrase and perform manual execution.
 
 ## Current Command
 
-Phase 26 — COMPLETE. Codex PASS WITH NOTES. Notes resolved. Awaiting Owner push authorization.
+Phase 27 runbook and evidence template created. Awaiting Owner: (1) issue approval phrase, (2) perform manual execution, (3) fill evidence log, (4) issue OWNER_APPROVED for Builder commit.
 
 ## Builder
 
@@ -25,47 +23,52 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — PASS WITH NOTES (2026-06-02). Notes resolved this session.
+Codex — not yet started for Phase 27. (Phase 26 Codex result: PASS WITH NOTES — resolved, pushed.)
 
 ## Next Gate
 
-Owner authorizes push → push → Phase 27 (sandbox execution, requires new approval phrase:
-`APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — [date]`).
+Owner issues: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — 2026-06-02`
+→ Owner opens n8n sandbox, executes workflow manually
+→ Owner fills evidence log
+→ Owner issues OWNER_APPROVED
+→ Builder commits Phase 27 evidence
+→ Codex review
+→ push
 
-## Phase 26 Files
+## Phase 27 Files
 
 | File | Status |
 |------|--------|
-| `docs/PHASE_26_CREATIVE_ASSET_SANDBOX_IMPORT_EVIDENCE.md` | UPDATED — status PASS; Owner import result section added |
-| `logs/phase_26_creative_asset_sandbox_import_evidence_log.md` | COMPLETE — Owner filled all fields; result PASS |
-| `handoff/PHASE_26_HANDOFF.md` | UPDATED — PASS, history table, post-import state confirmed |
+| `docs/PHASE_27_SANDBOX_MANUAL_EXECUTION_CREATIVE_ASSET_AUTO.md` | CREATED — runbook (14 sections) |
+| `logs/phase_27_creative_asset_auto_sandbox_manual_execution_evidence.md` | CREATED — evidence template (all [OWNER TO FILL]) |
+| `handoff/PHASE_27_HANDOFF.md` | CREATED — phase handoff |
 
-## Phase 26 Status
+## Phase 27 Status
 
 | Check | Status |
 |-------|--------|
-| Codex review | FAIL (2026-06-01) — initial; re-review REQUIRED |
-| Path taken | PATH B (pre-import framework) → Owner import PASS (2026-06-02) |
-| Import completed | **YES — 2026-06-02 (Owner: Bo Bao)** |
-| Owner approval phrase | `APPROVED FOR SANDBOX IMPORT ONLY — creative_asset_auto_skeleton — 2026-06-01` |
-| Workflow active status post-import | **INACTIVE** |
-| Execution count post-import | **0** |
+| Owner approval phrase required | `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — 2026-06-02` |
+| Runbook created | YES |
+| Evidence template created | YES |
+| Owner manual execution performed | NO — awaiting Owner |
+| Workflow active status | INACTIVE |
+| Execution count | 0 (pre-execution) |
 | Workflow JSON modified | NO |
 | `active=true` introduced | NO |
 | Real credentials added | NO |
 | Real customer data | NO |
-| Workflow execution performed | NO |
 | Auto-post | NO |
 | Auto-reply | NO |
 | Ads spend | NO |
-| Secret scan (new/updated files) | CLEAN |
+| Secret scan (new files) | CLEAN |
 | Branch | main |
-| Latest commit | `bd418c1` — docs: add phase 26 owner sandbox import evidence and update to pass |
+| Latest commit (Phase 27 docs) | pending — not yet committed |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
+| Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `4a001bc`) — PASS** |
 | Phase 25 — Sandbox Import Readiness Gate | **DONE + PUSHED (commit `9bfaeecc`)** |
 | Phase 24B — Sandbox Evidence Pack Template & Execution Log Standardization | **DONE + PUSHED (commit `69eef55`)** |
 | Phase 24A — Sandbox Runbook Index & Owner Runtime Readiness | **DONE + PUSHED (commits `8bc18f2` + `0d75c70`)** |

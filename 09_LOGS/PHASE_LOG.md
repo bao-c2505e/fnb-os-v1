@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-02 — Phase 27 — Sandbox Manual Execution Runbook Created — RUNBOOK_READY
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** RUNBOOK_READY — AWAITING OWNER MANUAL EXECUTION
+**Detail:**
+Phase 26 (first sandbox import of `creative_asset_auto_skeleton`) DONE + PUSHED (commit `4a001bc`). Workflow INACTIVE, execution count = 0, no credentials. Phase 27 documentation and evidence readiness built: `docs/PHASE_27_SANDBOX_MANUAL_EXECUTION_CREATIVE_ASSET_AUTO.md` (14-section runbook: objective, workflow identity + URL, required approval phrase, pre-execution checklist PE-01–PE-14, 11-step manual execution guide, node chain reference, evidence capture checklist, pass/fail criteria, rollback/no-op statement, prohibited actions, stop conditions SC-01–SC-10, related docs, safety confirmation); `logs/phase_27_creative_asset_auto_sandbox_manual_execution_evidence.md` (evidence log template: approval phrase, pre-execution checklist, execution record, 15-node execution results, key output fields, forbidden output checks FO-01–FO-10, result summary, screenshots, post-execution safety, final decision, owner sign-off — all [OWNER TO FILL]); `handoff/PHASE_27_HANDOFF.md`. Updated CURRENT_PHASE, SESSION_SUMMARY, AGENT_ACTIVITY_LOG, PHASE_LOG. No workflow JSON modified. No credentials. No activation. No execution. No auto-post/reply/ads. No commit, no push. Phase 27 blocked on Owner manual execution.
+
+---
+
 ### 2026-06-02 — Phase 26 — Codex PASS WITH NOTES: Tidy Committed — READY FOR PUSH
 
 **By:** Claude Code (Builder, AGT-02)

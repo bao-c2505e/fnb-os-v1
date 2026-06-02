@@ -1,8 +1,62 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-02 (Phase 26 — Codex PASS WITH NOTES tidy)
+Updated By: Claude Code (Builder) — 2026-06-02 (Phase 27 — Sandbox Manual Execution Runbook + Evidence Template)
 
-## Latest Session — Phase 26 — Codex PASS WITH NOTES: Metadata Tidy + .gitignore Update
+## Latest Session — Phase 27 — Sandbox Manual Execution Runbook: Creative Asset Auto Skeleton
+
+### current_phase
+Phase 27 — Sandbox Manual Execution Only: Creative Asset Auto Skeleton (RUNBOOK_READY — AWAITING OWNER MANUAL EXECUTION)
+
+### current_role
+Builder — Claude Code (runbook + evidence template creation — no execution, no activation, no real data, no JSON modification)
+
+### active_command
+Phase 26 DONE + PUSHED (commit `4a001bc`). Phase 27 build: created runbook `docs/PHASE_27_SANDBOX_MANUAL_EXECUTION_CREATIVE_ASSET_AUTO.md` (14 sections — objective, workflow identity, approval phrase, pre-execution checklist PE-01–PE-14, 11-step manual execution guide, node chain reference, evidence capture checklist EC-01–EC-08, pass/fail criteria, rollback/no-op statement, prohibited actions, stop conditions SC-01–SC-10, related docs, phase connections, safety confirmation). Created evidence log template `logs/phase_27_creative_asset_auto_sandbox_manual_execution_evidence.md` (all [OWNER TO FILL] fields — header, sections A–L, owner sign-off). Created `handoff/PHASE_27_HANDOFF.md`. Updated state files. Awaiting Owner: approval phrase → manual execution → evidence fill → OWNER_APPROVED → commit.
+
+### latest_commit
+`4a001bc` — docs: tidy phase 26 metadata after codex review (HEAD = origin/main, Phase 26 DONE + PUSHED)
+Phase 27 docs: pending commit (not yet committed)
+
+### files_changed
+Phase 27 (build — this session — 2026-06-02):
+- `docs/PHASE_27_SANDBOX_MANUAL_EXECUTION_CREATIVE_ASSET_AUTO.md` — CREATED: 14-section runbook
+- `logs/phase_27_creative_asset_auto_sandbox_manual_execution_evidence.md` — CREATED: evidence log template (all [OWNER TO FILL])
+- `handoff/PHASE_27_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 27 RUNBOOK_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+3 primary Phase 27 files + 4 state file updates. Awaiting Owner manual execution, evidence fill, and OWNER_APPROVED before commit.
+
+### decisions_made
+- Phase 27 scope is documentation/runbook/evidence readiness only. Builder does not execute workflows and has no n8n UI access.
+- Runbook uses 14-section structure consistent with Phase 26 doc style. Evidence log uses same [OWNER TO FILL] pattern as Phase 26 evidence log.
+- Forbidden output checks expanded to FO-01–FO-10 (Phase 26 had FC-01–FC-06) — execution phase requires stricter output monitoring than import phase.
+- Pre-execution checklist uses PE-01–PE-14 (14 items) — more comprehensive than Phase 26 import checklist (11 items) because execution involves more risk than import.
+- Evidence log Section D covers all 15 nodes (happy path 9, validation failure 3, error handler 3) — Owner can record which path was taken.
+
+### open_issues
+None in Phase 27 build. Owner must perform manual execution and fill evidence log.
+
+### blockers
+BLOCKED on Owner manual execution. Builder has no n8n UI access.
+
+### next_owner_action
+(1) Issue approval phrase: `APPROVED FOR SANDBOX MANUAL EXECUTION ONLY — creative_asset_auto_skeleton — 2026-06-02`
+(2) Open runbook: `docs/PHASE_27_SANDBOX_MANUAL_EXECUTION_CREATIVE_ASSET_AUTO.md`
+(3) Open evidence log: `logs/phase_27_creative_asset_auto_sandbox_manual_execution_evidence.md`
+(4) Open n8n sandbox: `https://n8n.baon8n.blog/workflow/VW5PDkOOtrjLQBps`
+(5) Complete PE-01–PE-14 pre-execution checklist
+(6) Execute Steps 1–11 in runbook Section E
+(7) Fill all [OWNER TO FILL] fields in evidence log
+(8) Record final decision: PASS / PASS WITH NOTES / FAIL
+(9) Issue OWNER_APPROVED → Builder commits → Codex review → push → Phase 28
+
+---
+
+## Previous Session — Phase 26 — Codex PASS WITH NOTES: Metadata Tidy + .gitignore Update
 
 ### current_phase
 Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton (PASS — CODEX PASS WITH NOTES — READY FOR PUSH)
