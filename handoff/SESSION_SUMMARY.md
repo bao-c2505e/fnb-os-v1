@@ -1,8 +1,100 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation — EVIDENCE_RECORDED — PASS)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest — EVIDENCE_RECORDED — FAIL)
 
-## Latest Session — Phase 35 — Evidence Recording (PASS)
+## Latest Session — Phase 36 — Evidence Recording (FAIL)
+
+### current_phase
+Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest (EVIDENCE_RECORDED — FAIL)
+
+### current_role
+Builder — Claude Code (evidence recording only — no workflow JSON modification, no n8n import, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 36 RUNBOOK_READY (commit `dad0ca9`). Owner evidence received 2026-06-03. Result: FAIL. Owner executed `FnB OS V1 — Creative Asset Auto [SKELETON] — CURRENT CLEAN SANDBOX` manually: workflow INACTIVE, canvas clean (single cluster, no duplicate nodes), execution performed, Set Input Variables output = 1 item with 0 fields visible, "No fields - item(s) exist, but they're empty" still present, "Currently no items exist" in parameters panel, all 19 Phase 30 safe sample fields absent, downstream IF Validation Pass shows fields from Code node fallbacks. No credentials, no API calls, no production side effect. Architect conclusion: root cause is n8n Set node typeVersion 3 / `assignments.assignments` JSON parameter format mismatch — duplicate workflow issue eliminated as cause. Phase 37 = Set Input Variables Code Node Patch (repo JSON only — no n8n import/execution in Phase 37). Updated `docs/phase-36-creative-asset-auto-current-clean-sandbox-manual-execution-retest.md` (Section 7 evidence form filled; type updated to EVIDENCE_RECORDED — FAIL; Phase Connections updated). Updated `handoff/PHASE_36_HANDOFF.md` (type EVIDENCE_RECORDED — FAIL; Owner Evidence table added 22 items including Architect conclusion). Updated `handoff/CURRENT_PHASE.md` (status EVIDENCE_RECORDED — FAIL; Phase 36 Status table updated; Next Gate = Phase 37 Code Node Patch). Updated SESSION_SUMMARY (this entry). Updated AGENT_ACTIVITY_LOG (new row). Updated PHASE_LOG (new entry). No workflow JSON modified. No credentials. No n8n import by Builder. No n8n execution. No activation. No auto-post/reply/ads. Amending Phase 36 commit (`dad0ca9`) — not yet pushed to origin/main. Pushing.
+
+### latest_commit
+Phase 36 build commit to be amended: `dad0ca9` (local only — not yet pushed to origin/main at evidence recording start)
+
+### files_changed
+Phase 36 evidence recording (this session — 2026-06-03):
+- `docs/phase-36-creative-asset-auto-current-clean-sandbox-manual-execution-retest.md` — UPDATED: Section 7 evidence form filled; type EVIDENCE_RECORDED — FAIL; Phase Connections updated
+- `handoff/PHASE_36_HANDOFF.md` — UPDATED: type EVIDENCE_RECORDED — FAIL; Owner Evidence table added
+- `handoff/CURRENT_PHASE.md` — updated to Phase 36 EVIDENCE_RECORDED — FAIL
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+None. All files updated. Amending Phase 36 commit and pushing to origin/main.
+
+### decisions_made
+- Phase 36 result classified as FAIL — Set Input Variables output still empty on clean workflow (not contaminated canvas). Duplicate workflow issue eliminated as cause. Root cause confirmed: n8n Set node typeVersion 3 / `assignments.assignments` format mismatch.
+- Architect recommendation accepted: Phase 37 = Code Node Patch. Replace `Set Input Variables` node with Code node (typeVersion 2) returning all 19 fields as explicit JS object. Keep same node name → connections preserved.
+- Amending Phase 36 commit (`dad0ca9`) per Owner instruction — Phase 36 was not yet pushed to origin/main at time of evidence recording.
+
+### open_issues
+None. Phase 36 FAIL confirmed. Phase 37 = Code Node Patch ready to begin.
+
+### blockers
+None. Phase 37 scope defined. Awaiting Phase 37 command.
+
+### next_owner_action
+(1) Authorize Phase 36 commit amend and push. (2) Issue Phase 37 command — Set Input Variables Code Node Patch. (3) In Phase 37: Claude patches `n8n/workflows/creative_asset_auto_skeleton.json` — replaces Set node (typeVersion 3) with Code node (typeVersion 2) returning 19 fields. (4) No n8n import/execution in Phase 37. (5) Phase 38 = re-import patched JSON + execution retest.
+
+---
+
+## Previous Session — Phase 36 — Runbook Build
+
+### current_phase
+Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest (RUNBOOK_READY)
+
+### current_phase
+Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest (RUNBOOK_READY)
+
+### current_role
+Builder — Claude Code (runbook + evidence form creation only — no workflow JSON modification, no n8n import, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 35 DONE + PUSHED (`6eac786`). Phase 36 build: pre-check confirmed HEAD = `6eac786` (= origin/main), working tree clean, branch main. Phase 35 confirmed clean workflow `CURRENT CLEAN SANDBOX` with single skeleton cluster, INACTIVE, no credentials, no execution since isolation. Created `docs/phase-36-creative-asset-auto-current-clean-sandbox-manual-execution-retest.md` (11 sections: 1 purpose — retest clean workflow, PASS → Phase 30 correct, FAIL → Code node fix needed; 2 preconditions — 8-item table Phase 35 PASS + single cluster + INACTIVE + no credentials + not executed; 3 Owner execution steps — 8 pre-checks + execute + 5 inspection steps, forbidden: UI editing, manual field addition; 4 expected output — 19-field table with exact values from Phase 30 patch, key targets brand_name=Vi Cuon/approval_required=boolean true/sandbox_mode=boolean true, brief_request placeholder acceptable; 5 PASS criteria — 13 items; 6 FAIL criteria — 5 conditions + stop action, forbidden: UI editing; 7 evidence form — blank fill-in field-by-field: workflow identity/active status/execution result/output fields/boolean types/duplicate check/safety/result; 8 safety checklist — 10 items all NO; 9 Phase 37 recommendation — PASS: evidence recording + Phase 38+ planning, FAIL: Code node patch per Phase 34 Section 5; 10 Phase Connections; 11 Safety Confirmation all NO/CLEAN). Created `handoff/PHASE_36_HANDOFF.md` (phase summary, context table, files created/updated/not-modified, runbook content summary 11 sections, runtime safety 10 checks all NO/CLEAN, 20 acceptance criteria all PASS, Owner next action 8 steps, Codex review 3 points, phase connections). Updated CURRENT_PHASE.md (Phase 36 RUNBOOK_READY, Phase 36 files table, Phase 36 status table, Prior Phase Results updated). Updated SESSION_SUMMARY (this entry). Updated AGENT_ACTIVITY_LOG (new row). Updated 09_LOGS/PHASE_LOG (new entry). No workflow JSON modified. No credentials. No n8n import by Builder. No n8n execution. No activation. No auto-post/reply/ads. Committing: `docs: add phase 36 clean sandbox manual execution retest`. Push pending Owner authorization.
+
+### latest_commit
+HEAD before Phase 36 commit: `6eac786` (= origin/main)
+
+### files_changed
+Phase 36 (build — this session — 2026-06-03):
+- `docs/phase-36-creative-asset-auto-current-clean-sandbox-manual-execution-retest.md` — CREATED: 11-section runbook and evidence form
+- `handoff/PHASE_36_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 36 RUNBOOK_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 36 files. Awaiting Owner review and push authorization. Owner then performs manual n8n execution on `CURRENT CLEAN SANDBOX` and fills evidence form.
+
+### decisions_made
+- Evidence form (Section 7) is a blank fill-in — not pre-filled. Consistent with Phase 27/33 evidence log pattern.
+- FAIL path explicitly forbids UI editing — prevents Owner from attempting manual fixes that bypass the planned Code node patch approach.
+- 19-field expected output table includes all values from Phase 30 patch — gives Owner a concrete verification reference.
+- Phase 37 PASS and FAIL branches both documented — PASS: evidence recording; FAIL: Code node patch per Phase 34 Section 5 design.
+- `brief_request` placeholder value `REPLACE_WITH_OWNER_BRIEF_REQUEST` documented as expected/acceptable — prevents false FAIL classification.
+
+### open_issues
+None. Phase 36 runbook complete. Execution pending Owner scheduling.
+
+### blockers
+None from Builder side. Owner must perform manual n8n execution on `CURRENT CLEAN SANDBOX`.
+
+### next_owner_action
+(1) Review `docs/phase-36-creative-asset-auto-current-clean-sandbox-manual-execution-retest.md`. (2) Authorize commit and push. (3) Open n8n sandbox — confirm workflow `CURRENT CLEAN SANDBOX`, inactive, no credentials. (4) Execute per Section 3. (5) Fill Section 7 Evidence Form. (6) Report PASS or FAIL.
+
+---
+
+## Previous Session — Phase 35 — Evidence Recording (PASS)
+
+### current_phase
+Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation (EVIDENCE_RECORDED — PASS)
 
 ### current_phase
 Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation (EVIDENCE_RECORDED — PASS)

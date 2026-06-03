@@ -5,6 +5,24 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-03 — Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest — EVIDENCE_RECORDED — FAIL
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** EVIDENCE_RECORDED — FAIL — AMENDING COMMIT — PUSHING
+**Detail:**
+Owner manually executed `FnB OS V1 — Creative Asset Auto [SKELETON] — CURRENT CLEAN SANDBOX` on 2026-06-03. Result: FAIL. Canvas clean: single cluster, no duplicate nodes, Set Input Variables count = 1. Execution performed. `Set Input Variables` output: 1 item, 0 fields visible. "No fields - item(s) exist, but they're empty" still present. "Currently no items exist" in parameters panel. All 19 Phase 30 safe sample fields absent. Downstream IF Validation Pass shows fields from Code node fallbacks. Workflow INACTIVE before and after. No credentials, no API calls, no production side effect. Architect conclusion: root cause = n8n Set node typeVersion 3 / `assignments.assignments` JSON format mismatch — duplicate workflow issue eliminated as cause. Phase 37 = Set Input Variables Code Node Patch (repo JSON only — no n8n import/execution in Phase 37). Updated `docs/phase-36-creative-asset-auto-current-clean-sandbox-manual-execution-retest.md` (evidence form filled, type EVIDENCE_RECORDED — FAIL). Updated `handoff/PHASE_36_HANDOFF.md` (Owner Evidence table). Updated CURRENT_PHASE.md, SESSION_SUMMARY, AGENT_ACTIVITY_LOG, PHASE_LOG (this entry). No workflow JSON modified. No credentials. No n8n import or execution by Builder. Amending Phase 36 commit (`dad0ca9`) and pushing.
+
+---
+
+### 2026-06-03 — Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest — RUNBOOK_READY
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** RUNBOOK_READY — COMMITTED — PUSH PENDING OWNER AUTHORIZATION
+**Detail:**
+Phase 35 DONE + PUSHED (`6eac786`). Phase 36 build: pre-check confirmed HEAD = `6eac786` (= origin/main), working tree clean. Phase 35 confirmed clean workflow `CURRENT CLEAN SANDBOX` with single skeleton cluster, INACTIVE, no credentials, not executed since isolation. Created `docs/phase-36-creative-asset-auto-current-clean-sandbox-manual-execution-retest.md` (11 sections: purpose — retest clean workflow, PASS → Phase 30 correct, FAIL → Code node fix; preconditions — Phase 35 PASS + single cluster + INACTIVE + no execution; Owner execution steps — pre-checks + execute + inspect Set Input Variables output; expected output — 19-field table brand_name=Vi Cuon/approval_required=boolean true/sandbox_mode=boolean true; PASS criteria 13 items; FAIL criteria + stop action — do NOT edit UI; evidence form blank fill-in; safety checklist all NO; Phase 37 PASS: evidence recording, FAIL: Code node patch; Phase Connections; Safety Confirmation all NO). Created `handoff/PHASE_36_HANDOFF.md`. Updated state files. No workflow JSON modified. No credentials. No n8n import or execution by Builder. Committing: `docs: add phase 36 clean sandbox manual execution retest`. Push pending Owner authorization.
+
+---
+
 ### 2026-06-03 — Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation — EVIDENCE_RECORDED — PASS
 
 **By:** Claude Code (Builder, AGT-02)
