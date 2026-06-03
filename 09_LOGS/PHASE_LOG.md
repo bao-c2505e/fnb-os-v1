@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-03 — Phase 31 — Sandbox Re-import & Manual Execution Planning — PLAN_READY
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** PLAN_READY — AWAITING CODEX REVIEW
+**Detail:**
+Phase 30 DONE + PUSHED (commit `18c681d`, Codex PASS). Phase 31 planning build complete. Created `docs/phase-31-creative-asset-auto-sandbox-reimport-manual-execution-plan.md` (11 sections: purpose — planning only, no runtime action in Phase 31; current state — Phase 30 DONE + PUSHED `18c681d`, Set Input Variables 19 fields, no import/execution in Phase 30 or 31; workflow file to import — `n8n/workflows/creative_asset_auto_skeleton.json`, n8n ID `VW5PDkOOtrjLQBps`, active=false; re-import plan — 4 pre-import checks, 10-step guide, safety notes, labeled as future phase not Phase 31; execution plan — 8-item PE checklist, 10-step execution guide, labeled as Phase 33 or execution sub-phase; expected output — 19-field table with expected values, key targets: brand_name="Vi Cuon", approval_required=true boolean, sandbox_mode=true boolean, no "empty" message in output panel; evidence to capture — 14 evidence items for later execution phase; safety checklist — 11 items all NO; Phase 32/33 recommendation — Option A split: Phase 32 re-import only, Phase 33 manual execution — Architect recommendation; Option B combined also documented; phase connections Phase 8–33; safety confirmation 11 items all NO/CLEAN). Created `handoff/PHASE_31_HANDOFF.md`. Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, PHASE_LOG.md. No workflow JSON modified. No credentials. No activation. No n8n import. No n8n execution. No auto-post/reply/ads. Committing: `docs: plan phase 31 creative asset sandbox reimport`. Push pending Codex review + Owner authorization.
+
+---
+
 ### 2026-06-03 — Phase 30 — Safe Sample Input Patch Implementation — BUILD_READY
 
 **By:** Claude Code (Builder, AGT-02)

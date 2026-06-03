@@ -1,6 +1,55 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 30 — Safe Sample Input Patch Implementation — BUILD_READY)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning — PLAN_READY)
+
+## Latest Session — Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning
+
+### current_phase
+Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning (PLAN_READY — AWAITING CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (planning documentation only — no workflow JSON modification, no n8n import, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 30 DONE + PUSHED (commit `18c681d`). Phase 31 build: pre-check confirmed HEAD = `18c681d` (= origin/main), working tree clean, branch main. Read CURRENT_PHASE.md (Phase 30 BUILD_READY, Set Input Variables 19 fields, no import/execution in Phase 30). Read PHASE_30_HANDOFF.md (patch summary, 19-field table, expected sandbox behavior after re-import, Owner next action). Read SESSION_SUMMARY.md (Phase 30 session entry, open_issues: Phase 31 re-import pending Owner scheduling). Created `docs/phase-31-creative-asset-auto-sandbox-reimport-manual-execution-plan.md` (11 sections: 1 purpose — planning only, no runtime action in Phase 31; 2 current state table — Phase 30 DONE + PUSHED `18c681d`, 19 fields, no import/execution; 3 workflow file to import — path, n8n name, n8n ID `VW5PDkOOtrjLQBps`, active=false, 15 nodes; 4 manual re-import plan — 4 pre-import checks, 10-step guide, safety notes, labeled as future phase not Phase 31; 5 manual execution plan — 8-item PE checklist, 10-step execution guide, labeled as Phase 33 or execution sub-phase; 6 expected output — 19-field table with expected values, key targets brand_name="Vi Cuon"/approval_required=true boolean/sandbox_mode=true boolean/no "empty" message in output panel; 7 evidence to capture — 14 evidence items for later execution phase; 8 safety checklist — 11 items all NO; 9 Phase 32/33 recommendation — Option A split Architect recommendation Phase 32 re-import only + Phase 33 manual execution, Option B combined also documented; 10 phase connections Phase 8–Phase 33; 11 safety confirmation 11 items all NO/CLEAN). Created `handoff/PHASE_31_HANDOFF.md` (phase summary, context table, files created/updated/not-modified, planning doc content summary 11 sections, runtime safety 12 checks all NO/CLEAN, 20 acceptance criteria all PASS, Owner next action 6 steps, Codex review instructions 3 points, phase connections Phase 8–33). Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, 09_LOGS/PHASE_LOG.md. No workflow JSON modified. No connections modified. active=false unchanged. No credentials. No activation. No n8n import. No n8n execution. No auto-post/reply/ads. Committing: `docs: plan phase 31 creative asset sandbox reimport`. Push pending Codex review + Owner authorization.
+
+### latest_commit
+HEAD before Phase 31 commit: `18c681d` (= origin/main)
+
+### files_changed
+Phase 31 (build — this session — 2026-06-03):
+- `docs/phase-31-creative-asset-auto-sandbox-reimport-manual-execution-plan.md` — CREATED: main planning doc (11 sections)
+- `handoff/PHASE_31_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 31 PLAN_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 31 files. Awaiting Codex review and Owner push authorization.
+
+### decisions_made
+- Phase 31 is planning only — no workflow JSON modification, no n8n import, no n8n execution. Consistent with project convention of separating planning phases from implementation/execution phases.
+- Re-import plan and execution plan documented separately (Sections 4 and 5) — re-import and execution are distinct actions with different risk levels and different Owner approval requirements.
+- Option A (split Phase 32/33) recommended by Architect over Option B (combined) — provides cleaner gate for each action and reduces risk of unexpected behavior during import affecting execution decision.
+- Expected output table (Section 6) includes all 19 fields with exact values from Phase 30 patch — gives Owner a clear reference for verification.
+- Evidence items (Section 7) documented with 14 items — consistent with Phase 27 evidence log pattern but adapted for re-execution context.
+
+### open_issues
+None. Phase 31 plan complete. Phase 32 (re-import) and Phase 33 (manual execution) pending Owner scheduling and approval.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Review `docs/phase-31-creative-asset-auto-sandbox-reimport-manual-execution-plan.md`. (2) Review `handoff/PHASE_31_HANDOFF.md`. (3) Issue Codex review request. (4) If Codex PASS: push Phase 31 to GitHub. (5) Decide Phase 32 scope: Option A (re-import only) or Option B (re-import + execution combined). (6) Architect recommendation: Option A — Phase 32 = re-import only, Phase 33 = manual execution check.
+
+---
+
+## Previous Session — Phase 30 — Creative Asset Auto Safe Sample Input Patch Implementation
+
+### current_phase
+Phase 30 — Creative Asset Auto Safe Sample Input Patch Implementation (BUILD_READY — AWAITING CODEX REVIEW)
 
 ## Latest Session — Phase 30 — Creative Asset Auto Safe Sample Input Patch Implementation
 

@@ -1,22 +1,22 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 30 — Safe Sample Input Patch Implementation — BUILD_READY)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning — PLAN_READY)
 
 ## Phase
 
-Phase 30 — Creative Asset Auto Safe Sample Input Patch Implementation
+Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning
 
 ## Status
 
-**BUILD_READY — AWAITING CODEX REVIEW**
+**PLAN_READY — AWAITING CODEX REVIEW**
 
-Phase 29 DONE + PUSHED (commit `da89e8d`). Phase 30 patch complete.
-`Set Input Variables` node in `creative_asset_auto_skeleton.json` patched: 2 values updated (`brand_name` → `"Vi Cuon"`, `asset_type` → `"social_static_post"`), 12 new safe sample fields added (a2-set-008 through a2-set-019). Total: 7 → 19 fields.
-No other node or workflow modified. active=false unchanged. No credentials. No API calls.
+Phase 30 DONE + PUSHED (commit `18c681d`). Phase 31 planning complete.
+`docs/phase-31-creative-asset-auto-sandbox-reimport-manual-execution-plan.md` created (11 sections: purpose, current state, workflow file, re-import plan, execution plan, expected output, evidence items, safety checklist, Phase 32/33 recommendation, phase connections, safety confirmation).
+No workflow JSON modified. active=false unchanged. No credentials. No n8n import. No n8n execution.
 
 ## Current Command
 
-Phase 30 BUILD_READY. Awaiting Codex review and Owner push authorization.
+Phase 31 PLAN_READY. Awaiting Codex review and Owner push authorization.
 
 ## Builder
 
@@ -24,91 +24,50 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — not yet started for Phase 30.
+Codex — not yet started for Phase 31.
 
 ## Next Gate
 
-Phase 30 BUILD_READY — 2026-06-03 — Awaiting Codex review → Owner push authorization
-origin/main: `da89e8d`
+Phase 31 PLAN_READY — 2026-06-03 — Awaiting Codex review → Owner push authorization → Phase 32 scope decision
 
-## Phase 30 Files
+## Phase 31 Files
 
 | File | Change |
 |------|--------|
-| `n8n/workflows/creative_asset_auto_skeleton.json` | MODIFIED — Set Input Variables: 7 → 19 fields |
-| `handoff/PHASE_30_HANDOFF.md` | CREATED — phase handoff |
+| `docs/phase-31-creative-asset-auto-sandbox-reimport-manual-execution-plan.md` | CREATED — 11-section planning doc and runbook |
+| `handoff/PHASE_31_HANDOFF.md` | CREATED — phase handoff |
 
-## Phase 30 Status
+## Phase 31 Status
 
 | Check | Status |
 |-------|--------|
-| Phase 29 result | DONE + PUSHED (commit `da89e8d`) |
-| `Set Input Variables` patched | YES — 19 fields total |
-| `brand_name` → `"Vi Cuon"` (no Unicode duplicate) | YES |
-| `asset_type` → `"social_static_post"` | YES |
-| 12 new fields added (a2-set-008 through a2-set-019) | YES |
-| No duplicate field keys | YES |
-| `sandbox_mode: true` added | YES |
-| `approval_required: true` added | YES |
-| JSON valid (`validate_json.py` PASS) | YES |
-| `active=false` confirmed (`check_n8n_workflows.py` PASS) | YES |
-| Secret scan new fields | CLEAN |
-| Only `Set Input Variables` changed (`git diff`) | YES |
-| Other workflow JSONs modified | NO |
+| Phase 30 result | DONE + PUSHED (commit `18c681d`) |
+| Planning doc created (11 sections) | YES |
+| Re-import plan documented (Section 4) | YES |
+| Execution plan documented (Section 5) | YES |
+| Expected output table (Section 6) | YES — 19 fields |
+| Evidence items (Section 7) | YES — 14 items |
+| Safety checklist (Section 8) all NO | YES |
+| Phase 32/33 recommendation (Section 9) | YES — Option A (Architect recommendation: split) |
+| Phase connections complete | YES |
+| Workflow JSON NOT modified | YES |
 | `active=true` introduced | NO |
 | Real credentials added | NO |
-| Real API calls added | NO |
 | n8n import executed | NO |
 | n8n execution performed | NO |
+| Secret scan new files | CLEAN |
 | Branch | main |
-| HEAD at Phase 30 start | `da89e8d` (= origin/main) |
+| HEAD at Phase 31 start | `18c681d` (= origin/main) |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
+| Phase 30 — Safe Sample Input Patch Implementation | **DONE + PUSHED (commit `18c681d`) — PASS** |
 | Phase 29 — Safe Sample Input Patch Planning | **DONE + PUSHED (commit `da89e8d`) — PASS** |
 | Phase 28 — Sandbox I/O Standardization | **DONE + PUSHED (commit `a7d0bd5`)** |
 | Phase 27 — Sandbox Manual Execution | **DONE + PUSHED (commit `0b7ce07`) — PASS WITH NOTES** |
 | Phase 26 — First Sandbox Import | **DONE + PUSHED (commit `4a001bc`) — PASS** |
-
-## Guardrails
-
-- Do not hardcode secrets or credentials.
-- Do not auto-post, auto-reply, or auto-spend.
-- Do not activate n8n workflows.
-- Do not run ads or spend money.
-- Do not push without OWNER_APPROVED for push.
-- .claude/ must NEVER be committed.
-
-## Prior Phase Results
-
-| Phase | Result |
-|-------|--------|
-| Phase 28 — Sandbox I/O Standardization: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `a7d0bd5`)** |
-| Phase 27 — Sandbox Manual Execution: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `0b7ce07`) — PASS WITH NOTES** |
-| Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `4a001bc`) — PASS** |
-| Phase 25 — Sandbox Import Readiness Gate | **DONE + PUSHED (commit `9bfaeecc`)** |
-
-## Guardrails
-
-- Do not hardcode secrets or credentials.
-- Do not auto-post, auto-reply, or auto-spend.
-- Do not activate n8n workflows.
-- Do not run ads or spend money.
-- Do not push without OWNER_APPROVED for push.
-- .claude/ must NEVER be committed.
-
-## Prior Phase Results
-
-| Phase | Result |
-|-------|--------|
-| Phase 27 — Sandbox Manual Execution: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `0b7ce07`) — PASS WITH NOTES** |
-| Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `4a001bc`) — PASS** |
-| Phase 25 — Sandbox Import Readiness Gate | **DONE + PUSHED (commit `9bfaeecc`)** |
-| Phase 24B — Sandbox Evidence Pack Template & Execution Log Standardization | **DONE + PUSHED (commit `69eef55`)** |
-| Phase 24A — Sandbox Runbook Index & Owner Runtime Readiness | **DONE + PUSHED (commits `8bc18f2` + `0d75c70`)** |
-| Phase 23 — Agent OS Layer / ECC Lite Operating Protocol Index | **DONE + PUSHED (commit `41186df`)** |
 
 ## Guardrails
 
