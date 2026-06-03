@@ -1,8 +1,52 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 32 — Creative Asset Auto Sandbox Re-import Only — EVIDENCE_RECORDED — PASS)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 33 — Creative Asset Auto Sandbox Manual Execution Check — RUNBOOK_READY)
 
-## Latest Session — Phase 32 — Evidence Recording
+## Latest Session — Phase 33 — Creative Asset Auto Sandbox Manual Execution Check
+
+### current_phase
+Phase 33 — Creative Asset Auto Sandbox Manual Execution Check (RUNBOOK_READY — OWNER ACTION REQUIRED)
+
+### current_role
+Builder — Claude Code (runbook and evidence form creation only — no workflow JSON modification, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 32 DONE + PUSHED (commit `11268bb`). Phase 33 build: pre-check confirmed HEAD = `11268bb` (= origin/main), working tree clean, branch main. Read CURRENT_PHASE.md (Phase 32 EVIDENCE_RECORDED — PASS, sandbox re-import confirmed, inactive, no execution, ready for Phase 33). Created `docs/phase-33-creative-asset-auto-sandbox-manual-execution-check.md` (11 sections: 1 purpose — Owner manual execution to verify Phase 30 patch, Set Input Variables 19-field check, Phase 27 "empty" message must be gone, Claude does not operate n8n; 2 preconditions — 8-item table Phase 30/31/32 DONE, workflow re-imported inactive no credentials; 3 Owner execution steps — 5 pre-check confirmations + 12-step guide: execute → click Set Input Variables → OUTPUT tab → verify fields → downstream nodes → record evidence; 4 expected Set Input Variables output — 19-field table with exact values and types, notes: brief_request placeholder expected, approval_required/sandbox_mode must be boolean not string, no duplicate brand_name, Phase 27 message must be gone; 5 success criteria — 17-item table covering output fields/booleans/downstream results/safety; 6 evidence form — blank fill-in: workflow identity/execution result/Set Input Variables output fields/downstream nodes/final output/safety/result; 7 failure handling — 3 scenarios: output still empty (stop + report), error node (stop + record), validation FALSE branch (may be PASS WITH NOTES); 8 safety checklist — 12 items all NO except Owner manual execution = PLANNED; 9 Phase 34 recommendation — PASS path: evidence recording + next module decision, FAIL path: Set Input Variables output debug planning; 10 phase connections Phase 8–34; 11 safety confirmation 11 items all NO/CLEAN). Created `handoff/PHASE_33_HANDOFF.md` (phase summary, context, files created/updated/not-modified, runbook summary 11 sections, runtime safety 12 checks all NO/CLEAN, 21 acceptance criteria all PASS, Owner next action 7 steps, Codex review 3 points, phase connections). Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, 09_LOGS/PHASE_LOG.md. No workflow JSON modified. No credentials. No activation. No n8n import. No n8n execution. No auto-post/reply/ads. Committing: `docs: add phase 33 creative asset manual execution check`. Push pending Owner authorization.
+
+### latest_commit
+HEAD before Phase 33 commit: `11268bb` (= origin/main)
+
+### files_changed
+Phase 33 (build — this session — 2026-06-03):
+- `docs/phase-33-creative-asset-auto-sandbox-manual-execution-check.md` — CREATED: 11-section runbook + evidence form
+- `handoff/PHASE_33_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 33 RUNBOOK_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 33 files. Awaiting Owner review and push authorization. Owner then performs manual n8n execution and fills evidence form.
+
+### decisions_made
+- Phase 33 is runbook/docs only — no workflow JSON modification, no n8n execution. Builder has no n8n UI access.
+- Evidence form (Section 6) is a blank fill-in form — not pre-filled. Consistent with Phase 27/32 evidence log pattern.
+- Failure handling (Section 7) documents 3 distinct scenarios: empty output, error node, validation FALSE branch. FALSE branch classified as potentially PASS WITH NOTES (consistent with Phase 27 precedent where stub values caused downstream fill rather than failure).
+- Phase 34 recommendation split into two paths — PASS path proceeds to evidence recording and next module decision; FAIL path requires debug planning.
+- Expected output table (Section 4) includes note that `brief_request = REPLACE_WITH_OWNER_BRIEF_REQUEST` is expected/acceptable — prevents Owner from classifying a stub placeholder as a failure.
+
+### open_issues
+None. Phase 33 runbook complete. Execution pending Owner scheduling.
+
+### blockers
+None from Builder side. Owner must perform manual n8n execution.
+
+### next_owner_action
+(1) Review `docs/phase-33-creative-asset-auto-sandbox-manual-execution-check.md`. (2) Review `handoff/PHASE_33_HANDOFF.md`. (3) Authorize commit and push. (4) Open n8n sandbox — confirm inactive, no credentials. (5) Execute per Section 3. (6) Fill Section 6 Evidence Form. (7) Report result to Builder.
+
+---
+
+## Previous Session — Phase 32 — Evidence Recording
 
 ### current_phase
 Phase 32 — Creative Asset Auto Sandbox Re-import Only (EVIDENCE_RECORDED — PASS — READY FOR PHASE 33)
