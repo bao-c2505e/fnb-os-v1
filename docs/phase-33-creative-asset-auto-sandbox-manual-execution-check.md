@@ -153,63 +153,60 @@ Key checks:
 
 ## 6. Evidence Form
 
-Owner fills after completing Phase 33 execution:
+**Phase 33 Evidence — RECORDED 2026-06-03**
 
 ```
 Phase 33 Evidence — Creative Asset Auto Sandbox Manual Execution Check
-Date: _______________
-Operator: _______________
+Date: 2026-06-03
+Operator: Bo Bao (Owner)
 
 Workflow:
-- Workflow name: _______________
-- Workflow active status during execution: _______________
-- Workflow active status after execution: _______________
+- Workflow name: FnB OS V1 — Creative Asset Auto [SKELETON]
+- Workflow active status during execution: inactive / not activated
+- Workflow active status after execution: inactive / not activated
 
 Execution:
-- Manual execution performed: YES / NO
-- Execution result: PASS / PASS WITH NOTES / FAIL / ERROR
-- Execution path taken: happy path (TRUE branch) / validation failure / error handler
+- Manual execution performed: YES
+- Execution result: FAIL — Set Input Variables output empty
+- Execution path taken: workflow executed / Set Input Variables output not visible
 
 Set Input Variables node:
-- Set Input Variables clicked: YES / NO
-- Output panel opened (OUTPUT tab, not INPUT): YES / NO
-- Output fields visible (not empty): YES / NO
-- "No fields - item(s) exist, but they're empty." message: GONE / STILL PRESENT
-- Total fields visible: ___
-- request_id present: YES / NO — value: _______________
-- brand_name present: YES / NO — value: _______________
-- campaign_name present: YES / NO — value: _______________
-- channel present: YES / NO — value: _______________
-- asset_type present: YES / NO — value: _______________
-- product_name present: YES / NO — value: _______________
-- approval_required present: YES / NO — value/type: _______________ (boolean true required)
-- sandbox_mode present: YES / NO — value/type: _______________ (boolean true required)
-- Duplicate brand_name exists: YES / NO
+- Set Input Variables clicked: YES
+- Output panel opened: YES
+- Output item count: 1 item
+- Output fields visible (not empty): NO
+- "No fields - item(s) exist, but they're empty." message: STILL PRESENT
+- Parameters panel message: "Currently no items exist"
+- Expected safe sample fields missing: YES — all 19 fields absent from output
+- Total fields visible: 0
+- request_id present: NO
+- brand_name present: NO
+- campaign_name present: NO
+- channel present: NO
+- asset_type present: NO
+- product_name present: NO
+- approval_required present: NO
+- sandbox_mode present: NO
+- Duplicate brand_name exists: unknown — no fields visible
 
-Downstream nodes:
-- Code: Load Brand Brain result: _______________
-- Code: AI Generate Creative Brief result: _______________
-- Code: Validate Required Fields result: _______________
-- If: Validation Pass branch taken: TRUE / FALSE / unknown
-- Set: approval_status = Draft: YES / NO
-- Code: Write Log Entry result: _______________
-- NoOp: STUB visible/reached: YES / NO
-
-Final output:
-- approval_status: _______________
-- logWritten: _______________
-- approvalQueueStubReached: _______________
+Downstream nodes: not inspected — focus on Set Input Variables failure
+Final output: not recorded — execution stopped at Set Input Variables debug
 
 Safety:
-- Credentials attached: YES / NO
-- API calls observed: YES / NO
-- Auto-post / auto-reply occurred: YES / NO
-- Production side effect: YES / NO
-- Workflow activated during session: YES / NO
+- Credentials attached: NO
+- API calls observed: NO
+- Auto-post / auto-reply occurred: NO
+- Production side effect: NO
+- Workflow activated during session: NO
+- Workflow published: NO
 
-Result: PASS / PASS WITH NOTES / FAIL
-Notes: _______________
-Ready for next phase: YES / NO
+Result: FAIL — NEED DEBUG
+Notes: Phase 30 patch (19-field Set Input Variables) did not appear in
+       n8n sandbox execution output. Same "empty" behavior as Phase 27
+       despite re-import in Phase 32. Possible causes: patch not loaded
+       by n8n import, wrong node targeted, duplicate node, Set node
+       format incompatibility. Requires Phase 34 debug investigation.
+Ready for next phase: YES — Phase 34 debug planning
 ```
 
 ---
