@@ -1,6 +1,49 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 34 — Owner Cross-check Update: Duplicate Workflow Confirmed — DEBUG_PLAN_READY + UPDATED)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 34 — Canvas Cross-check: Contaminated Workflow Confirmed — DEBUG_PLAN_READY + UPDATED)
+
+## Latest Session — Phase 34 — Canvas Cross-check Update (Contaminated Workflow Confirmed)
+
+### current_phase
+Phase 34 — Creative Asset Auto Set Input Variables Output Debug Planning (DEBUG_PLAN_READY — updated with canvas cross-check)
+
+### current_role
+Builder — Claude Code (docs/handoff/state update only — no workflow JSON modification, no n8n import, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 34 canvas cross-check update. Owner reported canvas inspection result (2026-06-03): the current sandbox workflow (`FnB OS V1 — Creative Asset Auto [SKELETON] — CURRENT SANDBOX`) contains two complete parallel node clusters on the same canvas. Top cluster: original nodes (Manual Trigger, Set Input Variables, Code: Load Brand Brain, Code: AI Generate Creative Brief, Code: Validate Required Fields, IF Validation Pass, approval/log/noop path). Lower cluster: `1`-suffixed duplicate nodes (Set Input Variables1, Code: Load Brand Brain1, Code: AI Generate Creative Brief1, Code: Validate Required Fields1, IF Validation Pass1, duplicate path). n8n import (Phase 32) merged the re-imported nodes alongside the existing ones instead of cleanly replacing them. Workflow is contaminated — Phase 33 execution ran on this contaminated canvas with unpredictable execution path. Architect decision: do NOT execute, do NOT patch JSON, do NOT delete nodes manually in n8n UI, do NOT activate, do NOT attach credentials. Phase 35 = Clean Workflow Isolation. Updated `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md`: Section 4 root cause ranking updated (Rank 1 = n8n import merged nodes CONFIRMED, Rank 2 = Phase 33 ran on contaminated canvas, Rank 3 = Set node format DEFERRED); Section 6 updated with Round 2 canvas cross-check findings and contaminated canvas detail table; Section 8 updated from "Phase 35 = Duplicate Isolation" to "Phase 35 = Clean Workflow Isolation" (options A archive+fresh import PREFERRED, B delete+fresh import, C manual deletion NOT recommended; constraints: no execution, no manual deletion without approval, verify single cluster + INACTIVE + 0 credentials; conditional Phase 36 documented); Section 9 Phase Connections updated. Updated `handoff/PHASE_34_HANDOFF.md`: Summary updated with canvas finding; Key Findings updated (Finding 1 = contaminated canvas CONFIRMED, Finding 2 = Set node format DEFERRED); Content Summary Sections 4/5/6/8 updated; Phase Connections updated; Owner Next Action updated. Updated CURRENT_PHASE.md (canvas finding, Phase 35 = Clean Isolation, status table updated). Updated SESSION_SUMMARY, AGENT_ACTIVITY_LOG, PHASE_LOG. No workflow JSON modified. No n8n import. No n8n execution. Creating new commit (Phase 34 already pushed).
+
+### latest_commit
+Phase 34 was already pushed as `ce89ba2`. Canvas update = new commit.
+
+### files_changed
+Phase 34 canvas update (this session — 2026-06-03):
+- `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` — UPDATED: Section 4 (root cause), Section 6 (Round 2 canvas cross-check), Section 8 (Phase 35 = Clean Isolation), Section 9 (Phase Connections)
+- `handoff/PHASE_34_HANDOFF.md` — UPDATED: Summary, Key Findings, Content Summary, Phase Connections, Owner Next Action
+- `handoff/CURRENT_PHASE.md` — UPDATED: canvas finding, Phase 35 recommendation, status table
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### decisions_made
+- Phase 35 = Clean Workflow Isolation (archive/replace contaminated canvas, fresh import). Not duplicate isolation (previous decision superseded by canvas finding).
+- Manual node deletion in n8n UI NOT recommended — risk of breaking connections. Requires explicit Owner approval if pursued.
+- JSON patch fix (Code node replacement) remains DEFERRED. Cannot assess Set node format issue until clean single-cluster workflow is tested.
+- New commit created (not amend) — Phase 34 was already pushed to origin.
+
+### open_issues
+- Phase 35 command pending Owner/Architect.
+- After Phase 35 clean isolation: Phase 36 = execution check. If clean workflow still shows empty Set node → Code node fix. If clean workflow shows 19 fields → Phase 30 patch is correct, no JSON fix needed.
+
+### blockers
+None. Phase 34 docs updated. Awaiting Phase 35 command.
+
+### next_owner_action
+(1) Authorize commit and push of Phase 34 canvas update. (2) Issue Phase 35 command — Clean Workflow Isolation. (3) In Phase 35: archive/replace contaminated workflow, import JSON fresh, verify single cluster, INACTIVE, 0 credentials. (4) Do NOT execute in Phase 35. (5) JSON patch fix DEFERRED.
+
+---
+
+## Previous Session — Phase 34 — Owner Cross-check Update (Duplicate Workflow Confirmed)
 
 ## Latest Session — Phase 34 — Owner Cross-check Update (Duplicate Workflow Confirmed)
 

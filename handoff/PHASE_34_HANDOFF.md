@@ -9,11 +9,13 @@ Branch: main
 
 ## Phase 34 Summary
 
-Phase 34 inspects the repo workflow JSON and compares execution behavior across phases to identify why `Set Input Variables` output is always empty. Initial finding: the `n8n-nodes-base.set` typeVersion 3 `assignments.assignments` format has never been recognized by n8n — confirmed by identical behavior in `content_auto_skeleton` (Phase 20C) and `creative_asset_auto_skeleton` (Phase 27, Phase 33).
+Phase 34 inspects the repo workflow JSON and compares execution behavior across phases to identify why `Set Input Variables` output is always empty. Initial finding: the `n8n-nodes-base.set` typeVersion 3 `assignments.assignments` format may not be recognized by n8n.
 
-**Owner cross-check (2026-06-03) added critical finding: a duplicate workflow exists in n8n.** Phase 32 re-import created a NEW workflow copy instead of overwriting the existing one. Phase 33 likely executed the original Phase 26 instance (pre-Phase 30 patch), not the patched version. This changes the Phase 35 recommendation.
+**Round 1 Owner cross-check:** a duplicate workflow exists in n8n sandbox. Phase 32 re-import did not cleanly replace the existing workflow.
 
-**Architect decision:** JSON patch fix (Code node replacement) is DEFERRED. Phase 35 must first isolate the correct workflow instance. The Phase 30 patch may be correct and working in the patched workflow — it was simply never executed.
+**Round 2 Owner canvas cross-check (2026-06-03 — critical):** The canvas of the current sandbox workflow contains **two complete parallel node clusters** — the original cluster and a fully duplicated cluster with `1`-suffixed node names (`Set Input Variables1`, `Code: Load Brand Brain1`, etc.). n8n import merged the re-imported nodes alongside the existing ones instead of cleanly replacing them. The workflow is contaminated.
+
+**Architect decision:** Do NOT execute, patch JSON, delete nodes manually, activate, or attach credentials. Phase 35 must isolate a clean single-cluster workflow before any retest. JSON patch fix (Code node replacement) remains DEFERRED pending clean isolation.
 
 No workflow JSON was modified in Phase 34. No n8n import or execution performed.
 
@@ -36,13 +38,13 @@ No workflow JSON was modified in Phase 34. No n8n import or execution performed.
 
 ## Key Investigation Findings
 
-**Finding 1 — Duplicate workflow (Owner cross-check, 2026-06-03):**
-Phase 32 re-import did NOT overwrite the existing workflow — it created a second copy. The Phase 33 execution likely ran the original Phase 26 instance (7 fields, pre-Phase 30 patch), not the Phase 30-patched version (19 fields). This is now the **primary suspected root cause** of the Phase 33 FAIL.
+**Finding 1 — Contaminated canvas (Owner canvas cross-check, 2026-06-03 — CONFIRMED PRIMARY CAUSE):**
+The current sandbox workflow contains two complete parallel node clusters on the same canvas. n8n import merged nodes instead of replacing them. Node names in the lower cluster are suffixed with `1` (`Set Input Variables1`, `Code: Load Brand Brain1`, etc.). Phase 33 execution ran on this contaminated canvas — the execution path was unpredictable and the Set Input Variables node inspected may have been from either cluster.
 
-**Finding 2 — Set node format (repo analysis):**
-The `assignments.assignments` format for `n8n-nodes-base.set` typeVersion 3 may not be parsed by n8n — evidenced by identical empty behavior in `content_auto_skeleton` (Phase 20C). This remains a secondary candidate, deferred until Phase 35 confirms whether the correct (patched) workflow also shows empty fields.
+**Finding 2 — Set node format (repo analysis — DEFERRED):**
+The `assignments.assignments` format for `n8n-nodes-base.set` typeVersion 3 may not be parsed by n8n. Cannot confirm until a clean single-cluster workflow is isolated and executed in Phase 36.
 
-**Current priority:** Phase 35 = Duplicate Workflow Isolation. Identify which instance is Phase 30-patched, which is Phase 26 original, and which was executed in Phase 33. JSON patch fix (Code node replacement) is DEFERRED pending this investigation.
+**Current priority:** Phase 35 = Clean Workflow Isolation. Archive or replace the contaminated workflow, establish a single clean workflow with one node cluster, verify INACTIVE and no credentials. No execution in Phase 35. JSON patch fix DEFERRED.
 
 ---
 
@@ -84,11 +86,11 @@ The `assignments.assignments` format for `n8n-nodes-base.set` typeVersion 3 may 
 1. **Purpose** — investigate root cause, produce fix plan, no JSON changes in Phase 34
 2. **Observed Failure** — Phase 33 evidence table; "Currently no items exist" in parameters panel is key
 3. **Repo Inspection** — node identity (1 node, correct path, no duplicates); 19 fields present in repo JSON; all 4 Set nodes use identical format; `content_auto_skeleton` uses identical format and showed same behavior in Phase 20C
-4. **Root Cause Ranking (updated after Owner cross-check)** — (1) CONFIRMED MOST LIKELY: Duplicate workflow — Phase 32 re-import created new copy, Phase 33 executed wrong (pre-patch) instance; (2) SECONDARY: n8n Set typeVersion 3 `assignments.assignments` format unrecognized — deferred until Phase 35 confirms; (3) Part of Rank 1: re-import silently ignored overwrite prompt
-5. **Fix Strategy** — JSON patch fix (Code node replacement) DEFERRED pending Phase 35. Deferred approach documented: replace node type with `n8n-nodes-base.code` typeVersion 2, 19-field JS return object specified; preserves node ID/name/position/connections
-6. **Owner UI Cross-check** — COMPLETED 2026-06-03. Results: Check 1 YES (title correct), Check 2 YES (DUPLICATE CONFIRMED), Check 3 YES (Set Input Variables first after Manual Trigger). Architect decision: defer JSON fix, isolate duplicate first.
+4. **Root Cause Ranking (updated after canvas cross-check)** — (1) CONFIRMED MOST LIKELY: n8n import merged nodes into existing workflow — contaminated canvas with two parallel clusters, `1`-suffixed duplicate nodes; (2) LIKELY CONSEQUENCE: Phase 33 executed on contaminated canvas — unpredictable execution path; (3) DEFERRED: n8n Set typeVersion 3 format mismatch — cannot confirm until clean isolation
+5. **Fix Strategy** — JSON patch fix (Code node replacement) DEFERRED. Approach documented: replace node type with `n8n-nodes-base.code` typeVersion 2, 19-field JS return object specified. Not applied until Phase 35 clean isolation + Phase 36 execution confirms it is needed.
+6. **Owner Cross-check** — Round 1 (workflow-level) COMPLETED: title correct, duplicate workflow confirmed. Round 2 (canvas-level) COMPLETED: two parallel node clusters found — top cluster original, lower cluster has `1`-suffixed duplicates. Architect decision: no execute, no patch, no manual node deletion, Phase 35 = Clean Workflow Isolation.
 7. **Safety Checklist** — all NO
-8. **Phase 35 Recommendation** — Duplicate Workflow Isolation: identify both instances, determine which was executed in Phase 33, check if patched instance shows fields. No JSON fix in Phase 35. Conditional Phase 36 scope documented.
+8. **Phase 35 Recommendation** — Clean Workflow Isolation: archive/replace contaminated workflow, import JSON fresh as new workflow, verify single cluster, INACTIVE, 0 credentials, 0 executions. No execution in Phase 35. Options A (archive + fresh import — preferred), B (delete + fresh import), C (manual node deletion — NOT recommended without explicit approval).
 9. **Phase Connections** — Phase 8 through Phase 37
 10. **Safety Confirmation** — all NO/CLEAN
 
@@ -134,11 +136,12 @@ The `assignments.assignments` format for `n8n-nodes-base.set` typeVersion 3 may 
 
 ## Owner Next Action
 
-1. Review updated `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` — cross-check findings and updated Phase 35 recommendation.
-2. Authorize commit and push Phase 34 (cross-check findings recorded, docs updated).
-3. Proceed to Phase 35 — Creative Asset Auto Sandbox Duplicate Workflow Isolation.
-4. In Phase 35: identify both workflow instances in n8n sandbox, determine which is Phase 30-patched and which was executed in Phase 33.
-5. JSON patch fix (Code node replacement) is DEFERRED — do NOT apply until Phase 35 findings are clear.
+1. Review updated `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` — canvas finding and updated Phase 35 recommendation.
+2. Authorize commit of Phase 34 canvas update (new commit — Phase 34 was already pushed).
+3. Proceed to Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation.
+4. In Phase 35: archive or replace the contaminated canvas workflow, import JSON fresh, verify single cluster, INACTIVE, 0 credentials.
+5. Do NOT execute in Phase 35. Do NOT delete nodes manually unless explicitly approved.
+6. JSON patch fix DEFERRED — do NOT apply until Phase 35 isolation + Phase 36 execution confirms it is needed.
 
 ---
 
@@ -161,9 +164,9 @@ The `assignments.assignments` format for `n8n-nodes-base.set` typeVersion 3 may 
 | Phase 8 | n8n Workflow Skeleton Build | DONE + PUSHED |
 | Phase 27 | Sandbox Manual Execution — PASS WITH NOTES | DONE + PUSHED |
 | Phase 30 | Safe Sample Input Patch — 19 fields in repo JSON | DONE + PUSHED |
-| Phase 32 | Sandbox Re-import — duplicate created | DONE + PUSHED |
-| Phase 33 | Sandbox Manual Execution — FAIL (wrong instance likely) | DONE + PUSHED |
-| **Phase 34** | **Set Input Variables Debug Planning + Owner cross-check (this phase)** | **DEBUG_PLAN_READY** |
-| Phase 35 (TBD) | Duplicate Workflow Isolation — no JSON fix yet | NOT STARTED |
-| Phase 36 (TBD) | Conditional: Code node fix OR execution check (depends on Phase 35) | NOT STARTED |
-| Phase 37+ (TBD) | Re-import and/or execution check — scope TBD | NOT STARTED |
+| Phase 32 | Sandbox Re-import — merged nodes into existing workflow (contaminated canvas) | DONE + PUSHED |
+| Phase 33 | Sandbox Manual Execution — FAIL (contaminated canvas, unpredictable execution) | DONE + PUSHED |
+| **Phase 34** | **Debug Planning + 2 rounds Owner cross-check — canvas contamination confirmed (this phase)** | **DEBUG_PLAN_READY** |
+| Phase 35 (TBD) | Clean Workflow Isolation — archive/replace contaminated canvas, single clean workflow | NOT STARTED |
+| Phase 36 (TBD) | Execution check on clean workflow — conditional Code node fix if still empty | NOT STARTED |
+| Phase 37+ (TBD) | Scope TBD based on Phase 35/36 findings | NOT STARTED |

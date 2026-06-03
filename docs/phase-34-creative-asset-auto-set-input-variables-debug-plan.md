@@ -125,30 +125,31 @@ The downstream Code nodes succeed via `|| fallback` regardless of `Set Input Var
 
 ## 4. Likely Root Cause Ranking
 
-**Updated 2026-06-03 — Owner UI cross-check confirmed duplicate workflow exists.**
+**Updated 2026-06-03 — Owner canvas cross-check confirmed duplicate node clusters within the same workflow.**
 
-### Rank 1 — Duplicate workflow: Phase 32 re-import created a new copy instead of replacing the existing one (CONFIRMED — MOST LIKELY PRIMARY CAUSE)
-
-**Evidence:**
-- Owner cross-check Check 2 **confirmed**: duplicate workflow exists in n8n.
-- Phase 32 re-import did NOT overwrite the Phase 26 original — it created a second workflow instance.
-- Owner likely executed the **original Phase 26 workflow** (pre-Phase 30 patch) in Phase 33 — explaining identical behavior to Phase 27.
-- The Phase 30-patched version exists as a second workflow in n8n but has not been identified or executed.
-- **Implication:** The Phase 30 JSON patch may be correct and working once the right workflow instance is identified and executed.
-
-### Rank 2 — n8n Set node typeVersion 3 does not parse the `assignments.assignments` format as written (STILL POSSIBLE — secondary investigation after duplicate resolved)
+### Rank 1 — n8n import merged/duplicated nodes into the existing workflow instead of clean replace (CONFIRMED — MOST LIKELY PRIMARY CAUSE)
 
 **Evidence:**
-- "Currently no items exist" in parameters panel — could be the old pre-patch workflow.
-- Identical empty behavior in `content_auto_skeleton` (Phase 20C) — same format.
-- **Cannot confirm or rule out** until the correct (patched) duplicate is identified and executed.
-- **Deferred:** investigate only if Phase 35 duplicate isolation + Phase 36 execution of the correct workflow still shows empty fields.
+- Owner canvas cross-check (2026-06-03) confirmed: the current sandbox workflow (`FnB OS V1 — Creative Asset Auto [SKELETON] — CURRENT SANDBOX`) contains **two complete node clusters** on the same canvas:
+  - Top cluster: `Manual Trigger → Set Input Variables → Code: Load Brand Brain → Code: AI Generate Creative Brief → Code: Validate Required Fields → IF Validation Pass → approval/log/noop path`
+  - Lower cluster: `Set Input Variables1 → Code: Load Brand Brain1 → Code: AI Generate Creative Brief1 → Code: Validate Required Fields1 → IF Validation Pass1 → duplicate approval/log/noop path`
+- n8n import did NOT overwrite the existing workflow cleanly — it **merged the re-imported nodes alongside the existing ones**, creating a contaminated duplicate structure within the same workflow.
+- Phase 32 re-import procedure did not produce a clean single-cluster workflow as intended.
 
-### Rank 3 — Re-import process silently ignored the overwrite prompt (POSSIBLE — part of Rank 1 explanation)
+### Rank 2 — Owner may have executed a contaminated workflow with duplicate branches (LIKELY — consequence of Rank 1)
 
 **Evidence:**
-- n8n import behavior on "overwrite/replace" varies by version — may create new copy regardless of user selection.
-- Consistent with duplicate confirmed in Check 2.
+- With duplicate node clusters on the canvas, n8n execution path is unpredictable — it may follow either the original or the duplicated branch.
+- Phase 33 execution result ("Currently no items exist") is consistent with execution of either the pre-patch original Set node or the contaminated/disconnected duplicate.
+- The Phase 30-patched Set Input Variables node (19 fields) may never have been executed cleanly.
+
+### Rank 3 — n8n Set node typeVersion 3 does not parse `assignments.assignments` as written (POSSIBLE — deferred)
+
+**Evidence:**
+- "Currently no items exist" in parameters panel — may reflect the contaminated canvas state, not a format issue.
+- Identical behavior in `content_auto_skeleton` (Phase 20C) — same format, same empty result.
+- **Cannot confirm or rule out** until a clean single-cluster workflow is isolated and executed.
+- **Deferred:** investigate only if Phase 35 clean isolation + Phase 36 execution still shows empty fields.
 
 ---
 
@@ -208,21 +209,34 @@ return [{
 
 ---
 
-## 6. Owner / n8n UI Cross-check — COMPLETED 2026-06-03
+## 6. Owner / n8n UI Cross-check — COMPLETED 2026-06-03 (Two rounds)
 
-Owner performed 3 UI cross-checks. Results:
+### Round 1 — Workflow-level check
 
 | Check | Question | Owner Result |
 |-------|----------|-------------|
-| Check 1 | Workflow title correct? | **YES** |
-| Check 2 | Duplicate workflow exists in n8n? | **YES — DUPLICATE CONFIRMED** |
+| Check 1 | Workflow title correct? | **YES** — `FnB OS V1 — Creative Asset Auto [SKELETON] — CURRENT SANDBOX` |
+| Check 2 | Duplicate workflow exists in n8n? | **YES — confirmed** |
 | Check 3 | Set Input Variables is first node after Manual Trigger? | **YES** |
 
-**Critical finding from cross-check: A duplicate workflow exists in n8n.**
+### Round 2 — Canvas-level check (critical finding)
 
-The Phase 32 re-import created a NEW copy of the workflow instead of replacing the existing one. Owner likely executed the **original Phase 26 import** (pre-Phase 30 patch, 7 fields or 0 effective fields in Set Input Variables) rather than the newly imported Phase 30-patched version.
+Owner inspected the canvas of the current sandbox workflow. Observed:
 
-**Architect decision (received 2026-06-03):** Do NOT proceed to JSON patch fix yet. Phase 35 must first isolate the correct n8n workflow target and determine which instance was executed in Phase 33.
+| Cluster | Nodes | Status |
+|---------|-------|--------|
+| Top cluster (original) | Manual Trigger → Set Input Variables → Code: Load Brand Brain → Code: AI Generate Creative Brief → Code: Validate Required Fields → IF Validation Pass → approval/log/noop path | Present |
+| Lower cluster (duplicate) | Set Input Variables**1** → Code: Load Brand Brain**1** → Code: AI Generate Creative Brief**1** → Code: Validate Required Fields**1** → IF Validation Pass**1** → duplicate approval/log/noop path | Present — **contaminated** |
+
+**Critical finding:** n8n import did NOT overwrite the workflow cleanly. It **merged the re-imported nodes alongside the existing ones**, creating two complete parallel node clusters on the same canvas. The workflow is contaminated — it is not a clean single-cluster workflow.
+
+**Architect decision (received 2026-06-03):**
+- Do NOT execute again.
+- Do NOT patch JSON yet.
+- Do NOT delete nodes manually in n8n UI.
+- Do NOT activate or publish.
+- Do NOT attach credentials.
+- Phase 35 must isolate a clean workflow target before any retest.
 
 ---
 
@@ -246,34 +260,41 @@ The Phase 32 re-import created a NEW copy of the workflow instead of replacing t
 
 ## 8. Recommended Phase 35
 
-**Phase 35 — Creative Asset Auto Sandbox Duplicate Workflow Isolation**
+**Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation**
 
-**Architect decision (2026-06-03):** Do NOT proceed to JSON patch fix until the duplicate workflow issue is resolved. Phase 35 must first identify which workflow instance is the correct (Phase 30-patched) one and which is the original Phase 26 import.
+**Architect decision (2026-06-03):** The current sandbox workflow is contaminated — two complete node clusters exist on the same canvas. Do NOT execute or patch until a clean single-cluster workflow is established.
 
-**Goal:** Owner identifies both workflow instances in n8n sandbox, determines which one was executed in Phase 33, and confirms which one contains the Phase 30 patch (19-field Set Input Variables). No JSON patch, no execution in Phase 35.
+**Goal:** Identify a clean way to get one and only one Creative Asset Auto skeleton workflow in n8n sandbox — with a single uncontaminated node cluster — and record its identity for Phase 36 retesting.
 
-**Phase 35 scope (sandbox UI investigation by Owner — Builder provides guidance doc):**
-- Identify both workflow instances in n8n sandbox workflow list.
-- Record the workflow ID / name / creation date for each.
-- Open the Phase 30-patched instance and check Set Input Variables node parameters panel — does it show 19 fields or "Currently no items exist"?
-- Determine which instance was executed in Phase 33.
-- Report findings to Builder.
+**Phase 35 approach options (Builder will document in Phase 35 plan):**
+
+| Option | Description | Preference |
+|--------|-------------|------------|
+| A — Archive + fresh import | Archive or rename the contaminated workflow, then import `creative_asset_auto_skeleton.json` as a brand-new workflow (no overwrite) | **Preferred — cleanest result** |
+| B — Delete contaminated workflow + fresh import | Delete the contaminated workflow entirely, then import JSON fresh | Acceptable if archive not available |
+| C — Manual node deletion in n8n UI | Manually delete the lower (duplicate) cluster nodes from the canvas | **NOT recommended** — risk of breaking connections; requires explicit Owner approval if pursued |
 
 **Phase 35 constraints:**
+- No manual node deletion unless Owner explicitly approves and Architect agrees.
 - No workflow JSON modification.
-- No n8n import in Phase 35.
-- No execution in Phase 35 (isolation/inspection only).
-- No credentials attached.
-- No activation.
+- No execution in Phase 35 — isolation and inspection only.
+- No activation, no credentials, no publish.
+- Verify the resulting workflow has exactly 1 cluster, is INACTIVE, and has 0 credentials attached before exiting Phase 35.
+
+**Phase 35 deliverable:**
+- A single clean `FnB OS V1 — Creative Asset Auto [SKELETON]` workflow in n8n sandbox.
+- Canvas: one Manual Trigger, one Set Input Variables, no `1`-suffixed duplicate nodes visible.
+- active = INACTIVE, credentials = NONE, execution count = 0.
 
 **Phase 36 (after Phase 35 — conditional):**
-- If Phase 35 confirms the correct workflow shows fields correctly: re-import not needed, proceed to Phase 36 execution check of the correct instance.
-- If Phase 35 confirms the correct workflow STILL shows empty fields: JSON patch fix (Code node replacement, see Section 5) is applied in Phase 36, then Phase 37 re-import, Phase 38 execution check.
+- Owner executes the clean workflow manually.
+- If Set Input Variables output shows 19 fields → Phase 30 patch works — no JSON fix needed.
+- If Set Input Variables output still empty → JSON patch fix (Code node replacement, Section 5) applied in Phase 36/37.
 
 **Phase 35 entry criteria:**
 - Phase 34 DONE + PUSHED.
 - Owner has access to n8n sandbox.
-- Owner can identify multiple workflows in n8n workflow list.
+- Contaminated workflow identified and documented.
 
 ---
 
@@ -284,12 +305,12 @@ The Phase 32 re-import created a NEW copy of the workflow instead of replacing t
 | Phase 8 | n8n Workflow Skeleton Build | DONE + PUSHED |
 | Phase 27 | Sandbox Manual Execution — PASS WITH NOTES (empty Set node masked by fallbacks) | DONE + PUSHED |
 | Phase 30 | Safe Sample Input Patch — 7 → 19 fields in Set node assignments | DONE + PUSHED |
-| Phase 32 | Sandbox Re-import — duplicate created instead of overwrite | DONE + PUSHED |
-| Phase 33 | Sandbox Manual Execution — FAIL (wrong workflow instance likely executed) | DONE + PUSHED |
-| **Phase 34** | **Set Input Variables Debug Planning + Owner cross-check (this phase)** | **DEBUG_PLAN_READY** |
-| Phase 35 (TBD) | Duplicate Workflow Isolation — identify correct instance, no JSON fix yet | NOT STARTED |
-| Phase 36 (TBD) | Conditional: Code node fix (if Phase 35 still shows empty) OR execution check (if Phase 35 shows fields) | NOT STARTED |
-| Phase 37+ (TBD) | Re-import and/or execution check — scope depends on Phase 35/36 outcome | NOT STARTED |
+| Phase 32 | Sandbox Re-import — merged nodes into existing workflow (contaminated canvas) | DONE + PUSHED |
+| Phase 33 | Sandbox Manual Execution — FAIL (contaminated canvas, wrong/duplicate branch likely) | DONE + PUSHED |
+| **Phase 34** | **Set Input Variables Debug Planning + 2 rounds of Owner cross-check (this phase)** | **DEBUG_PLAN_READY** |
+| Phase 35 (TBD) | Clean Workflow Isolation — archive/replace contaminated canvas, establish single clean workflow | NOT STARTED |
+| Phase 36 (TBD) | Manual execution check on clean workflow — conditional Code node fix if still empty | NOT STARTED |
+| Phase 37+ (TBD) | Scope TBD based on Phase 35/36 findings | NOT STARTED |
 
 ---
 

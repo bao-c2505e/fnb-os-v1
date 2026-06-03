@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-03 — Phase 34 — Canvas Cross-check: Contaminated Workflow Confirmed — DEBUG_PLAN_READY + UPDATED
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** DEBUG_PLAN_READY — CANVAS CROSS-CHECK UPDATE — NEW COMMIT
+**Detail:**
+Owner canvas inspection (2026-06-03): current sandbox workflow contains two complete parallel node clusters — top cluster original nodes, lower cluster `1`-suffixed duplicates (Set Input Variables1, Code: Load Brand Brain1, etc.). n8n Phase 32 import merged nodes instead of cleanly replacing. Workflow contaminated. Phase 33 ran on contaminated canvas — execution path unpredictable. Architect decision: no execute, no JSON patch, no manual node deletion, no activate, no credentials. Phase 35 = Clean Workflow Isolation. Updated planning doc (Section 4 root cause ranking: Rank 1 = merged nodes CONFIRMED, Rank 2 = contaminated execution, Rank 3 = Set node format DEFERRED; Section 6 Round 2 canvas cross-check; Section 8 Phase 35 = Clean Isolation with 3 options — A archive+fresh import PREFERRED, B delete+fresh import, C manual deletion NOT recommended; Section 9 Phase Connections). Updated handoff, CURRENT_PHASE, SESSION_SUMMARY, AGENT_ACTIVITY_LOG, PHASE_LOG. No workflow JSON modified. No n8n import. No n8n execution. New commit (Phase 34 already pushed as `ce89ba2`).
+
+---
+
 ### 2026-06-03 — Phase 34 — Owner Cross-check Update: Duplicate Workflow Confirmed — DEBUG_PLAN_READY + UPDATED
 
 **By:** Claude Code (Builder, AGT-02)
