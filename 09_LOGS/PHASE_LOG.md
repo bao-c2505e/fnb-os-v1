@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-03 — Phase 30 — Safe Sample Input Patch Implementation — BUILD_READY
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILD_READY — AWAITING CODEX REVIEW
+**Detail:**
+Phase 29 DONE + PUSHED (commit `da89e8d`). Phase 30 patch complete. `Set Input Variables` node in `creative_asset_auto_skeleton.json` patched per Phase 29 plan and Owner/Architect decisions: (1) `brand_name` updated from `"Vị Cuốn"` to `"Vi Cuon"` (ASCII-only, no duplicate); (2) `asset_type` updated from `"Photo"` to `"social_static_post"`; (3) 12 new safe sample fields added — a2-set-008 through a2-set-019 (request_id, campaign_name, channel, product_name, offer, target_audience, key_message, tone_of_voice, visual_direction, required_output, approval_required=true boolean, sandbox_mode=true boolean). Total: 7 → 19 fields. No duplicate keys. No other node modified. No connections modified. Validation: `validate_json.py` ALL PASS 36/36; `check_n8n_workflows.py` ALL PASS 6/6 active=false; new fields secret scan CLEAN; `git diff` confirms only Set Input Variables block changed. Created `handoff/PHASE_30_HANDOFF.md`. Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, PHASE_LOG.md. active=false unchanged. No credentials. No activation. No n8n import/execution. No auto-post/reply/ads. Committing: `workflow: add safe sample input to creative asset skeleton`. Push pending Codex review + Owner authorization.
+
+---
+
 ### 2026-06-03 — Phase 29 — Safe Sample Input Patch Planning — PLAN_READY
 
 **By:** Claude Code (Builder, AGT-02)

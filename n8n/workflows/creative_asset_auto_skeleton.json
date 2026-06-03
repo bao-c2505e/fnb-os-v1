@@ -37,12 +37,24 @@
         "assignments": {
           "assignments": [
             { "id": "a2-set-001", "name": "brand_id", "value": "VQ", "type": "string" },
-            { "id": "a2-set-002", "name": "brand_name", "value": "Vị Cuốn", "type": "string" },
+            { "id": "a2-set-002", "name": "brand_name", "value": "Vi Cuon", "type": "string" },
             { "id": "a2-set-003", "name": "brief_request", "value": "REPLACE_WITH_OWNER_BRIEF_REQUEST", "type": "string" },
-            { "id": "a2-set-004", "name": "asset_type", "value": "Photo", "type": "string" },
+            { "id": "a2-set-004", "name": "asset_type", "value": "social_static_post", "type": "string" },
             { "id": "a2-set-005", "name": "platform", "value": "Facebook", "type": "string" },
             { "id": "a2-set-006", "name": "format", "value": "1:1 square 1080x1080", "type": "string" },
-            { "id": "a2-set-007", "name": "objective", "value": "Engagement", "type": "string" }
+            { "id": "a2-set-007", "name": "objective", "value": "Engagement", "type": "string" },
+            { "id": "a2-set-008", "name": "request_id", "value": "creative_asset_sandbox_001", "type": "string" },
+            { "id": "a2-set-009", "name": "campaign_name", "value": "Sandbox Creative Asset Test", "type": "string" },
+            { "id": "a2-set-010", "name": "channel", "value": "facebook", "type": "string" },
+            { "id": "a2-set-011", "name": "product_name", "value": "Heo quay nuong lu", "type": "string" },
+            { "id": "a2-set-012", "name": "offer", "value": "Sandbox sample only - no real promotion", "type": "string" },
+            { "id": "a2-set-013", "name": "target_audience", "value": "office workers and local food lovers in Vinh", "type": "string" },
+            { "id": "a2-set-014", "name": "key_message", "value": "Fresh rolled food with warm street-premium visual direction", "type": "string" },
+            { "id": "a2-set-015", "name": "tone_of_voice", "value": "friendly, appetizing, local, premium-but-accessible", "type": "string" },
+            { "id": "a2-set-016", "name": "visual_direction", "value": "warm brown, orange accent, clean food photography style", "type": "string" },
+            { "id": "a2-set-017", "name": "required_output", "value": "design_brief", "type": "string" },
+            { "id": "a2-set-018", "name": "approval_required", "value": true, "type": "boolean" },
+            { "id": "a2-set-019", "name": "sandbox_mode", "value": true, "type": "boolean" }
           ]
         },
         "options": {}
