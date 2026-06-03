@@ -1,8 +1,52 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning — PLAN_READY)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 32 — Creative Asset Auto Sandbox Re-import Only — INSTRUCTIONS_READY)
 
-## Latest Session — Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning
+## Latest Session — Phase 32 — Creative Asset Auto Sandbox Re-import Only
+
+### current_phase
+Phase 32 — Creative Asset Auto Sandbox Re-import Only (INSTRUCTIONS_READY — OWNER ACTION REQUIRED)
+
+### current_role
+Builder — Claude Code (instruction documentation only — no workflow JSON modification, no n8n import, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 31 DONE + PUSHED (commit `d6570f0`). Phase 32 build: pre-check confirmed HEAD = `d6570f0` (= origin/main), working tree clean, branch main. Read CURRENT_PHASE.md (Phase 31 PLAN_READY, plan doc 11 sections, no import/execution). Read PHASE_31_HANDOFF.md (Phase 30 DONE `18c681d`, 19-field patch, planning doc summary, re-import plan Section 4, execution plan Section 5, Phase 32/33 recommendation Option A split). Read SESSION_SUMMARY.md (Phase 31 session entry confirmed). Created `docs/phase-32-creative-asset-auto-sandbox-reimport-only-instructions.md` (11 sections: 1 purpose — re-import only, no execution, no activation, no credentials, no API calls, Phase 33 follows; 2 scope — in/out of scope table, re-import IN SCOPE, all other actions OUT OF SCOPE; 3 workflow file — path `n8n/workflows/creative_asset_auto_skeleton.json`, n8n ID `VW5PDkOOtrjLQBps`, active=false, 15 nodes, Phase 30 patch info; 4 Owner re-import steps — git pre-check, 12-step import guide, Step 7 specifies verifying 19 fields including brand_name="Vi Cuon"/approval_required=true boolean/sandbox_mode=true boolean; 5 re-import evidence checklist — 13-item Owner-fill checklist with expected values; 6 what not to do — 7-row forbidden actions table; 7 expected result — post-Phase 32 state, Phase 27 "empty" note expected to be resolved; 8 safety checklist — 11 items all NO except Owner manual import = YES; 9 Phase 33 recommendation — objectives: 19-field check/approval_status=Draft/no forbidden output, entry criteria: Phase 32 confirmed; 10 phase connections Phase 8–33; 11 safety confirmation 12 items all NO/CLEAN). Created `handoff/PHASE_32_HANDOFF.md` (phase summary, context, files created/updated/not-modified, instruction doc summary 11 sections, runtime safety 12 checks all NO/CLEAN, 21 acceptance criteria all PASS, Owner next action 7 steps, Codex review 3 points, phase connections). Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, 09_LOGS/PHASE_LOG.md. No workflow JSON modified. No connections modified. active=false unchanged. No credentials. No activation. No n8n import. No n8n execution. No auto-post/reply/ads. Committing: `docs: add phase 32 creative asset sandbox reimport instructions`. Push pending Codex review + Owner authorization.
+
+### latest_commit
+HEAD before Phase 32 commit: `d6570f0` (= origin/main)
+
+### files_changed
+Phase 32 (build — this session — 2026-06-03):
+- `docs/phase-32-creative-asset-auto-sandbox-reimport-only-instructions.md` — CREATED: main instruction doc (11 sections)
+- `handoff/PHASE_32_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 32 INSTRUCTIONS_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 32 files. Awaiting Codex review and Owner push authorization. Owner then performs manual n8n sandbox re-import.
+
+### decisions_made
+- Phase 32 is instructions only — no workflow JSON modification, no n8n import, no n8n execution. Consistent with Option A (split) recommended by Architect in Phase 31 Section 9.
+- Re-import steps (Section 4) include a git pre-check step before opening n8n — ensures Owner is working from the patched version.
+- Step 7 explicitly specifies which fields to verify in Set Input Variables (19 fields, key values) — gives Owner a concrete verification target before closing the import.
+- Evidence checklist (Section 5) is `[OWNER TO FILL]` — not pre-filled, consistent with Phase 26/27 evidence log pattern.
+- Phase 33 entry criteria require Phase 32 re-import confirmed before any execution — maintains separation of re-import and execution gates.
+
+### open_issues
+None. Phase 32 instructions complete. Phase 32 re-import pending Owner scheduling. Phase 33 pending Phase 32 completion.
+
+### blockers
+None from Builder side. Owner must perform manual n8n sandbox re-import.
+
+### next_owner_action
+(1) Review `docs/phase-32-creative-asset-auto-sandbox-reimport-only-instructions.md`. (2) Review `handoff/PHASE_32_HANDOFF.md`. (3) Issue Codex review request. (4) If Codex PASS: push Phase 32 to GitHub. (5) Open n8n sandbox and follow Section 4 (12-step re-import guide). (6) Fill Section 5 evidence checklist. (7) Report result — proceed to Phase 33.
+
+---
+
+## Previous Session — Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning
 
 ### current_phase
 Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning (PLAN_READY — AWAITING CODEX REVIEW)

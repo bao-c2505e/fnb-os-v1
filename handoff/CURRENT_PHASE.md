@@ -1,22 +1,22 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning — PLAN_READY)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 32 — Creative Asset Auto Sandbox Re-import Only — INSTRUCTIONS_READY)
 
 ## Phase
 
-Phase 31 — Creative Asset Auto Sandbox Re-import & Manual Execution Planning
+Phase 32 — Creative Asset Auto Sandbox Re-import Only
 
 ## Status
 
-**PLAN_READY — AWAITING CODEX REVIEW**
+**INSTRUCTIONS_READY — OWNER ACTION REQUIRED**
 
-Phase 30 DONE + PUSHED (commit `18c681d`). Phase 31 planning complete.
-`docs/phase-31-creative-asset-auto-sandbox-reimport-manual-execution-plan.md` created (11 sections: purpose, current state, workflow file, re-import plan, execution plan, expected output, evidence items, safety checklist, Phase 32/33 recommendation, phase connections, safety confirmation).
-No workflow JSON modified. active=false unchanged. No credentials. No n8n import. No n8n execution.
+Phase 31 DONE + PUSHED (commit `d6570f0`). Phase 32 instructions complete.
+`docs/phase-32-creative-asset-auto-sandbox-reimport-only-instructions.md` created (11 sections: purpose, scope, workflow file, Owner re-import steps, evidence checklist, what not to do, expected result, safety checklist, Phase 33 recommendation, phase connections, safety confirmation).
+No workflow JSON modified. active=false unchanged. No credentials. No n8n import by Builder. No n8n execution.
 
 ## Current Command
 
-Phase 31 PLAN_READY. Awaiting Codex review and Owner push authorization.
+Phase 32 INSTRUCTIONS_READY. Owner to review, authorize push, then perform manual n8n sandbox re-import per Section 4.
 
 ## Builder
 
@@ -24,45 +24,46 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — not yet started for Phase 31.
+Codex — not yet started for Phase 32.
 
 ## Next Gate
 
-Phase 31 PLAN_READY — 2026-06-03 — Awaiting Codex review → Owner push authorization → Phase 32 scope decision
+Phase 32 INSTRUCTIONS_READY — 2026-06-03 — Owner review → push authorization → Owner manual n8n re-import → Phase 33
 
-## Phase 31 Files
+## Phase 32 Files
 
 | File | Change |
 |------|--------|
-| `docs/phase-31-creative-asset-auto-sandbox-reimport-manual-execution-plan.md` | CREATED — 11-section planning doc and runbook |
-| `handoff/PHASE_31_HANDOFF.md` | CREATED — phase handoff |
+| `docs/phase-32-creative-asset-auto-sandbox-reimport-only-instructions.md` | CREATED — 11-section Owner instruction doc |
+| `handoff/PHASE_32_HANDOFF.md` | CREATED — phase handoff |
 
-## Phase 31 Status
+## Phase 32 Status
 
 | Check | Status |
 |-------|--------|
-| Phase 30 result | DONE + PUSHED (commit `18c681d`) |
-| Planning doc created (11 sections) | YES |
-| Re-import plan documented (Section 4) | YES |
-| Execution plan documented (Section 5) | YES |
-| Expected output table (Section 6) | YES — 19 fields |
-| Evidence items (Section 7) | YES — 14 items |
+| Phase 31 result | DONE + PUSHED (commit `d6570f0`) |
+| Instruction doc created (11 sections) | YES |
+| Re-import steps documented (Section 4, 12 steps) | YES |
+| Evidence checklist (Section 5, 13 items) | YES |
+| Forbidden actions documented (Section 6) | YES |
+| Expected result documented (Section 7) | YES |
 | Safety checklist (Section 8) all NO | YES |
-| Phase 32/33 recommendation (Section 9) | YES — Option A (Architect recommendation: split) |
+| Phase 33 recommendation (Section 9) | YES |
 | Phase connections complete | YES |
 | Workflow JSON NOT modified | YES |
 | `active=true` introduced | NO |
 | Real credentials added | NO |
-| n8n import executed | NO |
+| n8n import executed by Builder | NO |
 | n8n execution performed | NO |
 | Secret scan new files | CLEAN |
 | Branch | main |
-| HEAD at Phase 31 start | `18c681d` (= origin/main) |
+| HEAD at Phase 32 start | `d6570f0` (= origin/main) |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
+| Phase 31 — Sandbox Re-import & Manual Execution Planning | **DONE + PUSHED (commit `d6570f0`) — PASS** |
 | Phase 30 — Safe Sample Input Patch Implementation | **DONE + PUSHED (commit `18c681d`) — PASS** |
 | Phase 29 — Safe Sample Input Patch Planning | **DONE + PUSHED (commit `da89e8d`) — PASS** |
 | Phase 28 — Sandbox I/O Standardization | **DONE + PUSHED (commit `a7d0bd5`)** |
