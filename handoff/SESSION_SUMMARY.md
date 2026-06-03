@@ -1,8 +1,56 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest — EVIDENCE_RECORDED — FAIL)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 37 — Creative Asset Auto Set Input Variables Code Node Patch — BUILD_READY)
 
-## Latest Session — Phase 36 — Evidence Recording (FAIL)
+## Latest Session — Phase 37 — Creative Asset Auto Set Input Variables Code Node Patch
+
+### current_phase
+Phase 37 — Creative Asset Auto Set Input Variables Code Node Patch (BUILD_READY)
+
+### current_role
+Builder — Claude Code (workflow JSON patch — Set Input Variables node only — no n8n import, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 36 DONE + PUSHED (`66f8c28`). Phase 37 build: pre-check confirmed HEAD = `66f8c28` (= origin/main), working tree clean, branch main. Inspected `n8n/workflows/creative_asset_auto_skeleton.json` (read): confirmed 1 node named `Set Input Variables`, ID `a2000002-0002-4001-a002-200000000002`, type `n8n-nodes-base.set`, typeVersion 3, position [500,420], immediately after Manual Trigger, connections Manual Trigger → Set Input Variables → Code: Load Brand Brain. All other Code nodes use `n8n-nodes-base.code` typeVersion 2 with `jsCode` + `mode: runOnceForAllItems`. Patched: replaced `Set Input Variables` node from Set node (typeVersion 3, `assignments.assignments` format — unrecognized by n8n per Phase 36 FAIL) to Code node (typeVersion 2, `jsCode`, `mode: runOnceForAllItems`) returning 14 safe sample fields as explicit JS object: request_id, brand_name="Vi Cuon", campaign_name, channel, asset_type, product_name, offer, target_audience, key_message, tone_of_voice, visual_direction, required_output, approval_required=true (boolean), sandbox_mode=true (boolean). Node name unchanged: `Set Input Variables`. Node position unchanged: [500,420]. Connections unchanged (referenced by name). active=false unchanged. No other nodes modified. No other workflow files modified. Validation: `validate_json.py` ALL PASS; `check_n8n_workflows.py` ALL PASS 6/6 active=false; `check_no_secrets.py` 3 pre-existing findings (.env gitignored + Phase 20 doc) — NOT introduced by Phase 37; `git diff --stat` = only creative_asset_auto_skeleton.json. Created `handoff/PHASE_37_HANDOFF.md`. Updated CURRENT_PHASE.md, SESSION_SUMMARY (this entry), AGENT_ACTIVITY_LOG, PHASE_LOG. Committing: `workflow: convert creative asset input node to code sample`. Push pending Owner authorization.
+
+### latest_commit
+HEAD before Phase 37 commit: `66f8c28` (= origin/main)
+
+### files_changed
+Phase 37 (build — this session — 2026-06-03):
+- `n8n/workflows/creative_asset_auto_skeleton.json` — PATCHED: Set Input Variables: Set node typeVersion 3 → Code node typeVersion 2
+- `handoff/PHASE_37_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 37 BUILD_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 37 files. Awaiting Owner review of `git diff n8n/workflows/creative_asset_auto_skeleton.json` and push authorization. Then Phase 38 = re-import patched workflow to `CURRENT CLEAN SANDBOX`.
+
+### decisions_made
+- Code node approach: `jsCode` returns `[{ json: {...14 fields...} }]` — same pattern as all existing Code nodes in this workflow (typeVersion 2, runOnceForAllItems).
+- Node name kept as `Set Input Variables` — connections in n8n reference node NAME not node type, so all connections (Manual Trigger → Set Input Variables → Code: Load Brand Brain) are preserved without modification.
+- 14 fields (not 19): owner-specified fields in the Phase 37 command. `brand_id`, `brief_request`, `platform`, `format`, `objective` from the original 19-field Set node are omitted per Architect/Owner code spec — downstream Code nodes use `|| fallback` values for fields not provided.
+- `approval_required: true` and `sandbox_mode: true` as JS boolean literals (not strings) — eliminates any string/boolean type ambiguity.
+- `brand_name: "Vi Cuon"` (ASCII) — no Unicode, consistent with Phase 30 decision.
+- Secret scan findings: pre-existing (.env gitignored, Phase 20 doc) — NOT introduced by Phase 37. Acceptable per prior phase precedent.
+
+### open_issues
+None. Phase 37 patch complete. Phase 38 = re-import patched workflow to `CURRENT CLEAN SANDBOX` pending Owner authorization.
+
+### blockers
+None from Builder side. Awaiting Owner push authorization and Phase 38 command.
+
+### next_owner_action
+(1) Review `git diff n8n/workflows/creative_asset_auto_skeleton.json`. (2) Review `handoff/PHASE_37_HANDOFF.md`. (3) Authorize commit and push: `workflow: convert creative asset input node to code sample`. (4) Issue Phase 38 command — re-import patched workflow to `CURRENT CLEAN SANDBOX`. (5) In Phase 38: Owner imports updated JSON to n8n sandbox (no execution). (6) Phase 39: execution retest — verify Set Input Variables output shows 14 fields.
+
+---
+
+## Previous Session — Phase 36 — Evidence Recording (FAIL)
+
+### current_phase
+Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest (EVIDENCE_RECORDED — FAIL)
 
 ### current_phase
 Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest (EVIDENCE_RECORDED — FAIL)

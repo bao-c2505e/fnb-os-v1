@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-03 — Phase 37 — Creative Asset Auto Set Input Variables Code Node Patch — BUILD_READY
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** BUILD_READY — COMMITTED — PUSH PENDING OWNER AUTHORIZATION
+**Detail:**
+Phase 36 DONE + PUSHED (`66f8c28`). Root cause confirmed: n8n Set node typeVersion 3 / `assignments.assignments` format mismatch. Phase 37 patch: replaced `Set Input Variables` node from Set node (typeVersion 3) to Code node (typeVersion 2, `jsCode`, `mode: runOnceForAllItems`) returning 14 safe sample fields as explicit JS object — request_id, brand_name="Vi Cuon", campaign_name, channel, asset_type, product_name, offer, target_audience, key_message, tone_of_voice, visual_direction, required_output, approval_required=true (boolean), sandbox_mode=true (boolean). Node name, position [500,420], and connections (Manual Trigger → Set Input Variables → Code: Load Brand Brain) all unchanged. active=false unchanged. No other nodes or workflow files modified. Validation: `validate_json.py` ALL PASS; `check_n8n_workflows.py` ALL PASS 6/6; secret scan 3 pre-existing findings NOT from Phase 37. Created `handoff/PHASE_37_HANDOFF.md`. Updated state files. No credentials, no API calls, no n8n import or execution. Committing: `workflow: convert creative asset input node to code sample`. Push pending Owner authorization. Phase 38 = re-import patched workflow to `CURRENT CLEAN SANDBOX`.
+
+---
+
 ### 2026-06-03 — Phase 36 — Creative Asset Auto Current Clean Sandbox Manual Execution Retest — EVIDENCE_RECORDED — FAIL
 
 **By:** Claude Code (Builder, AGT-02)

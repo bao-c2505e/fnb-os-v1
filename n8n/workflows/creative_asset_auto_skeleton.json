@@ -30,36 +30,14 @@
     {
       "id": "a2000002-0002-4001-a002-200000000002",
       "name": "Set Input Variables",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3,
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [500, 420],
       "parameters": {
-        "assignments": {
-          "assignments": [
-            { "id": "a2-set-001", "name": "brand_id", "value": "VQ", "type": "string" },
-            { "id": "a2-set-002", "name": "brand_name", "value": "Vi Cuon", "type": "string" },
-            { "id": "a2-set-003", "name": "brief_request", "value": "REPLACE_WITH_OWNER_BRIEF_REQUEST", "type": "string" },
-            { "id": "a2-set-004", "name": "asset_type", "value": "social_static_post", "type": "string" },
-            { "id": "a2-set-005", "name": "platform", "value": "Facebook", "type": "string" },
-            { "id": "a2-set-006", "name": "format", "value": "1:1 square 1080x1080", "type": "string" },
-            { "id": "a2-set-007", "name": "objective", "value": "Engagement", "type": "string" },
-            { "id": "a2-set-008", "name": "request_id", "value": "creative_asset_sandbox_001", "type": "string" },
-            { "id": "a2-set-009", "name": "campaign_name", "value": "Sandbox Creative Asset Test", "type": "string" },
-            { "id": "a2-set-010", "name": "channel", "value": "facebook", "type": "string" },
-            { "id": "a2-set-011", "name": "product_name", "value": "Heo quay nuong lu", "type": "string" },
-            { "id": "a2-set-012", "name": "offer", "value": "Sandbox sample only - no real promotion", "type": "string" },
-            { "id": "a2-set-013", "name": "target_audience", "value": "office workers and local food lovers in Vinh", "type": "string" },
-            { "id": "a2-set-014", "name": "key_message", "value": "Fresh rolled food with warm street-premium visual direction", "type": "string" },
-            { "id": "a2-set-015", "name": "tone_of_voice", "value": "friendly, appetizing, local, premium-but-accessible", "type": "string" },
-            { "id": "a2-set-016", "name": "visual_direction", "value": "warm brown, orange accent, clean food photography style", "type": "string" },
-            { "id": "a2-set-017", "name": "required_output", "value": "design_brief", "type": "string" },
-            { "id": "a2-set-018", "name": "approval_required", "value": true, "type": "boolean" },
-            { "id": "a2-set-019", "name": "sandbox_mode", "value": true, "type": "boolean" }
-          ]
-        },
-        "options": {}
+        "jsCode": "// Phase 37 Patch — replaced Set node (typeVersion 3 format mismatch) with Code node\n// PURPOSE: Return explicit safe sample input fields for Creative Asset Auto sandbox\n// CONSTRAINT: No real data, no credentials, no API calls, sandbox_mode=true\nreturn [\n  {\n    json: {\n      request_id: \"creative_asset_sandbox_001\",\n      brand_name: \"Vi Cuon\",\n      campaign_name: \"Sandbox Creative Asset Test\",\n      channel: \"facebook\",\n      asset_type: \"social_static_post\",\n      product_name: \"Heo quay nuong lu\",\n      offer: \"Sandbox sample only - no real promotion\",\n      target_audience: \"office workers and local food lovers in Vinh\",\n      key_message: \"Fresh rolled food with warm street-premium visual direction\",\n      tone_of_voice: \"friendly, appetizing, local, premium-but-accessible\",\n      visual_direction: \"warm brown, orange accent, clean food photography style\",\n      required_output: \"design_brief\",\n      approval_required: true,\n      sandbox_mode: true\n    }\n  }\n];",
+        "mode": "runOnceForAllItems"
       },
-      "notes": "Mock input — replace all REPLACE_WITH_* values with real Owner request data before production use."
+      "notes": "Phase 37 patch — replaced Set node (typeVersion 3 format mismatch) with Code node. Returns explicit safe sample fields. No real credentials, no API calls, sandbox_mode=true."
     },
     {
       "id": "a2000002-0003-4001-a002-200000000003",
