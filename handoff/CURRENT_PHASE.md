@@ -1,6 +1,6 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 32 — Creative Asset Auto Sandbox Re-import Only — INSTRUCTIONS_READY)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 32 — Creative Asset Auto Sandbox Re-import Only — EVIDENCE_RECORDED — PASS)
 
 ## Phase
 
@@ -8,15 +8,15 @@ Phase 32 — Creative Asset Auto Sandbox Re-import Only
 
 ## Status
 
-**INSTRUCTIONS_READY — OWNER ACTION REQUIRED**
+**EVIDENCE_RECORDED — PASS — READY FOR PHASE 33**
 
-Phase 31 DONE + PUSHED (commit `d6570f0`). Phase 32 instructions complete.
-`docs/phase-32-creative-asset-auto-sandbox-reimport-only-instructions.md` created (11 sections: purpose, scope, workflow file, Owner re-import steps, evidence checklist, what not to do, expected result, safety checklist, Phase 33 recommendation, phase connections, safety confirmation).
-No workflow JSON modified. active=false unchanged. No credentials. No n8n import by Builder. No n8n execution.
+Phase 31 DONE + PUSHED (commit `d6570f0`). Phase 32 DONE + PUSHED (commit `677dff1`).
+Owner evidence received 2026-06-03: workflow re-imported/opened in n8n sandbox, inactive, no execution, no credentials, no API calls, canvas opened, nodes visible, ready for Phase 33.
+No workflow JSON modified. active=false unchanged. No credentials. No execution.
 
 ## Current Command
 
-Phase 32 INSTRUCTIONS_READY. Owner to review, authorize push, then perform manual n8n sandbox re-import per Section 4.
+Phase 32 EVIDENCE_RECORDED — PASS. Proceed to Phase 33 — manual execution check.
 
 ## Builder
 
@@ -42,22 +42,23 @@ Phase 32 INSTRUCTIONS_READY — 2026-06-03 — Owner review → push authorizati
 | Check | Status |
 |-------|--------|
 | Phase 31 result | DONE + PUSHED (commit `d6570f0`) |
-| Instruction doc created (11 sections) | YES |
-| Re-import steps documented (Section 4, 12 steps) | YES |
-| Evidence checklist (Section 5, 13 items) | YES |
-| Forbidden actions documented (Section 6) | YES |
-| Expected result documented (Section 7) | YES |
-| Safety checklist (Section 8) all NO | YES |
-| Phase 33 recommendation (Section 9) | YES |
-| Phase connections complete | YES |
+| Phase 32 instructions committed + pushed | YES (commit `677dff1`) |
+| Owner evidence received | YES — 2026-06-03 |
+| Workflow re-imported / opened in sandbox | YES |
+| Workflow active status | inactive — confirmed |
+| Manual execution performed | NO |
+| Credentials attached | NO |
+| API calls observed | NO |
+| Canvas opened / nodes visible | YES |
+| Ready for Phase 33 | YES |
 | Workflow JSON NOT modified | YES |
 | `active=true` introduced | NO |
 | Real credentials added | NO |
 | n8n import executed by Builder | NO |
 | n8n execution performed | NO |
-| Secret scan new files | CLEAN |
+| Evidence result | PASS |
 | Branch | main |
-| HEAD at Phase 32 start | `d6570f0` (= origin/main) |
+| HEAD | `677dff1` (= origin/main after push) |
 
 ## Prior Phase Results
 

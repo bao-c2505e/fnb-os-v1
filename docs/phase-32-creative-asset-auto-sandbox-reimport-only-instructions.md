@@ -114,19 +114,24 @@ Owner records after completing Phase 32 re-import:
 
 | Item | Expected | Owner Result |
 |------|----------|-------------|
-| Workflow name after import | `FnB OS V1 — Creative Asset Auto [SKELETON]` | [OWNER TO FILL] |
-| Re-import completed | YES | [OWNER TO FILL] |
-| Workflow active status after import | inactive (OFF) | [OWNER TO FILL] |
-| Manual execution performed | NO | [OWNER TO FILL] |
-| Credentials attached | NO | [OWNER TO FILL] |
-| API calls observed during import | NO | [OWNER TO FILL] |
-| Workflow canvas opened successfully | YES | [OWNER TO FILL] |
-| Nodes visible on canvas | YES — approx 10–15 | [OWNER TO FILL — count: __] |
-| Set Input Variables node shows 19 fields | YES | [OWNER TO FILL] |
-| `brand_name` shows `Vi Cuon` | YES | [OWNER TO FILL] |
-| `approval_required` shows boolean `true` | YES | [OWNER TO FILL] |
-| `sandbox_mode` shows boolean `true` | YES | [OWNER TO FILL] |
-| Ready for Phase 33 manual execution check | YES | [OWNER TO FILL] |
+| Workflow name after import | `FnB OS V1 — Creative Asset Auto [SKELETON]` | **CONFIRMED** — `FnB OS V1 — Creative Asset Auto [SKELETON]` |
+| Re-import / opened in sandbox | YES | **YES** |
+| Workflow active status after import | inactive (OFF) | **inactive — not activated** |
+| Manual execution performed | NO | **NO** |
+| Execute button visible but not clicked | YES | **YES** |
+| Credentials attached | NO | **NO** |
+| API calls observed | NO | **NO** |
+| Workflow canvas opened successfully | YES | **YES** |
+| Nodes visible on canvas | YES — approx 10–15 | **YES** |
+| Set Input Variables node shows 19 fields | YES | To verify in Phase 33 — Owner did not open node in Phase 32 |
+| `brand_name` shows `Vi Cuon` | YES | To verify in Phase 33 |
+| `approval_required` shows boolean `true` | YES | To verify in Phase 33 |
+| `sandbox_mode` shows boolean `true` | YES | To verify in Phase 33 |
+| Ready for Phase 33 manual execution check | YES | **YES** |
+
+**Phase 32 Evidence Result: PASS**
+Re-import confirmed. Workflow inactive. No execution. No credentials. No API calls.
+Field-level verification of Set Input Variables (19 fields, brand_name, booleans) deferred to Phase 33 manual execution.
 
 ---
 

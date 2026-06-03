@@ -1,8 +1,49 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 32 — Creative Asset Auto Sandbox Re-import Only — INSTRUCTIONS_READY)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 32 — Creative Asset Auto Sandbox Re-import Only — EVIDENCE_RECORDED — PASS)
 
-## Latest Session — Phase 32 — Creative Asset Auto Sandbox Re-import Only
+## Latest Session — Phase 32 — Evidence Recording
+
+### current_phase
+Phase 32 — Creative Asset Auto Sandbox Re-import Only (EVIDENCE_RECORDED — PASS — READY FOR PHASE 33)
+
+### current_role
+Builder — Claude Code (evidence recording only — no workflow JSON modification, no n8n import by Builder, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 32 instructions DONE + PUSHED (commit `677dff1`). Owner evidence received 2026-06-03. Evidence recorded in `docs/phase-32-creative-asset-auto-sandbox-reimport-only-instructions.md` Section 5 (13-item checklist filled): workflow name confirmed `FnB OS V1 — Creative Asset Auto [SKELETON]`, re-import/opened YES, active status inactive, manual execution NO, execute button visible but not clicked YES, credentials NO, API calls NO, canvas opened YES, nodes visible YES, ready for Phase 33 YES. Field-level Set Input Variables verification (19 fields, brand_name, booleans) deferred to Phase 33 — Owner did not open node in Phase 32. Evidence result: PASS. Updated `handoff/PHASE_32_HANDOFF.md` (type EVIDENCE_RECORDED — PASS, evidence table added). Updated CURRENT_PHASE.md (status EVIDENCE_RECORDED — PASS — READY FOR PHASE 33, Phase 32 status table updated). Updated SESSION_SUMMARY.md (this entry). Updated AGENT_ACTIVITY_LOG.md (new row). Updated 09_LOGS/PHASE_LOG.md (new entry). No workflow JSON modified. No credentials. No activation. No n8n import by Builder. No n8n execution. No auto-post/reply/ads. Committing: `docs: record phase 32 sandbox reimport evidence`. Push pending Owner authorization.
+
+### latest_commit
+HEAD before evidence commit: `677dff1` (= origin/main, Phase 32 instructions pushed)
+
+### files_changed
+Phase 32 evidence recording (this session — 2026-06-03):
+- `docs/phase-32-creative-asset-auto-sandbox-reimport-only-instructions.md` — UPDATED: Section 5 evidence checklist filled with Owner results + PASS result note
+- `handoff/PHASE_32_HANDOFF.md` — UPDATED: type EVIDENCE_RECORDED — PASS, Owner evidence table added, summary updated
+- `handoff/CURRENT_PHASE.md` — updated to Phase 32 EVIDENCE_RECORDED — PASS
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 32 evidence files. Awaiting Owner push authorization.
+
+### decisions_made
+- Set Input Variables field-level items (19 fields, brand_name, approval_required, sandbox_mode) marked "To verify in Phase 33" — Owner confirmed nodes visible on canvas but did not open the Set Input Variables node to inspect fields during Phase 32. This is acceptable for Phase 32 (re-import only); field verification is the primary goal of Phase 33 execution check.
+- Evidence result classified as PASS — all core Phase 32 re-import checks confirmed (inactive, no execution, no credentials, no API calls, canvas open, ready for Phase 33). Field-level deferral does not affect Phase 32 PASS status.
+
+### open_issues
+None. Phase 32 evidence complete. Phase 33 (manual execution check) ready to begin.
+
+### blockers
+None.
+
+### next_owner_action
+(1) Authorize push: `docs: record phase 32 sandbox reimport evidence`. (2) Proceed to Phase 33 — manual execution check.
+
+---
+
+## Previous Session — Phase 32 — Instructions Build
 
 ### current_phase
 Phase 32 — Creative Asset Auto Sandbox Re-import Only (INSTRUCTIONS_READY — OWNER ACTION REQUIRED)

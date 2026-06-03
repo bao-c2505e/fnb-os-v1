@@ -1,15 +1,36 @@
 # Phase 32 Handoff — Creative Asset Auto Sandbox Re-import Only
 
 Created By: Claude Code (Builder, AGT-02) — 2026-06-03
+Updated By: Claude Code (Builder, AGT-02) — 2026-06-03 (evidence recorded)
 Phase: 32 — Creative Asset Auto Sandbox Re-import Only
-Type: INSTRUCTIONS_READY — OWNER ACTION REQUIRED
+Type: EVIDENCE_RECORDED — PASS — READY FOR PHASE 33
 Branch: main
 
 ---
 
 ## Phase 32 Summary
 
-Phase 32 produces Owner instructions for re-importing the patched `creative_asset_auto_skeleton.json` (Phase 30 patch, commit `18c681d`, 19-field Set Input Variables) into the n8n sandbox. No workflow JSON was modified in Phase 32. No n8n import or execution was performed by Builder. The n8n re-import is a manual action for Owner only.
+Phase 32 produces Owner instructions for re-importing the patched `creative_asset_auto_skeleton.json` (Phase 30 patch, commit `18c681d`, 19-field Set Input Variables) into the n8n sandbox. Owner performed manual re-import/open of the workflow in n8n sandbox. Evidence confirmed: workflow name correct, inactive, no execution, no credentials, no API calls, canvas opened, nodes visible, ready for Phase 33. No workflow JSON was modified in Phase 32. No n8n execution was performed.
+
+---
+
+## Phase 32 Owner Evidence (2026-06-03)
+
+| Item | Expected | Owner Result |
+|------|----------|-------------|
+| Workflow name | `FnB OS V1 — Creative Asset Auto [SKELETON]` | CONFIRMED |
+| Re-import / opened in sandbox | YES | YES |
+| Workflow active status | inactive (OFF) | inactive — not activated |
+| Manual execution performed | NO | NO |
+| Execute button visible but not clicked | YES | YES |
+| Credentials attached | NO | NO |
+| API calls observed | NO | NO |
+| Canvas opened successfully | YES | YES |
+| Nodes visible on canvas | YES | YES |
+| Set Input Variables 19 fields | YES | To verify in Phase 33 |
+| Ready for Phase 33 | YES | YES |
+
+**Evidence Result: PASS**
 
 ---
 
