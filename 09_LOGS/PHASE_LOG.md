@@ -5,6 +5,24 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-03 — Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation — EVIDENCE_RECORDED — PASS
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** EVIDENCE_RECORDED — PASS — AMENDING COMMIT — PUSHING
+**Detail:**
+Owner evidence received 2026-06-03. Result: PASS. Owner confirmed: new workflow `FnB OS V1 — Creative Asset Auto [SKELETON] — CURRENT CLEAN SANDBOX` imported and open; canvas has exactly one skeleton cluster; no duplicate suffix nodes visible; Set Input Variables node count on main path = 1; workflow INACTIVE (not activated); not published; no credentials attached; no manual execution performed after clean isolation; ready for Phase 36 retest. Updated `docs/phase-35-creative-asset-auto-sandbox-clean-workflow-isolation.md` (Section 4 evidence form filled; type EVIDENCE_RECORDED — PASS; Phase Connections updated). Updated `handoff/PHASE_35_HANDOFF.md` (Owner Evidence table added, type EVIDENCE_RECORDED — PASS). Updated CURRENT_PHASE.md (status EVIDENCE_RECORDED — PASS; Next Gate = Phase 36). Updated SESSION_SUMMARY, AGENT_ACTIVITY_LOG, PHASE_LOG (this entry). No workflow JSON modified. No credentials. No n8n import or execution by Builder. Amending Phase 35 commit (`303cc0d`) — not yet pushed to origin/main. Pushing.
+
+---
+
+### 2026-06-03 — Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation — ISOLATION_PLAN_READY
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** ISOLATION_PLAN_READY — COMMITTED — PUSH PENDING OWNER AUTHORIZATION
+**Detail:**
+Phase 34 DONE + PUSHED (`ea0a962`). Canvas contamination confirmed. Phase 35 isolation plan build complete. Created `docs/phase-35-creative-asset-auto-sandbox-clean-workflow-isolation.md` (10 sections: current problem with contaminated canvas; Step A rename contaminated workflow to `DUPLICATED DO NOT USE` (no delete); Step B import repo JSON as brand-new workflow (no overwrite); Step C rename new workflow to `CURRENT CLEAN SANDBOX`; Step D 10-item post-import verification checklist; evidence form; forbidden actions 9-row table; PASS/FAIL criteria; Phase 36 recommendation — PASS: execution retest on clean workflow, FAIL: import cleanup planning; safety checklist 11 items all NO). Created `handoff/PHASE_35_HANDOFF.md`. Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, PHASE_LOG.md. No workflow JSON modified. No credentials. No n8n import or execution by Builder. Committing: `docs: add phase 35 creative asset clean workflow isolation`. Push pending Owner authorization.
+
+---
+
 ### 2026-06-03 — Phase 34 — Canvas Cross-check: Contaminated Workflow Confirmed — DEBUG_PLAN_READY + UPDATED
 
 **By:** Claude Code (Builder, AGT-02)

@@ -1,24 +1,22 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 34 — Canvas Cross-check: Contaminated Workflow Confirmed — DEBUG_PLAN_READY + UPDATED)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation — EVIDENCE_RECORDED — PASS)
 
 ## Phase
 
-Phase 34 — Creative Asset Auto Set Input Variables Output Debug Planning
+Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation
 
 ## Status
 
-**DEBUG_PLAN_READY — UPDATED WITH CANVAS CROSS-CHECK**
+**EVIDENCE_RECORDED — PASS**
 
-Phase 33 FAIL. Phase 34 debug investigation + two rounds of Owner cross-check complete.
+Phase 35 Owner evidence received 2026-06-03. Clean workflow isolation complete. Phase 36 = clean sandbox manual execution retest.
 
-**Canvas finding (2026-06-03):** The current sandbox workflow contains two complete parallel node clusters on the same canvas. n8n import (Phase 32) merged nodes into the existing workflow instead of cleanly replacing it. Lower cluster has `1`-suffixed duplicate nodes (`Set Input Variables1`, `Code: Load Brand Brain1`, etc.). The workflow is contaminated — Phase 33 execution ran on this contaminated canvas.
-
-**Architect decision:** Do NOT execute, do NOT patch JSON, do NOT delete nodes manually, do NOT activate, do NOT attach credentials. Phase 35 = Clean Workflow Isolation.
+Owner confirmed: new workflow `FnB OS V1 — Creative Asset Auto [SKELETON] — CURRENT CLEAN SANDBOX` imported, canvas has exactly one skeleton cluster, no duplicate suffix nodes, Set Input Variables count = 1, workflow INACTIVE, not published, no credentials attached, no manual execution performed. Ready for Phase 36.
 
 ## Current Command
 
-Phase 34 canvas update committed. Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation — pending Owner/Architect command.
+Phase 35 EVIDENCE_RECORDED — PASS. Phase 36 = Creative Asset Auto Current Clean Sandbox Manual Execution Retest. Owner executes `CURRENT CLEAN SANDBOX` workflow, inspects `Set Input Variables` output panel, checks whether 19 fields are visible.
 
 ## Builder
 
@@ -26,48 +24,52 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — not yet reviewed Phase 34 canvas update.
+Codex — not yet reviewed Phase 35 (may be unavailable).
 
 ## Next Gate
 
-Phase 35 — Creative Asset Auto Sandbox Clean Workflow Isolation — archive/replace contaminated workflow, fresh import, verify single cluster, INACTIVE, 0 credentials
+Phase 35 EVIDENCE_RECORDED — PASS — 2026-06-03 — Phase 36: Owner manual execution on `CURRENT CLEAN SANDBOX` → check Set Input Variables 19-field output → Phase 36 evidence report
 
-## Phase 34 Files
+## Phase 35 Files
 
 | File | Change |
 |------|--------|
-| `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` | CREATED + UPDATED — 10-section debug plan, 2 rounds cross-check |
-| `handoff/PHASE_34_HANDOFF.md` | CREATED + UPDATED — canvas finding recorded |
+| `docs/phase-35-creative-asset-auto-sandbox-clean-workflow-isolation.md` | CREATED — 10-section isolation plan and evidence form |
+| `handoff/PHASE_35_HANDOFF.md` | CREATED — phase handoff |
 
-## Phase 34 Status
+## Phase 35 Status
 
 | Check | Status |
 |-------|--------|
-| Phase 33 result | FAIL — Set Input Variables empty |
-| Repo JSON inspection complete | YES |
-| 19 fields present in repo JSON | YES — Phase 30 patch correct |
-| Round 1 cross-check (workflow-level) | DONE — duplicate workflow confirmed |
-| Round 2 cross-check (canvas-level) | DONE — duplicate node clusters confirmed |
-| Canvas contamination confirmed | YES — `1`-suffixed nodes present |
-| Root cause ranked | YES — 3 candidates |
-| Primary root cause | n8n import merged nodes — contaminated canvas |
-| JSON patch fix (Code node) | DEFERRED — pending Phase 35 clean isolation |
-| Phase 35 recommendation updated | YES — Clean Workflow Isolation |
+| Phase 34 result | DEBUG_PLAN_READY + canvas contamination confirmed (commit `ea0a962`) |
+| Isolation plan created | YES |
+| Owner evidence received | YES — 2026-06-03 |
+| New workflow name confirmed | `FnB OS V1 — Creative Asset Auto [SKELETON] — CURRENT CLEAN SANDBOX` |
+| Canvas single cluster | YES — confirmed by Owner |
+| Duplicate suffix nodes | NO — none visible |
+| Set Input Variables count | 1 |
+| Workflow active status | INACTIVE |
+| Published | NO |
+| Credentials attached | NONE |
+| Manual execution (Phase 35) | NO |
+| Ready for Phase 36 | YES |
 | Workflow JSON NOT modified | YES |
 | `active=true` introduced | NO |
+| n8n import by Builder | NO |
 | n8n execution by Builder | NO |
+| Secret scan new files | CLEAN |
 | Branch | main |
-| HEAD at Phase 34 canvas update | `ce89ba2` (= origin/main before this commit) |
+| Phase 35 result | EVIDENCE_RECORDED — PASS |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
+| Phase 34 — Debug Planning + cross-check | **DONE + PUSHED (commit `ea0a962`) — canvas contamination confirmed** |
 | Phase 33 — Sandbox Manual Execution Check | **FAIL — DONE + PUSHED (commit `224bc4d`)** |
 | Phase 32 — Sandbox Re-import Only | **DONE + PUSHED (commit `11268bb`) — canvas contaminated** |
 | Phase 30 — Safe Sample Input Patch | **DONE + PUSHED (commit `18c681d`) — correct in repo** |
-| Phase 27 — Sandbox Manual Execution | **DONE + PUSHED (commit `0b7ce07`) — PASS WITH NOTES** |
-| Phase 26 — First Sandbox Import | **DONE + PUSHED (commit `4a001bc`) — PASS** |
+| Phase 26 — First Sandbox Import | **DONE + PUSHED (commit `4a001bc`) — original workflow created** |
 
 ## Guardrails
 
