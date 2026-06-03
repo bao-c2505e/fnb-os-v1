@@ -1,8 +1,95 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 33 — Creative Asset Auto Sandbox Manual Execution Check — EVIDENCE_RECORDED — FAIL)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 34 — Owner Cross-check Update: Duplicate Workflow Confirmed — DEBUG_PLAN_READY + UPDATED)
 
-## Latest Session — Phase 33 — Evidence Recording (FAIL)
+## Latest Session — Phase 34 — Owner Cross-check Update (Duplicate Workflow Confirmed)
+
+### current_phase
+Phase 34 — Creative Asset Auto Set Input Variables Output Debug Planning (DEBUG_PLAN_READY — updated with cross-check findings)
+
+### current_role
+Builder — Claude Code (docs/handoff update only — no workflow JSON modification, no n8n import, no n8n execution, no activation, no credentials)
+
+### active_command
+Phase 34 DEBUG_PLAN_READY. Owner reported cross-check results (2026-06-03): Check 1 YES (workflow title correct), Check 2 YES (DUPLICATE WORKFLOW CONFIRMED in n8n), Check 3 YES (Set Input Variables is first node after Manual Trigger). Architect decision: do NOT proceed to JSON patch fix yet — Phase 35 must first isolate the correct n8n workflow target. Updated `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md`: Section 5 revised from "Recommended Fix Strategy" to "Fix Strategy DEFERRED" (Code node replacement is deferred pending Phase 35; rationale: duplicate means Phase 33 may have executed wrong instance); Section 8 updated from "Phase 35 = Code Node Fix" to "Phase 35 = Duplicate Workflow Isolation" (identify both instances, determine which was executed in Phase 33, check if patched instance shows fields, no execution in Phase 35); Section 9 Phase Connections updated (Phase 35 = Duplicate Isolation, Phase 36 = conditional Code node fix OR execution check, Phase 37+ = TBD). Updated `handoff/PHASE_34_HANDOFF.md`: Phase 34 Summary updated with cross-check finding and Architect decision; Key Investigation Findings updated (Finding 1 = duplicate, Finding 2 = Set node format deferred); Debug Plan Content Summary Section 4/5/6/8 updated; Phase Connections updated; Owner Next Action updated (cross-check DONE, Phase 35 = duplicate isolation, JSON fix DEFERRED). Root cause ranking updated: Rank 1 = Duplicate workflow CONFIRMED MOST LIKELY; Rank 2 = Set node typeVersion 3 format mismatch SECONDARY + DEFERRED; Rank 3 = overwrite silently ignored (part of Rank 1). Updated SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, 09_LOGS/PHASE_LOG.md. CURRENT_PHASE.md already updated. No workflow JSON modified. No n8n import or execution. Amending and pushing Phase 34 commit.
+
+### latest_commit
+Phase 34 commit to be amended: see git log for current hash before amend.
+
+### files_changed
+Phase 34 cross-check update (this session — 2026-06-03):
+- `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` — UPDATED: Section 5 (fix DEFERRED), Section 8 (Phase 35 = Duplicate Isolation), Section 9 (Phase Connections)
+- `handoff/PHASE_34_HANDOFF.md` — UPDATED: Summary, Key Findings, Content Summary Sections 4/5/6/8, Phase Connections, Owner Next Action
+- `handoff/CURRENT_PHASE.md` — already updated (Phase 34 DEBUG_PLAN_READY + duplicate finding + Phase 35 = Duplicate Isolation)
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### decisions_made
+- JSON patch fix (Code node replacement) DEFERRED to Phase 36 or later, conditional on Phase 35 findings.
+- Phase 35 = Duplicate Workflow Isolation — identify both n8n instances, no execution, no JSON fix.
+- Root cause Rank 1 updated to CONFIRMED: duplicate workflow is the most likely explanation for Phase 33 FAIL. Phase 30 patch may be correct and the patched workflow may never have been executed.
+
+### open_issues
+- Phase 35 scope pending Owner/Architect command.
+- If Phase 35 confirms patched instance also shows empty fields → Code node fix is the path.
+- If Phase 35 confirms patched instance shows 19 fields → no JSON fix needed, proceed to execution of correct instance.
+
+### blockers
+None. Phase 34 docs updated. Awaiting push authorization and Phase 35 command.
+
+### next_owner_action
+(1) Confirm amend + push of Phase 34 with cross-check findings. (2) Issue Phase 35 command — Duplicate Workflow Isolation. (3) In Phase 35: identify both workflow instances in n8n sandbox. (4) Do NOT apply JSON fix until Phase 35 findings are clear.
+
+---
+
+## Previous Session — Phase 34 — Set Input Variables Output Debug Planning
+
+## Latest Session — Phase 34 — Set Input Variables Output Debug Planning
+
+### current_phase
+Phase 34 — Creative Asset Auto Set Input Variables Output Debug Planning (DEBUG_PLAN_READY)
+
+### current_role
+Builder/Investigator — Claude Code (read-only repo inspection + debug planning — no workflow JSON modification, no n8n import, no n8n execution)
+
+### active_command
+Phase 33 FAIL + PUSHED (commit `224bc4d`). Phase 34 investigation build: pre-check confirmed HEAD = `224bc4d` (= origin/main), working tree clean, branch main. Inspected `n8n/workflows/creative_asset_auto_skeleton.json` (read-only): confirmed Set Input Variables node ID `a2000002-0002-4001-a002-200000000002`, type `n8n-nodes-base.set`, typeVersion 3, position [500,420], 19 fields in `assignments.assignments` (Phase 30 patch correct in repo), on main path Manual Trigger → Set Input Variables → Code: Load Brand Brain, NO duplicate nodes. Cross-checked `n8n/workflows/content_auto_skeleton.json` (read-only): identical `assignments.assignments` format with typeVersion 3 — confirms issue is systemic since Phase 8, not specific to creative_asset or Phase 30 patch. Key finding: n8n UI message "Currently no items exist" in parameters panel = n8n sees ZERO assignments configured on the node despite 19 being in the repo JSON — n8n cannot parse the `assignments.assignments` format as written. The Phase 30 patch correctly modified the repo file but had no effect on n8n execution because the format was unrecognized before and after the patch. All 4 Set nodes in the workflow use the identical format; downstream Code nodes use `|| fallback` values masking the issue. Phase 27 PASS WITH NOTES and Phase 20C PASS were both correct but masked the underlying Set node format issue. Created `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` (10 sections: 1 purpose; 2 Phase 33 failure evidence; 3 repo inspection — node identity/format/cross-workflow comparison; 4 root cause ranking — Rank 1: n8n Set typeVersion 3 format unrecognized MOST LIKELY, Rank 2: re-import duplicate LIKELY, Rank 3/4 LOW; 5 fix strategy — replace Set node with Code node typeVersion 2, JS code for 19-field return specified, alternative `"mode": "manual"` approach noted; 6 Owner 3-item UI cross-check; 7 safety checklist all NO; 8 Phase 35 recommendation; 9 phase connections Phase 8–37; 10 safety confirmation). Created `handoff/PHASE_34_HANDOFF.md`. Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, 09_LOGS/PHASE_LOG.md. No workflow JSON modified. No credentials. No n8n import. No n8n execution. No auto-post/reply/ads. Committing: `docs: plan phase 34 creative asset set input debug`. Push pending Owner authorization.
+
+### latest_commit
+HEAD before Phase 34 commit: `224bc4d` (= origin/main)
+
+### files_changed
+Phase 34 (build — this session — 2026-06-03):
+- `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` — CREATED: 10-section debug plan
+- `handoff/PHASE_34_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 34 DEBUG_PLAN_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 34 files. Awaiting Owner review and push authorization.
+
+### decisions_made
+- Root cause Rank 1: n8n Set typeVersion 3 `assignments.assignments` format unrecognized. Evidence: "Currently no items exist" in parameters panel + identical behavior across content_auto (Phase 20C) and creative_asset (Phase 27, Phase 33).
+- Fix recommendation: Code node replacement (not another patch to `assignments.assignments`). Rationale: Code nodes proven reliable in this environment; format uncertainty about Set node eliminated.
+- JS code for the replacement Code node specified in Section 5 of debug plan — 19 fields, exact values from Phase 30 patch, `approval_required: true` and `sandbox_mode: true` as boolean literals.
+- Connections do NOT need to change — connections reference node NAME (`"Set Input Variables"`), not node type. Keeping the same node name means connections are preserved.
+- Phase 35/36/37 roadmap: Phase 35 = Code node fix (repo only), Phase 36 = re-import, Phase 37 = execution check.
+
+### open_issues
+Owner 3-item UI cross-check (Section 6 of debug plan) pending — will confirm whether duplicate workflow exists and verify parameters panel behavior.
+
+### blockers
+None from Builder side. Awaiting Owner review + push authorization + Phase 35 approval.
+
+### next_owner_action
+(1) Review `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md`. (2) Perform 3 UI cross-checks (Section 6). (3) Report UI cross-check findings. (4) Authorize push. (5) Authorize Phase 35 Code node fix.
+
+---
+
+## Previous Session — Phase 33 — Evidence Recording (FAIL)
 
 ### current_phase
 Phase 33 — Creative Asset Auto Sandbox Manual Execution Check (EVIDENCE_RECORDED — FAIL — PROCEED TO PHASE 34 DEBUG)

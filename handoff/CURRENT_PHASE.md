@@ -1,25 +1,24 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-03 (Phase 33 — Creative Asset Auto Sandbox Manual Execution Check — EVIDENCE_RECORDED — FAIL)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 34 — Creative Asset Auto Set Input Variables Output Debug Planning — DEBUG_PLAN_READY)
 
 ## Phase
 
-Phase 33 — Creative Asset Auto Sandbox Manual Execution Check
+Phase 34 — Creative Asset Auto Set Input Variables Output Debug Planning
 
 ## Status
 
-**EVIDENCE_RECORDED — FAIL — PROCEED TO PHASE 34 DEBUG**
+**DEBUG_PLAN_READY**
 
-Phase 33 manual execution completed 2026-06-03. Result: FAIL.
-`Set Input Variables` node output still empty: "No fields - item(s) exist, but they're empty." / "Currently no items exist."
-Phase 30 patch (19-field Set Input Variables) did not appear in n8n sandbox execution despite re-import in Phase 32.
-No credentials. No API calls. No production side effect. Workflow remained inactive. Safety constraints respected.
-
-**Next: Phase 34 — Creative Asset Auto Set Input Variables Output Debug Planning**
+Phase 33 FAIL. Phase 34 debug investigation complete.
+Finding: `n8n-nodes-base.set` typeVersion 3 `assignments.assignments` format has never been recognized by n8n — confirmed by cross-check with `content_auto_skeleton.json` (identical format, same empty behavior in Phase 20C).
+The Phase 30 patch correctly wrote 19 fields to the repo JSON, but n8n cannot read them.
+Recommended fix: replace `Set Input Variables` node with `n8n-nodes-base.code` (typeVersion 2) node — proven reliable in this environment.
+No workflow JSON modified. No n8n import or execution.
 
 ## Current Command
 
-Phase 33 FAIL. Proceed to Phase 34 debug planning. Investigate why Phase 30 patch did not load into n8n execution.
+Phase 34 DEBUG_PLAN_READY. Owner to review debug plan, perform 3 UI cross-checks (Section 6 of plan), then authorize Phase 35 Code node fix.
 
 ## Builder
 
@@ -27,51 +26,49 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — not yet reviewed Phase 33 (may be unavailable).
+Codex — not yet reviewed Phase 34 (may be unavailable).
 
 ## Next Gate
 
-Phase 33 FAIL — 2026-06-03 — Phase 34 debug planning required
+Phase 34 DEBUG_PLAN_READY — 2026-06-03 — Owner review → 3 UI cross-checks → Phase 35 Code node fix authorization
 
-## Phase 33 Files
+## Phase 34 Files
 
 | File | Change |
 |------|--------|
-| `docs/phase-33-creative-asset-auto-sandbox-manual-execution-check.md` | CREATED + UPDATED (Section 6 evidence recorded) |
-| `handoff/PHASE_33_HANDOFF.md` | CREATED + UPDATED (FAIL evidence added) |
+| `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` | CREATED — 10-section debug plan |
+| `handoff/PHASE_34_HANDOFF.md` | CREATED — phase handoff |
 
-## Phase 33 Status
+## Phase 34 Status
 
 | Check | Status |
 |-------|--------|
-| Phase 32 result | DONE + PUSHED (commit `11268bb`) — PASS |
-| Phase 33 runbook committed + pushed | YES (commit `bfb182a`) |
-| Owner execution performed | YES — 2026-06-03 |
-| Execution result | **FAIL** |
-| Set Input Variables output fields visible | **NO — 0 fields** |
-| "No fields - empty" message | **STILL PRESENT** |
-| Parameters panel | **"Currently no items exist"** |
-| Phase 30 patch visible in execution | **NO** |
-| Credentials attached | NO |
-| API calls observed | NO |
-| Production side effect | NO |
-| Workflow activated | NO |
-| Workflow JSON NOT modified (Phase 33) | YES |
+| Phase 33 result | FAIL — Set Input Variables empty |
+| Repo JSON inspection complete | YES |
+| Duplicate Set Input Variables nodes | NO — exactly 1 |
+| 19 fields present in repo JSON | YES — Phase 30 patch correct |
+| n8n recognizes assignments | NO — "Currently no items exist" |
+| Cross-workflow comparison (content_auto) | DONE — identical format, same behavior |
+| Root cause ranked | YES — 4 candidates |
+| Primary root cause | n8n Set typeVersion 3 format unrecognized |
+| Fix strategy documented (Phase 35) | YES — Code node replacement |
+| Phase 35/36/37 roadmap documented | YES |
+| Workflow JSON NOT modified | YES |
 | `active=true` introduced | NO |
 | n8n execution by Builder | NO |
-| Evidence result | **FAIL — NEED DEBUG** |
+| Secret scan new files | CLEAN |
 | Branch | main |
+| HEAD at Phase 34 start | `224bc4d` (= origin/main) |
 
 ## Prior Phase Results
 
 | Phase | Result |
 |-------|--------|
-| Phase 33 — Sandbox Manual Execution Check | **FAIL — EVIDENCE_RECORDED (commit `bfb182a`)** |
+| Phase 33 — Sandbox Manual Execution Check | **FAIL — DONE + PUSHED (commit `224bc4d`)** |
 | Phase 32 — Sandbox Re-import Only | **DONE + PUSHED (commit `11268bb`) — PASS** |
-| Phase 31 — Sandbox Re-import & Manual Execution Planning | **DONE + PUSHED (commit `d6570f0`) — PASS** |
-| Phase 30 — Safe Sample Input Patch Implementation | **DONE + PUSHED (commit `18c681d`) — PASS** |
-| Phase 29 — Safe Sample Input Patch Planning | **DONE + PUSHED (commit `da89e8d`) — PASS** |
-| Phase 27 — Sandbox Manual Execution | **DONE + PUSHED (commit `0b7ce07`) — PASS WITH NOTES** |
+| Phase 30 — Safe Sample Input Patch | **DONE + PUSHED (commit `18c681d`) — correct in repo, unread by n8n** |
+| Phase 27 — Sandbox Manual Execution | **DONE + PUSHED (commit `0b7ce07`) — PASS WITH NOTES (same empty behavior, masked)** |
+| Phase 26 — First Sandbox Import | **DONE + PUSHED (commit `4a001bc`) — PASS** |
 
 ## Guardrails
 

@@ -5,6 +5,24 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-03 — Phase 34 — Owner Cross-check Update: Duplicate Workflow Confirmed — DEBUG_PLAN_READY + UPDATED
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** DEBUG_PLAN_READY — UPDATED WITH CROSS-CHECK FINDINGS — AMENDING + PUSHING
+**Detail:**
+Owner cross-check results received (2026-06-03): Check 1 YES (workflow title correct), Check 2 YES (DUPLICATE WORKFLOW CONFIRMED in n8n), Check 3 YES (Set Input Variables first after Manual Trigger). Architect decision: do NOT proceed to JSON patch fix. Phase 35 = Duplicate Workflow Isolation. Updated `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` (Section 5: fix DEFERRED — Code node replacement moved to Phase 36+, conditional on Phase 35 findings, deferred JS code retained for reference; Section 8: Phase 35 = Duplicate Workflow Isolation — identify both instances, no execution, no JSON fix; Section 9: Phase Connections updated — Phase 35 = Duplicate Isolation, Phase 36 = conditional, Phase 37+ = TBD). Updated `handoff/PHASE_34_HANDOFF.md` (Summary, Key Findings, Content Summary, Phase Connections, Owner Next Action). Root cause ranking finalized: Rank 1 = Duplicate workflow CONFIRMED MOST LIKELY (Phase 32 created copy instead of overwrite, Phase 33 executed wrong instance); Rank 2 = Set node typeVersion 3 format mismatch SECONDARY/DEFERRED; Rank 3 = overwrite silently ignored (part of Rank 1). No workflow JSON modified. No n8n import. No n8n execution. Amending Phase 34 commit and pushing.
+
+---
+
+### 2026-06-03 — Phase 34 — Creative Asset Auto Set Input Variables Output Debug Planning — DEBUG_PLAN_READY
+
+**By:** Claude Code (Builder/Investigator, AGT-02)
+**Status:** DEBUG_PLAN_READY
+**Detail:**
+Phase 33 FAIL + PUSHED (commit `224bc4d`). Phase 34 investigation complete. Inspected `n8n/workflows/creative_asset_auto_skeleton.json` (read-only) — confirmed 1 Set Input Variables node, correct path, 19 fields in `assignments.assignments` (Phase 30 patch present). Cross-checked `n8n/workflows/content_auto_skeleton.json` (read-only) — identical `assignments.assignments` format, confirming systemic issue since Phase 8. Key finding: n8n cannot parse the `assignments.assignments` format — "Currently no items exist" confirms n8n sees zero assignments. Phase 30 patch correctly modified repo JSON but had zero effect on n8n execution. Root cause Rank 1: n8n Set node typeVersion 3 format unrecognized. Recommended fix: replace `Set Input Variables` node with Code node (typeVersion 2) — proven reliable in this environment. JS code for 19-field return specified in debug plan Section 5. Phase 35/36/37 roadmap documented. Created `docs/phase-34-creative-asset-auto-set-input-variables-debug-plan.md` (10 sections) and `handoff/PHASE_34_HANDOFF.md`. Updated state files. No workflow JSON modified. No n8n import or execution. Committing: `docs: plan phase 34 creative asset set input debug`. Push pending Owner authorization.
+
+---
+
 ### 2026-06-03 — Phase 33 — Creative Asset Auto Sandbox Manual Execution Check — EVIDENCE_RECORDED — FAIL
 
 **By:** Claude Code (Builder, AGT-02)
