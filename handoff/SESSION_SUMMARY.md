@@ -1,8 +1,51 @@
 # Session Summary
 
-Updated By: Claude Code (Builder) — 2026-06-02 (Phase 28 — Sandbox I/O Standardization — BUILD_READY)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 29 — Safe Sample Input Patch Planning — PLAN_READY)
 
-## Latest Session — Phase 28 — Creative Asset Auto Sandbox I/O Standardization
+## Latest Session — Phase 29 — Creative Asset Auto Safe Sample Input Patch Planning
+
+### current_phase
+Phase 29 — Creative Asset Auto Safe Sample Input Patch Planning (PLAN_READY — AWAITING CODEX REVIEW)
+
+### current_role
+Builder — Claude Code (planning documentation only — no workflow JSON modification, no execution, no activation, no credentials)
+
+### active_command
+Phase 28 DONE + PUSHED (commit `a7d0bd5`). Phase 29 build: read `n8n/workflows/creative_asset_auto_skeleton.json` (read-only) to document current `Set Input Variables` node state (node ID `a2000002-0002-4001-a002-200000000002`, typeVersion 3, position [500,420], 7 existing fields: brand_id/brand_name/brief_request/asset_type/platform/format/objective). Created `docs/phase-29-creative-asset-auto-safe-sample-input-patch-plan.md` (10 sections: 1 purpose — planning only, no JSON change; 2 current finding — workflow file identity, Set Input Variables node state with 7-field table; 3 root cause hypothesis — Factor 1: Manual Trigger emits `{}`, Set node execution panel shows incoming empty item state; Factor 2: downstream Code nodes use `|| fallback` patterns making execution succeed regardless of Set node output; combined effect: operator confusion not execution failure; 4 proposed safe sample input fields — 14 new fields with values/classification, existing 7 fields KEEP, `brand_name` duplication note flagged for Owner/Architect decision; 5 patch boundary for Phase 30 — allowed/forbidden actions table, Phase 30 entry requirements; 6 expected sandbox output after patch — before/after comparison; 7 safety checklist 11 items all NO/CLEAN; 8 recommended Phase 30 — objectives, prerequisites, scope, hard constraints, post-patch verification steps; 9 phase connections; 10 safety confirmation). Created `handoff/PHASE_29_HANDOFF.md` (phase summary, context, files created/updated/not-modified, deliverables summary, runtime safety 11 checks all NO/CLEAN, 22 acceptance criteria all PASS, open `brand_name` decision, Owner next action 6 steps, Codex review 3 points, phase connections). Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, 09_LOGS/PHASE_LOG.md. No workflow JSON modified. No credentials. No activation. No n8n import. No n8n execution. No auto-post/reply/ads. Commit: `docs: plan phase 29 creative asset sample input patch`.
+
+### latest_commit
+HEAD before Phase 29 commit: `a7d0bd5` (= origin/main)
+
+### files_changed
+Phase 29 (build — this session — 2026-06-03):
+- `docs/phase-29-creative-asset-auto-safe-sample-input-patch-plan.md` — CREATED: main planning doc (10 sections)
+- `handoff/PHASE_29_HANDOFF.md` — CREATED: phase handoff
+- `handoff/CURRENT_PHASE.md` — updated to Phase 29 PLAN_READY
+- `handoff/SESSION_SUMMARY.md` — this file; new session entry prepended
+- `logs/AGENT_ACTIVITY_LOG.md` — new row prepended
+- `09_LOGS/PHASE_LOG.md` — new entry prepended
+
+### files_pending
+All Phase 29 files. Awaiting Codex review and Owner push authorization.
+
+### decisions_made
+- Phase 29 is planning only — workflow JSON read but not modified. Consistent with project convention of separating planning phases from implementation phases.
+- Root cause documented at two levels: (1) n8n UI display behavior for Manual Trigger empty item; (2) Code node `|| fallback` patterns making downstream execution independent of Set node output.
+- 14 proposed fields classified by safety tier. `brand_name` duplication flagged as requiring Owner/Architect decision before Phase 30 begins.
+- Planning doc filename uses kebab-case per Owner instruction (`phase-29-creative-asset-auto-safe-sample-input-patch-plan.md`) — differs from prior PHASE_XX_ uppercase convention; consistent with Owner's specified filename.
+
+### open_issues
+- `brand_name` duplication: existing field uses `"Vị Cuốn"` (Unicode); proposed new field uses `"Vi Cuon"` (ASCII). Requires Owner/Architect resolution before Phase 30.
+
+### blockers
+None. Phase 29 plan complete.
+
+### next_owner_action
+(1) Review `docs/phase-29-creative-asset-auto-safe-sample-input-patch-plan.md`. (2) Review `handoff/PHASE_29_HANDOFF.md`. (3) Consult ChatGPT Architect on `brand_name` duplication if needed. (4) Issue Codex review request. (5) If Codex PASS: push Phase 29 to GitHub. (6) Decide Phase 30 patch implementation — issue Owner approval when ready.
+
+---
+
+## Previous Session — Phase 28 — Creative Asset Auto Sandbox I/O Standardization
 
 ### current_phase
 Phase 28 — Creative Asset Auto Sandbox Input/Output Standardization (BUILD_READY — AWAITING CODEX REVIEW)

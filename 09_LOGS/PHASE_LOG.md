@@ -5,6 +5,15 @@ One entry per phase or sub-phase action.
 
 ---
 
+### 2026-06-03 — Phase 29 — Safe Sample Input Patch Planning — PLAN_READY
+
+**By:** Claude Code (Builder, AGT-02)
+**Status:** PLAN_READY — AWAITING CODEX REVIEW
+**Detail:**
+Phase 28 DONE + PUSHED (commit `a7d0bd5`). Phase 29 planning build complete. Read `n8n/workflows/creative_asset_auto_skeleton.json` (read-only) — confirmed Set Input Variables node current state: node ID `a2000002-0002-4001-a002-200000000002`, typeVersion 3, 7 existing fields (brand_id, brand_name, brief_request, asset_type, platform, format, objective). Created `docs/phase-29-creative-asset-auto-safe-sample-input-patch-plan.md` (10 sections: purpose, current finding, root cause hypothesis, 14 proposed safe sample fields, patch boundary, expected post-patch output, safety checklist, Phase 30 recommendation, phase connections, safety confirmation). Root cause documented: Manual Trigger emits `{}` causing Set node UI to display "No fields - item(s) exist, but they're empty." for the incoming item; downstream Code nodes use `|| fallback` patterns making execution succeed regardless; combined effect is operator confusion, not execution failure. 14 proposed fields documented with safe values and classification. `brand_name` duplication (existing Unicode `"Vị Cuốn"` vs proposed ASCII `"Vi Cuon"`) flagged for Owner/Architect decision before Phase 30. Created `handoff/PHASE_29_HANDOFF.md`. Updated CURRENT_PHASE.md, SESSION_SUMMARY.md, AGENT_ACTIVITY_LOG.md, PHASE_LOG.md. No workflow JSON modified. No credentials. No activation. No n8n import. No n8n execution. No auto-post/reply/ads. Committing locally: `docs: plan phase 29 creative asset sample input patch`. Push pending Codex review + Owner authorization.
+
+---
+
 ### 2026-06-02 — Phase 28 — Sandbox I/O Standardization — BUILD_READY
 
 **By:** Claude Code (Builder, AGT-02)

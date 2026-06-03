@@ -1,22 +1,22 @@
 # Current Phase
 
-Updated By: Claude Code (Builder) — 2026-06-02 (Phase 28 — Sandbox I/O Standardization — BUILD_READY)
+Updated By: Claude Code (Builder) — 2026-06-03 (Phase 29 — Safe Sample Input Patch Planning — PLAN_READY)
 
 ## Phase
 
-Phase 28 — Creative Asset Auto Sandbox Input/Output Standardization
+Phase 29 — Creative Asset Auto Safe Sample Input Patch Planning
 
 ## Status
 
-**BUILD_READY — AWAITING CODEX REVIEW**
+**PLAN_READY — AWAITING CODEX REVIEW**
 
-Phase 27 DONE + PUSHED (commit `0b7ce07`). Phase 27 result: PASS WITH NOTES. Phase 28 documentation build complete.
-Phase 28 creates sandbox I/O standardization docs for `creative_asset_auto_skeleton` after Phase 27 execution.
+Phase 28 DONE + PUSHED (commit `a7d0bd5`). Phase 29 planning build complete.
+Phase 29 plans a safe patch for the `Set Input Variables` node in `creative_asset_auto_skeleton` to address the "No fields - item(s) exist, but they're empty." display from Phase 27 sandbox execution.
 No workflow JSON modified. No credentials. No API calls. No activation.
 
 ## Current Command
 
-Phase 28 BUILD_READY. Awaiting Codex review and Owner push authorization.
+Phase 29 PLAN_READY. Awaiting Codex review and Owner push authorization.
 
 ## Builder
 
@@ -24,39 +24,58 @@ Claude Code (AGT-02)
 
 ## Reviewer
 
-Codex — not yet started for Phase 28.
+Codex — not yet started for Phase 29.
 
 ## Next Gate
 
-Phase 28 BUILD_READY — 2026-06-02 — Awaiting Codex review → Owner push authorization
-origin/main: `0b7ce07`
+Phase 29 PLAN_READY — 2026-06-03 — Awaiting Codex review → Owner push authorization
+origin/main: `a7d0bd5`
 
-## Phase 28 Files
+## Phase 29 Files
 
 | File | Status |
 |------|--------|
-| `docs/PHASE_28_CREATIVE_ASSET_AUTO_SANDBOX_IO_STANDARDIZATION.md` | CREATED — main phase doc (9 sections) |
-| `docs/specs/creative_asset_auto_sandbox_io_spec.md` | CREATED — formal I/O spec (8 sections) |
-| `handoff/PHASE_28_HANDOFF.md` | CREATED — phase handoff |
+| `docs/phase-29-creative-asset-auto-safe-sample-input-patch-plan.md` | CREATED — main planning doc (10 sections) |
+| `handoff/PHASE_29_HANDOFF.md` | CREATED — phase handoff |
 
-## Phase 28 Status
+## Phase 29 Status
 
 | Check | Status |
 |-------|--------|
-| Phase 27 execution result | PASS WITH NOTES — 2026-06-02 |
-| Sandbox input contract defined | YES |
-| Sandbox output contract defined | YES |
-| Phase 27 note explained | YES — Set Input Variables UI quirk documented |
-| Pass/fail criteria defined | YES — PASS / PASS WITH NOTES / FAIL / BLOCKED |
-| Safety constraints documented | YES |
-| Formal I/O spec created | YES — `docs/specs/` |
+| Phase 28 result | DONE + PUSHED (commit `a7d0bd5`) |
+| Current Set Input Variables state documented | YES — 7 fields, typeVersion 3, node ID, position |
+| Root cause hypothesis documented | YES — Manual Trigger `{}` + UI display + Code node fallbacks |
+| 14 proposed safe sample fields documented | YES — with values and safety classification |
+| Existing 7 fields noted as KEEP | YES |
+| `brand_name` duplication flagged | YES — requires Owner/Architect decision before Phase 30 |
+| Patch boundary for Phase 30 documented | YES — allowed and forbidden actions table |
+| Safety checklist present | YES — 11 items all NO/CLEAN |
+| Phase 30 recommendation documented | YES |
 | Workflow JSON modified | NO |
 | `active=true` introduced | NO |
 | Real credentials added | NO |
 | Real API calls added | NO |
 | Secret scan (new files) | CLEAN |
 | Branch | main |
-| HEAD at Phase 28 start | `0b7ce07` (= origin/main) |
+| HEAD at Phase 29 start | `a7d0bd5` (= origin/main) |
+
+## Prior Phase Results
+
+| Phase | Result |
+|-------|--------|
+| Phase 28 — Sandbox I/O Standardization: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `a7d0bd5`)** |
+| Phase 27 — Sandbox Manual Execution: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `0b7ce07`) — PASS WITH NOTES** |
+| Phase 26 — First Sandbox Import: Creative Asset Auto Skeleton | **DONE + PUSHED (commit `4a001bc`) — PASS** |
+| Phase 25 — Sandbox Import Readiness Gate | **DONE + PUSHED (commit `9bfaeecc`)** |
+
+## Guardrails
+
+- Do not hardcode secrets or credentials.
+- Do not auto-post, auto-reply, or auto-spend.
+- Do not activate n8n workflows.
+- Do not run ads or spend money.
+- Do not push without OWNER_APPROVED for push.
+- .claude/ must NEVER be committed.
 
 ## Prior Phase Results
 
